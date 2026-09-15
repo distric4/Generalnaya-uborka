@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Клиенты и документы — Генеральная уборка</title>
+<meta name="description" content="Генеральная уборка — клининговая компания в Иркутске с 2007 года. Уборка квартир и офисов, мытьё окон, химчистка, услуги для бизнеса.">
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+html,body{overflow-x:clip;}
+
+.gu-page{
+  --cyan:#03AAD3; --cyan-deep:#0089B0; --blue:#008DC4; --green:#7CCD00; --green-deep:#5FA300;
+  --orange:#5FA300;
+  --ink:#131B23; --ink-2:#414F58; --gray:#6B7680; --gray-2:#98A2AA;
+  --white:#fff; --paper:#F5F7F9; --mint-1:#EAF6FA; --mint-2:#DCEEF4; --mint-3:#B8E1EC; --line:#E4E8EC;
+  --navy:#0F1B2E; --navy-2:#16273F;
+  --r-xl:20px; --r-lg:16px; --r-md:12px; --r-pill:999px;
+  --sh-1:0 2px 10px rgba(19,27,35,.05);
+  --sh-2:0 14px 34px rgba(19,27,35,.10);
+  --sh-3:0 18px 40px rgba(19,27,35,.14);
+}
+.gu-page *{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+.gu-page{background:var(--white);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip;}
+.gu-page a{color:inherit;text-decoration:none;}
+.gu-page button{font-family:inherit;cursor:pointer;border:none;}
+.gu-page h1, .gu-page h2, .gu-page h3{font-weight:700;letter-spacing:-.02em;line-height:1.14;}
+.gu-page .wrap{max-width:1280px;margin:0 auto;padding:0 40px;position:relative;z-index:2;}
+.gu-page section{padding:88px 0;position:relative;}
+.gu-page .micro{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan-deep);}
+.gu-page .gr{color:var(--green-deep);}
+
+/* ---------- прогресс-бар прокрутки ---------- */
+.gu-page .scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;z-index:100;
+  background:linear-gradient(90deg,var(--cyan),var(--green));transition:width .1s linear;}
+
+/* ---------- кнопка «наверх» ---------- */
+.gu-page .back-top{
+  position:fixed;right:24px;bottom:24px;z-index:60;width:48px;height:48px;border-radius:50%;
+  background:var(--white);border:1px solid var(--line);box-shadow:var(--sh-2);
+  color:var(--cyan-deep);font-size:18px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;transform:translateY(10px);transition:.25s ease;
+}
+.gu-page .back-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.gu-page .back-top:hover{background:var(--cyan);color:#fff;border-color:var(--cyan);}
+
+/* ---------- ПЕРЕМЕННЫЕ ФОНЫ СЕКЦИЙ ---------- */
+.gu-page .bg-plain{background:var(--white);}
+.gu-page .bg-mint{background:var(--paper);}
+.gu-page .bg-dark{background:var(--navy);}
+.gu-page .bg-dark .s-head h2{color:#fff;}
+.gu-page .bg-dark .s-head p{color:rgba(255,255,255,.62);}
+.gu-page .bg-dark .micro{color:var(--green);}
+
+/* ---------- КНОПКИ ---------- */
+.gu-page .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 28px;border-radius:var(--r-pill);
+  font-weight:700;font-size:15px;transition:.2s ease;white-space:nowrap;}
+.gu-page .btn-cyan{background:var(--cyan);color:#fff;box-shadow:0 8px 20px rgba(3,170,211,.28);}
+.gu-page .btn-cyan:hover{background:var(--cyan-deep);transform:translateY(-2px);}
+.gu-page .btn-green{background:var(--green);color:#16290a;box-shadow:0 8px 20px rgba(122,205,2,.28);}
+.gu-page .btn-green:hover{transform:translateY(-2px);}
+.gu-page .btn-dark{background:var(--ink);color:#fff;}
+.gu-page .btn-dark:hover{background:#000;transform:translateY(-2px);}
+.gu-page .btn-line{background:#fff;border:1.5px solid var(--line);color:var(--ink);}
+.gu-page .btn-line:hover{border-color:var(--cyan);color:var(--cyan-deep);}
+.gu-page .btn-block{width:100%;}
+
+/* заглушка для фото без реального снимка */
+.gu-page .photo{background:linear-gradient(140deg,#EAF6FA,#DCEEF4);
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#7C8992;font-size:12.5px;line-height:1.45;}
+.gu-page .photo span{max-width:24ch;}
+.gu-page img.photo{width:100%;height:100%;object-fit:cover;display:block;padding:0;}
+
+.gu-page .s-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:40px;flex-wrap:wrap;}
+.gu-page .s-head h2{font-size:clamp(28px,3.4vw,42px);max-width:17ch;}
+.gu-page .s-head p{color:var(--gray);font-size:15px;max-width:34ch;}
+
+/* ---------- ШАПКА ---------- */
+.gu-page .hdr{position:sticky;top:0;z-index:70;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line);}
+.gu-page .hdr-in{max-width:1440px;margin:0 auto;padding:12px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.gu-page .hdr-logo img{height:56px;width:auto;}
+.gu-page .hdr-nav{display:flex;gap:4px;flex:1;justify-content:center;}
+.gu-page .hdr-nav a{padding:10px 18px;border-radius:var(--r-pill);font-size:15px;font-weight:600;color:var(--ink-2);white-space:nowrap;transition:.15s;}
+.gu-page .hdr-nav a:hover{background:var(--paper);color:var(--cyan-deep);}
+.gu-page .hdr-nav a.on{background:var(--mint-1);color:var(--cyan-deep);}
+.gu-page .hdr-right{display:flex;align-items:center;gap:20px;}
+.gu-page .msg-ico{display:flex;gap:9px;}
+.gu-page .msg-ico a{width:38px;height:38px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;transition:.18s;}
+.gu-page .msg-ico a:hover{transform:translateY(-2px);}
+.gu-page .i-max{background:linear-gradient(135deg,#9B5CFF,#6C2BD9);}
+.gu-page .i-vk{background:var(--cyan-deep);}
+.gu-page .hdr-tel{text-align:right;}
+.gu-page .hdr-tel a{font-size:22px;font-weight:800;letter-spacing:-.02em;white-space:nowrap;}
+.gu-page .hdr-tel a:hover{color:var(--cyan-deep);}
+.gu-page .hdr-tel span{display:flex;align-items:center;justify-content:flex-end;gap:7px;font-size:13px;color:var(--gray);margin-top:2px;}
+.gu-page .hdr-tel i{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;animation:blinkdot 1.8s ease-in-out infinite;}
+@keyframes blinkdot{0%,100%{opacity:1;}50%{opacity:.25;}}
+@media(prefers-reduced-motion:reduce){.gu-page .hdr-tel i{animation:none;}}
+
+/* ---- бургер ---- */
+.gu-page .burger{display:none;width:38px;height:38px;border-radius:50%;background:var(--ink);flex-direction:column;align-items:center;justify-content:center;gap:4px;flex-shrink:0;}
+.gu-page .burger span{display:block;width:16px;height:1.5px;background:#fff;border-radius:2px;transition:.2s ease;}
+.gu-page .burger.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg);}
+.gu-page .burger.open span:nth-child(2){opacity:0;}
+.gu-page .burger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg);}
+
+/* ---- выпадающее мобильное меню ---- */
+.gu-page .mob-menu{max-height:0;overflow:hidden;transition:max-height .25s ease;background:#fff;border-bottom:1px solid var(--line);}
+.gu-page .mob-menu.open{max-height:400px;border-bottom:1px solid var(--line);}
+@media(min-width:1241px){.gu-page .mob-menu{display:none;}}
+.gu-page .mob-nav{display:flex;flex-direction:column;padding:8px 18px;}
+.gu-page .mob-nav a{padding:13px 4px;font-size:15.5px;font-weight:600;color:var(--ink-2);border-bottom:1px solid var(--line);}
+.gu-page .mob-nav a.on{color:var(--cyan-deep);}
+.gu-page .mob-nav a:last-child{border-bottom:none;}
+.gu-page .mob-social{display:flex;gap:10px;padding:16px 18px 20px;}
+.gu-page .mob-social a{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;}
+@media(max-width:1240px){.gu-page .hdr-nav{display:none;}.gu-page .burger{display:flex;}}
+@media(max-width:760px){
+  .gu-page .hdr-in{padding:10px 14px;gap:8px;}
+  .gu-page .hdr-logo img{height:36px;}
+  .gu-page .msg-ico{display:none;}
+  .gu-page .hdr-right{flex:1;display:flex;align-items:center;justify-content:space-between;gap:8px;}
+  .gu-page .hdr-tel{flex:1;text-align:center;}
+  .gu-page .hdr-tel a{font-size:15.5px;}
+  .gu-page .hdr-tel span{display:flex;justify-content:center;}
+  .gu-page .burger{display:flex;}
+}
+
+/* ---------- ХЛЕБНЫЕ КРОШКИ ---------- */
+.gu-page .breadcrumbs{padding-top:16px;padding-bottom:16px;font-size:13px;color:var(--gray-2);display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.gu-page .breadcrumbs a{color:var(--gray);font-weight:600;}
+.gu-page .breadcrumbs a:hover{color:var(--cyan-deep);}
+.gu-page .breadcrumbs .sep{color:var(--gray-2);}
+
+/* ---------- HERO (внутренняя страница) ---------- */
+.gu-page .hero{padding:48px 0 64px;position:relative;overflow:hidden;
+  background:
+    linear-gradient(100deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.92) 35%, rgba(255,255,255,.58) 60%, rgba(255,255,255,.18) 100%),
+    linear-gradient(160deg, rgba(3,170,211,.10) 0%, rgba(122,205,2,.08) 100%),
+    url('https://static.tildacdn.com/tild6334-3161-4131-b936-356137636465/clipboard-image-1788.png') center 38%/cover no-repeat;
+}
+.gu-page .hero h1{font-size:clamp(30px,3.4vw,44px);font-weight:500;margin-bottom:18px;letter-spacing:-.01em;margin-top:14px;max-width:24ch;}
+.gu-page .hero h1 b{font-weight:800;}
+.gu-page .hero-lead{color:var(--gray);font-size:16px;max-width:62ch;margin-bottom:18px;}
+
+/* ---------- ЛОГОТИПЫ КЛИЕНТОВ ---------- */
+.gu-page .logo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+.gu-page .logo-grid .photo{aspect-ratio:16/9;border-radius:var(--r-md);font-size:11.5px;}
+
+/* ---------- БЛАГОДАРСТВЕННЫЕ ПИСЬМА ---------- */
+.gu-page .letters-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+.gu-page .letters-grid .photo{aspect-ratio:3/4;border-radius:var(--r-md);}
+.gu-page .note-placeholder{font-size:13px;color:var(--gray-2);font-style:italic;margin-top:20px;}
+
+/* ---------- РЕКВИЗИТЫ ---------- */
+.gu-page .req-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-1);padding:12px 34px;max-width:820px;margin:0 auto;}
+.gu-page .req-row{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px;flex-wrap:wrap;}
+.gu-page .req-row:last-child{border-bottom:none;}
+.gu-page .req-row .rk{color:var(--gray);font-weight:600;flex-shrink:0;}
+.gu-page .req-row .rv{font-weight:600;text-align:right;color:var(--ink);}
+.gu-page .req-row .rv.ph{color:var(--gray-2);font-weight:500;font-style:italic;}
+
+/* ---------- ЧЕК-ЛИСТ (тендерная документация) ---------- */
+.gu-page .checklist{list-style:none;display:flex;flex-direction:column;gap:12px;margin:22px 0;}
+.gu-page .checklist li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--ink-2);}
+.gu-page .checklist li::before{content:"✓";flex-shrink:0;width:24px;height:24px;border-radius:50%;background:rgba(122,205,2,.16);color:var(--green-deep);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.gu-page .tender-split{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start;}
+@media(max-width:860px){.gu-page .tender-split{grid-template-columns:1fr;gap:28px;}}
+
+/* ---------- ФОРМА ---------- */
+.gu-page .frm{display:grid;grid-template-columns:.85fr 1.15fr;border-radius:var(--r-xl);overflow:hidden;
+  border:1px solid var(--line);box-shadow:var(--sh-2);background:#fff;}
+.gu-page .frm-s{background:linear-gradient(160deg,var(--cyan),var(--blue));padding:46px;color:#fff;}
+.gu-page .frm-s .micro{color:rgba(255,255,255,.75);}
+.gu-page .frm-s h2{color:#fff;font-size:clamp(25px,2.9vw,33px);margin:14px 0 16px;}
+.gu-page .frm-s>p{font-size:15px;color:rgba(255,255,255,.92);}
+.gu-page .frm-b{padding:46px;}
+.gu-page .fld{margin-bottom:20px;}
+.gu-page .fld label{display:block;font-size:13px;font-weight:600;color:var(--gray);margin-bottom:9px;}
+.gu-page .fld input{width:100%;padding:15px 18px;border-radius:var(--r-md);border:1.5px solid var(--line);font-family:inherit;font-size:15px;background:#fff;}
+.gu-page .fld input:focus{outline:none;border-color:var(--cyan);}
+.gu-page .rrow{display:flex;gap:9px;flex-wrap:wrap;}
+.gu-page .rrow label{display:inline-flex;align-items:center;gap:9px;border:1.5px solid var(--line);border-radius:var(--r-pill);padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer;margin:0;color:var(--ink);}
+.gu-page .rrow label:hover{border-color:var(--cyan);}
+.gu-page .rrow input{accent-color:var(--cyan);width:auto;}
+.gu-page .agree{display:flex;gap:11px;align-items:flex-start;font-size:12.5px;color:var(--gray);margin:8px 0 20px;}
+.gu-page .agree input{accent-color:var(--cyan);margin-top:3px;flex-shrink:0;}
+.gu-page .agree a{text-decoration:underline;}
+.gu-page #formMsg{background:rgba(122,205,2,.14) !important;border:1.5px solid var(--green) !important;color:var(--ink) !important;border-radius:var(--r-md) !important;}
+@media(max-width:860px){.gu-page .frm{grid-template-columns:1fr;}.gu-page .frm-s, .gu-page .frm-b{padding:30px 24px;}}
+
+/* ---------- ФУТЕР ---------- */
+.gu-page footer{background:var(--navy);color:#B7C4D1;padding:70px 0 36px;}
+.gu-page .fg{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:32px;margin-bottom:40px;}
+.gu-page .fg h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:17px;}
+.gu-page .fg a, .gu-page .fg p{display:block;font-size:14px;margin-bottom:10px;color:#B7C4D1;}
+.gu-page .fg a:hover{color:var(--green);}
+.gu-page .fbr img{height:58px;width:auto;margin-bottom:16px;filter:brightness(0) invert(1);opacity:.95;}
+.gu-page .fbr p{color:rgba(255,255,255,.55);font-size:13.5px;max-width:28ch;}
+.gu-page .fzone{padding:22px 0;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:rgba(255,255,255,.5);line-height:1.75;}
+.gu-page .fzone b{color:#fff;font-weight:600;}
+.gu-page .fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;color:rgba(255,255,255,.4);}
+.gu-page .fbot .lg{display:flex;gap:20px;flex-wrap:wrap;}
+@media(max-width:820px){.gu-page .fg{grid-template-columns:1fr 1fr;}}
+@media(max-width:1000px){.gu-page .wrap{padding:0 20px;}.gu-page section{padding:60px 0;}}
+
+</style>
+<div class="gu-page">
+
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ ШАПКА ============ -->
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="index.html" class="hdr-logo"><img src="https://static.tildacdn.com/tild3766-6436-4261-b661-613261313461/image_997.png" alt="Генеральная уборка — клининговая компания в Иркутске"></a>
+    <nav class="hdr-nav">
+      <a href="index.html#uslugi">Для дома</a>
+      <a href="business.html">Для бизнеса</a>
+      <a href="price.html">Цены</a>
+      <a href="index.html#otzyvy">Отзывы</a>
+      <a href="index.html#uds">Бонусы UDS</a>
+    </nav>
+    <div class="hdr-right">
+      <div class="msg-ico">
+        <a href="tel:+79149276748" class="i-max" title="MAX: +7 914 927-67-48 — пришлите фото и видео">MAX</a>
+        <a href="https://vk.com/38uborka" class="i-vk" title="ВКонтакте">VK</a>
+      </div>
+      <div class="hdr-tel">
+        <a href="tel:83952554499">8 (3952) 55-44-99</a>
+        <span><i></i>ежедневно 08:00–20:00</span>
+      </div>
+      <button type="button" class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mob-menu" id="mobMenu">
+    <nav class="mob-nav">
+      <a href="index.html#uslugi">Для дома</a>
+      <a href="business.html">Для бизнеса</a>
+      <a href="price.html">Цены</a>
+      <a href="index.html#otzyvy">Отзывы</a>
+      <a href="index.html#uds">Бонусы UDS</a>
+    </nav>
+    <div class="mob-social">
+      <a href="tel:+79149276748" class="i-max" title="MAX: +7 914 927-67-48 — пришлите фото и видео">MAX</a>
+      <a href="https://vk.com/38uborka" class="i-vk" title="ВКонтакте">VK</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ХЛЕБНЫЕ КРОШКИ ============ -->
+<div class="wrap breadcrumbs"><a href="index.html">Главная</a><span class="sep">→</span><a href="business.html">Для бизнеса</a><span class="sep">→</span><span>Клиенты и документы</span></div>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <span class="micro">Клиенты и документы</span>
+    <h1>Клиенты, документы и <b class="gr">прозрачная работа с юрлицами</b></h1>
+    <p class="hero-lead">Работаем с компаниями и организациями Иркутска с 2007 года — официально, по договору и в ЭДО. Здесь собрано всё, что важно вашей бухгалтерии и тендерному отделу: клиенты, благодарственные письма, реквизиты и пакет документов для закупок.</p>
+  </div>
+</section>
+
+<!-- ============ 2. ЛОГОТИПЫ КЛИЕНТОВ ============ -->
+<section class="bg-mint">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Клиенты</span><h2 style="margin-top:14px;">Нам доверяют компании Иркутска</h2></div>
+      <p>Среди наших клиентов — офисы, торговые сети, склады и производства. Часть из них выбрала нас по итогам тендера.</p>
+    </div>
+    <!-- Плейсхолдеры логотипов — заказчик заменит реальными логотипами клиентов -->
+    <div class="logo-grid">
+      <div class="photo"><span>Логотип клиента</span></div>
+      <div class="photo"><span>Логотип клиента</span></div>
+      <div class="photo"><span>Логотип клиента</span></div>
+      <div class="photo"><span>Логотип клиента</span></div>
+      <div class="photo"><span>Логотип клиента</span></div>
+      <div class="photo"><span>Логотип клиента</span></div>
+      <div class="photo"><span>Логотип клиента</span></div>
+      <div class="photo"><span>Логотип клиента</span></div>
+      <div class="photo"><span>Логотип клиента</span></div>
+      <div class="photo"><span>Логотип клиента</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. БЛАГОДАРСТВЕННЫЕ ПИСЬМА ============ -->
+<section class="bg-plain">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Отзывы клиентов</span><h2 style="margin-top:14px;">Благодарственные письма</h2></div>
+      <p>Компании, с которыми мы работаем, оставляют официальные благодарственные письма. Ниже — сканы оригиналов.</p>
+    </div>
+    <!-- Плейсхолдеры сканов — здесь будут реальные сканы писем, сейчас стоят заглушки (заполнит заказчик) -->
+    <div class="letters-grid">
+      <div class="photo"><span>Благодарственное письмо</span></div>
+      <div class="photo"><span>Благодарственное письмо</span></div>
+      <div class="photo"><span>Благодарственное письмо</span></div>
+      <div class="photo"><span>Благодарственное письмо</span></div>
+    </div>
+    <p class="note-placeholder">Здесь будут реальные сканы писем — сейчас стоят заглушки.</p>
+  </div>
+</section>
+
+<!-- ============ 4. РЕКВИЗИТЫ КОМПАНИИ ============ -->
+<section class="bg-mint">
+  <div class="wrap">
+    <div class="s-head" style="justify-content:center;text-align:center;">
+      <div style="max-width:none;"><span class="micro">Реквизиты</span><h2 style="margin-top:14px;max-width:none;">Реквизиты компании</h2></div>
+    </div>
+    <p style="text-align:center;color:var(--gray);font-size:15px;max-width:60ch;margin:0 auto 34px;">Полные реквизиты для договоров, счетов и оплаты. Если нужен файл с реквизитами или карточка предприятия — пришлём по запросу.</p>
+    <!-- Значения «указывается заказчиком» — плейсхолдеры, заполнит заказчик реальными данными -->
+    <div class="req-card">
+      <div class="req-row"><span class="rk">Наименование</span><span class="rv ph">указывается заказчиком (ООО / ИП)</span></div>
+      <div class="req-row"><span class="rk">ИНН</span><span class="rv ph">указывается заказчиком</span></div>
+      <div class="req-row"><span class="rk">КПП</span><span class="rv ph">указывается заказчиком</span></div>
+      <div class="req-row"><span class="rk">ОГРН / ОГРНИП</span><span class="rv ph">указывается заказчиком</span></div>
+      <div class="req-row"><span class="rk">Юридический адрес</span><span class="rv">664023, г. Иркутск, ул. Красноказачья, 85, офис 39</span></div>
+      <div class="req-row"><span class="rk">Расчётный счёт</span><span class="rv ph">указывается заказчиком</span></div>
+      <div class="req-row"><span class="rk">Банк</span><span class="rv ph">указывается заказчиком</span></div>
+      <div class="req-row"><span class="rk">БИК</span><span class="rv ph">указывается заказчиком</span></div>
+      <div class="req-row"><span class="rk">Корреспондентский счёт</span><span class="rv ph">указывается заказчиком</span></div>
+      <div class="req-row"><span class="rk">Email</span><span class="rv"><a href="mailto:38uborka@gmail.com" style="color:var(--cyan-deep);">38uborka@gmail.com</a></span></div>
+      <div class="req-row"><span class="rk">Телефон для юрлиц и тендеров</span><span class="rv"><a href="tel:+79149272287" style="color:var(--cyan-deep);">8 (914) 927-22-87</a></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. ТЕНДЕРНАЯ ДОКУМЕНТАЦИЯ ============ -->
+<section class="bg-plain">
+  <div class="wrap">
+    <div class="tender-split">
+      <div>
+        <span class="micro">Тендеры и закупки</span>
+        <h2 style="margin-top:14px;margin-bottom:16px;">Готовы к участию в тендерах и закупках</h2>
+        <p style="color:var(--ink-2);font-size:15px;">Участвуем в тендерах и закупочных процедурах с юрлицами и организациями. Готовим полный пакет документов под требования заказчика и коммерческое предложение с расчётом — в течение 24 часов после получения документации.</p>
+        <ul class="checklist">
+          <li>Учредительные документы и реквизиты компании</li>
+          <li>Коммерческое предложение с расчётом по вашему ТЗ</li>
+          <li>Проект договора и работу в ЭДО</li>
+          <li>Благодарственные письма и подтверждение опыта работы с 2007 года</li>
+        </ul>
+        <div style="margin-top:26px;"><a href="#zayavka" class="btn btn-cyan">Пригласить на тендер →</a></div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-1);padding:32px 34px;">
+        <h3 style="font-size:19px;margin-bottom:16px;">Как пригласить</h3>
+        <p style="color:var(--ink-2);font-size:14.5px;margin-bottom:18px;">Пришлите тендерную документацию на <a href="mailto:38uborka@gmail.com" style="color:var(--cyan-deep);font-weight:600;">38uborka@gmail.com</a> или позвоните тендерному специалисту по номеру <a href="tel:+79149272287" style="color:var(--cyan-deep);font-weight:600;">8 (914) 927-22-87</a> — подготовим пакет документов и предложение.</p>
+        <p style="color:var(--gray);font-size:13.5px;">Ваш контакт по тендерам:<br><b style="color:var(--ink);">Огер Елена Борисовна</b><br>тендерный специалист по работе с юрлицами</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. ФОРМА / КОНТАКТ ТЕНДЕРНОГО СПЕЦИАЛИСТА ============ -->
+<section class="bg-mint" id="zayavka">
+  <div class="wrap">
+    <div class="frm">
+      <div class="frm-s">
+        <span class="micro">Тендеры</span>
+        <h2>Пригласите нас на тендер</h2>
+        <p>Оставьте заявку или пришлите документацию — подготовим пакет документов и КП в течение 24 часов. Ваш контакт по тендерам: Огер Елена Борисовна, тендерный специалист по работе с юрлицами, 8 (914) 927-22-87.</p>
+      </div>
+      <div class="frm-b">
+        <form id="leadForm" novalidate>
+          <div class="fld"><label for="f-name">Имя</label><input type="text" id="f-name" name="name" placeholder="Как к вам обращаться"></div>
+          <div class="fld"><label for="f-phone">Телефон <span style="color:var(--cyan-deep)">*</span></label><input type="tel" id="f-phone" name="phone" placeholder="+7 (___) ___-__-__" required></div>
+          <div class="fld"><label for="f-email">Email</label><input type="email" id="f-email" name="email" placeholder="Для тендерной документации"></div>
+          <div class="fld"><label>Как удобнее связаться</label>
+            <div class="rrow">
+              <label><input type="radio" name="svyaz" value="Позвонить" checked> Позвонить</label>
+              <label><input type="radio" name="svyaz" value="MAX"> MAX</label>
+            </div>
+          </div>
+          <label class="agree"><input type="checkbox" id="f-agree" required>
+            <span>Нажимая кнопку, я соглашаюсь с <a href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных.</span></label>
+          <button type="submit" class="btn btn-cyan btn-block">Пригласить на тендер →</button>
+          <div id="formMsg" style="display:none;margin-top:18px;padding:15px 18px;border-radius:14px;background:rgba(122,205,2,.14);border:1px solid rgba(122,205,2,.42);font-size:14px;"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ФУТЕР ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div class="fbr">
+        <img src="https://static.tildacdn.com/tild3766-6436-4261-b661-613261313461/image_997.png" alt="Генеральная уборка — клининг в Иркутске">
+        <p>Клининговая компания полного цикла в Иркутске. Работаем с 2007 года.</p>
+        <address style="font-style:normal;margin-top:16px;font-size:13.5px;line-height:1.75;color:rgba(255,255,255,.6);">
+          664023, г. Иркутск,<br>ул. Красноказачья, 85, офис 39<br>
+          <a href="mailto:38uborka@gmail.com" style="display:inline;">38uborka@gmail.com</a>
+        </address>
+      </div>
+      <div><h4>Для дома</h4><a href="index.html#uslugi">Уборка</a><a href="index.html#uslugi">Мытьё окон</a><a href="index.html#uslugi">Химчистка</a></div>
+      <div><h4>Для бизнеса</h4><a href="business.html">Тендеры</a><a href="abonement.html">Абонентское обслуживание</a><a href="razovye.html">Разовые услуги</a></div>
+      <div><h4>Контакты</h4>
+        <a href="tel:83952554499">8 (3952) 55-44-99 — приём заявок</a>
+        <a href="tel:+79149276748">8 (914) 927-67-48 — физлицам</a>
+        <a href="tel:+79149272287">8 (914) 927-22-87 — юрлицам и тендеры</a>
+        <p>Ежедневно 08:00–20:00</p></div>
+    </div>
+    <div class="fzone"><b>Зона обслуживания:</b> все районы Иркутска. Пригород в радиусе 30 км: Маркова, Хомутово, Пивовариха, Молодёжный, Грановщина, Смоленщина, Листвянка.</div>
+    <div class="fbot"><span>© 2026 Генеральная уборка</span>
+      <span class="lg"><a href="#">Политика конфиденциальности</a><a href="#">Пользовательское соглашение</a></span></div>
+  </div>
+</footer>
+
+<button type="button" class="back-top" id="backTop" aria-label="Наверх">↑</button>
+
+<script>
+(function(){
+  var btn=document.getElementById('burgerBtn'),menu=document.getElementById('mobMenu');
+  if(!btn||!menu)return;
+  function close(){btn.classList.remove('open');btn.setAttribute('aria-expanded','false');menu.classList.remove('open');}
+  btn.addEventListener('click',function(){
+    var o=menu.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o?'true':'false');
+  });
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+})();
+(function(){
+  var bar=document.getElementById('scrollProgress');
+  function upd(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';}
+  document.addEventListener('scroll',upd,{passive:true});upd();
+})();
+(function(){
+  var btn=document.getElementById('backTop');
+  function upd(){if(window.scrollY>700)btn.classList.add('show');else btn.classList.remove('show');}
+  document.addEventListener('scroll',upd,{passive:true});
+  btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  upd();
+})();
+/* ===== Форма заявки ===== */
+(function(){
+  var form=document.getElementById('leadForm');
+  if(!form)return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ph=document.getElementById('f-phone'),ag=document.getElementById('f-agree'),ms=document.getElementById('formMsg');
+    if(!ph.value.trim()){ph.focus();ph.style.borderColor='#d33';return;}
+    if(!ag.checked){ag.focus();return;}
+    ph.style.borderColor='';
+    var data={name:document.getElementById('f-name').value.trim(),phone:ph.value.trim(),
+      email:document.getElementById('f-email').value.trim(),
+      svyaz:(document.querySelector('input[name=svyaz]:checked')||{}).value};
+    /* TODO(интеграция): отправить data на почту / в CRM */
+    console.log('Заявка (тендер):',data);
+    ms.textContent='Заявка принята. Елена Борисовна свяжется с вами в течение 24 часов. Срочно — 8 (914) 927-22-87';
+    ms.style.display='block';this.reset();
+  });
+})();
+</script>
+
+</div>
+
+</body>
+</html>

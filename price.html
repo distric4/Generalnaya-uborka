@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Цены на клининг в Иркутске — Генеральная уборка</title>
+<meta name="description" content="Генеральная уборка — клининговая компания в Иркутске с 2007 года. Уборка квартир и офисов, мытьё окон, химчистка, услуги для бизнеса.">
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+html,body{overflow-x:clip;}
+
+.gu-page{
+  --cyan:#03AAD3; --cyan-deep:#0089B0; --blue:#008DC4; --green:#7CCD00; --green-deep:#5FA300;
+  --orange:#5FA300;
+  --ink:#131B23; --ink-2:#414F58; --gray:#6B7680; --gray-2:#98A2AA;
+  --white:#fff; --paper:#F5F7F9; --mint-1:#EAF6FA; --mint-2:#DCEEF4; --mint-3:#B8E1EC; --line:#E4E8EC;
+  --navy:#0F1B2E; --navy-2:#16273F;
+  --r-xl:20px; --r-lg:16px; --r-md:12px; --r-pill:999px;
+  --sh-1:0 2px 10px rgba(19,27,35,.05);
+  --sh-2:0 14px 34px rgba(19,27,35,.10);
+  --sh-3:0 18px 40px rgba(19,27,35,.14);
+}
+.gu-page *{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+.gu-page{background:var(--white);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip;}
+.gu-page a{color:inherit;text-decoration:none;}
+.gu-page button{font-family:inherit;cursor:pointer;border:none;}
+.gu-page h1, .gu-page h2, .gu-page h3{font-weight:700;letter-spacing:-.02em;line-height:1.14;}
+.gu-page .wrap{max-width:1280px;margin:0 auto;padding:0 40px;position:relative;z-index:2;}
+.gu-page section{padding:88px 0;position:relative;}
+.gu-page .micro{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan-deep);}
+.gu-page .gr{color:var(--green-deep);}
+
+/* ---------- прогресс-бар прокрутки ---------- */
+.gu-page .scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;z-index:100;
+  background:linear-gradient(90deg,var(--cyan),var(--green));transition:width .1s linear;}
+
+/* ---------- кнопка «наверх» ---------- */
+.gu-page .back-top{
+  position:fixed;right:24px;bottom:24px;z-index:60;width:48px;height:48px;border-radius:50%;
+  background:var(--white);border:1px solid var(--line);box-shadow:var(--sh-2);
+  color:var(--cyan-deep);font-size:18px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;transform:translateY(10px);transition:.25s ease;
+}
+.gu-page .back-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.gu-page .back-top:hover{background:var(--cyan);color:#fff;border-color:var(--cyan);}
+
+/* ---------- ПЕРЕМЕННЫЕ ФОНЫ СЕКЦИЙ (классические, плоские) ---------- */
+.gu-page .bg-plain{background:var(--white);}
+.gu-page .bg-mint{background:var(--paper);}
+.gu-page .bg-mint-deep{background:var(--paper);}
+.gu-page .bg-dots{background:var(--white);}
+.gu-page .bg-grid{background:var(--paper);}
+.gu-page .bg-dark{background:var(--navy);}
+.gu-page .bg-dark .s-head h2{color:#fff;}
+.gu-page .bg-dark .s-head p{color:rgba(255,255,255,.62);}
+.gu-page .bg-dark .micro{color:var(--green);}
+.gu-page .bg-dark .tr, .gu-page .bg-dark .eqc{background:var(--navy-2);border-color:rgba(255,255,255,.10);}
+.gu-page .bg-dark .tr h3, .gu-page .bg-dark .eqc h3{color:#fff;}
+.gu-page .bg-dark .tr p, .gu-page .bg-dark .eqc p{color:rgba(255,255,255,.58);}
+
+/* декоративные пятна отключены по просьбе — фон классический, без подсветок */
+.gu-page .blob{display:none;}
+.gu-page .wave{display:none;}
+
+/* ---------- КНОПКИ ---------- */
+.gu-page .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 28px;border-radius:var(--r-pill);
+  font-weight:700;font-size:15px;transition:.2s ease;white-space:nowrap;}
+.gu-page .btn-cyan{background:var(--cyan);color:#fff;box-shadow:0 8px 20px rgba(3,170,211,.28);}
+.gu-page .btn-cyan:hover{background:var(--cyan-deep);transform:translateY(-2px);}
+.gu-page .btn-green{background:var(--green);color:#16290a;box-shadow:0 8px 20px rgba(122,205,2,.28);}
+.gu-page .btn-green:hover{transform:translateY(-2px);}
+.gu-page .btn-dark{background:var(--ink);color:#fff;}
+.gu-page .btn-dark:hover{background:#000;transform:translateY(-2px);}
+.gu-page .btn-line{background:#fff;border:1.5px solid var(--line);color:var(--ink);}
+.gu-page .btn-line:hover{border-color:var(--cyan);color:var(--cyan-deep);}
+.gu-page .btn-block{width:100%;}
+
+/* заглушка для фото без реального снимка (до/после, приложение UDS) */
+.gu-page .photo{background:linear-gradient(140deg,#EAF6FA,#DCEEF4);
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#7C8992;font-size:12.5px;line-height:1.45;}
+.gu-page .photo span{max-width:24ch;}
+.gu-page img.photo{width:100%;height:100%;object-fit:cover;display:block;padding:0;}
+
+.gu-page .s-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:40px;flex-wrap:wrap;}
+.gu-page .s-head h2{font-size:clamp(28px,3.4vw,42px);max-width:17ch;}
+.gu-page .s-head p{color:var(--gray);font-size:15px;max-width:34ch;}
+
+/* ---------- ШАПКА ---------- */
+.gu-page .hdr{position:sticky;top:0;z-index:70;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line);}
+.gu-page .hdr-in{max-width:1440px;margin:0 auto;padding:12px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.gu-page .hdr-logo img{height:56px;width:auto;}
+.gu-page .hdr-nav{display:flex;gap:4px;flex:1;justify-content:center;}
+.gu-page .hdr-nav a{padding:10px 18px;border-radius:var(--r-pill);font-size:15px;font-weight:600;color:var(--ink-2);white-space:nowrap;transition:.15s;}
+.gu-page .hdr-nav a:hover{background:var(--paper);color:var(--cyan-deep);}
+.gu-page .hdr-nav a.on{background:var(--mint-1);color:var(--cyan-deep);}
+.gu-page .hdr-right{display:flex;align-items:center;gap:20px;}
+.gu-page .msg-ico{display:flex;gap:9px;}
+.gu-page .msg-ico a{width:38px;height:38px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;transition:.18s;}
+.gu-page .msg-ico a:hover{transform:translateY(-2px);}
+.gu-page .i-max{background:linear-gradient(135deg,#9B5CFF,#6C2BD9);}
+.gu-page .i-tg{background:var(--blue);}
+.gu-page .i-vk{background:var(--cyan-deep);}
+.gu-page .hdr-tel{text-align:right;}
+.gu-page .hdr-tel a{font-size:22px;font-weight:800;letter-spacing:-.02em;white-space:nowrap;}
+.gu-page .hdr-tel a:hover{color:var(--cyan-deep);}
+.gu-page .hdr-tel span{display:flex;align-items:center;justify-content:flex-end;gap:7px;font-size:13px;color:var(--gray);margin-top:2px;}
+.gu-page .hdr-tel i{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;animation:blinkdot 1.8s ease-in-out infinite;}
+@keyframes blinkdot{0%,100%{opacity:1;}50%{opacity:.25;}}
+@media(prefers-reduced-motion:reduce){.gu-page .hdr-tel i{animation:none;}}
+
+/* ---- бургер ---- */
+.gu-page .burger{display:none;width:38px;height:38px;border-radius:50%;background:var(--ink);flex-direction:column;align-items:center;justify-content:center;gap:4px;flex-shrink:0;}
+.gu-page .burger span{display:block;width:16px;height:1.5px;background:#fff;border-radius:2px;transition:.2s ease;}
+.gu-page .burger.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg);}
+.gu-page .burger.open span:nth-child(2){opacity:0;}
+.gu-page .burger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg);}
+
+/* ---- выпадающее мобильное меню ---- */
+.gu-page .mob-menu{max-height:0;overflow:hidden;transition:max-height .25s ease;background:#fff;border-bottom:1px solid var(--line);}
+.gu-page .mob-menu.open{max-height:400px;border-bottom:1px solid var(--line);}
+@media(min-width:1241px){.gu-page .mob-menu{display:none;}}
+.gu-page .mob-nav{display:flex;flex-direction:column;padding:8px 18px;}
+.gu-page .mob-nav a{padding:13px 4px;font-size:15.5px;font-weight:600;color:var(--ink-2);border-bottom:1px solid var(--line);}
+.gu-page .mob-nav a:last-child{border-bottom:none;}
+.gu-page .mob-social{display:flex;gap:10px;padding:16px 18px 20px;}
+.gu-page .mob-social a{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;}
+@media(max-width:1240px){.gu-page .hdr-nav{display:none;}.gu-page .burger{display:flex;}}
+@media(max-width:760px){
+  .gu-page .hdr-in{padding:10px 14px;gap:8px;}
+  .gu-page .hdr-logo img{height:36px;}
+  .gu-page .msg-ico{display:none;}
+  .gu-page .hdr-right{flex:1;display:flex;align-items:center;justify-content:space-between;gap:8px;}
+  .gu-page .hdr-tel{flex:1;text-align:center;}
+  .gu-page .hdr-tel a{font-size:15.5px;}
+  .gu-page .hdr-tel span{display:flex;justify-content:center;}
+  .gu-page .burger{display:flex;}
+}
+
+/* ---------- 1. HERO ---------- */
+.gu-page .hero{padding:48px 0 64px;position:relative;overflow:hidden;
+  background:
+    linear-gradient(100deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.92) 35%, rgba(255,255,255,.58) 60%, rgba(255,255,255,.18) 100%),
+    linear-gradient(160deg, rgba(3,170,211,.10) 0%, rgba(122,205,2,.08) 100%),
+    url('https://static.tildacdn.com/tild6334-3161-4131-b936-356137636465/clipboard-image-1788.png') center 38%/cover no-repeat;
+}
+.gu-page .hero-city{display:none;}
+.gu-page .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:44px;align-items:start;}
+.gu-page .hero h1{font-size:clamp(32px,3.5vw,48px);font-weight:500;margin-bottom:18px;letter-spacing:-.01em;margin-top:14px;}
+.gu-page .hero h1 b{font-weight:500;}
+.gu-page .hero h1 b{font-weight:800;display:block;}
+.gu-page .hero-lead{color:var(--gray);font-size:16px;max-width:50ch;margin-bottom:26px;}
+.gu-page .hero-lead-link{color:var(--cyan-deep);font-weight:700;white-space:nowrap;}
+.gu-page .hero-lead-link:hover{color:var(--cyan);}
+
+/* рейтинг с аватарами */
+.gu-page .rating{display:flex;align-items:center;gap:16px;margin-bottom:28px;}
+.gu-page .ava{display:flex;}
+.gu-page .ava span{width:44px;height:44px;border-radius:50%;border:3px solid #fff;margin-left:-14px;
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;box-shadow:var(--sh-1);}
+.gu-page .ava span:first-child{margin-left:0;}
+.gu-page .ava .a1{background:var(--cyan);}
+.gu-page .ava .a2{background:var(--green);color:#16290a;}
+.gu-page .ava .a3{background:var(--blue);}
+.gu-page .ava .a4{background:var(--mint-3);color:var(--cyan-deep);}
+.gu-page .rt-n{font-size:19px;font-weight:800;display:flex;align-items:center;gap:9px;letter-spacing:-.01em;}
+.gu-page .rt-n i{font-style:normal;color:#F5A623;font-size:14px;letter-spacing:1px;}
+.gu-page .rt-s{font-size:13px;color:var(--gray);margin-top:1px;}
+
+.gu-page .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px;}
+
+/* пронумерованные карточки услуг */
+.gu-page .hero-cards{display:grid;grid-template-rows:repeat(3,1fr);gap:14px;height:100%;min-height:600px;}
+.gu-page .hc{position:relative;border-radius:var(--r-lg);overflow:hidden;display:block;transition:.25s ease;box-shadow:var(--sh-1);}
+.gu-page .hc:hover{transform:translateY(-4px);box-shadow:var(--sh-3);}
+.gu-page .hc .photo{position:absolute;inset:0;font-size:12px;}
+.gu-page .hc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(15,27,46,.78));}
+.gu-page .hc-n{position:absolute;top:14px;left:14px;z-index:2;color:#fff;font-size:12px;font-weight:700;letter-spacing:.06em;
+  background:rgba(255,255,255,.22);backdrop-filter:blur(6px);padding:6px 12px;border-radius:var(--r-pill);}
+.gu-page .hc-t{position:absolute;left:18px;bottom:16px;z-index:2;color:#fff;font-size:19px;font-weight:800;letter-spacing:-.01em;}
+@media(max-width:1000px){
+  .gu-page .hero-grid{grid-template-columns:1fr;gap:32px;}
+  .gu-page .hero-cards{min-height:0;grid-template-rows:none;grid-template-columns:repeat(3,1fr);}
+  .gu-page .hc{aspect-ratio:3/4;}
+}
+@media(max-width:640px){.gu-page .hero-cards{grid-template-columns:1fr;}.gu-page .hc{aspect-ratio:16/9;}}
+
+/* полоса цифр */
+.gu-page .statband{background:var(--navy);padding:20px 0;overflow:hidden;position:relative;z-index:2;}
+.gu-page .stat-track{display:flex;width:max-content;animation:sx 16s linear infinite;}
+.gu-page .si{display:flex;flex-direction:column;padding:0 40px;border-left:1px solid rgba(255,255,255,.14);white-space:nowrap;}
+.gu-page .si-line{font-weight:400;font-size:15px;letter-spacing:-.01em;color:#fff;padding-right:8px;white-space:nowrap;}
+.gu-page .si-line i{font-style:normal;color:var(--green);padding:0 14px;}
+.gu-page .si b{color:#fff;font-size:22px;font-weight:800;letter-spacing:-.01em;}
+.gu-page .si span, .gu-page .si{color:rgba(255,255,255,.55);font-size:13px;}
+@keyframes sx{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@media(prefers-reduced-motion:reduce){.gu-page .stat-track{animation:none;}}
+
+/* ---------- КАЛЬКУЛЯТОР ---------- */
+.gu-page .calc{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-2);
+  padding:24px;max-width:660px;}
+.gu-page .calc.center{margin:0 auto;}
+.gu-page .calc-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:20px;flex-wrap:wrap;}
+.gu-page .calc-tabs{display:flex;gap:7px;flex-wrap:wrap;}
+.gu-page .calc-tab{background:var(--paper);border-radius:var(--r-pill);padding:11px 20px;font-size:13.5px;font-weight:600;color:var(--gray);transition:.15s;}
+.gu-page .calc-tab.on{background:var(--ink);color:#fff;}
+.gu-page .calc-body{display:flex;align-items:flex-end;gap:26px;}
+.gu-page .calc-ctl{flex:1;min-width:0;}
+.gu-page .calc-panel{display:none;}
+.gu-page .calc-panel.on{display:block;}
+.gu-page .calc-panel label{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--gray);margin-bottom:14px;}
+.gu-page .calc-panel label b{color:var(--ink);font-weight:700;font-size:15px;}
+.gu-page .calc input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:5px;background:var(--mint-3);outline:none;cursor:pointer;}
+.gu-page .calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--cyan);border:4px solid #fff;box-shadow:0 3px 8px rgba(3,170,211,.4);cursor:pointer;}
+.gu-page .calc input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--cyan);border:4px solid #fff;box-shadow:0 3px 8px rgba(3,170,211,.4);cursor:pointer;}
+.gu-page .calc-scale{display:flex;justify-content:space-between;font-size:11.5px;color:var(--gray-2);margin-top:9px;}
+.gu-page .calc-sel{width:100%;padding:14px 16px;border-radius:var(--r-md);border:1.5px solid var(--line);font-family:inherit;font-size:14.5px;font-weight:600;background:#fff;}
+.gu-page .calc-sel:focus{outline:none;border-color:var(--cyan);}
+.gu-page .calc-out{text-align:right;flex-shrink:0;}
+.gu-page .calc-out .om{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);}
+.gu-page .calc-out .op{font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.15;white-space:nowrap;}
+.gu-page .calc-foot{display:flex;align-items:center;gap:16px;margin-top:24px;}
+.gu-page .calc-foot .btn{flex:1;}
+.gu-page .calc-note{font-size:12px;color:var(--gray-2);max-width:19ch;line-height:1.45;}
+@media(max-width:640px){
+  .gu-page .calc{padding:20px;}
+  .gu-page .calc-head{flex-direction:column;align-items:flex-start;}
+  .gu-page .calc-tabs{width:100%;} .gu-page .calc-tab{flex:1;text-align:center;padding:11px 8px;font-size:12.5px;}
+  .gu-page .calc-body{flex-direction:column;align-items:stretch;gap:18px;}
+  .gu-page .calc-out{text-align:left;display:flex;align-items:baseline;gap:10px;}
+  .gu-page .calc-out .op{font-size:28px;}
+  .gu-page .calc-foot{flex-direction:column;align-items:stretch;gap:12px;}
+  .gu-page .calc-note{max-width:none;text-align:center;}
+}
+
+/* ---------- 2. УСЛУГИ ---------- */
+.gu-page .srv{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.gu-page .srv-c{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);
+  overflow:hidden;display:flex;flex-direction:column;transition:.2s ease;box-shadow:var(--sh-1);}
+.gu-page .srv-c:hover{transform:translateY(-5px);box-shadow:var(--sh-3);}
+.gu-page .srv-ph{position:relative;height:180px;}
+.gu-page .srv-ph .photo{position:absolute;inset:0;font-size:12px;}
+.gu-page .srv-tag{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.92);border-radius:var(--r-pill);padding:7px 15px;font-size:11.5px;font-weight:700;box-shadow:var(--sh-1);}
+.gu-page .srv-b{padding:24px;display:flex;flex-direction:column;gap:9px;flex:1;}
+.gu-page .srv-ops{display:flex;gap:14px;font-size:12px;color:var(--gray-2);padding-top:2px;}
+.gu-page .srv-ops span{display:flex;align-items:center;gap:5px;}
+.gu-page .srv-ops b{color:var(--ink-2);font-weight:700;}
+
+.gu-page .work-specs{display:flex;gap:0;margin-top:12px;border-top:1px solid var(--line);padding-top:12px;}
+.gu-page .work-specs div{flex:1;padding-right:10px;}
+.gu-page .work-specs div+div{border-left:1px solid var(--line);padding-left:10px;}
+.gu-page .work-specs .wv{font-size:15px;font-weight:700;color:var(--ink);}
+.gu-page .work-specs .wl{font-size:10.5px;color:var(--gray-2);text-transform:uppercase;letter-spacing:.04em;margin-top:2px;}
+
+.gu-page .addon-strip{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);
+  border-radius:10px;padding:12px 22px;margin-top:28px;font-size:13.5px;color:var(--ink-2);box-shadow:var(--sh-1);}
+.gu-page .addon-strip b{color:var(--cyan-deep);font-weight:700;}
+@media(max-width:700px){
+  .gu-page .addon-strip{flex-direction:column;align-items:flex-start;border-radius:10px;gap:6px;padding:16px 18px;}
+  .gu-page .addon-strip span{font-size:12.5px;}
+}
+.gu-page .srv-b h3{font-size:20px;}
+.gu-page .srv-b p{font-size:14px;color:var(--gray);flex:1;}
+.gu-page .srv-price{font-size:21px;font-weight:800;color:var(--cyan-deep);letter-spacing:-.01em;}
+.gu-page .srv-price small{font-weight:500;font-size:13px;color:var(--gray);}
+.gu-page .srv-link{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;padding:11px 18px;border-radius:999px;font-size:13.5px;font-weight:700;color:#fff;background:var(--green);box-shadow:0 6px 16px rgba(122,205,2,.28);transition:.2s ease;}
+.gu-page .srv-link:hover{transform:translateY(-2px);color:#fff;}
+@media(max-width:900px){.gu-page .srv{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.gu-page .srv{grid-template-columns:1fr;}}
+
+/* ---------- 4. БИЗНЕС-СПЛИТ ---------- */
+.gu-page .biz-split{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:stretch;}
+.gu-page .biz-main{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-1);
+  padding:36px;display:flex;flex-direction:column;gap:22px;}
+.gu-page .biz-tag{display:inline-flex;align-self:flex-start;background:var(--ink);color:#fff;border-radius:var(--r-pill);padding:8px 18px;font-size:12.5px;font-weight:700;}
+.gu-page .biz-tag.light{background:var(--mint-1);color:var(--cyan-deep);}
+.gu-page .biz-main h3{font-size:24px;max-width:22ch;}
+.gu-page .biz-hooks{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.gu-page .bh{display:flex;gap:13px;align-items:flex-start;}
+.gu-page .bh i{font-style:normal;font-size:20px;margin-top:1px;flex-shrink:0;line-height:1;}
+.gu-page .bh b{display:block;font-size:15px;font-weight:700;margin-bottom:4px;}
+.gu-page .bh span{font-size:13.5px;color:var(--gray);}
+.gu-page .biz-side{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-xl);
+  padding:36px;display:flex;flex-direction:column;gap:16px;justify-content:center;}
+.gu-page .biz-side h3{font-size:22px;}
+.gu-page .biz-side p{font-size:14px;color:var(--ink-2);}
+@media(max-width:960px){.gu-page .biz-split{grid-template-columns:1fr;}.gu-page .biz-hooks{grid-template-columns:1fr;}}
+@media(max-width:640px){.gu-page .biz-main, .gu-page .biz-side{padding:26px;}}
+
+/* ---------- 7. ОБОРУДОВАНИЕ: видео + список ---------- */
+.gu-page .eq-split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;}
+.gu-page .eq-video .video-ph{aspect-ratio:4/3;border-radius:var(--r-lg);}
+.gu-page .eq-list{list-style:none;display:flex;flex-direction:column;}
+.gu-page .eq-list li{position:relative;padding:16px 0 16px 28px;font-size:15px;line-height:1.5;color:rgba(241,241,238,.85);
+  border-top:1px solid rgba(255,255,255,.12);}
+.gu-page .eq-list li:first-child{border-top:none;}
+.gu-page .eq-list li::before{content:"✓";position:absolute;left:0;top:16px;color:var(--green);font-weight:800;font-size:14px;}
+@media(max-width:860px){.gu-page .eq-split{grid-template-columns:1fr;gap:24px;}}
+
+/* ---------- 4. АУДИТОРИИ (легаси, не используется) ---------- */
+.gu-page .fork{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.gu-page .fc{border-radius:var(--r-xl);overflow:hidden;background:#fff;display:flex;flex-direction:column;}
+.gu-page .fc-ph{position:relative;height:250px;}
+.gu-page .fc-ph .photo{position:absolute;inset:0;}
+.gu-page .fc-tag{position:absolute;top:16px;left:16px;background:#fff;border-radius:var(--r-pill);padding:8px 17px;font-size:12.5px;font-weight:700;}
+.gu-page .fc-b{padding:28px;display:flex;flex-direction:column;gap:14px;flex:1;}
+.gu-page .fc-b h3{font-size:26px;}
+.gu-page .fc-b .d{color:var(--gray);font-size:14.5px;flex:1;}
+.gu-page .fc-b .pr{font-size:13px;font-weight:700;color:var(--cyan-deep);}
+@media(max-width:820px){.gu-page .fork{grid-template-columns:1fr;}}
+
+/* ---------- 5. ДОВЕРИЕ ---------- */
+.gu-page .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.gu-page .tr{background:var(--navy-2);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-xl);padding:30px;transition:.2s ease;}
+.gu-page .tr:hover{transform:translateY(-4px);}
+.gu-page .tr i{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;margin-bottom:20px;font-style:normal;}
+.gu-page .tr:nth-child(1) i{background:var(--cyan);}
+.gu-page .tr:nth-child(2) i{background:var(--green);color:#16290a;}
+.gu-page .tr:nth-child(3) i{background:var(--blue);}
+.gu-page .tr:nth-child(4) i{background:var(--cyan-deep);}
+.gu-page .tr h3{font-size:18px;margin-bottom:10px;line-height:1.3;font-weight:700;}
+.gu-page .tr p{font-size:14px;color:var(--gray);}
+@media(max-width:900px){.gu-page .trust{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.gu-page .trust{grid-template-columns:1fr;}}
+
+/* ---------- 6. КОМАНДА — СЛАЙДЕР ---------- */
+.gu-page .team-slider-wrap{position:relative;}
+.gu-page .ppl{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:4px;scrollbar-width:none;}
+.gu-page .ppl::-webkit-scrollbar{display:none;}
+.gu-page .pp{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-1);overflow:hidden;transition:.2s ease;
+  flex:0 0 calc((100% - 40px) / 3);scroll-snap-align:start;}
+.gu-page .pp:hover{transform:translateY(-4px);box-shadow:var(--sh-3);}
+.gu-page .pp-ph{position:relative;aspect-ratio:3/4;}
+.gu-page .pp-ph .photo{position:absolute;inset:0;font-size:12px;}
+.gu-page .pp-b{padding:20px 22px 24px;}
+.gu-page .pp-b .nm{font-weight:700;font-size:17px;}
+.gu-page .pp-b .rl{font-size:13px;color:var(--cyan-deep);font-weight:600;margin-top:3px;}
+.gu-page .pp-b .yr{font-size:12px;color:var(--gray-2);margin-top:8px;}
+.gu-page .slider-nav{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;}
+.gu-page .slider-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:16px;color:var(--ink-2);box-shadow:var(--sh-1);transition:.2s ease;}
+.gu-page .slider-btn:hover{background:var(--cyan);color:#fff;border-color:var(--cyan);}
+@media(max-width:900px){
+  .gu-page .pp{flex:0 0 78%;}
+}
+
+/* ---------- 7. ОБОРУДОВАНИЕ (легаси, не используется) ---------- */
+.gu-page .eq{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--r-xl);overflow:hidden;background:#fff;}
+.gu-page .eq-ph{position:relative;min-height:400px;}
+.gu-page .eq-ph .photo{position:absolute;inset:0;}
+.gu-page .eq-t{padding:46px;}
+.gu-page .eq-t h2{font-size:clamp(26px,3vw,34px);margin:14px 0 14px;max-width:18ch;}
+.gu-page .eq-t>p{color:var(--gray);font-size:15px;max-width:44ch;}
+.gu-page .eq-l{list-style:none;margin-top:26px;}
+.gu-page .eq-l li{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line);font-size:14.5px;}
+.gu-page .eq-l li:last-child{border-bottom:1px solid var(--line);}
+.gu-page .eq-l i{color:var(--cyan);font-weight:700;font-style:normal;flex-shrink:0;}
+.gu-page .eq-l li:nth-child(even) i{color:var(--green-deep);}
+@media(max-width:860px){.gu-page .eq{grid-template-columns:1fr;}.gu-page .eq-t{padding:28px 22px;}.gu-page .eq-ph{min-height:250px;}}
+
+/* ---------- 8. НАШИ РАБОТЫ (видео) ---------- */
+.gu-page .works{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.gu-page .video-ph{position:relative;aspect-ratio:16/10;border-radius:var(--r-lg);border:1px solid var(--line);overflow:hidden;box-shadow:var(--sh-1);
+  background:linear-gradient(140deg,rgba(3,170,211,.16),rgba(122,205,2,.14));display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:20px;color:#4C6068;font-size:12.5px;line-height:1.45;}
+.gu-page .video-ph::after{content:"▶";position:absolute;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.9);
+  display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--ink);box-shadow:var(--sh-2);}
+.gu-page .work .cap{margin-top:14px;font-weight:700;font-size:15px;}
+.gu-page .work .cap span{display:block;font-size:12.5px;font-weight:400;color:var(--gray-2);margin-top:3px;}
+@media(max-width:900px){
+  .gu-page .works{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding-bottom:8px;}
+  .gu-page .works .work{flex:0 0 82%;scroll-snap-align:start;}
+}
+
+/* ---------- 9. ОТЗЫВЫ ---------- */
+.gu-page .revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.gu-page .rev{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);
+  padding:28px;display:flex;flex-direction:column;gap:20px;position:relative;}
+.gu-page .rev .q{font-size:38px;line-height:.6;color:var(--mint-3);font-weight:800;}
+.gu-page .rev p{font-size:14.5px;}
+.gu-page .rev .who{display:flex;align-items:center;gap:12px;margin-top:auto;}
+.gu-page .rev .av{width:38px;height:38px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;background:var(--cyan);}
+.gu-page .rev:nth-child(2) .av{background:var(--green);color:#16290a;}
+.gu-page .rev:nth-child(3) .av{background:var(--blue);}
+.gu-page .rev .nm{font-size:14px;font-weight:700;display:block;}
+.gu-page .rev .sv{font-size:12px;color:var(--gray-2);display:block;}
+@media(max-width:820px){.gu-page .revs{grid-template-columns:1fr;}}
+
+/* ---------- 10. ШАГИ (легаси, не используется) ---------- */
+.gu-page .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.gu-page .st{background:#fff;border-radius:var(--r-xl);position:relative;padding:30px;border:1px solid var(--line);}
+.gu-page .st .n{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff;margin-bottom:18px;background:var(--cyan);}
+.gu-page .st:nth-child(2) .n{background:var(--green);color:#16290a;}
+.gu-page .st:nth-child(3) .n{background:var(--blue);}
+.gu-page .st:nth-child(4) .n{background:var(--cyan-deep);}
+.gu-page .st h3{font-size:19px;margin-bottom:10px;}
+.gu-page .st p{font-size:14px;color:var(--gray);}
+@media(max-width:900px){.gu-page .steps{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.gu-page .steps{grid-template-columns:1fr;}}
+
+/* ---------- 11. UDS ---------- */
+.gu-page .uds{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;}
+.gu-page .uds h2{color:#fff;font-size:clamp(28px,3.2vw,40px);margin:14px 0 16px;max-width:15ch;}
+.gu-page .uds .micro{color:rgba(255,255,255,.6);}
+.gu-page .uds p{color:rgba(255,255,255,.7);font-size:15px;max-width:42ch;margin-bottom:20px;}
+.gu-page .uds .pts{display:inline-flex;align-items:center;gap:10px;background:rgba(122,205,2,.14);border:1px solid rgba(122,205,2,.4);
+  border-radius:var(--r-pill);padding:11px 20px;font-size:13.5px;font-weight:600;color:var(--green);margin-bottom:28px;}
+.gu-page .uds .pts i{width:8px;height:8px;border-radius:50%;background:var(--green);}
+.gu-page .uds-ph{position:relative;aspect-ratio:4/5;border-radius:var(--r-xl);overflow:hidden;border:1px solid rgba(255,255,255,.10);}
+.gu-page .uds-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:44px;padding-top:36px;border-top:1px solid rgba(255,255,255,.14);}
+.gu-page .uds-step{display:flex;flex-direction:column;gap:12px;}
+.gu-page .uds-step .usn{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--green);flex-shrink:0;}
+.gu-page .uds-step p{font-size:13.5px;line-height:1.5;color:rgba(255,255,255,.75);}
+@media(max-width:900px){.gu-page .uds-steps{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.gu-page .uds-steps{grid-template-columns:1fr;gap:20px;}}
+.gu-page .uds-ph .photo{position:absolute;inset:0;background:rgba(255,255,255,.06);color:rgba(255,255,255,.4);}
+@media(max-width:900px){.gu-page .uds{grid-template-columns:1fr;gap:30px;}}
+
+/* ---------- 12. FAQ ---------- */
+.gu-page .faq{max-width:900px;margin:0 auto;}
+.gu-page .faq details{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);margin-bottom:12px;overflow:hidden;}
+.gu-page .faq summary{list-style:none;cursor:pointer;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-weight:700;font-size:17px;}
+.gu-page .faq summary::-webkit-details-marker{display:none;}
+.gu-page .faq summary::after{content:"+";width:30px;height:30px;border-radius:50%;background:var(--paper);color:var(--cyan-deep);
+  display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:600;flex-shrink:0;}
+.gu-page .faq details[open] summary::after{content:"–";background:var(--cyan);color:#fff;}
+.gu-page .faq .ans{padding:0 28px 24px;color:var(--gray);font-size:15px;}
+
+/* ---------- 13. ФОРМА ---------- */
+.gu-page .frm{display:grid;grid-template-columns:.85fr 1.15fr;border-radius:var(--r-xl);overflow:hidden;
+  border:1px solid var(--line);box-shadow:var(--sh-2);background:#fff;}
+.gu-page .frm-s{background:linear-gradient(160deg,var(--cyan),var(--blue));padding:46px;color:#fff;}
+.gu-page .frm-s .micro{color:rgba(255,255,255,.75);}
+.gu-page .frm-s h2{color:#fff;font-size:clamp(25px,2.9vw,33px);margin:14px 0 16px;}
+.gu-page .frm-s>p{font-size:15px;color:rgba(255,255,255,.92);margin-bottom:26px;}
+.gu-page .frm-s .fs{display:flex;gap:12px;padding:14px 0;border-top:1px solid rgba(255,255,255,.28);font-size:14px;}
+.gu-page .frm-s .fs:last-of-type{border-bottom:1px solid rgba(255,255,255,.28);}
+.gu-page .frm-b{padding:46px;}
+.gu-page .fld{margin-bottom:20px;}
+.gu-page .fld label{display:block;font-size:13px;font-weight:600;color:var(--gray);margin-bottom:9px;}
+.gu-page .fld input{width:100%;padding:15px 18px;border-radius:var(--r-md);border:1.5px solid var(--line);font-family:inherit;font-size:15px;background:#fff;}
+.gu-page .fld input:focus{outline:none;border-color:var(--cyan);}
+.gu-page .rrow{display:flex;gap:9px;flex-wrap:wrap;}
+.gu-page .rrow label{display:inline-flex;align-items:center;gap:9px;border:1.5px solid var(--line);border-radius:var(--r-pill);padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer;margin:0;color:var(--ink);}
+.gu-page .rrow label:hover{border-color:var(--cyan);}
+.gu-page .rrow input{accent-color:var(--cyan);width:auto;}
+.gu-page .agree{display:flex;gap:11px;align-items:flex-start;font-size:12.5px;color:var(--gray);margin:8px 0 20px;}
+.gu-page .agree input{accent-color:var(--cyan);margin-top:3px;flex-shrink:0;}
+.gu-page .agree a{text-decoration:underline;}
+.gu-page .fcalc{background:var(--paper);border-radius:var(--r-md);padding:14px 16px;font-size:13px;color:var(--gray);margin-bottom:20px;display:none;}
+.gu-page .fcalc.on{display:block;}
+.gu-page .fcalc b{color:var(--ink);}
+.gu-page #formMsg{background:rgba(122,205,2,.14) !important;border:1.5px solid var(--green) !important;color:var(--ink) !important;border-radius:var(--r-md) !important;}
+@media(max-width:860px){.gu-page .frm{grid-template-columns:1fr;}.gu-page .frm-s, .gu-page .frm-b{padding:30px 24px;}}
+
+/* ---------- ФУТЕР ---------- */
+.gu-page footer{background:var(--navy);color:#B7C4D1;padding:70px 0 36px;}
+.gu-page .fg{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:32px;margin-bottom:40px;}
+.gu-page .fg h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:17px;}
+.gu-page .fg a, .gu-page .fg p{display:block;font-size:14px;margin-bottom:10px;color:#B7C4D1;}
+.gu-page .fg a:hover{color:var(--green);}
+.gu-page .fbr img{height:58px;width:auto;margin-bottom:16px;filter:brightness(0) invert(1);opacity:.95;}
+.gu-page .fbr p{color:rgba(255,255,255,.55);font-size:13.5px;max-width:28ch;}
+.gu-page .fzone{padding:22px 0;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:rgba(255,255,255,.5);line-height:1.75;}
+.gu-page .fzone b{color:#fff;font-weight:600;}
+.gu-page .fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;color:rgba(255,255,255,.4);}
+.gu-page .fbot .lg{display:flex;gap:20px;flex-wrap:wrap;}
+@media(max-width:820px){.gu-page .fg{grid-template-columns:1fr 1fr;}}
+@media(max-width:1000px){.gu-page .wrap{padding:0 20px;}.gu-page section{padding:60px 0;}}
+
+/* ---------- ПРАЙС-ЛИСТ ---------- */
+.gu-page .price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.gu-page .price-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);padding:26px 28px;}
+.gu-page .price-card h3{font-size:18px;margin-bottom:14px;}
+.gu-page .price-note{font-size:12.5px;color:var(--gray-2);font-style:italic;margin:14px 0 8px;}
+.gu-page .price-table{width:100%;border-collapse:collapse;font-size:14px;}
+.gu-page .price-table tr{border-top:1px solid var(--line);}
+.gu-page .price-table tr:first-child{border-top:none;}
+.gu-page .price-table td{padding:10px 0;color:var(--ink-2);vertical-align:top;}
+.gu-page .price-table td:first-child{padding-right:16px;}
+.gu-page .price-table td:last-child{text-align:right;white-space:nowrap;font-weight:700;color:var(--cyan-deep);}
+@media(max-width:860px){.gu-page .price-grid{grid-template-columns:1fr;}}
+
+</style>
+<div class="gu-page">
+
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ ШАПКА ============ -->
+<header class="hdr">
+  <div class="hdr-in">
+    <a href="index.html" class="hdr-logo"><img src="https://static.tildacdn.com/tild3766-6436-4261-b661-613261313461/image_997.png" alt="Генеральная уборка — клининговая компания в Иркутске"></a>
+    <nav class="hdr-nav">
+      <a href="index.html#uslugi">Для дома</a>
+      <a href="business.html">Для бизнеса</a>
+      <a href="price.html" class="on">Цены</a>
+      <a href="index.html#otzyvy">Отзывы</a>
+      <a href="index.html#uds">Бонусы UDS</a>
+    </nav>
+    <div class="hdr-right">
+      <div class="msg-ico">
+        <a href="tel:+79149276748" class="i-max" title="MAX: +7 914 927-67-48 — пришлите фото и видео">MAX</a>
+        <a href="https://vk.com/38uborka" class="i-vk" title="ВКонтакте">VK</a>
+      </div>
+      <div class="hdr-tel">
+        <a href="tel:83952554499">8 (3952) 55-44-99</a>
+        <span><i></i>ежедневно 08:00–20:00</span>
+      </div>
+      <button type="button" class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mob-menu" id="mobMenu">
+    <nav class="mob-nav">
+      <a href="index.html#uslugi">Для дома</a>
+      <a href="business.html">Для бизнеса</a>
+      <a href="price.html">Цены</a>
+      <a href="index.html#otzyvy">Отзывы</a>
+      <a href="index.html#uds">Бонусы UDS</a>
+    </nav>
+    <div class="mob-social">
+      <a href="tel:+79149276748" class="i-max" title="MAX: +7 914 927-67-48 — пришлите фото и видео">MAX</a>
+      <a href="https://vk.com/38uborka" class="i-vk" title="ВКонтакте">VK</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ЗАГОЛОВОК СТРАНИЦЫ ============ -->
+<section class="hero" style="padding:56px 0 40px;">
+  <div class="wrap">
+    <span class="micro">Прайс-лист</span>
+    <h1 style="margin-top:14px;">Цены на услуги <b class="gr">клининга в Иркутске</b></h1>
+    <p class="hero-lead" style="max-width:64ch;">Все цены указаны «от» — точная стоимость зависит от площади, состояния объекта и доступа к воде. Финальную сумму называет менеджер после уточнения деталей или оценки по фото.</p>
+    <div class="hero-btns">
+      <a href="index.html#calc" class="btn btn-cyan">Рассчитать в калькуляторе →</a>
+      <a href="index.html#zayavka" class="btn btn-line">Оставить заявку</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ УБОРКА КВАРТИР И ДОМОВ ============ -->
+<section class="bg-mint">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Для дома</span><h2 style="margin-top:14px;">Уборка квартир и домов</h2></div>
+      <p>Базовые тарифы на выезд бригады, дополнительные часы и опции.</p>
+    </div>
+    <div class="price-grid">
+
+      <div class="price-card">
+        <h3>Генеральная уборка</h3>
+        <table class="price-table">
+          <tr><td>5 часов работы (1 клинер)</td><td>9 000 ₽</td></tr>
+        </table>
+        <div class="price-note">Дополнительные услуги при генеральной уборке:</div>
+        <table class="price-table">
+          <tr><td>Роторная размывка полов</td><td>от 300 ₽/м²</td></tr>
+          <tr><td>Сухой туман</td><td>200 ₽/м²</td></tr>
+        </table>
+      </div>
+
+      <div class="price-card">
+        <h3>Уборка после ремонта</h3>
+        <table class="price-table">
+          <tr><td>Послестроительная уборка, 4 часа (1 клинер)</td><td>12 000 ₽</td></tr>
+          <tr><td>Каждый дополнительный час (1 клинер)</td><td>2 500 ₽</td></tr>
+          <tr><td>Балконы, лоджии</td><td>500 ₽/м²</td></tr>
+          <tr><td>Балконы, лоджии (со следами краски, цемента)</td><td>700 ₽/м²</td></tr>
+        </table>
+      </div>
+
+      <div class="price-card">
+        <h3>Уборка после пожара</h3>
+        <table class="price-table">
+          <tr><td>Минимальный выезд, 4 часа (1 клинер)</td><td>от 15 000 ₽</td></tr>
+          <tr><td>Каждый дополнительный час</td><td>3 500 ₽</td></tr>
+        </table>
+      </div>
+
+      <div class="price-card">
+        <h3>Уборка после смерти</h3>
+        <table class="price-table">
+          <tr><td>Только мытьё полов после выноса (если нет запаха), 1,5 часа</td><td>4 000 ₽</td></tr>
+          <tr><td>Уборка, 4 часа (1 клинер)</td><td>15 000 ₽</td></tr>
+          <tr><td>Каждый дополнительный час</td><td>2 500 ₽</td></tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ОКНА, ФАСАДЫ И ПОВЕРХНОСТИ ============ -->
+<section class="bg-plain">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Окна и поверхности</span><h2 style="margin-top:14px;">Окна, фасады и поверхности</h2></div>
+      <p>Мытьё окон, фасадов, потолков и полов — для дома и коммерческих объектов.</p>
+    </div>
+    <div class="price-grid">
+
+      <div class="price-card">
+        <h3>Окна, лоджии, балконы</h3>
+        <table class="price-table">
+          <tr><td>Мытьё окон, лоджий, балконов</td><td>500 ₽/м²</td></tr>
+          <tr><td>Новостройка</td><td>+30% к стоимости</td></tr>
+          <tr><td>Уборка лоджии целиком (стены, потолок, мебель, пол)</td><td>1 500 ₽</td></tr>
+          <tr><td>Минимальный заказ по разделу</td><td>4 000 ₽</td></tr>
+        </table>
+      </div>
+
+      <div class="price-card">
+        <h3>Мытьё фасадов и вывесок</h3>
+        <div class="price-note">Сезон: с 15 апреля по 15 октября</div>
+        <table class="price-table">
+          <tr><td>Базовая ставка</td><td>от 100 ₽/м²</td></tr>
+          <tr><td>Площадь фасада от 1 000 м²</td><td>от 100 ₽/м²</td></tr>
+          <tr><td>Площадь фасада от 40 м²</td><td>от 250 ₽/м²</td></tr>
+          <tr><td>Вывеска прямая (мин. заказ 3 600 ₽)</td><td>от 500 ₽/м²</td></tr>
+          <tr><td>Вывеска с объёмными буквами (мин. заказ 2 500 ₽)</td><td>300–700 ₽/м²</td></tr>
+          <tr><td>Удаление граффити</td><td>+300 ₽/м²</td></tr>
+          <tr><td>Мойка высокого давления</td><td>1 500 ₽</td></tr>
+          <tr><td>Строительные леса</td><td>3 000 ₽</td></tr>
+          <tr><td>Автовышка (минимум 2 часа)</td><td>2 800 ₽/час</td></tr>
+          <tr><td>Минимальный заказ по разделу</td><td>5 000 ₽</td></tr>
+        </table>
+      </div>
+
+      <div class="price-card">
+        <h3>Натяжные потолки</h3>
+        <table class="price-table">
+          <tr><td>Мытьё натяжного потолка</td><td>200 ₽/м²</td></tr>
+          <tr><td>Минимальный заказ по разделу</td><td>5 000 ₽</td></tr>
+        </table>
+      </div>
+
+      <div class="price-card">
+        <h3>Полы</h3>
+        <table class="price-table">
+          <tr><td>Размывка полов</td><td>от 300 ₽/м²</td></tr>
+        </table>
+      </div>
+
+      <div class="price-card">
+        <h3>Устранение запахов</h3>
+        <table class="price-table">
+          <tr><td>Обработка «сухой туман»</td><td>200 ₽/м²</td></tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ХИМЧИСТКА МЕБЕЛИ ============ -->
+<section class="bg-mint">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Химчистка</span><h2 style="margin-top:14px;">Диваны и мягкая мебель</h2></div>
+      <p>Полный прайс на конкретные модели уточняйте у менеджера — цена зависит от типа и размера мебели.</p>
+    </div>
+    <div class="price-grid" style="grid-template-columns:1fr;max-width:640px;">
+      <div class="price-card">
+        <table class="price-table">
+          <tr><td>Минимальный заказ</td><td>3 000 ₽</td></tr>
+          <tr><td>Скидка мебельным центрам</td><td>20%</td></tr>
+          <tr><td>Наценка: сильные загрязнения, запахи</td><td>+30% к стоимости</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ХИМЧИСТКА КОВРОВ ============ -->
+<section class="bg-plain">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Химчистка</span><h2 style="margin-top:14px;">Ковры и ковровые покрytия</h2></div>
+      <p>Цена зависит от материала — натуральные волокна, синтетика или изделия ручной работы.</p>
+    </div>
+    <div class="price-grid">
+
+      <div class="price-card">
+        <h3>Натуральные волокна</h3>
+        <div class="price-note">Цена за м²</div>
+        <table class="price-table">
+          <tr><td>HWO — полушерсть</td><td>500 ₽</td></tr>
+          <tr><td>WO — шерсть</td><td>500 ₽</td></tr>
+          <tr><td>JU — джут</td><td>500 ₽</td></tr>
+          <tr><td>Vi — вискоза</td><td>800 ₽</td></tr>
+          <tr><td>Si — сизаль</td><td>1 100 ₽</td></tr>
+          <tr><td>CO — хлопок</td><td>1 100 ₽</td></tr>
+          <tr><td>SE — шёлк</td><td>800 ₽</td></tr>
+          <tr><td>Высокий ворс (выше 1,5 см)</td><td>600 ₽</td></tr>
+        </table>
+      </div>
+
+      <div class="price-card">
+        <h3>Синтетические волокна</h3>
+        <table class="price-table">
+          <tr><td>Ковролин с выездом (мин. выезд 2 000 ₽)</td><td>500 ₽/м²</td></tr>
+          <tr><td>Удаление запаха мочи (без 100% гарантии)</td><td>+40% к стоимости</td></tr>
+        </table>
+      </div>
+
+      <div class="price-card">
+        <h3>Изделия ручной выработки</h3>
+        <table class="price-table">
+          <tr><td>Шкуры натуральные</td><td>1 500 ₽/м²</td></tr>
+          <tr><td>Шкуры искусственные</td><td>1 000 ₽/м²</td></tr>
+          <tr><td>Гобелены</td><td>по согласованию</td></tr>
+          <tr><td>Антикварные, эксклюзивные, ручной работы</td><td>1 500 ₽/м²</td></tr>
+        </table>
+      </div>
+
+      <div class="price-card">
+        <h3>Дополнительные услуги</h3>
+        <table class="price-table">
+          <tr><td>Длительное хранение (первые 7 дней бесплатно)</td><td>+50 ₽/сутки далее</td></tr>
+          <tr><td>Изделия сверх малой площади (до 2 м²)</td><td>1 000 ₽ без доставки</td></tr>
+          <tr><td>Экспресс-обработка вне очереди</td><td>+30% к стоимости</td></tr>
+          <tr><td>Вывоз, доставка, подъём на этаж</td><td>50–80 ₽ за этаж</td></tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ЗОНА ВЫЕЗДА ============ -->
+<section class="bg-mint">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Логистика</span><h2 style="margin-top:14px;">Зона выезда</h2></div>
+      <p>Работаем по Иркутску и пригороду.</p>
+    </div>
+    <div class="price-grid" style="grid-template-columns:1fr;max-width:640px;">
+      <div class="price-card">
+        <table class="price-table">
+          <tr><td>Выезд в Ленинский район</td><td>+1 000 ₽</td></tr>
+          <tr><td>Выезд за пределы Иркутска</td><td>50 ₽/км</td></tr>
+        </table>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:13px;color:var(--gray-2);margin-top:24px;max-width:70ch;margin-left:auto;margin-right:auto;">Цены указаны «от» и могут отличаться в зависимости от состояния объекта, доступа к воде и площади. Точную стоимость менеджер называет после уточнения деталей или оценки по фото.</p>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="bg-dark">
+  <div class="wrap" style="text-align:center;">
+    <span class="micro">Не нашли нужную услугу?</span>
+    <h2 style="margin-top:14px;">Посчитаем точную стоимость по фото или на объекте</h2>
+    <p style="color:rgba(255,255,255,.68);max-width:56ch;margin:14px auto 30px;">Бесплатный выезд менеджера или оценка по фото в мессенджере — точную цену назовём в течение суток.</p>
+    <div class="hero-btns" style="justify-content:center;">
+      <a href="index.html#calc" class="btn btn-green">Открыть калькулятор →</a>
+      <a href="tel:83952554499" class="btn btn-line" style="border-color:rgba(255,255,255,.3);color:#fff;">8 (3952) 55-44-99</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ФУТЕР ============ -->
+<footer>
+  <div class="blob b-teal" style="width:520px;height:520px;right:-180px;top:-200px;opacity:.5;"></div>
+  <div class="wrap">
+    <div class="fg">
+      <div class="fbr">
+        <img src="https://static.tildacdn.com/tild3766-6436-4261-b661-613261313461/image_997.png" alt="Генеральная уборка — клининг в Иркутске">
+        <p>Клининговая компания полного цикла в Иркутске. Работаем с 2007 года.</p>
+        <address style="font-style:normal;margin-top:16px;font-size:13.5px;line-height:1.75;color:rgba(255,255,255,.6);">
+          664023, г. Иркутск,<br>ул. Красноказачья, 85, офис 39<br>
+          <a href="mailto:38uborka@gmail.com" style="display:inline;">38uborka@gmail.com</a>
+        </address>
+      </div>
+      <div><h4>Для дома</h4><a href="index.html#uslugi">Уборка</a><a href="index.html#uslugi">Мытьё окон</a><a href="index.html#uslugi">Химчистка</a></div>
+      <div><h4>Для бизнеса</h4><a href="index.html#biznes">Коммерческая недвижимость</a><a href="index.html#zayavka">Получить КП</a></div>
+      <div><h4>Контакты</h4>
+        <a href="tel:83952554499">8 (3952) 55-44-99 — приём заявок</a>
+        <a href="tel:+79149276748">8 (914) 927-67-48 — физлицам</a>
+        <a href="tel:+79149272287">8 (914) 927-22-87 — юрлицам и тендеры</a>
+        <p>Ежедневно 08:00–20:00</p></div>
+    </div>
+    <div class="fzone"><b>Зона обслуживания:</b> все районы Иркутска. Пригород в радиусе 30 км: Маркова, Хомутово, Пивовариха, Молодёжный, Грановщина, Смоленщина, Листвянка.</div>
+    <div class="fbot"><span>© 2026 Генеральная уборка</span>
+      <span class="lg"><a href="#">Политика конфиденциальности</a><a href="#">Пользовательское соглашение</a></span></div>
+  </div>
+</footer>
+
+<button type="button" class="back-top" id="backTop" aria-label="Наверх">↑</button>
+
+<script>
+(function(){
+  var btn=document.getElementById('burgerBtn'),menu=document.getElementById('mobMenu');
+  if(!btn||!menu)return;
+  function close(){btn.classList.remove('open');btn.setAttribute('aria-expanded','false');menu.classList.remove('open');}
+  btn.addEventListener('click',function(){
+    var o=menu.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o?'true':'false');
+  });
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+})();
+(function(){
+  var bar=document.getElementById('scrollProgress');
+  function upd(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';}
+  document.addEventListener('scroll',upd,{passive:true});upd();
+})();
+(function(){
+  var btn=document.getElementById('backTop');
+  function upd(){if(window.scrollY>700)btn.classList.add('show');else btn.classList.remove('show');}
+  document.addEventListener('scroll',upd,{passive:true});
+  btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  upd();
+})();
+</script>
+
+</div>
+
+</body>
+</html>
