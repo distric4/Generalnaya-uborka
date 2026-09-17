@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Разовые услуги для бизнеса — Генеральная уборка</title>
+<title>Система лояльности UDS — Генеральная уборка</title>
 <meta name="description" content="Генеральная уборка — клининговая компания в Иркутске с 2007 года. Уборка квартир и офисов, мытьё окон, химчистка, услуги для бизнеса.">
 </head>
 <body>
@@ -21,7 +21,6 @@ html,body{overflow-x:clip;}
   --sh-1:0 2px 10px rgba(19,27,35,.05);
   --sh-2:0 14px 34px rgba(19,27,35,.10);
   --sh-3:0 18px 40px rgba(19,27,35,.14);
-  --hdr-h:81px;
 }
 .gu-page *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -49,13 +48,23 @@ html{scroll-behavior:smooth;}
 .gu-page .back-top.show{opacity:1;visibility:visible;transform:translateY(0);}
 .gu-page .back-top:hover{background:var(--cyan);color:#fff;border-color:var(--cyan);}
 
-/* ---------- ПЕРЕМЕННЫЕ ФОНЫ СЕКЦИЙ ---------- */
+/* ---------- ПЕРЕМЕННЫЕ ФОНЫ СЕКЦИЙ (классические, плоские) ---------- */
 .gu-page .bg-plain{background:var(--white);}
 .gu-page .bg-mint{background:var(--paper);}
+.gu-page .bg-mint-deep{background:var(--paper);}
+.gu-page .bg-dots{background:var(--white);}
+.gu-page .bg-grid{background:var(--paper);}
 .gu-page .bg-dark{background:var(--navy);}
 .gu-page .bg-dark .s-head h2{color:#fff;}
 .gu-page .bg-dark .s-head p{color:rgba(255,255,255,.62);}
 .gu-page .bg-dark .micro{color:var(--green);}
+.gu-page .bg-dark .tr, .gu-page .bg-dark .eqc{background:var(--navy-2);border-color:rgba(255,255,255,.10);}
+.gu-page .bg-dark .tr h3, .gu-page .bg-dark .eqc h3{color:#fff;}
+.gu-page .bg-dark .tr p, .gu-page .bg-dark .eqc p{color:rgba(255,255,255,.58);}
+
+/* декоративные пятна отключены по просьбе — фон классический, без подсветок */
+.gu-page .blob{display:none;}
+.gu-page .wave{display:none;}
 
 /* ---------- КНОПКИ ---------- */
 .gu-page .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 28px;border-radius:var(--r-pill);
@@ -93,6 +102,7 @@ html{scroll-behavior:smooth;}
 .gu-page .msg-ico a{width:38px;height:38px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;transition:.18s;}
 .gu-page .msg-ico a:hover{transform:translateY(-2px);}
 .gu-page .i-max{background:linear-gradient(135deg,#9B5CFF,#6C2BD9);}
+.gu-page .i-tg{background:var(--blue);}
 .gu-page .i-vk{background:var(--cyan-deep);}
 .gu-page .hdr-tel{text-align:right;}
 .gu-page .hdr-tel a{font-size:22px;font-weight:800;letter-spacing:-.02em;white-space:nowrap;}
@@ -121,7 +131,6 @@ html{scroll-behavior:smooth;}
 .gu-page .mob-social a{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;}
 @media(max-width:1240px){.gu-page .hdr-nav{display:none;}.gu-page .burger{display:flex;}}
 @media(max-width:760px){
-  .gu-page{--hdr-h:57px;}
   .gu-page .hdr-in{padding:10px 14px;gap:8px;}
   .gu-page .hdr-logo img{height:36px;}
   .gu-page .msg-ico{display:none;}
@@ -133,7 +142,7 @@ html{scroll-behavior:smooth;}
 }
 
 /* ---------- ХЛЕБНЫЕ КРОШКИ ---------- */
-.gu-page .breadcrumbs{padding-top:16px;padding-bottom:16px;font-size:13px;color:var(--gray-2);display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.gu-page .breadcrumbs{padding-top:16px;padding-bottom:16px;font-size:13px;color:var(--gray-2);display:flex;align-items:center;gap:6px;}
 .gu-page .breadcrumbs a{color:var(--gray);font-weight:600;}
 .gu-page .breadcrumbs a:hover{color:var(--cyan-deep);}
 .gu-page .breadcrumbs .sep{color:var(--gray-2);}
@@ -143,7 +152,7 @@ html{scroll-behavior:smooth;}
   background:
     linear-gradient(100deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.92) 35%, rgba(255,255,255,.58) 60%, rgba(255,255,255,.18) 100%),
     linear-gradient(160deg, rgba(3,170,211,.10) 0%, rgba(122,205,2,.08) 100%),
-    url('https://static.tildacdn.com/tild3539-3035-4362-b561-313365333232/4.webp') center 38%/cover no-repeat;
+    url('https://static.tildacdn.com/tild6233-3661-4131-b463-353236663139/3.webp') center 38%/cover no-repeat;
 }
 .gu-page .hero h1{font-size:clamp(30px,3.4vw,44px);font-weight:500;margin-bottom:18px;letter-spacing:-.01em;margin-top:14px;max-width:24ch;}
 .gu-page .hero h1 b{font-weight:800;}
@@ -151,41 +160,55 @@ html{scroll-behavior:smooth;}
 .gu-page .hero-marks{font-size:13.5px;font-weight:700;color:var(--ink-2);margin-bottom:26px;}
 .gu-page .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
 
-/* ---------- ЯКОРНОЕ ПОДМЕНЮ (липкое) ---------- */
-.gu-page .anchor-nav{position:sticky;top:var(--hdr-h);z-index:65;background:rgba(255,255,255,.96);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line);}
-.gu-page .anchor-nav .an-in{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
-.gu-page .anchor-nav .an-in::-webkit-scrollbar{display:none;}
-.gu-page .anchor-nav a{padding:15px 16px;font-size:14px;font-weight:600;color:var(--ink-2);white-space:nowrap;border-bottom:2px solid transparent;transition:.15s;}
-.gu-page .anchor-nav a:hover{color:var(--cyan-deep);}
-.gu-page .anchor-nav a.on{color:var(--cyan-deep);border-bottom-color:var(--cyan);}
-@media(max-width:1000px){.gu-page .anchor-nav .an-in{padding:0 20px;}}
+/* ---------- КАРТОЧКИ ФОРМАТОВ (ссылки) ---------- */
+.gu-page .price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.gu-page .price-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);padding:26px 28px;}
+.gu-page .price-card h3{font-size:18px;margin-bottom:14px;}
+.gu-page .price-note{font-size:12.5px;color:var(--gray-2);font-style:italic;margin:14px 0 8px;}
+@media(max-width:860px){.gu-page .price-grid{grid-template-columns:1fr;}}
 
-/* секции услуг — отступ под липкие шапку+подменю при переходе по якорю */
-.gu-page .svc{scroll-margin-top:calc(var(--hdr-h) + 56px);}
+/* сетка выгод — 4 карточки в ряд */
+.gu-page .ben-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.gu-page .ben-card p{color:var(--ink-2);font-size:14.5px;margin-top:8px;}
+@media(max-width:960px){.gu-page .ben-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.gu-page .ben-grid{grid-template-columns:1fr;}}
 
-/* ---------- СЕКЦИЯ УСЛУГИ (сплит текст + фото) ---------- */
-.gu-page .svc-split{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;}
-.gu-page .svc-split.rev .svc-txt{order:2;}
-.gu-page .svc-txt h2{font-size:clamp(24px,2.8vw,34px);margin:12px 0 16px;}
-.gu-page .svc-txt p{color:var(--ink-2);font-size:15px;margin-bottom:14px;}
-.gu-page .svc-txt .when{font-size:14px;color:var(--gray);background:var(--paper);border-left:3px solid var(--cyan);padding:12px 16px;border-radius:0 var(--r-md) var(--r-md) 0;}
-.gu-page .bg-mint .svc-txt .when{background:#fff;}
-.gu-page .svc-ph{aspect-ratio:4/3;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-1);}
-.gu-page .svc-ph .photo{width:100%;height:100%;}
-@media(max-width:860px){
-  .gu-page .svc-split{grid-template-columns:1fr;gap:24px;}
-  .gu-page .svc-split.rev .svc-txt{order:0;}
-  .gu-page .svc-ph{order:-1;}
-}
+.gu-page .fmt-card{display:flex;flex-direction:column;gap:14px;}
+.gu-page .fmt-card p{color:var(--ink-2);font-size:14.5px;}
 
-/* ---------- ШАГИ (тёмный блок) ---------- */
-.gu-page .uds-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+/* ---------- ТИПЫ ОБЪЕКТОВ ---------- */
+.gu-page .obj-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+.gu-page .obj-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:24px 16px;text-align:center;box-shadow:var(--sh-1);transition:.2s ease;}
+.gu-page .obj-card:hover{transform:translateY(-3px);box-shadow:var(--sh-3);}
+.gu-page .obj-card i{font-style:normal;font-size:26px;display:block;margin-bottom:10px;}
+.gu-page .obj-card b{font-size:14px;font-weight:700;line-height:1.3;}
+@media(max-width:900px){.gu-page .obj-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:560px){.gu-page .obj-grid{grid-template-columns:1fr 1fr;}}
+
+/* ---------- ШАГИ РАБОТЫ (тёмный блок, как UDS) ---------- */
+.gu-page .uds-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
 .gu-page .uds-step{display:flex;flex-direction:column;gap:12px;}
 .gu-page .uds-step .usn{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
   display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--green);flex-shrink:0;}
 .gu-page .uds-step p{font-size:13.5px;line-height:1.5;color:rgba(255,255,255,.75);}
-@media(max-width:860px){.gu-page .uds-steps{grid-template-columns:1fr 1fr;}}
-@media(max-width:520px){.gu-page .uds-steps{grid-template-columns:1fr;gap:20px;}}
+@media(max-width:900px){.gu-page .uds-steps{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.gu-page .uds-steps{grid-template-columns:1fr;gap:20px;}}
+
+/* ---------- ЛОГОТИПЫ КЛИЕНТОВ ---------- */
+.gu-page .logo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+.gu-page .logo-grid .photo{aspect-ratio:16/9;border-radius:var(--r-md);font-size:11.5px;}
+
+/* ---------- КОМАНДА / ПРОЕКТ-МЕНЕДЖЕРЫ ---------- */
+.gu-page .pp{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-1);overflow:hidden;transition:.2s ease;}
+.gu-page .pp:hover{transform:translateY(-4px);box-shadow:var(--sh-3);}
+.gu-page .pp-ph{position:relative;aspect-ratio:16/10;}
+.gu-page .pp-ph .photo{position:absolute;inset:0;font-size:12px;}
+.gu-page .pp-b{padding:22px 24px 26px;}
+.gu-page .pp-b .nm{font-weight:700;font-size:18px;}
+.gu-page .pp-b .rl{font-size:13.5px;color:var(--cyan-deep);font-weight:600;margin-top:4px;}
+.gu-page .pp-b .ds{font-size:14px;color:var(--gray);margin-top:12px;line-height:1.55;}
+.gu-page .pp-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:880px;margin:0 auto;}
+@media(max-width:760px){.gu-page .pp-grid{grid-template-columns:1fr;}}
 
 /* ---------- FAQ ---------- */
 .gu-page .faq{max-width:900px;margin:0 auto;}
@@ -249,7 +272,7 @@ html{scroll-behavior:smooth;}
       <a href="business.html">Для бизнеса</a>
       <a href="price.html">Цены</a>
       <a href="index.html#otzyvy">Отзывы</a>
-      <a href="uds.html">Бонусы UDS</a>
+      <a href="uds.html" class="on">Бонусы UDS</a>
     </nav>
     <div class="hdr-right">
       <div class="msg-ico">
@@ -271,7 +294,7 @@ html{scroll-behavior:smooth;}
       <a href="business.html">Для бизнеса</a>
       <a href="price.html">Цены</a>
       <a href="index.html#otzyvy">Отзывы</a>
-      <a href="uds.html">Бонусы UDS</a>
+      <a href="uds.html" class="on">Бонусы UDS</a>
     </nav>
     <div class="mob-social">
       <a href="tel:+79149276748" class="i-max" title="MAX: +7 914 927-67-48 — пришлите фото и видео">MAX</a>
@@ -281,193 +304,75 @@ html{scroll-behavior:smooth;}
 </header>
 
 <!-- ============ ХЛЕБНЫЕ КРОШКИ ============ -->
-<div class="wrap breadcrumbs"><a href="index.html">Главная</a><span class="sep">→</span><a href="business.html">Для бизнеса</a><span class="sep">→</span><span>Разовые услуги</span></div>
+<div class="wrap breadcrumbs"><a href="index.html">Главная</a><span class="sep">→</span><span>Система лояльности UDS</span></div>
 
 <!-- ============ 1. HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <span class="micro">Разовые услуги</span>
-    <h1>Разовая уборка <b class="gr">под конкретную задачу</b></h1>
-    <p class="hero-lead">После ремонта, перед открытием, мытьё окон и фасадов, химчистка, дезинфекция и уборка после мероприятий. Когда регулярный график не нужен — делаем один раз и качественно. Работаем с юрлицами по договору с 2007 года.</p>
-    <p class="hero-marks">Выезд по Иркутску · КП за 24 часа · Договор и ЭДО</p>
+    <span class="micro">Система лояльности</span>
+    <h1>Платите <b class="gr">баллами UDS</b> за уборку и химчистку</h1>
+    <p class="hero-lead">Копите баллы за каждый заказ и оплачивайте ими будущую уборку или химчистку — частично или полностью. При регистрации сразу +300 баллов, срок их действия не ограничен.</p>
+    <p class="hero-marks">Баллы за каждый заказ · Скидка 10% за наличку · +300 баллов при регистрации</p>
     <div class="hero-btns">
-      <a href="#zayavka" class="btn btn-cyan">Получить КП →</a>
+      <a href="#kak" class="btn btn-cyan">Подключиться →</a>
+      <a href="#zayavka" class="btn btn-line">Оставить заявку</a>
     </div>
   </div>
 </section>
 
-<!-- ============ 2. ЯКОРНОЕ ПОДМЕНЮ ============ -->
-<nav class="anchor-nav" id="anchorNav" aria-label="Навигация по услугам">
-  <div class="an-in">
-    <a href="#ofis">Уборка офиса</a>
-    <a href="#posle-remonta">После ремонта</a>
-    <a href="#okna">Окна и витрины</a>
-    <a href="#fasady">Фасады</a>
-    <a href="#himchistka">Химчистка</a>
-    <a href="#posle-meropriyatiy">После мероприятий</a>
-    <a href="#dezinfekciya">Дезинфекция</a>
-    <a href="#suhoy-tuman">Сухой туман</a>
-  </div>
-</nav>
-
-<!-- ============ 3. УБОРКА ОФИСА ============ -->
-<section class="bg-plain svc" id="ofis">
-  <div class="wrap">
-    <div class="svc-split">
-      <div class="svc-txt">
-        <span class="micro">Разовая услуга</span>
-        <h2>Уборка офиса</h2>
-        <p>Разовая генеральная уборка офисных помещений — полы, поверхности, мебель, техника, санузлы, стеклянные перегородки и двери. Подходит для офисов, кабинетов и опенспейсов любой площади — от 30 до 10 000 м².</p>
-        <p class="when">Когда актуально: перед выходом сотрудников после праздников, при заселении в новое помещение или когда офис давно не приводили в порядок. Цена рассчитывается по объекту.</p>
-      </div>
-      <div class="svc-ph"><div class="photo"><span>Фото: генеральная уборка офиса</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 4. ПОСЛЕ РЕМОНТА ============ -->
-<section class="bg-mint svc" id="posle-remonta">
-  <div class="wrap">
-    <div class="svc-split rev">
-      <div class="svc-txt">
-        <span class="micro">Разовая услуга</span>
-        <h2>Уборка после ремонта</h2>
-        <p>Строительная (постремонтная) уборка: удаление строительной пыли и следов работ, обеспыливание поверхностей, отмывание окон, полов, стен и сантехники, вывоз строительного мусора. Работаем в офисах, магазинах, на складах и производстве.</p>
-        <p class="when">Когда актуально: после завершения ремонта или отделки, перед сдачей объекта или открытием. Цена — по объёму и состоянию помещения.</p>
-      </div>
-      <div class="svc-ph"><div class="photo"><span>Фото: уборка после ремонта</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 5. ОКНА И ВИТРИНЫ ============ -->
-<section class="bg-plain svc" id="okna">
-  <div class="wrap">
-    <div class="svc-split">
-      <div class="svc-txt">
-        <span class="micro">Разовая услуга</span>
-        <h2>Мытьё окон и витрин</h2>
-        <p>Мытьё остекления, витрин и стеклянных фасадов — внутри и снаружи, в том числе на высоте. Убираем разводы, следы стройки и налёт, работаем профессиональной химией и инструментом. Подходит магазинам, шоурумам, офисам и бизнес-центрам.</p>
-        <p class="when">Когда актуально: перед открытием, после ремонта или по сезону. Остекление на высоте — с промышленным альпинизмом или автовышкой. Цена рассчитывается по объёму.</p>
-      </div>
-      <div class="svc-ph"><div class="photo"><span>Фото: мытьё окон и витрин</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 6. ФАСАДЫ ============ -->
-<section class="bg-mint svc" id="fasady">
-  <div class="wrap">
-    <div class="svc-split rev">
-      <div class="svc-txt">
-        <span class="micro">Разовая услуга</span>
-        <h2>Мытьё фасадов</h2>
-        <p>Мытьё фасадов зданий и сложного остекления на высоте — методом промышленного альпинизма или с автовышки. Очищаем стеклянные, композитные и другие поверхности от пыли, потёков и загрязнений.</p>
-        <p class="when">Когда актуально: сезонное обслуживание фасада, подготовка здания к событию или после строительных работ. Цена — по площади и типу фасада.</p>
-      </div>
-      <div class="svc-ph"><div class="photo"><span>Фото: мытьё фасада здания</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 7. ХИМЧИСТКА ============ -->
-<section class="bg-plain svc" id="himchistka">
-  <div class="wrap">
-    <div class="svc-split">
-      <div class="svc-txt">
-        <span class="micro">Разовая услуга</span>
-        <h2>Химчистка мебели и покрытий</h2>
-        <p>Химчистка мягкой мебели, офисных кресел, диванов в зонах ожидания и ковролина. Выезжаем на объект, чистим на месте профессиональным оборудованием — без демонтажа и вывоза.</p>
-        <p class="when">Когда актуально: для офисов, переговорных, залов ожидания и торговых залов, когда мебель и покрытия потеряли вид. Цена — по количеству и типу изделий.</p>
-      </div>
-      <div class="svc-ph"><div class="photo"><span>Фото: химчистка офисной мебели</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 8. ПОСЛЕ МЕРОПРИЯТИЙ ============ -->
-<section class="bg-mint svc" id="posle-meropriyatiy">
-  <div class="wrap">
-    <div class="svc-split rev">
-      <div class="svc-txt">
-        <span class="micro">Разовая услуга</span>
-        <h2>Уборка после мероприятий</h2>
-        <p>Уборка помещений после корпоративов, конференций, презентаций и других событий — полы, поверхности, вынос мусора, приведение зала в исходный вид. Работаем в конференц-залах, офисах и на площадках.</p>
-        <p class="when">Когда актуально: сразу после мероприятия, в том числе ночью или в выходные, чтобы к утру объект был готов к работе. Цена рассчитывается по объекту.</p>
-      </div>
-      <div class="svc-ph"><div class="photo"><span>Фото: уборка после мероприятия</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 9. ДЕЗИНФЕКЦИЯ ============ -->
-<section class="bg-plain svc" id="dezinfekciya">
-  <div class="wrap">
-    <div class="svc-split">
-      <div class="svc-txt">
-        <span class="micro">Разовая услуга</span>
-        <h2>Дезинфекция помещений</h2>
-        <p>Дезинфекционная обработка помещений — обеззараживание поверхностей и воздуха в офисах, магазинах, на складах и производстве. Применяем сертифицированные средства и профессиональное оборудование.</p>
-        <p class="when">Когда актуально: как профилактика в местах с высокой проходимостью или после сезона заболеваний. Цена — по площади и типу обработки.</p>
-      </div>
-      <div class="svc-ph"><div class="photo"><span>Фото: дезинфекция помещения</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 10. СУХОЙ ТУМАН ============ -->
-<section class="bg-mint svc" id="suhoy-tuman">
-  <div class="wrap">
-    <div class="svc-split rev">
-      <div class="svc-txt">
-        <span class="micro">Разовая услуга</span>
-        <h2>Устранение запахов сухим туманом</h2>
-        <p>Технология «сухого тумана» устраняет источник запаха, а не маскирует его: мельчайший аэрозоль проникает во все поверхности и текстиль. Убираем запахи гари, табака, сырости и другие стойкие ароматы.</p>
-        <p class="when">Когда актуально: после ремонта, задымления, в помещениях с посторонними запахами или при подготовке к сдаче в аренду. Цена рассчитывается по объёму помещения.</p>
-      </div>
-      <div class="svc-ph"><div class="photo"><span>Фото: обработка сухим туманом</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 11. КАК ЗАКАЗАТЬ ============ -->
-<section class="bg-dark">
+<!-- ============ 2. ЧТО ДАЁТ UDS ============ -->
+<section class="bg-mint">
   <div class="wrap">
     <div class="s-head">
-      <div><span class="micro">Как это работает</span><h2 style="margin-top:14px;">Как заказать разовую уборку</h2></div>
+      <div><span class="micro">Выгода</span><h2 style="margin-top:14px;">Что даёт бонусная программа</h2></div>
     </div>
-    <div class="uds-steps">
-      <div class="uds-step"><span class="usn">1</span><p><b style="color:#fff;">Заявка и ТЗ</b><br>Пришлите задачу и фото/видео объекта в MAX или вызовите специалиста на выезд.</p></div>
-      <div class="uds-step"><span class="usn">2</span><p><b style="color:#fff;">КП за 24 часа</b><br>Рассчитаем объём и пришлём коммерческое предложение в течение 24 часов.</p></div>
-      <div class="uds-step"><span class="usn">3</span><p><b style="color:#fff;">Договор</b><br>Подписываем договор, работаем в ЭДО, оплата по безналу.</p></div>
-      <div class="uds-step"><span class="usn">4</span><p><b style="color:#fff;">Выполнение</b><br>Выезжаем в согласованное время и делаем работу под ключ.</p></div>
+    <div class="ben-grid">
+      <div class="price-card ben-card"><h3>Баллы за каждый заказ</h3><p>Начисляем бонусные баллы за каждую оплаченную уборку и химчистку.</p></div>
+      <div class="price-card ben-card"><h3>Оплата баллами</h3><p>Оплачивайте баллами следующий заказ — частично или полностью.</p></div>
+      <div class="price-card ben-card"><h3>Скидка 10% за наличку</h3><p>Постоянным клиентам — скидка 10% при оплате наличными.</p></div>
+      <div class="price-card ben-card"><h3>+300 баллов при регистрации</h3><p>Приветственные баллы начисляем сразу, срок их действия не ограничен.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============ 12. FAQ ============ -->
+<!-- ============ 3. КАК ЭТО РАБОТАЕТ ============ -->
+<section class="bg-dark" id="kak">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Как подключиться</span><h2 style="margin-top:14px;">Как начать копить баллы</h2></div>
+    </div>
+    <div class="uds-steps">
+      <div class="uds-step"><span class="usn">1</span><p><b style="color:#fff;">Откройте приложение UDS</b><br>Установите бесплатное приложение UDS на телефон.</p></div>
+      <div class="uds-step"><span class="usn">2</span><p><b style="color:#fff;">Найдите нас</b><br>В поиске приложения напишите «Генеральная уборка».</p></div>
+      <div class="uds-step"><span class="usn">3</span><p><b style="color:#fff;">Присоединитесь</b><br>Нажмите «Присоединиться» к нашей программе лояльности.</p></div>
+      <div class="uds-step"><span class="usn">4</span><p><b style="color:#fff;">Получите баллы</b><br>Приветственные +300 баллов начислим сразу, срок не ограничен.</p></div>
+      <div class="uds-step"><span class="usn">5</span><p><b style="color:#fff;">Платите баллами</b><br>Оформите заявку и рассчитайтесь накопленными баллами.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. FAQ ============ -->
 <section class="bg-plain">
   <div class="wrap">
     <div class="s-head" style="justify-content:center;text-align:center;">
-      <div style="max-width:none;"><span class="micro">Частые вопросы</span><h2 style="margin-top:14px;max-width:none;">Вопросы про разовые услуги</h2></div>
+      <div style="max-width:none;"><span class="micro">Частые вопросы</span><h2 style="margin-top:14px;max-width:none;">Вопросы про баллы UDS</h2></div>
     </div>
     <div class="faq">
-      <details open><summary>Есть ли минимальный заказ?</summary><div class="ans">Отдельного «пакета» нет: считаем по объёму конкретной задачи. Небольшие объекты тоже берём — от 30 м².</div></details>
-      <details><summary>Как быстро вы можете приехать?</summary><div class="ans">Сначала готовим КП в течение 24 часов, дальше согласуем удобную дату выезда. Если задача срочная, отметьте это в заявке — постараемся ускорить.</div></details>
-      <details><summary>Работаете ли в выходные и ночью?</summary><div class="ans">Да. Разовые работы часто делаем ночью, ранним утром или в выходные, чтобы не мешать работе объекта.</div></details>
-      <details><summary>Нужен ли договор на разовую услугу?</summary><div class="ans">Да, с юрлицами работаем по договору и счёту, с закрывающими документами через ЭДО — даже если это один выезд.</div></details>
+      <details open><summary>Сколько действуют баллы?</summary><div class="ans">Срок действия приветственных и накопленных баллов не ограничен.</div></details>
+      <details><summary>Можно ли оплатить баллами весь заказ?</summary><div class="ans">Да, баллами можно закрыть часть суммы или всю стоимость — в пределах накопленного баланса.</div></details>
+      <details><summary>Действует ли скидка 10% вместе с баллами?</summary><div class="ans">Скидка 10% — за оплату наличными. Условия сочетания со списанием баллов уточняйте у менеджера при заказе.</div></details>
     </div>
   </div>
 </section>
 
-<!-- ============ 13. ФОРМА ============ -->
+<!-- ============ 5. ФОРМА ============ -->
 <section class="bg-mint" id="zayavka">
   <div class="wrap">
     <div class="frm">
       <div class="frm-s">
         <span class="micro">Заявка</span>
-        <h2>Опишите задачу</h2>
-        <p>Пришлите задачу и параметры объекта — рассчитаем и пришлём КП в течение 24 часов.</p>
+        <h2>Остались вопросы по UDS?</h2>
+        <p>Оставьте контакты — расскажем, как подключиться и начать копить баллы.</p>
       </div>
       <div class="frm-b">
         <form id="leadForm" novalidate>
@@ -481,7 +386,7 @@ html{scroll-behavior:smooth;}
           </div>
           <label class="agree"><input type="checkbox" id="f-agree" required>
             <span>Нажимая кнопку, я соглашаюсь с <a href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных.</span></label>
-          <button type="submit" class="btn btn-cyan btn-block">Получить КП →</button>
+          <button type="submit" class="btn btn-cyan btn-block">Оставить заявку →</button>
           <div id="formMsg" style="display:none;margin-top:18px;padding:15px 18px;border-radius:14px;background:rgba(122,205,2,.14);border:1px solid rgba(122,205,2,.42);font-size:14px;"></div>
         </form>
       </div>
@@ -558,43 +463,13 @@ html{scroll-behavior:smooth;}
     if(!ph.value.trim()){ph.focus();ph.style.borderColor='#d33';return;}
     if(!ag.checked){ag.focus();return;}
     ph.style.borderColor='';
-    /* TODO(интеграция): отправить data на почту / в CRM */
-    ms.textContent='Заявка принята. Пришлём КП в течение 24 часов. Срочно — 8 (914) 927-22-87';
+    var data={name:document.getElementById('f-name').value.trim(),phone:ph.value.trim(),
+      svyaz:(document.querySelector('input[name=svyaz]:checked')||{}).value};
+    /* TODO(интеграция): отправить data на почту / в CRM / в Telegram */
+    console.log('Заявка (UDS):',data);
+    ms.textContent='Заявка принята. Менеджер свяжется в течение 24 часов. Срочно — 8 (914) 927-22-87';
     ms.style.display='block';this.reset();
   });
-})();
-/* ===== Якорное подменю: плавный скролл + подсветка активного (scrollspy) ===== */
-(function(){
-  var nav=document.getElementById('anchorNav');
-  if(!nav)return;
-  var links=[].slice.call(nav.querySelectorAll('a'));
-  var items=links.map(function(a){
-    var el=document.getElementById(a.getAttribute('href').replace('#',''));
-    return el?{a:a,el:el}:null;
-  }).filter(Boolean);
-  function offset(){
-    var cs=getComputedStyle(document.querySelector('.gu-page'));
-    var h=parseInt(cs.getPropertyValue('--hdr-h'))||81;
-    return h+nav.offsetHeight+8;
-  }
-  function upd(){
-    var line=window.scrollY+offset()+10,cur=null;
-    items.forEach(function(it){
-      var top=it.el.getBoundingClientRect().top+window.scrollY;
-      if(top<=line)cur=it;
-    });
-    items.forEach(function(it){it.a.classList.toggle('on',it===cur);});
-    if(cur){ /* держим активный пункт в поле зрения на мобильном */
-      var a=cur.a,box=nav.querySelector('.an-in');
-      if(box.scrollWidth>box.clientWidth){
-        var l=a.offsetLeft-box.clientWidth/2+a.offsetWidth/2;
-        box.scrollTo({left:l,behavior:'smooth'});
-      }
-    }
-  }
-  document.addEventListener('scroll',upd,{passive:true});
-  window.addEventListener('resize',upd);
-  upd();
 })();
 </script>
 
