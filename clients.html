@@ -90,6 +90,20 @@ html{scroll-behavior:smooth;}
 .gu-page .s-head p{color:var(--gray);font-size:15px;max-width:34ch;}
 .gu-page .s-lead{color:var(--gray);font-size:15.5px;max-width:64ch;margin:-18px 0 36px;line-height:1.65;}
 
+/* ---------- ТОПБАР ---------- */
+.gu-page .topbar{background:#fff;border-bottom:1px solid var(--line);font-size:13px;color:var(--gray);}
+.gu-page .topbar-in{max-width:1440px;margin:0 auto;padding:7px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.gu-page .topbar-addr{display:flex;align-items:center;gap:6px;}
+.gu-page .topbar-addr::before{content:'•';color:var(--green);}
+.gu-page .topbar-tag{font-weight:700;color:var(--cyan-deep);font-size:13px;}
+.gu-page .topbar-right{display:flex;align-items:center;gap:20px;}
+.gu-page .topbar-right a{color:var(--gray);transition:.15s;}
+.gu-page .topbar-right a:hover{color:var(--cyan-deep);}
+.gu-page .topbar-sep{width:1px;height:14px;background:var(--line);}
+.gu-page .topbar-phone{font-weight:600;color:var(--ink-2);}
+@media(max-width:860px){.gu-page .topbar-addr,.gu-page .topbar-tag{display:none;}}
+@media(max-width:600px){.gu-page .topbar{display:none;}}
+
 /* ---------- ШАПКА ---------- */
 .gu-page .hdr{position:sticky;top:0;z-index:70;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line);}
 .gu-page .hdr-in{max-width:1440px;margin:0 auto;padding:12px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
@@ -236,11 +250,92 @@ html{scroll-behavior:smooth;}
 @media(max-width:820px){.gu-page .fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:1000px){.gu-page .wrap{padding:0 20px;}.gu-page section{padding:60px 0;}}
 
+/* ---------- УСЛУГИ С ФОТО ---------- */
+.gu-page .srv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.gu-page .srv-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);overflow:hidden;display:flex;flex-direction:column;transition:.2s ease;}
+.gu-page .srv-card:hover{transform:translateY(-4px);box-shadow:var(--sh-3);}
+.gu-page .srv-ph{aspect-ratio:16/11;}
+.gu-page .srv-ph .photo{width:100%;height:100%;}
+.gu-page .srv-b{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1;}
+.gu-page .srv-b h3{font-size:17px;margin-bottom:8px;}
+.gu-page .srv-b p{font-size:14px;color:var(--gray);flex:1;}
+.gu-page .srv-b .srv-pr{font-size:18px;font-weight:800;color:var(--cyan-deep);margin:12px 0 14px;}
+.gu-page .srv-b .srv-pr small{font-size:12.5px;font-weight:600;color:var(--gray);}
+@media(max-width:1000px){.gu-page .srv-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.gu-page .srv-grid{grid-template-columns:1fr;}}
+
+/* ---------- ЧТО ВХОДИТ (табы + чек-лист) ---------- */
+.gu-page .inc-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
+.gu-page .inc-tab{background:var(--paper);color:var(--ink-2);border-radius:var(--r-pill);padding:11px 22px;font-size:14px;font-weight:700;transition:.15s;}
+.gu-page .inc-tab.on{background:var(--ink);color:#fff;}
+.gu-page .inc-panel{display:none;}
+.gu-page .inc-panel.on{display:block;}
+.gu-page .inc-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 30px;list-style:none;}
+.gu-page .inc-list li{display:flex;gap:11px;font-size:15px;color:var(--ink-2);}
+.gu-page .inc-list li::before{content:"✓";flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(122,205,2,.16);color:var(--green-deep);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+@media(max-width:700px){.gu-page .inc-list{grid-template-columns:1fr;}}
+
+/* ---------- ЦЕНЫ (список) ---------- */
+.gu-page .pl{max-width:780px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);padding:6px 28px;}
+.gu-page .pl-row{display:flex;justify-content:space-between;gap:20px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);flex-wrap:wrap;}
+.gu-page .pl-row:last-child{border-bottom:none;}
+.gu-page .pl-row .pl-n{font-weight:600;font-size:15.5px;}
+.gu-page .pl-row .pl-n small{display:block;font-weight:500;font-size:13px;color:var(--gray);margin-top:2px;}
+.gu-page .pl-row .pl-p{font-weight:800;color:var(--cyan-deep);font-size:16px;white-space:nowrap;}
+.gu-page .pl-note{font-size:13px;color:var(--gray-2);margin-top:16px;}
+
+/* ---------- КАЛЬКУЛЯТОР ---------- */
+.gu-page .calc2{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-2);padding:32px 34px;display:grid;grid-template-columns:1.5fr 1fr;gap:34px;align-items:start;}
+.gu-page .cc-row{margin-bottom:22px;}
+.gu-page .cc-row>label{display:block;font-size:12px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+.gu-page .cc-seg{display:flex;gap:8px;flex-wrap:wrap;}
+.gu-page .cc-opt{background:var(--paper);border:none;border-radius:var(--r-pill);padding:10px 18px;font-size:14px;font-weight:700;color:var(--ink-2);cursor:pointer;transition:.15s;}
+.gu-page .cc-opt.on{background:var(--cyan);color:#fff;}
+.gu-page .cc-checks{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.gu-page .cc-check{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2);cursor:pointer;background:var(--paper);border-radius:var(--r-md);padding:10px 12px;}
+.gu-page .cc-check input{accent-color:var(--cyan);}
+.gu-page .cc-out{background:var(--navy);color:#fff;border-radius:var(--r-lg);padding:28px 26px;position:sticky;top:96px;}
+.gu-page .cc-out .cc-lbl{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.55);}
+.gu-page .cc-out .cc-sum{font-size:34px;font-weight:800;letter-spacing:-.02em;margin:8px 0 6px;}
+.gu-page .cc-out .cc-hint{font-size:12.5px;color:rgba(255,255,255,.6);margin-bottom:20px;line-height:1.5;}
+.gu-page .cc-out .btn{width:100%;}
+@media(max-width:860px){.gu-page .calc2{grid-template-columns:1fr;gap:24px;}.gu-page .cc-out{position:static;}.gu-page .cc-checks{grid-template-columns:1fr;}}
+
+/* ---------- ГАЛЕРЕЯ ФОТО/ВИДЕО ---------- */
+.gu-page .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.gu-page .gal-grid .photo{aspect-ratio:4/3;border-radius:var(--r-md);}
+@media(max-width:820px){.gu-page .gal-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.gu-page .gal-grid{grid-template-columns:1fr;}}
+
+/* ---------- FAQ ---------- */
+.gu-page .faq{max-width:900px;margin:0 auto;}
+.gu-page .faq details{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);margin-bottom:12px;overflow:hidden;}
+.gu-page .faq summary{list-style:none;cursor:pointer;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-weight:700;font-size:16.5px;}
+.gu-page .faq summary::-webkit-details-marker{display:none;}
+.gu-page .faq summary::after{content:"+";width:30px;height:30px;border-radius:50%;background:var(--paper);color:var(--cyan-deep);display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:600;flex-shrink:0;}
+.gu-page .faq details[open] summary::after{content:"–";background:var(--cyan);color:#fff;}
+.gu-page .faq .ans{padding:0 26px 24px;color:var(--gray);font-size:15px;}
+
 </style>
 <div class="gu-page">
 
 
 <div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ ТОПБАР ============ -->
+<div class="topbar">
+  <div class="topbar-in">
+    <span class="topbar-addr">г. Иркутск, ул. Седова, 31</span>
+    <span class="topbar-tag">Профессиональный клининг с 2007 года</span>
+    <div class="topbar-right">
+      <a href="business.html">Для бизнеса</a>
+      <a href="/partners/">Партнёрам</a>
+      <a href="/price.html">Цены</a>
+      <div class="topbar-sep"></div>
+      <a href="tel:+73952000000" class="topbar-phone">+7 (3952) 00-00-00</a>
+    </div>
+  </div>
+</div>
 
 <!-- ============ ШАПКА ============ -->
 <header class="hdr">
@@ -293,98 +388,177 @@ html{scroll-behavior:smooth;}
     <p class="hero-lead">Уборка квартир и домов, мытьё окон и потолков, химчистка мебели и устранение запахов. Приезжаем со своими материалами и оборудованием, работаем по договору с 2007 года.</p>
     <p class="hero-marks">Свои материалы · Договор и гарантия · Оценка по фото в MAX</p>
     <div class="hero-btns">
-      <a href="#zayavka" class="btn btn-cyan">Рассчитать стоимость →</a>
+      <a href="#calc" class="btn btn-cyan">Рассчитать стоимость →</a>
       <a href="#zayavka" class="btn btn-line">Оставить заявку</a>
     </div>
   </div>
 </section>
 
-<!-- ============ 2. УСЛУГИ ДЛЯ ДОМА ============ -->
-<section class="bg-mint">
+<!-- ============ 2. ОСНОВНЫЕ УСЛУГИ С ФОТО ============ -->
+<section class="bg-mint" id="uslugi">
   <div class="wrap">
     <div class="s-head">
-      <div><span class="micro">Услуги для дома</span><h2 style="margin-top:14px;">Что мы делаем для дома</h2></div>
+      <div><span class="micro">Услуги для дома</span><h2 style="margin-top:14px;">Основные услуги</h2></div>
+      <p>Выберите услугу — на странице покажем, что входит, и назовём цену.</p>
     </div>
-    <div class="price-grid">
-      <div class="price-card fmt-card">
-        <h3>Уборка квартир и домов</h3>
-        <p>Генеральная, поддерживающая, после ремонта и загородные дома — от плинтусов до люстр.</p>
-        <div class="fmt-price">от 9 000 ₽</div>
-        <div><a href="uborka.html" class="btn btn-line">Подробнее →</a></div>
-      </div>
-      <div class="price-card fmt-card">
-        <h3>Мытьё окон, потолков, люстр</h3>
-        <p>Окна, лоджии и фасады, натяжные потолки, люстры и даже яхты.</p>
-        <div class="fmt-price">от 500 ₽<small> /м²</small></div>
-        <div><a href="mytyo.html" class="btn btn-line">Подробнее →</a></div>
-      </div>
-      <div class="price-card fmt-card">
-        <h3>Химчистка</h3>
-        <p>Диваны, кресла, матрасы, ковры, шторы и жалюзи — с выездом на дом.</p>
-        <div class="fmt-price">от 3 000 ₽</div>
-        <div><a href="himchistka.html" class="btn btn-line">Подробнее →</a></div>
-      </div>
-      <div class="price-card fmt-card">
-        <h3>Сухой туман</h3>
-        <p>Устранение запахов после животных, ремонта и табака.</p>
-        <div class="fmt-price">по запросу</div>
-        <div><a href="suhoy-tuman.html" class="btn btn-line">Подробнее →</a></div>
-      </div>
+    <div class="srv-grid">
+      <a href="uborka.html" class="srv-card">
+        <div class="srv-ph"><div class="photo"><span>Фото: уборка квартиры</span></div></div>
+        <div class="srv-b"><h3>Уборка квартир и домов</h3><p>Генеральная, поддерживающая, после ремонта, загородные дома.</p><div class="srv-pr">от 9 000 ₽</div><span class="btn btn-line">Подробнее →</span></div>
+      </a>
+      <a href="mytyo.html" class="srv-card">
+        <div class="srv-ph"><div class="photo"><span>Фото: мытьё окон</span></div></div>
+        <div class="srv-b"><h3>Мытьё окон, потолков, люстр</h3><p>Окна, лоджии и фасады, натяжные потолки, люстры, яхты.</p><div class="srv-pr">от 500 ₽<small> /м²</small></div><span class="btn btn-line">Подробнее →</span></div>
+      </a>
+      <a href="himchistka.html" class="srv-card">
+        <div class="srv-ph"><div class="photo"><span>Фото: химчистка дивана</span></div></div>
+        <div class="srv-b"><h3>Химчистка</h3><p>Диваны, кресла, матрасы, ковры, шторы и жалюзи на дому.</p><div class="srv-pr">от 3 000 ₽</div><span class="btn btn-line">Подробнее →</span></div>
+      </a>
+      <a href="suhoy-tuman.html" class="srv-card">
+        <div class="srv-ph"><div class="photo"><span>Фото: сухой туман</span></div></div>
+        <div class="srv-b"><h3>Сухой туман</h3><p>Устранение запахов после животных, ремонта и табака.</p><div class="srv-pr">по запросу</div><span class="btn btn-line">Подробнее →</span></div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ============ 3. ПОЧЕМУ МЫ ============ -->
-<section class="bg-dark">
-  <div class="wrap">
-    <div class="s-head">
-      <div><span class="micro">Безопасность</span><h2 style="margin-top:14px;">Почему квартиру можно доверить нам</h2></div>
-    </div>
-    <div class="terms-grid">
-      <div class="tr"><div class="tr-n">01</div><h3>Договор</h3><p>Работаем официально. Все обязательства и ответственность закреплены документом, а не словами.</p></div>
-      <div class="tr"><div class="tr-n">02</div><h3>Штатные клинеры</h3><p>Не подрядчики с улицы. Каждый в штате, проходит проверку службой безопасности и обучение.</p></div>
-      <div class="tr"><div class="tr-n">03</div><h3>Безопасная химия</h3><p>Сертифицированные средства. Для семей с детьми, животными и аллергиками — щадящие составы.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 4. КАК ЗАКАЗАТЬ ============ -->
+<!-- ============ 3. ЧТО ВХОДИТ В УБОРКУ КВАРТИРЫ ============ -->
 <section class="bg-plain">
   <div class="wrap">
     <div class="s-head">
-      <div><span class="micro">Как это работает</span><h2 style="margin-top:14px;">Как заказать уборку</h2></div>
+      <div><span class="micro">Состав работ</span><h2 style="margin-top:14px;">Что входит в уборку квартиры</h2></div>
+      <p>Состав зависит от типа уборки. Выберите тип — покажем, по какому чек-листу работает клинер.</p>
     </div>
-    <div class="uds-steps">
-      <div class="uds-step"><span class="usn">1</span><p><b style="color:var(--ink);">Оставьте заявку</b><br>Позвоните или оставьте контакты на сайте — перезвоним с 08:00 до 20:00.</p></div>
-      <div class="uds-step"><span class="usn">2</span><p><b style="color:var(--ink);">Оценка по фото</b><br>Пришлите фото или видео в MAX — рассчитаем стоимость без выезда.</p></div>
-      <div class="uds-step"><span class="usn">3</span><p><b style="color:var(--ink);">Приезжаем со своим</b><br>Бригада привозит профхимию и оборудование, от вас — доступ к воде.</p></div>
-      <div class="uds-step"><span class="usn">4</span><p><b style="color:var(--ink);">Принимаете результат</b><br>Работу принимаете вместе с менеджером. Гарантия и договор на все работы.</p></div>
+    <div class="inc-tabs">
+      <button type="button" class="inc-tab on" data-i="pod">Поддерживающая</button>
+      <button type="button" class="inc-tab" data-i="gen">Генеральная</button>
+      <button type="button" class="inc-tab" data-i="rem">После ремонта</button>
+    </div>
+    <div class="inc-panel on" data-ip="pod">
+      <ul class="inc-list">
+        <li>Влажная уборка полов и плинтусов</li>
+        <li>Пыль с открытых поверхностей и мебели</li>
+        <li>Кухня: раковина, рабочие зоны, техника снаружи</li>
+        <li>Санузел: сантехника, зеркала, дезинфекция</li>
+        <li>Мытьё зеркал и стеклянных поверхностей</li>
+        <li>Вынос мусора, аккуратная раскладка вещей</li>
+      </ul>
+    </div>
+    <div class="inc-panel" data-ip="gen">
+      <ul class="inc-list">
+        <li>Всё из поддерживающей уборки — глубже и тщательнее</li>
+        <li>Мытьё полов, плинтусов, дверей и выключателей</li>
+        <li>Кухня: фасады, вытяжка, фартук, техника снаружи</li>
+        <li>Санузел: плитка, известковый налёт, дезинфекция</li>
+        <li>Люстры, светильники, подоконники, батареи</li>
+        <li>Обеспыливание на всех уровнях — от карнизов до плинтусов</li>
+      </ul>
+    </div>
+    <div class="inc-panel" data-ip="rem">
+      <ul class="inc-list">
+        <li>Обеспыливание всех поверхностей, включая труднодоступные</li>
+        <li>Удаление следов краски, шпаклёвки, клея, скотча</li>
+        <li>Мытьё окон, рам, откосов, подоконников, дверей</li>
+        <li>Мытьё полов в несколько проходов, чистка плитки</li>
+        <li>Санузел и кухня после строителей — до чистоты</li>
+        <li>Вынос строительного мусора</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ============ 5. ОТЗЫВЫ ============ -->
+<!-- ============ 4. ЦЕНЫ ============ -->
 <section class="bg-mint">
   <div class="wrap">
     <div class="s-head">
-      <div><span class="micro">Отзывы</span><h2 style="margin-top:14px;">Что говорят клиенты</h2></div>
+      <div><span class="micro">Цены</span><h2 style="margin-top:14px;">Цены на уборку квартиры и дома</h2></div>
+      <p>Цены указаны «от». Точную стоимость рассчитает менеджер по фото или в калькуляторе ниже.</p>
     </div>
-    <div class="rev-grid">
-      <div class="rev-card">
-        <div class="rev-st">★★★★★</div>
-        <p>Заказывала генеральную уборку перед переездом. Приехали со всем своим, вернулась в идеально чистую квартиру.</p>
-        <div class="rev-nm">Ольга</div>
+    <div class="pl">
+      <div class="pl-row"><span class="pl-n">Поддерживающая уборка<small>Регулярная лёгкая уборка</small></span><span class="pl-p">рассчитайте в калькуляторе</span></div>
+      <div class="pl-row"><span class="pl-n">Генеральная уборка<small>Глубокая уборка всей квартиры</small></span><span class="pl-p">от 9 000 ₽ / 5 часов</span></div>
+      <div class="pl-row"><span class="pl-n">Уборка после ремонта<small>Строительная пыль, следы работ</small></span><span class="pl-p">от 150 ₽ / м²</span></div>
+      <div class="pl-row"><span class="pl-n">Мытьё окон<small>Окна, лоджии, фасады</small></span><span class="pl-p">от 500 ₽ / м²</span></div>
+      <div class="pl-row"><span class="pl-n">Химчистка мебели<small>Диваны, кресла, матрасы</small></span><span class="pl-p">от 3 000 ₽</span></div>
+    </div>
+    <p class="pl-note">Полный прайс на все услуги — на странице <a href="price.html" style="color:var(--cyan-deep);font-weight:700;">Цены</a>.</p>
+  </div>
+</section>
+
+<!-- ============ 5. КАЛЬКУЛЯТОР ============ -->
+<section class="bg-plain" id="calc">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Калькулятор</span><h2 style="margin-top:14px;">Рассчитайте стоимость уборки</h2></div>
+    </div>
+    <div class="calc2" id="calc2">
+      <div class="cc-controls">
+        <div class="cc-row"><label>Вид уборки</label>
+          <div class="cc-seg" data-k="type">
+            <button type="button" class="cc-opt" data-v="pod">Поддерживающая</button>
+            <button type="button" class="cc-opt on" data-v="gen">Генеральная</button>
+            <button type="button" class="cc-opt" data-v="rem">После ремонта</button>
+          </div>
+        </div>
+        <div class="cc-row"><label>Комнат</label>
+          <div class="cc-seg" data-k="rooms">
+            <button type="button" class="cc-opt on" data-v="1">1</button>
+            <button type="button" class="cc-opt" data-v="2">2</button>
+            <button type="button" class="cc-opt" data-v="3">3</button>
+            <button type="button" class="cc-opt" data-v="4">4</button>
+            <button type="button" class="cc-opt" data-v="5">5+</button>
+          </div>
+        </div>
+        <div class="cc-row"><label>Санузлов</label>
+          <div class="cc-seg" data-k="bath">
+            <button type="button" class="cc-opt on" data-v="1">1</button>
+            <button type="button" class="cc-opt" data-v="2">2</button>
+            <button type="button" class="cc-opt" data-v="3">3+</button>
+          </div>
+        </div>
+        <div class="cc-row"><label>Дополнительные услуги</label>
+          <div class="cc-checks">
+            <label class="cc-check"><input type="checkbox" value="oven"> Мытьё духовки</label>
+            <label class="cc-check"><input type="checkbox" value="mw"> Мытьё СВЧ</label>
+            <label class="cc-check"><input type="checkbox" value="fridge"> Холодильник внутри</label>
+            <label class="cc-check"><input type="checkbox" value="windows"> Мойка окон</label>
+            <label class="cc-check"><input type="checkbox" value="chandelier"> Мытьё люстры</label>
+            <label class="cc-check"><input type="checkbox" value="iron"> Глажка</label>
+            <label class="cc-check"><input type="checkbox" value="linen"> Смена белья</label>
+            <label class="cc-check"><input type="checkbox" value="balcony"> Уборка балкона</label>
+          </div>
+        </div>
       </div>
-      <div class="rev-card">
-        <div class="rev-st">★★★★★</div>
-        <p>Мыли окна после зимы — вымыли без единого развода, воду за собой убрали. Света в квартире стало заметно больше.</p>
-        <div class="rev-nm">Марина</div>
+      <div class="cc-out">
+        <div class="cc-lbl">Ориентировочно</div>
+        <div class="cc-sum" id="ccSum">от 8 250 ₽</div>
+        <div class="cc-hint">Предварительный расчёт. Точную цену назовёт менеджер по фото в MAX или на объекте.</div>
+        <a href="#zayavka" class="btn btn-green">Оставить заявку →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 6. ФОРМА ============ -->
+<!-- ============ 6. ФОТО И ВИДЕО ============ -->
+<section class="bg-mint">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Фото и видео</span><h2 style="margin-top:14px;">Наши работы — до и после</h2></div>
+      <p>Результат реальных объектов в Иркутске. Фото и видео добавит заказчик.</p>
+    </div>
+    <!-- TODO: заказчик заменит .photo-плейсхолдеры на реальные фото/видео (до/после) -->
+    <div class="gal-grid">
+      <div class="photo"><span>Кухня — до / после</span></div>
+      <div class="photo"><span>Санузел — до / после</span></div>
+      <div class="photo"><span>Комната — до / после</span></div>
+      <div class="photo"><span>Окна — до / после</span></div>
+      <div class="photo"><span>Диван — до / после</span></div>
+      <div class="photo"><span>Видео уборки</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. ФОРМА ============ -->
 <section class="bg-plain" id="zayavka">
   <div class="wrap">
     <div class="frm">
@@ -409,6 +583,44 @@ html{scroll-behavior:smooth;}
           <div id="formMsg" style="display:none;margin-top:18px;padding:15px 18px;border-radius:14px;background:rgba(122,205,2,.14);border:1px solid rgba(122,205,2,.42);font-size:14px;"></div>
         </form>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. ОТЗЫВЫ ============ -->
+<section class="bg-mint" id="otzyvy">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Отзывы</span><h2 style="margin-top:14px;">Что говорят клиенты</h2></div>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="rev-st">★★★★★</div>
+        <p>Заказывала генеральную уборку перед переездом. Приехали со всем своим, вернулась в идеально чистую квартиру.</p>
+        <div class="rev-nm">Ольга</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-st">★★★★★</div>
+        <p>Мыли окна после зимы — вымыли без единого развода, воду за собой убрали. Света в квартире стало заметно больше.</p>
+        <div class="rev-nm">Марина</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. ВОПРОСЫ ============ -->
+<section class="bg-plain">
+  <div class="wrap">
+    <div class="s-head" style="justify-content:center;text-align:center;">
+      <div style="max-width:none;"><span class="micro">Вопросы</span><h2 style="margin-top:14px;max-width:none;">Частые вопросы</h2></div>
+    </div>
+    <div class="faq">
+      <details open><summary>Нужно ли мне быть дома во время уборки?</summary><div class="ans">Не обязательно. Многие уезжают по делам и возвращаются к концу работы. Менеджер контролирует процесс на объекте, а результат вы принимаете вместе с ним.</div></details>
+      <details><summary>Нужно ли покупать моющие средства и инвентарь?</summary><div class="ans">Нет. Сотрудники привозят всё своё — профессиональную химию, пылесос, стремянку, тряпки. От вас нужен только доступ к воде.</div></details>
+      <details><summary>Как можно оплатить?</summary><div class="ans">Наличными, картой через терминал или QR-кодом. Юридическим лицам работаем по договору и счёту с полным пакетом закрывающих документов.</div></details>
+      <details><summary>Выезжаете ли за город?</summary><div class="ans">Да, выезжаем по Иркутску и пригороду в радиусе 30 км: Маркова, Хомутово, Пивовариха, Молодёжный, Листвянка и другие направления. 50 ₽ за 1 км единоразово.</div></details>
+      <details><summary>А если мне не понравится результат?</summary><div class="ans">Замечания устраняем сразу на месте — менеджер принимает объект вместе с вами. Если в течение 24 часов возникла претензия — пришлите фото и видео в MAX, приедем и устраним недочёты.</div></details>
+      <details><summary>Безопасна ли химия для детей и животных?</summary><div class="ans">Используем профессиональные средства без едкого запаха. Если в доме аллергики, дети или животные — предупредите заранее, подберём щадящий состав.</div></details>
     </div>
   </div>
 </section>
@@ -480,6 +692,55 @@ html{scroll-behavior:smooth;}
     ms.textContent='Заявка принята. Перезвоним в рабочее время с 08:00 до 20:00. Срочно — 8 (914) 927-67-48';
     ms.style.display='block';this.reset();
   });
+})();
+/* ===== «Что входит» — переключатель типов ===== */
+(function(){
+  var tabs=document.querySelectorAll('.inc-tab');
+  if(!tabs.length)return;
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    tabs.forEach(function(x){x.classList.remove('on');});
+    document.querySelectorAll('.inc-panel').forEach(function(p){p.classList.remove('on');});
+    this.classList.add('on');
+    var el=document.querySelector('.inc-panel[data-ip="'+this.getAttribute('data-i')+'"]');
+    if(el)el.classList.add('on');
+  });});
+})();
+/* ===== FAQ — раскрыт один вопрос ===== */
+(function(){
+  var items=document.querySelectorAll('.faq details');
+  items.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)items.forEach(function(o){if(o!==d)o.open=false;});});});
+})();
+/* ===== Калькулятор уборки (ориентировочно) =====
+   КОЭФФИЦИЕНТЫ НИЖЕ — ориентировочные. Заказчик заменит на реальные цены. */
+(function(){
+  var RATE={pod:90, gen:150, rem:200};        // ₽ за м² по типу уборки
+  var AREA={1:38, 2:55, 3:75, 4:95, 5:120};    // ориентир. площадь по числу комнат
+  var BATH_EXTRA=1200;                          // доплата за каждый доп. санузел
+  var MIN=4000;                                 // минимальный заказ
+  var EXTRA={oven:900, mw:400, fridge:1000, windows:2500, chandelier:1200, iron:1000, linen:500, balcony:1500};
+  var root=document.getElementById('calc2'); if(!root) return;
+  var out=document.getElementById('ccSum');
+  var state={type:'gen', rooms:1, bath:1};
+  function money(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,' ');}
+  function calc(){
+    var area=AREA[state.rooms]||120;
+    var base=Math.max(MIN, RATE[state.type]*area);
+    base += (state.bath-1)*BATH_EXTRA;
+    var ex=0; root.querySelectorAll('.cc-check input:checked').forEach(function(c){ex+=EXTRA[c.value]||0;});
+    out.textContent='от '+money(base+ex)+' ₽';
+  }
+  root.querySelectorAll('.cc-seg').forEach(function(seg){
+    seg.addEventListener('click',function(e){
+      var b=e.target.closest('.cc-opt'); if(!b)return;
+      seg.querySelectorAll('.cc-opt').forEach(function(o){o.classList.remove('on');});
+      b.classList.add('on');
+      var k=seg.getAttribute('data-k'), v=b.getAttribute('data-v');
+      state[k]=(k==='type')?v:parseInt(v,10);
+      calc();
+    });
+  });
+  root.querySelectorAll('.cc-check input').forEach(function(c){c.addEventListener('change',calc);});
+  calc();
 })();
 </script>
 
