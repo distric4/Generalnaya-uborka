@@ -277,6 +277,11 @@ html{scroll-behavior:smooth;}
 @media(max-width:820px){.gu-page .fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:1000px){.gu-page .wrap{padding:0 20px;}.gu-page section{padding:60px 0;}}
 
+/* видео работ */
+.gu-page .vid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.gu-page .vid-item iframe{width:100%;aspect-ratio:16/9;border-radius:var(--r-lg);border:none;display:block;}
+@media(max-width:760px){.gu-page .vid-grid{grid-template-columns:1fr;}}
+
 </style>
 <div class="gu-page">
 
@@ -469,6 +474,20 @@ html{scroll-behavior:smooth;}
       <div class="tr"><h3>Штатные клинеры</h3><p>Не подрядчики с улицы: каждый в штате, прошёл проверку службой безопасности и обучение.</p></div>
       <div class="tr"><h3>Договор и гарантия</h3><p>Работаем официально. Если в течение 24 часов возникнет замечание — пришлите фото или видео в MAX, приедем и всё исправим.</p></div>
       <div class="tr"><h3>Удобная оплата</h3><p>Наличными, картой через терминал или по QR-коду.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4а. ВИДЕО РАБОТ ============ -->
+<section class="bg-plain">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Видео работ</span><h2 style="margin-top:14px;">Смотрите, как мы убираем</h2></div>
+    </div>
+    <div class="vid-grid">
+      <div class="vid-item"><iframe src="https://kinescope.io/embed/7EGdmMfPyu89rqu1Awi4pS" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Видео уборки квартиры"></iframe></div>
+      <div class="vid-item"><iframe src="https://kinescope.io/embed/q4ZnwkA3VVJrhrZGtJHmwb" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Видео уборки квартиры"></iframe></div>
+      <div class="vid-item"><iframe src="https://kinescope.io/embed/aFuKSeTaHTcvqrcMu4Ujio" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Видео уборки квартиры"></iframe></div>
     </div>
   </div>
 </section>

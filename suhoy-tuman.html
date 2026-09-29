@@ -225,6 +225,9 @@ html{scroll-behavior:smooth;}
 .gu-page .fbot .lg{display:flex;gap:20px;flex-wrap:wrap;}
 @media(max-width:820px){.gu-page .fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:1000px){.gu-page .wrap{padding:0 20px;}.gu-page section{padding:60px 0;}}
+.gu-page .vid-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.gu-page .vid-item iframe{width:100%;aspect-ratio:16/9;border-radius:var(--r-lg);border:none;display:block;}
+@media(max-width:640px){.gu-page .vid-grid{grid-template-columns:1fr;}}
 </style>
 
 <div class="gu-page">
@@ -489,6 +492,19 @@ html{scroll-behavior:smooth;}
         <summary>Сколько стоит?</summary>
         <div class="faq-body">Цена зависит от площади и сложности. Однокомнатная квартира — от 2 500 ₽, двушка — от 3 500 ₽. Точную стоимость назовём после уточнения площади и источника запаха — просто позвоните или напишите в MAX.</div>
       </details>
+    </div>
+  </div>
+</section>
+
+<!-- 6б. ВИДЕО РАБОТ -->
+<section class="bg-plain">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Видео работ</span><h2 style="margin-top:14px;">Сухой туман в действии</h2></div>
+    </div>
+    <div class="vid-grid">
+      <div class="vid-item"><iframe src="https://kinescope.io/embed/gDqNWAj1qakLR6pfbS7vib" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Видео: устранение запахов сухим туманом"></iframe></div>
+      <div class="vid-item"><iframe src="https://kinescope.io/embed/h6uCw9NJtuaFH1ScpRUvyf" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Видео: устранение запахов сухим туманом"></iframe></div>
     </div>
   </div>
 </section>
