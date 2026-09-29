@@ -148,6 +148,13 @@ html{scroll-behavior:smooth;}
 @media(max-width:960px){.gu-page .ben-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:520px){.gu-page .ben-grid{grid-template-columns:1fr;}}
 
+/* прайс-карточки */
+.gu-page .price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.gu-page .price-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);padding:26px 28px;}
+.gu-page .price-card h3{font-size:18px;margin-bottom:14px;}
+.gu-page .price-note{font-size:12.5px;color:var(--gray-2);font-style:italic;margin:14px 0 0;}
+@media(max-width:860px){.gu-page .price-grid{grid-template-columns:1fr;}}
+
 /* нумерованный список (как работает) */
 .gu-page .prep-list{display:grid;gap:14px;max-width:920px;list-style:none;}
 .gu-page .prep-list li{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);padding:20px 24px;display:flex;gap:16px;align-items:flex-start;}
@@ -353,7 +360,88 @@ html{scroll-behavior:smooth;}
   </div>
 </section>
 
-<!-- 5. ОТЗЫВЫ -->
+<!-- 5. ЦЕНЫ -->
+<section class="bg-plain" id="tseny">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Стоимость</span><h2 style="margin-top:14px;">Цены на сухой туман</h2></div>
+    </div>
+    <p class="s-lead">Цена зависит от площади и источника запаха. Чем сильнее и застарелее запах — тем больше генераторов и времени. Точную стоимость называем после уточнения деталей или по фото помещения.</p>
+    <div class="price-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="price-card">
+        <h3>Квартиры</h3>
+        <table style="width:100%;border-collapse:collapse;font-size:14.5px;">
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:9px 0;color:var(--gray);">1-комнатная</td>
+            <td style="padding:9px 0;text-align:right;font-weight:700;">от 2 500 ₽</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:9px 0;color:var(--gray);">2-комнатная</td>
+            <td style="padding:9px 0;text-align:right;font-weight:700;">от 3 500 ₽</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:9px 0;color:var(--gray);">3-комнатная</td>
+            <td style="padding:9px 0;text-align:right;font-weight:700;">от 4 500 ₽</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 0;color:var(--gray);">4-комнатная и более</td>
+            <td style="padding:9px 0;text-align:right;font-weight:700;">от 6 000 ₽</td>
+          </tr>
+        </table>
+        <p class="price-note">+20% при сильном запахе (многолетнее курение, несколько кошек)</p>
+      </div>
+      <div class="price-card">
+        <h3>Офисы и нежилые помещения</h3>
+        <table style="width:100%;border-collapse:collapse;font-size:14.5px;">
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:9px 0;color:var(--gray);">до 50 м²</td>
+            <td style="padding:9px 0;text-align:right;font-weight:700;">от 2 500 ₽</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:9px 0;color:var(--gray);">50–100 м²</td>
+            <td style="padding:9px 0;text-align:right;font-weight:700;">от 4 000 ₽</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:9px 0;color:var(--gray);">100–200 м²</td>
+            <td style="padding:9px 0;text-align:right;font-weight:700;">от 6 500 ₽</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 0;color:var(--gray);">более 200 м²</td>
+            <td style="padding:9px 0;text-align:right;font-weight:700;">по запросу</td>
+          </tr>
+        </table>
+        <p class="price-note">Склады, рестораны, гостиницы — рассчитывается индивидуально</p>
+      </div>
+      <div class="price-card">
+        <h3>Автомобили и прочее</h3>
+        <table style="width:100%;border-collapse:collapse;font-size:14.5px;">
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:9px 0;color:var(--gray);">Легковой автомобиль</td>
+            <td style="padding:9px 0;text-align:right;font-weight:700;">от 1 500 ₽</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:9px 0;color:var(--gray);">Микроавтобус / минивэн</td>
+            <td style="padding:9px 0;text-align:right;font-weight:700;">от 2 500 ₽</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:9px 0;color:var(--gray);">Гараж / подвал</td>
+            <td style="padding:9px 0;text-align:right;font-weight:700;">от 2 000 ₽</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 0;color:var(--gray);">Повторная обработка</td>
+            <td style="padding:9px 0;text-align:right;font-weight:700;">−30%</td>
+          </tr>
+        </table>
+        <p class="price-note">Все цены «от» — точная стоимость по фото или после уточнения деталей</p>
+      </div>
+    </div>
+    <div style="margin-top:24px;background:var(--mint-1);border-radius:var(--r-lg);padding:20px 24px;font-size:14.5px;color:var(--ink-2);">
+      💡 <b>Комбо-выезд:</b> химчистка дивана + сухой туман в одном визите — скидка 10% на туман.
+    </div>
+  </div>
+</section>
+
+<!-- 5б. ОТЗЫВЫ -->
 <section class="bg-plain">
   <div class="wrap">
     <div class="s-head">
