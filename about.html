@@ -45,6 +45,8 @@ html{scroll-behavior:smooth;}
 .gu-page .btn-cyan:hover{background:var(--cyan-deep);transform:translateY(-2px);}
 .gu-page .btn-line{background:#fff;border:1.5px solid var(--line);color:var(--ink);}
 .gu-page .btn-line:hover{border-color:var(--cyan);color:var(--cyan-deep);}
+.gu-page .bg-dark .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.3);}
+
 .gu-page .btn-block{width:100%;}
 .gu-page .s-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:40px;flex-wrap:wrap;}
 .gu-page .s-head h2{font-size:clamp(28px,3.4vw,42px);max-width:17ch;}
@@ -126,13 +128,13 @@ html{scroll-behavior:smooth;}
 /* история (нумерованный список) */
 .gu-page .timeline{display:grid;gap:0;max-width:820px;}
 .gu-page .tl-item{display:grid;grid-template-columns:100px 1fr;gap:24px;padding-bottom:36px;position:relative;}
-.gu-page .tl-item::before{content:'';position:absolute;left:48px;top:40px;bottom:0;width:2px;background:var(--line);}
+.gu-page .tl-item::before{content:'';position:absolute;left:86px;top:40px;bottom:0;width:2px;background:var(--line);}
 .gu-page .tl-item:last-child::before{display:none;}
-.gu-page .tl-year{font-size:22px;font-weight:800;color:var(--cyan-deep);line-height:1.2;padding-top:2px;}
-.gu-page .tl-dot{width:14px;height:14px;border-radius:50%;background:var(--cyan-deep);position:absolute;left:42px;top:6px;border:3px solid var(--white);}
+.gu-page .tl-year{font-size:22px;font-weight:800;color:var(--cyan-deep);line-height:1.2;padding-top:2px;padding-right:20px;}
+.gu-page .tl-dot{width:14px;height:14px;border-radius:50%;background:var(--cyan-deep);position:absolute;left:80px;top:6px;border:3px solid var(--white);}
 .gu-page .tl-body h3{font-size:17px;margin-bottom:8px;}
 .gu-page .tl-body p{font-size:15px;color:var(--gray);line-height:1.6;}
-@media(max-width:600px){.gu-page .tl-item{grid-template-columns:70px 1fr;gap:16px;}.gu-page .tl-item::before{left:34px;}.gu-page .tl-dot{left:28px;}}
+@media(max-width:600px){.gu-page .tl-item{grid-template-columns:70px 1fr;gap:16px;}.gu-page .tl-item::before{left:62px;}.gu-page .tl-dot{left:56px;}}
 
 /* как работаем */
 .gu-page .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
@@ -188,7 +190,7 @@ html{scroll-behavior:smooth;}
 
 /* футер */
 .gu-page footer{background:var(--navy);color:#B7C4D1;padding:70px 0 36px;}
-.gu-page .fg{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:32px;margin-bottom:40px;}
+.gu-page .fg{display:grid;grid-template-columns:1fr repeat(4,1fr);gap:32px;margin-bottom:40px;}
 .gu-page .fg h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:17px;}
 .gu-page .fg a,.gu-page .fg p{display:block;font-size:14px;margin-bottom:10px;color:#B7C4D1;}
 .gu-page .fg a:hover{color:var(--green);}
@@ -520,8 +522,10 @@ html{scroll-behavior:smooth;}
         </address>
       </div>
       <div><h4>Для дома</h4><a href="uborka.html">Уборка</a><a href="mytyo.html">Мытьё окон</a><a href="himchistka.html">Химчистка</a><a href="suhoy-tuman.html">Сухой туман</a></div>
-      <div><h4>Для бизнеса</h4><a href="business.html">Тендеры</a><a href="abonement.html">Абонентское обслуживание</a><a href="razovye.html">Разовые услуги</a></div>
+      <div><h4>Для бизнеса</h4><a href="business.html">Тендеры</a><a href="abonement.html">Абонентское обслуживание</a><a href="razovye.html">Разовые услуги</a><a href="partners.html">Партнёрам</a></div>
+      <div><h4>Компания</h4><a href="about.html">О компании</a><a href="price.html">Цены</a><a href="index.html#otzyvy">Отзывы</a><a href="uds.html">Бонусы UDS</a></div>
       <div><h4>Контакты</h4>
+        <a href="contacts.html">Страница контактов</a>
         <a href="tel:83952554499">8 (3952) 55-44-99 — приём заявок</a>
         <a href="tel:+79149276748">8 (914) 927-67-48 — физлицам</a>
         <a href="tel:+79149272287">8 (914) 927-22-87 — юрлицам и тендеры</a>
