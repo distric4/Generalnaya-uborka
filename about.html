@@ -201,6 +201,15 @@ html{scroll-behavior:smooth;}
 @media(max-width:820px){.gu-page .fg{grid-template-columns:1fr 1fr;}}
 @media(max-width:1000px){.gu-page .wrap{padding:0 20px;}.gu-page section{padding:60px 0;}}
 
+/* 2ГИС бейдж */
+.gu-page .gis-badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:var(--r-pill);padding:10px 20px;text-decoration:none;transition:.2s ease;box-shadow:var(--sh-1);}
+.gu-page .gis-badge:hover{border-color:var(--cyan);box-shadow:var(--sh-2);transform:translateY(-2px);}
+.gu-page .gis-logo{font-size:13px;font-weight:800;color:#00A256;letter-spacing:-.01em;}
+.gu-page .gis-stars{color:#F5A623;font-size:15px;letter-spacing:1px;}
+.gu-page .gis-score{font-size:18px;font-weight:800;color:var(--ink);letter-spacing:-.02em;}
+.gu-page .gis-count{font-size:13px;color:var(--gray);}
+.gu-page .gis-arrow{font-size:12px;font-weight:700;color:var(--cyan-deep);margin-left:4px;}
+
 /* ---- ВЫПАДАЮЩЕЕ МЕНЮ ---- */
 .gu-page .nd{position:relative;}
 .gu-page .nd-t{display:flex;align-items:center;gap:4px;cursor:default;}
@@ -308,6 +317,13 @@ html{scroll-behavior:smooth;}
 <!-- 2. ЦИФРЫ -->
 <section class="bg-mint">
   <div class="wrap">
+    <a href="https://go.2gis.com/ALCVB" target="_blank" rel="noopener" class="gis-badge" style="margin-bottom:32px;">
+      <span class="gis-logo">2ГИС</span>
+      <span class="gis-stars">★★★★★</span>
+      <span class="gis-score">4.7</span>
+      <span class="gis-count">· 328 отзывов</span>
+      <span class="gis-arrow">Читать →</span>
+    </a>
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-num">17<span class="stat-unit"> лет</span></div>

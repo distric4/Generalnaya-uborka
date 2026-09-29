@@ -199,6 +199,15 @@ html{scroll-behavior:smooth;}
 @keyframes sx{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 /* stat-track animation kept active even in reduced-motion mode */
 
+/* ---------- 2ГИС бейдж ---------- */
+.gu-page .gis-badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:var(--r-pill);padding:10px 20px;margin-bottom:28px;text-decoration:none;transition:.2s ease;box-shadow:var(--sh-1);}
+.gu-page .gis-badge:hover{border-color:var(--cyan);box-shadow:var(--sh-2);transform:translateY(-2px);}
+.gu-page .gis-logo{font-size:13px;font-weight:800;color:#00A256;letter-spacing:-.01em;}
+.gu-page .gis-stars{color:#F5A623;font-size:15px;letter-spacing:1px;}
+.gu-page .gis-score{font-size:18px;font-weight:800;color:var(--ink);letter-spacing:-.02em;}
+.gu-page .gis-count{font-size:13px;color:var(--gray);}
+.gu-page .gis-arrow{font-size:12px;font-weight:700;color:var(--cyan-deep);margin-left:4px;}
+
 /* ---------- КАЛЬКУЛЯТОР ---------- */
 .gu-page .calc{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-2);
   padding:24px;max-width:660px;}
@@ -823,6 +832,13 @@ html{scroll-behavior:smooth;}
       <div><span class="micro">Отзывы</span><h2 style="margin-top:14px;">Клиенты, которые выбрали нас — и остались довольны</h2></div>
       <p>Собираем обратную связь после каждой уборки — контрольным звонком в течение суток.</p>
     </div>
+    <a href="https://go.2gis.com/ALCVB" target="_blank" rel="noopener" class="gis-badge">
+      <span class="gis-logo">2ГИС</span>
+      <span class="gis-stars">★★★★★</span>
+      <span class="gis-score">4.7</span>
+      <span class="gis-count">· 328 отзывов</span>
+      <span class="gis-arrow">Читать →</span>
+    </a>
     <div class="revs">
       <div class="rev"><div class="q">“</div><p>Долго не могли найти, кто возьмётся за химчистку вискозного ковра без воды — здесь справились, ковёр как новый.</p>
         <div class="who"><span class="av">В</span><span><span class="nm">Валерий</span><span class="sv">Химчистка ковра</span></span></div></div>
