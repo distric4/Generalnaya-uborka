@@ -78,6 +78,10 @@ html{scroll-behavior:smooth;}
 .gu-page .btn-line{background:#fff;border:1.5px solid var(--line);color:var(--ink);}
 .gu-page .btn-line:hover{border-color:var(--cyan);color:var(--cyan-deep);}
 .gu-page .bg-dark .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.3);}
+/* видео (на главной и прочих страницах) */
+.gu-page .vid-grid{display:grid;gap:20px;}
+.gu-page .vid-item iframe{width:100%;aspect-ratio:16/9;border-radius:var(--r-lg);border:none;display:block;}
+@media(max-width:760px){.gu-page .vid-grid{grid-template-columns:1fr!important;}}
 
 .gu-page .btn-block{width:100%;}
 
@@ -192,7 +196,7 @@ html{scroll-behavior:smooth;}
 
 /* полоса цифр */
 .gu-page .statband{background:var(--navy);padding:20px 0;overflow:hidden;position:relative;z-index:2;}
-.gu-page .stat-track{display:flex;width:max-content;animation:sx 16s linear infinite;}
+.gu-page .stat-track{display:flex;width:max-content;animation:sx 40s linear infinite;}
 .gu-page .si{display:flex;flex-direction:column;padding:0 40px;border-left:1px solid rgba(255,255,255,.14);white-space:nowrap;}
 .gu-page .si-line{font-weight:400;font-size:15px;letter-spacing:-.01em;color:#fff;padding-right:8px;white-space:nowrap;}
 .gu-page .si-line i{font-style:normal;color:var(--green);padding:0 14px;}
@@ -652,17 +656,17 @@ html{scroll-behavior:smooth;}
 
     <div class="hero-cards">
       <a href="#uslugi" class="hc">
-        <div class="photo"><span>Фото: клинер убирает квартиру</span></div>
+        <img class="photo" src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=700&q=80&fit=crop" alt="Уборка квартиры" loading="lazy">
         <span class="hc-n">01</span>
         <span class="hc-t">Уборка квартир</span>
       </a>
       <a href="#biznes" class="hc">
-        <div class="photo"><span>Фото: уборка офиса командой клинеров</span></div>
+        <img class="photo" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=700&q=80&fit=crop" alt="Уборка офиса" loading="lazy">
         <span class="hc-n">02</span>
         <span class="hc-t">Уборка офисов</span>
       </a>
       <a href="#uslugi" class="hc">
-        <div class="photo"><span>Фото: химчистка мебели на дому</span></div>
+        <img class="photo" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80&fit=crop" alt="Химчистка дивана" loading="lazy">
         <span class="hc-n">03</span>
         <span class="hc-t">Химчистка мебели</span>
       </a>
@@ -693,17 +697,17 @@ html{scroll-behavior:smooth;}
       <p>Цены указаны «от» — точная стоимость зависит от площади и состояния объекта.</p>
     </div>
     <div class="srv">
-      <article class="srv-c"><div class="srv-ph"><div class="photo"><span>Фото: генеральная уборка квартиры</span></div><span class="srv-tag">Для дома</span></div>
+      <article class="srv-c"><div class="srv-ph"><img class="photo" src="https://images.unsplash.com/photo-1527515637462-cff94aca208b?w=600&q=80&fit=crop" alt="Генеральная уборка квартиры" loading="lazy"><span class="srv-tag">Для дома</span></div>
         <div class="srv-b"><h3>Генеральная уборка</h3><p>Квартиры, дома и коттеджи — от плинтусов до люстр.</p><div class="srv-price">от 9 000 ₽ <small>/ 5 часов</small></div><div class="srv-ops"><span>👤 <b>1–2</b> клинера</span><span>⏱ <b>4–6</b> часов</span></div><a href="uborka.html" class="srv-link">Выбрать →</a></div></article>
-      <article class="srv-c"><div class="srv-ph"><div class="photo"><span>Фото: уборка после ремонта</span></div><span class="srv-tag">Популярное</span></div>
+      <article class="srv-c"><div class="srv-ph"><img class="photo" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop" alt="Уборка после ремонта" loading="lazy"><span class="srv-tag">Популярное</span></div>
         <div class="srv-b"><h3>Уборка после ремонта</h3><p>Обеспыливание, вывоз мусора, мытьё всех поверхностей.</p><div class="srv-price">от 150 ₽ <small>/ м²</small></div><div class="srv-ops"><span>👤 <b>2–3</b> клинера</span><span>⏱ <b>6–10</b> часов</span></div><a href="#calc" class="srv-link">Выбрать →</a></div></article>
-      <article class="srv-c"><div class="srv-ph"><div class="photo"><span>Фото: мытьё окон</span></div><span class="srv-tag">Высотные работы</span></div>
+      <article class="srv-c"><div class="srv-ph"><img class="photo" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80&fit=crop" alt="Мытьё окон" loading="lazy"><span class="srv-tag">Высотные работы</span></div>
         <div class="srv-b"><h3>Мытьё окон и фасадов</h3><p>Окна, лоджии, витрины, фасады — в том числе с автовышки.</p><div class="srv-price">от 500 ₽ <small>/ м²</small></div><div class="srv-ops"><span>👤 <b>1–2</b> клинера</span><span>⏱ <b>2–5</b> часов</span></div><a href="#calc" class="srv-link">Выбрать →</a></div></article>
-      <article class="srv-c"><div class="srv-ph"><div class="photo"><span>Фото: химчистка дивана</span></div><span class="srv-tag">Выезд на дом</span></div>
+      <article class="srv-c"><div class="srv-ph"><img class="photo" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80&fit=crop" alt="Химчистка дивана" loading="lazy"><span class="srv-tag">Выезд на дом</span></div>
         <div class="srv-b"><h3>Химчистка мебели</h3><p>Диваны, кресла, матрасы, стулья — с выездом к вам.</p><div class="srv-price">от 3 000 ₽</div><div class="srv-ops"><span>👤 <b>1</b> клинер</span><span>⏱ <b>1–2</b> часа</span></div><a href="#calc" class="srv-link">Выбрать →</a></div></article>
-      <article class="srv-c"><div class="srv-ph"><div class="photo"><span>Фото: химчистка ковра</span></div><span class="srv-tag">Без воды</span></div>
+      <article class="srv-c"><div class="srv-ph"><img class="photo" src="https://images.unsplash.com/photo-1617142108319-8fbc37f82fad?w=600&q=80&fit=crop" alt="Химчистка ковра" loading="lazy"><span class="srv-tag">Без воды</span></div>
         <div class="srv-b"><h3>Химчистка ковров и штор</h3><p>Ковры, паласы, шторы, жалюзи. Есть чистка без воды.</p><div class="srv-price">Рассчитаем по объёму</div><div class="srv-ops"><span>👤 <b>1</b> клинер</span><span>⏱ <b>1–3</b> часа</span></div><a href="#zayavka" class="srv-link">Выбрать →</a></div></article>
-      <article class="srv-c"><div class="srv-ph"><div class="photo"><span>Фото: обработка сухим туманом</span></div><span class="srv-tag">Запахи</span></div>
+      <article class="srv-c"><div class="srv-ph"><img class="photo" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80&fit=crop" alt="Сухой туман — устранение запахов" loading="lazy"><span class="srv-tag">Запахи</span></div>
         <div class="srv-b"><h3>Сухой туман</h3><p>Устранение запахов после животных, ремонта, табака.</p><div class="srv-price">Рассчитаем по объёму</div><div class="srv-ops"><span>👤 <b>1</b> клинер</span><span>⏱ <b>~1</b> час</span></div><a href="#zayavka" class="srv-link">Выбрать →</a></div></article>
     </div>
   </div>
@@ -733,7 +737,7 @@ html{scroll-behavior:smooth;}
         </div>
       </article>
       <article class="biz-side" style="justify-content:flex-start;padding:0;overflow:hidden;">
-        <div class="photo" style="height:100%;min-height:280px;border-radius:inherit;"><span>Видео: уборка на коммерческом объекте (офис, склад)</span></div>
+        <iframe src="https://kinescope.io/embed/gU6ABWUMKRLGyN4rpBz3a1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка коммерческого объекта" style="width:100%;height:100%;min-height:280px;border-radius:inherit;border:none;display:block;"></iframe>
       </article>
     </div>
   </div>
@@ -763,11 +767,11 @@ html{scroll-behavior:smooth;}
     </div>
     <div class="team-slider-wrap">
       <div class="ppl" id="teamSlider">
-        <div class="pp"><div class="pp-ph"><div class="photo"><span>Фото сотрудника</span></div></div><div class="pp-b"><div class="nm">Федотова Рита Владимировна</div><div class="rl">Генеральный директор</div></div></div>
-        <div class="pp"><div class="pp-ph"><div class="photo"><span>Фото сотрудника</span></div></div><div class="pp-b"><div class="nm">Булатова Марина Ивановна</div><div class="rl">Заместитель генерального директора (экономист)</div></div></div>
-        <div class="pp"><div class="pp-ph"><div class="photo"><span>Фото сотрудника</span></div></div><div class="pp-b"><div class="nm">Огер Елена Борисовна</div><div class="rl">Тендерный специалист по работе с юр.лицами</div></div></div>
-        <div class="pp"><div class="pp-ph"><div class="photo"><span>Фото сотрудника</span></div></div><div class="pp-b"><div class="nm">Титова Оксана Витальевна</div><div class="rl">Руководитель сервисного обслуживания объектов</div></div></div>
-        <div class="pp"><div class="pp-ph"><div class="photo"><span>Фото сотрудника</span></div></div><div class="pp-b"><div class="nm">Чернявская Наталья Сергеевна</div><div class="rl">Оператор по работе с физ.лицами</div></div></div>
+        <div class="pp"><div class="pp-ph"><img class="photo" src="img/team-10.png" alt="Федотова Рита Владимировна" loading="lazy"></div><div class="pp-b"><div class="nm">Федотова Рита Владимировна</div><div class="rl">Генеральный директор</div></div></div>
+        <div class="pp"><div class="pp-ph"><img class="photo" src="img/team-8.png" alt="Булатова Марина Ивановна" loading="lazy"></div><div class="pp-b"><div class="nm">Булатова Марина Ивановна</div><div class="rl">Заместитель генерального директора (экономист)</div></div></div>
+        <div class="pp"><div class="pp-ph"><img class="photo" src="img/team-9.png" alt="Огер Елена Борисовна" loading="lazy"></div><div class="pp-b"><div class="nm">Огер Елена Борисовна</div><div class="rl">Тендерный специалист по работе с юр.лицами</div></div></div>
+        <div class="pp"><div class="pp-ph"><img class="photo" src="img/team-11.png" alt="Титова Оксана Витальевна" loading="lazy"></div><div class="pp-b"><div class="nm">Титова Оксана Витальевна</div><div class="rl">Руководитель сервисного обслуживания объектов</div></div></div>
+        <div class="pp"><div class="pp-ph"><img class="photo" src="img/team-7.png" alt="Чернявская Наталья Сергеевна" loading="lazy"></div><div class="pp-b"><div class="nm">Чернявская Наталья Сергеевна</div><div class="rl">Оператор по работе с физ.лицами</div></div></div>
       </div>
       <div class="slider-nav">
         <button type="button" class="slider-btn" id="teamPrev" aria-label="Назад">←</button>
@@ -805,19 +809,10 @@ html{scroll-behavior:smooth;}
       <div><span class="micro">Наши работы</span><h2 style="margin-top:14px;">Наши работы в Иркутске</h2></div>
       <p>Видео с реальных объектов, на которых работали наши специалисты.</p>
     </div>
-    <div class="works">
-      <div class="work">
-        <div class="video-ph"><span>Видео: уборка кухни</span></div>
-        <div class="cap">Уборка кухни</div>
-      </div>
-      <div class="work">
-        <div class="video-ph"><span>Видео: уборка офиса</span></div>
-        <div class="cap">Уборка офиса</div>
-      </div>
-      <div class="work">
-        <div class="video-ph"><span>Видео: уборка склада</span></div>
-        <div class="cap">Уборка склада</div>
-      </div>
+    <div class="vid-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="vid-item"><iframe src="https://kinescope.io/embed/7EGdmMfPyu89rqu1Awi4pS" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка квартиры"></iframe></div>
+      <div class="vid-item"><iframe src="https://kinescope.io/embed/q4ZnwkA3VVJrhrZGtJHmwb" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка офиса"></iframe></div>
+      <div class="vid-item"><iframe src="https://kinescope.io/embed/aFuKSeTaHTcvqrcMu4Ujio" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка склада"></iframe></div>
     </div>
     <div class="addon-strip">
       <b>Доп.услуги при уборке:</b><span>поломоечная машина — 2 000 ₽</span>
@@ -860,7 +855,7 @@ html{scroll-behavior:smooth;}
         <div class="pts"><i></i>+300 баллов сразу при регистрации</div>
         <div><a href="#" class="btn btn-green">Подключиться →</a></div>
       </div>
-      <div class="uds-ph"><div class="photo"><span>Фото: экран приложения UDS с балансом бонусов</span></div></div>
+      <div class="uds-ph"><img class="photo" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80&fit=crop" alt="Мобильное приложение UDS" loading="lazy"></div>
     </div>
     <div class="uds-steps">
       <div class="uds-step"><span class="usn">1</span><p>Откройте приложение UDS</p></div>
