@@ -606,7 +606,9 @@ html{scroll-behavior:smooth;}
 
 /* ---- ТОПБАР (все внутренние страницы) ---- */
 .gu-page .topbar{background:#fff;border-bottom:1px solid var(--line);font-size:13px;color:var(--gray);}
-.gu-page .topbar-in{max-width:1440px;margin:0 auto;padding:7px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.gu-page .topbar-in{max-width:1280px;margin:0 auto;padding:7px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.gu-page .topbar-email{font-weight:600;color:var(--cyan-deep)!important;transition:.15s;}
+.gu-page .topbar-email:hover{color:var(--cyan)!important;}
 .gu-page .topbar-addr{display:flex;align-items:center;gap:6px;}
 .gu-page .topbar-addr::before{content:'•';color:var(--green);}
 .gu-page .topbar-tag{font-weight:700;color:var(--cyan-deep);font-size:13px;}
