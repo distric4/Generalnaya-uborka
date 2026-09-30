@@ -81,6 +81,7 @@ html{scroll-behavior:smooth;}
 /* видео (на главной и прочих страницах) */
 .gu-page .vid-grid{display:grid;gap:20px;}
 .gu-page .vid-item iframe{width:100%;aspect-ratio:16/9;border-radius:var(--r-lg);border:none;display:block;}
+.gu-page .vid-grid.vid-v .vid-item iframe{aspect-ratio:9/16;}
 @media(max-width:760px){.gu-page .vid-grid{grid-template-columns:1fr!important;}}
 
 .gu-page .btn-block{width:100%;}
@@ -346,7 +347,7 @@ html{scroll-behavior:smooth;}
 
 /* ---------- 6. КОМАНДА — СЛАЙДЕР ---------- */
 .gu-page .team-slider-wrap{position:relative;}
-.gu-page .ppl{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:4px;scrollbar-width:none;}
+.gu-page .ppl{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 4px 20px;scrollbar-width:none;}
 .gu-page .ppl::-webkit-scrollbar{display:none;}
 .gu-page .pp{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-1);overflow:hidden;transition:.2s ease;
   flex:0 0 calc((100% - 40px) / 3);scroll-snap-align:start;}
@@ -539,6 +540,13 @@ html{scroll-behavior:smooth;}
 .gu-page .om-ok{width:64px;height:64px;border-radius:50%;background:var(--mint-1);color:var(--green-deep);font-size:28px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
 .gu-page .om-success h3{font-size:20px;margin-bottom:8px;}
 .gu-page .om-success p{color:var(--gray);font-size:14.5px;}
+
+/* ---- КП и ТЕНДЕР модальные окна ---- */
+.gu-page .kp-modal,.gu-page .tender-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.2s ease;}
+.gu-page .kp-modal.open,.gu-page .tender-modal.open{opacity:1;visibility:visible;}
+.gu-page .kp-modal .om-backdrop,.gu-page .tender-modal .om-backdrop{position:absolute;inset:0;background:rgba(15,27,46,.55);backdrop-filter:blur(4px);}
+.gu-page .kp-modal .om-card,.gu-page .tender-modal .om-card{position:relative;background:#fff;border-radius:var(--r-xl);box-shadow:var(--sh-3);padding:40px 36px;width:100%;max-width:480px;margin:16px;z-index:1;transform:translateY(20px);transition:.25s ease;}
+.gu-page .kp-modal.open .om-card,.gu-page .tender-modal.open .om-card{transform:translateY(0);}
 </style>
 <div class="gu-page">
 
@@ -553,7 +561,7 @@ html{scroll-behavior:smooth;}
       <div class="nd"><a href="clients.html" class="nd-t">Для дома</a><div class="nd-m"><a href="clients.html" class="nd-top">Все услуги для дома</a><a href="uborka.html">Уборка квартир</a><a href="mytyo.html">Мытьё окон</a><a href="himchistka.html">Химчистка мебели</a><a href="suhoy-tuman.html">Сухой туман</a></div></div>
       <div class="nd"><a href="business.html" class="nd-t">Для бизнеса</a><div class="nd-m"><a href="business.html" class="nd-top">Все для бизнеса</a><a href="abonement.html">Абонентское обслуживание</a><a href="razovye.html">Разовые услуги</a><a href="partners.html">Партнёрам</a></div></div>
       <a href="price.html">Цены</a>
-      <div class="nd"><span class="nd-t">Ещё</span><div class="nd-m"><a href="index.html#otzyvy" class="nd-top">Отзывы</a><a href="about.html">О компании</a><a href="contacts.html">Контакты</a><a href="uds.html">Бонусы UDS</a></div></div>
+      <div class="nd"><span class="nd-t">Ещё</span><div class="nd-m"><a href="index.html#otzyvy">Отзывы</a><a href="about.html">О компании</a><a href="contacts.html">Контакты</a><a href="uds.html">Бонусы UDS</a></div></div>
     </nav>
     <div class="hdr-right">
       <div class="msg-ico">
@@ -766,12 +774,12 @@ html{scroll-behavior:smooth;}
         </div>
         <p style="font-size:13.5px;color:var(--gray);margin-top:4px;max-width:56ch;">P.S. Клининг — это услуга, в которой учтены все расходы и прибыль компании: цена клининга не равна зарплате уборщицы.</p>
         <div style="display:flex;gap:14px;flex-wrap:wrap;">
-          <a href="#zayavka" class="btn btn-dark">Получить КП →</a>
-          <a href="#zayavka" class="btn btn-line">Пригласить на тендер</a>
+          <button type="button" class="btn btn-dark" onclick="kpOpen()">Получить КП →</button>
+          <button type="button" class="btn btn-line" onclick="tenderOpen()">Пригласить на тендер</button>
         </div>
       </article>
       <article class="biz-side" style="justify-content:flex-start;padding:0;overflow:hidden;">
-        <iframe src="https://kinescope.io/embed/gU6ABWUMKRLGyN4rpBz3a1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка коммерческого объекта" style="width:100%;height:100%;min-height:280px;border-radius:inherit;border:none;display:block;"></iframe>
+        <iframe src="https://kinescope.io/embed/g7FMACFnaEdjPzWPKUSvTY?muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка коммерческого объекта" style="width:100%;height:100%;min-height:280px;border-radius:inherit;border:none;display:block;"></iframe>
       </article>
     </div>
   </div>
@@ -823,7 +831,7 @@ html{scroll-behavior:smooth;}
       <p>Профессиональное оборудование даёт результат, которого не добиться бытовыми средствами.</p>
     </div>
     <div class="eq-split">
-      <div class="eq-video"><div class="video-ph"><span>Видео: работа с профессиональным оборудованием</span></div></div>
+      <div class="eq-video"><div class="vid-item"><iframe src="https://kinescope.io/embed/sm64C8wtJeAKVY3TSSLzYL?muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Чем и как моем"></iframe></div></div>
       <ul class="eq-list">
         <li>Профессиональные пылесосы для жилых помещений и строительные пылесосы для спецработ</li>
         <li>Парогенераторы и экстракторы для химчистки мебели и ковров</li>
@@ -843,10 +851,10 @@ html{scroll-behavior:smooth;}
       <div><span class="micro">Наши работы</span><h2 style="margin-top:14px;">Наши работы в Иркутске</h2></div>
       <p>Видео с реальных объектов, на которых работали наши специалисты.</p>
     </div>
-    <div class="vid-grid" style="grid-template-columns:repeat(3,1fr);">
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/7EGdmMfPyu89rqu1Awi4pS" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка квартиры"></iframe></div>
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/q4ZnwkA3VVJrhrZGtJHmwb" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка офиса"></iframe></div>
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/aFuKSeTaHTcvqrcMu4Ujio" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка склада"></iframe></div>
+    <div class="vid-grid vid-v" style="grid-template-columns:repeat(3,1fr);">
+      <div class="vid-item"><iframe src="https://kinescope.io/embed/7EGdmMfPyu89rqu1Awi4pS?muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка квартиры"></iframe></div>
+      <div class="vid-item"><iframe src="https://kinescope.io/embed/q4ZnwkA3VVJrhrZGtJHmwb?muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка офиса"></iframe></div>
+      <div class="vid-item"><iframe src="https://kinescope.io/embed/aFuKSeTaHTcvqrcMu4Ujio?muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка склада"></iframe></div>
     </div>
     <div class="addon-strip">
       <b>Доп.услуги при уборке:</b><span>поломоечная машина — 2 000 ₽</span>
@@ -1146,6 +1154,92 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
 {"@type":"Question","name":"Безопасна ли химия для детей и животных?","acceptedAnswer":{"@type":"Answer","text":"Используем профессиональные средства без едкого запаха. Если в доме аллергики, дети или животные — предупредите заранее, подберём щадящий состав."}}]}
 </script>
 
+
+<!-- ============ МОДАЛЬНОЕ ОКНО: ПОЛУЧИТЬ КП ============ -->
+<div class="kp-modal" id="kpModal" role="dialog" aria-modal="true" aria-label="Получить КП">
+  <div class="om-backdrop" onclick="kpClose()"></div>
+  <div class="om-card">
+    <button class="om-close" onclick="kpClose()" aria-label="Закрыть">✕</button>
+    <div class="om-head">
+      <div class="micro">Для юридических лиц</div>
+      <h2>Получить КП</h2>
+      <p>Пришлём коммерческое предложение в течение 24 часов</p>
+    </div>
+    <form class="om-form" id="kpForm" onsubmit="return kpSubmit(event)">
+      <div class="om-field">
+        <label for="kpOrg">Организация</label>
+        <input type="text" id="kpOrg" name="org" placeholder="ООО «Название компании»" required>
+      </div>
+      <div class="om-field">
+        <label for="kpName">Контактное лицо</label>
+        <input type="text" id="kpName" name="name" placeholder="Имя и фамилия" autocomplete="name" required>
+      </div>
+      <div class="om-field">
+        <label for="kpPhone">Телефон</label>
+        <input type="tel" id="kpPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+      </div>
+      <div class="om-field">
+        <label for="kpDesc">Объект и задача (кратко)</label>
+        <input type="text" id="kpDesc" name="desc" placeholder="Например: офис 300 м², уборка 3 раза в неделю">
+      </div>
+      <div class="om-check">
+        <input type="checkbox" id="kpPd" name="pd" required>
+        <label for="kpPd">Согласен(а) с <a href="contacts.html">политикой обработки персональных данных</a></label>
+      </div>
+      <button type="submit" class="btn btn-dark btn-block">Получить КП →</button>
+    </form>
+    <div class="om-success" id="kpSuccess">
+      <div class="om-ok">✓</div>
+      <h3>Заявка принята!</h3>
+      <p>Пришлём КП в течение 24 часов. Если нужно быстрее — звоните: <a href="tel:+79149272287">8&nbsp;(914)&nbsp;927-22-87</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ МОДАЛЬНОЕ ОКНО: ТЕНДЕР ============ -->
+<div class="tender-modal" id="tenderModal" role="dialog" aria-modal="true" aria-label="Пригласить на тендер">
+  <div class="om-backdrop" onclick="tenderClose()"></div>
+  <div class="om-card">
+    <button class="om-close" onclick="tenderClose()" aria-label="Закрыть">✕</button>
+    <div class="om-head">
+      <div class="micro">Тендерный отдел</div>
+      <h2>Пригласить на тендер</h2>
+      <p>Наш тендерный специалист свяжется с вами для уточнения деталей и подготовки заявки</p>
+    </div>
+    <form class="om-form" id="tenderForm" onsubmit="return tenderSubmit(event)">
+      <div class="om-field">
+        <label for="tdOrg">Организация</label>
+        <input type="text" id="tdOrg" name="org" placeholder="ООО «Название компании»" required>
+      </div>
+      <div class="om-field">
+        <label for="tdInn">ИНН</label>
+        <input type="text" id="tdInn" name="inn" placeholder="Введите ИНН организации">
+      </div>
+      <div class="om-field">
+        <label for="tdContact">Контактное лицо</label>
+        <input type="text" id="tdContact" name="contact" placeholder="Имя, должность" required>
+      </div>
+      <div class="om-field">
+        <label for="tdPhone">Телефон</label>
+        <input type="tel" id="tdPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+      </div>
+      <div class="om-field">
+        <label for="tdDesc">Ссылка на тендер или описание</label>
+        <input type="text" id="tdDesc" name="desc" placeholder="zakupki.gov.ru/... или краткое описание">
+      </div>
+      <div class="om-check">
+        <input type="checkbox" id="tdPd" name="pd" required>
+        <label for="tdPd">Согласен(а) с <a href="contacts.html">политикой обработки персональных данных</a></label>
+      </div>
+      <button type="submit" class="btn btn-dark btn-block">Отправить заявку</button>
+    </form>
+    <div class="om-success" id="tenderSuccess">
+      <div class="om-ok">✓</div>
+      <h3>Заявка на тендер принята!</h3>
+      <p>Тендерный специалист Огер Елена Борисовна свяжется с вами. Прямой контакт: <a href="tel:+79149272287">8&nbsp;(914)&nbsp;927-22-87</a></p>
+    </div>
+  </div>
+</div>
 
 <!-- ============ МОДАЛЬНОЕ ОКНО: ЗАКАЗАТЬ КЛИНИНГ ============ -->
 <div class="order-modal" id="orderModal" role="dialog" aria-modal="true" aria-label="Заказать клининг">
