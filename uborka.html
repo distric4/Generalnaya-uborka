@@ -2,7 +2,8 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">`n<link rel="icon" href="img/favicon.webp" type="image/webp">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="img/favicon.webp" type="image/webp">
 <title>Уборка квартир и домов в Иркутске — Генеральная уборка</title>
 <meta name="description" content="Генеральная уборка — клининговая компания в Иркутске с 2007 года. Уборка квартир и офисов, мытьё окон, химчистка, услуги для бизнеса.">
 </head>
@@ -381,6 +382,12 @@
     var o=menu.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o?'true':'false');
   });
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+  menu.querySelectorAll('.mob-acc-t').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var acc=btn.parentElement;acc.classList.toggle('open');
+      menu.querySelectorAll('.mob-acc').forEach(function(o){if(o!==acc)o.classList.remove('open');});
+    });
+  });
 })();
 (function(){
   var bar=document.getElementById('scrollProgress');

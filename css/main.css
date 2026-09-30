@@ -604,9 +604,19 @@ html{scroll-behavior:smooth;}
 .gu-page .breadcrumbs a:hover{color:var(--cyan-deep);}
 .gu-page .breadcrumbs .sep{color:var(--gray-2);}
 
-/* ---- ТОПБАР (clients.html) ---- */
+/* ---- ТОПБАР (все внутренние страницы) ---- */
 .gu-page .topbar{background:#fff;border-bottom:1px solid var(--line);font-size:13px;color:var(--gray);}
-.gu-page .topbar-in{max-width:1440px;margin:0 auto;padding:7px 40px;display:flex;align-items:center;justify-content:space-between;}
+.gu-page .topbar-in{max-width:1440px;margin:0 auto;padding:7px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.gu-page .topbar-addr{display:flex;align-items:center;gap:6px;}
+.gu-page .topbar-addr::before{content:'•';color:var(--green);}
+.gu-page .topbar-tag{font-weight:700;color:var(--cyan-deep);font-size:13px;}
+.gu-page .topbar-right{display:flex;align-items:center;gap:20px;}
+.gu-page .topbar-right a{color:var(--gray);transition:.15s;}
+.gu-page .topbar-right a:hover{color:var(--cyan-deep);}
+.gu-page .topbar-sep{width:1px;height:14px;background:var(--line);}
+.gu-page .topbar-phone{font-weight:600;color:var(--ink-2)!important;}
+@media(max-width:860px){.gu-page .topbar-addr,.gu-page .topbar-tag{display:none;}}
+@media(max-width:600px){.gu-page .topbar{display:none;}}
 
 /* ---- ФОРМАТЫ УБОРКИ: карточки-вкладки (uborka, mytyo, himchistka, suhoy-tuman) ---- */
 .gu-page .sw-tabs{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;}
