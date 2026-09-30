@@ -76,6 +76,24 @@ html{scroll-behavior:smooth;}
 .gu-page .btn-block{width:100%;}
 
 /* ---------- ВИДЕО ---------- */
+/* ---------- СЛАЙДЕР РАБОТ ---------- */
+.gu-page .works-slider{position:relative;}
+.gu-page .ws-viewport{overflow:hidden;border-radius:var(--r-lg);}
+.gu-page .ws-track{display:flex;gap:16px;transition:transform .35s ease;}
+.gu-page .ws-track .vid-item{flex:0 0 calc((100% - 32px)/3);min-width:0;}
+.gu-page .ws-track .vid-item [id^="kp-"]{aspect-ratio:9/16;width:100%;border-radius:var(--r-lg);border:none;display:block;height:auto;}
+.gu-page .ws-ctrl{display:none;justify-content:center;align-items:center;gap:16px;margin-top:20px;}
+.gu-page .ws-btn{width:40px;height:40px;border-radius:50%;background:var(--cyan);border:none;color:#fff;font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;}
+.gu-page .ws-btn:hover{background:var(--cyan-deep);}
+.gu-page .ws-dots{display:flex;gap:8px;align-items:center;}
+.gu-page .ws-dot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;transition:.2s;}
+.gu-page .ws-dot.on{background:var(--cyan);width:22px;border-radius:4px;}
+@media(max-width:760px){
+  .gu-page .ws-track{gap:0;}
+  .gu-page .ws-track .vid-item{flex:0 0 100%;}
+  .gu-page .ws-ctrl{display:flex;}
+}
+
 .gu-page .vid-grid{display:grid;gap:20px;}
 .gu-page .vid-item iframe,.gu-page .vid-item [id^="kp-"]{width:100%;aspect-ratio:16/9;border-radius:var(--r-lg);border:none;display:block;height:auto;}
 .gu-page .vid-grid.vid-v .vid-item iframe,.gu-page .vid-grid.vid-v .vid-item [id^="kp-"]{aspect-ratio:9/16;}
@@ -129,8 +147,8 @@ html{scroll-behavior:smooth;}
 .gu-page .burger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg);}
 
 /* ---- мобильное меню ---- */
-.gu-page .mob-menu{max-height:0;overflow:hidden;transition:max-height .25s ease;background:#fff;border-bottom:1px solid var(--line);}
-.gu-page .mob-menu.open{max-height:400px;border-bottom:1px solid var(--line);}
+.gu-page .mob-menu{max-height:0;overflow:hidden;transition:max-height .3s ease;background:#fff;border-bottom:1px solid var(--line);}
+.gu-page .mob-menu.open{max-height:85vh;overflow-y:auto;border-bottom:1px solid var(--line);}
 @media(min-width:1241px){.gu-page .mob-menu{display:none;}}
 .gu-page .mob-nav{display:flex;flex-direction:column;padding:8px 18px;}
 .gu-page .mob-nav a{padding:13px 4px;font-size:15.5px;font-weight:600;color:var(--ink-2);border-bottom:1px solid var(--line);}
@@ -209,7 +227,8 @@ html{scroll-behavior:smooth;}
 @keyframes sx{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 /* ---------- 2ГИС БЕЙДЖ ---------- */
-.gu-page .gis-badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:var(--r-pill);padding:10px 20px;margin-bottom:28px;text-decoration:none;transition:.2s ease;box-shadow:var(--sh-1);flex-wrap:nowrap;white-space:nowrap;}
+.gu-page .gis-badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:var(--r-pill);padding:10px 20px;margin-bottom:28px;text-decoration:none;transition:.2s ease;box-shadow:var(--sh-1);flex-wrap:nowrap;white-space:nowrap;max-width:100%;}
+@media(max-width:500px){.gu-page .gis-badge{flex-wrap:wrap;white-space:normal;gap:6px 10px;padding:10px 16px;}.gu-page .gis-score{font-size:16px;}.gu-page .gis-count{font-size:11px;}}
 .gu-page .gis-badge:hover{border-color:var(--cyan);box-shadow:var(--sh-2);transform:translateY(-2px);}
 .gu-page .gis-logo{font-size:13px;font-weight:800;color:#00A256;letter-spacing:-.01em;flex-shrink:0;}
 .gu-page .gis-stars{color:#F5A623;font-size:15px;letter-spacing:1px;flex-shrink:0;}
