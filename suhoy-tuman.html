@@ -73,9 +73,9 @@ html{scroll-behavior:smooth;}
 
 /* ШАПКА */
 .gu-page .hdr{position:sticky;top:0;z-index:70;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--line);}
-.gu-page .hdr-in{max-width:1280px;margin:0 auto;padding:12px 40px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;}
+.gu-page .hdr-in{max-width:1280px;margin:0 auto;padding:12px 40px;display:grid;grid-template-columns:auto auto 1fr;align-items:center;gap:24px;}
 .gu-page .hdr-logo img{height:56px;width:auto;}
-.gu-page .hdr-nav{display:flex;gap:4px;justify-content:center;}
+.gu-page .hdr-nav{display:flex;gap:4px;justify-content:flex-start;}
 .gu-page .hdr-nav a{padding:10px 18px;border-radius:var(--r-pill);font-size:15px;font-weight:600;color:var(--ink-2);white-space:nowrap;transition:.15s;}
 .gu-page .hdr-nav a:hover{background:var(--paper);color:var(--cyan-deep);}
 .gu-page .hdr-nav a.on{background:var(--mint-1);color:var(--cyan-deep);}
@@ -255,6 +255,34 @@ html{scroll-behavior:smooth;}
 .gu-page .mob-acc-m a.nd-top{font-weight:600;color:var(--ink-2);}
 .gu-page .mob-acc-m a:last-child{border-bottom:none;}
 .gu-page .mob-acc-m a:hover{color:var(--cyan-deep);}
+
+/* ---- МОДАЛЬНОЕ ОКНО: Заказать клининг ---- */
+.gu-page .btn-order{padding:11px 20px;font-size:14px;}
+@media(max-width:760px){.gu-page .btn-order{display:none;}}
+.gu-page .order-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.2s ease;}
+.gu-page .order-modal.open{opacity:1;visibility:visible;}
+.gu-page .om-backdrop{position:absolute;inset:0;background:rgba(15,27,46,.55);backdrop-filter:blur(4px);}
+.gu-page .om-card{position:relative;background:#fff;border-radius:var(--r-xl);box-shadow:var(--sh-3);padding:40px 36px;width:100%;max-width:440px;margin:16px;z-index:1;transform:translateY(20px);transition:.25s ease;}
+.gu-page .order-modal.open .om-card{transform:translateY(0);}
+.gu-page .om-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:var(--paper);border:none;font-size:16px;color:var(--gray);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;}
+.gu-page .om-close:hover{background:var(--line);color:var(--ink);}
+.gu-page .om-head{margin-bottom:24px;}
+.gu-page .om-head h2{font-size:24px;margin:6px 0 8px;}
+.gu-page .om-head p{color:var(--gray);font-size:14.5px;}
+.gu-page .om-form .om-field{margin-bottom:14px;}
+.gu-page .om-form .om-field label{display:block;font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:6px;}
+.gu-page .om-form .om-field input{width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:var(--r-md);font-family:inherit;font-size:15px;color:var(--ink);background:#fff;transition:.15s;outline:none;}
+.gu-page .om-form .om-field input:focus{border-color:var(--cyan);}
+.gu-page .om-check{display:flex;align-items:flex-start;gap:10px;margin-bottom:20px;}
+.gu-page .om-check input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--cyan);cursor:pointer;}
+.gu-page .om-check label{font-size:12.5px;color:var(--gray);line-height:1.5;cursor:pointer;}
+.gu-page .om-check label a{color:var(--cyan-deep);text-decoration:underline;}
+.gu-page .om-success{display:none;text-align:center;padding:20px 0;}
+.gu-page .om-success.show{display:block;}
+.gu-page .om-form.hide{display:none;}
+.gu-page .om-ok{width:64px;height:64px;border-radius:50%;background:var(--mint-1);color:var(--green-deep);font-size:28px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+.gu-page .om-success h3{font-size:20px;margin-bottom:8px;}
+.gu-page .om-success p{color:var(--gray);font-size:14.5px;}
 </style>
 
 <div class="gu-page">
@@ -684,5 +712,53 @@ html{scroll-behavior:smooth;}
 
 </div>
 
+
+<!-- ============ МОДАЛЬНОЕ ОКНО: ЗАКАЗАТЬ КЛИНИНГ ============ -->
+<div class="order-modal gu-page" id="orderModal" role="dialog" aria-modal="true" aria-label="Заказать клининг">
+  <div class="om-backdrop" onclick="omClose()"></div>
+  <div class="om-card">
+    <button class="om-close" onclick="omClose()" aria-label="Закрыть">✕</button>
+    <div class="om-head">
+      <div class="micro">Бесплатная консультация</div>
+      <h2>Заказать клининг</h2>
+      <p>Оставьте заявку — перезвоним в течение 15 минут</p>
+    </div>
+    <form class="om-form" id="omForm" onsubmit="return omSubmit(event)">
+      <div class="om-field">
+        <label for="omName">Ваше имя</label>
+        <input type="text" id="omName" name="name" placeholder="Как вас зовут?" autocomplete="name" required>
+      </div>
+      <div class="om-field">
+        <label for="omPhone">Телефон</label>
+        <input type="tel" id="omPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+      </div>
+      <div class="om-check">
+        <input type="checkbox" id="omPd" name="pd" required>
+        <label for="omPd">Я согласен(а) с <a href="contacts.html">политикой обработки персональных данных</a></label>
+      </div>
+      <button type="submit" class="btn btn-green btn-block">Отправить заявку</button>
+    </form>
+    <div class="om-success" id="omSuccess">
+      <div class="om-ok">✓</div>
+      <h3>Заявка принята!</h3>
+      <p>Свяжемся с вами в ближайшее время</p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  function omOpen(){document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
+  function omClose(){document.getElementById('orderModal').classList.remove('open');document.body.style.overflow='';}
+  function omSubmit(e){
+    e.preventDefault();
+    document.getElementById('omForm').classList.add('hide');
+    document.getElementById('omSuccess').classList.add('show');
+    setTimeout(omClose, 3000);
+    return false;
+  }
+  window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit;
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
+})();
+</script>
 </body>
 </html>
