@@ -886,7 +886,7 @@ html{scroll-behavior:smooth;}
     rgba(255,255,255,.5) 62%,
     rgba(255,255,255,0) 78%);
 }
-.gu-page .hero-photo .wrap{display:flex;align-items:center;padding-top:70px;padding-bottom:70px;position:relative;z-index:1;}
+.gu-page .hero-photo .wrap{width:100%;display:flex;align-items:center;padding-top:70px;padding-bottom:70px;position:relative;z-index:1;}
 .gu-page .hero-txt{max-width:480px;}
 .gu-page .hero-txt .micro{display:block;margin-bottom:12px;}
 .gu-page .hero-txt h1{font-size:clamp(28px,3.2vw,44px);margin-bottom:18px;line-height:1.18;}
