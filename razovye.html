@@ -130,7 +130,7 @@ html{scroll-behavior:smooth;}
   .gu-page .hdr-in{padding:10px 14px;gap:8px;}
   .gu-page .hdr-logo img{height:36px;}
   .gu-page .msg-ico{display:none;}
-  .gu-page .hdr-right{flex:1;display:flex;align-items:center;justify-content:space-between;gap:8px;}
+  .gu-page .hdr-right{flex:1;display:flex;align-items:center;justify-content:space-between;gap:8px;justify-self:stretch;width:100%;}
   .gu-page .hdr-tel{flex:1;text-align:center;}
   .gu-page .hdr-tel a{font-size:15.5px;}
   .gu-page .hdr-tel span{display:flex;justify-content:center;}
@@ -314,6 +314,7 @@ html{scroll-behavior:smooth;}
         <a href="tel:83952554499">8 (3952) 55-44-99</a>
         <span><i></i>ежедневно 08:00–20:00</span>
       </div>
+      <button type="button" class="btn btn-green btn-order" onclick="omOpen()">Заказать</button>
       <button type="button" class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -678,11 +679,9 @@ html{scroll-behavior:smooth;}
 })();
 </script>
 
-</div>
-
 
 <!-- ============ МОДАЛЬНОЕ ОКНО: ЗАКАЗАТЬ КЛИНИНГ ============ -->
-<div class="order-modal gu-page" id="orderModal" role="dialog" aria-modal="true" aria-label="Заказать клининг">
+<div class="order-modal" id="orderModal" role="dialog" aria-modal="true" aria-label="Заказать клининг">
   <div class="om-backdrop" onclick="omClose()"></div>
   <div class="om-card">
     <button class="om-close" onclick="omClose()" aria-label="Закрыть">✕</button>
@@ -712,6 +711,7 @@ html{scroll-behavior:smooth;}
       <p>Свяжемся с вами в ближайшее время</p>
     </div>
   </div>
+</div>
 </div>
 <script>
 (function(){
