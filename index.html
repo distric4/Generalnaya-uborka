@@ -80,8 +80,11 @@ html{scroll-behavior:smooth;}
 .gu-page .bg-dark .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.3);}
 /* видео (на главной и прочих страницах) */
 .gu-page .vid-grid{display:grid;gap:20px;}
-.gu-page .vid-item iframe{width:100%;aspect-ratio:16/9;border-radius:var(--r-lg);border:none;display:block;}
-.gu-page .vid-grid.vid-v .vid-item iframe{aspect-ratio:9/16;}
+.gu-page .vid-item iframe,.gu-page .vid-item [id^="kp-"]{width:100%;aspect-ratio:16/9;border-radius:var(--r-lg);border:none;display:block;height:auto;}
+.gu-page .vid-grid.vid-v .vid-item iframe,.gu-page .vid-grid.vid-v .vid-item [id^="kp-"]{aspect-ratio:9/16;}
+.gu-page .kp-player{display:block;}
+.gu-page .eq-video [id^="kp-"]{aspect-ratio:9/14;width:100%;border-radius:var(--r-lg);border:none;display:block;height:auto;}
+.gu-page .biz-side [id^="kp-"]{width:100%;height:100%;min-height:280px;border-radius:inherit;border:none;display:block;}
 @media(max-width:760px){.gu-page .vid-grid{grid-template-columns:1fr!important;}}
 
 .gu-page .btn-block{width:100%;}
@@ -140,14 +143,15 @@ html{scroll-behavior:smooth;}
 .gu-page .mob-social a{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;}
 @media(max-width:1240px){.gu-page .hdr-nav{display:none;}.gu-page .burger{display:flex;}}
 @media(max-width:760px){
-  .gu-page .hdr-in{padding:10px 14px;gap:8px;}
+  .gu-page .hdr-in{padding:10px 14px;gap:8px;grid-template-columns:auto 1fr;}
   .gu-page .hdr-logo img{height:36px;}
   .gu-page .msg-ico{display:none;}
-  .gu-page .hdr-right{flex:1;display:flex;align-items:center;justify-content:space-between;gap:8px;justify-self:stretch;width:100%;}
-  .gu-page .hdr-tel{flex:1;text-align:center;}
+  .gu-page .hdr-right{display:flex;align-items:center;justify-content:flex-end;gap:12px;}
+  .gu-page .hdr-tel{text-align:right;}
   .gu-page .hdr-tel a{font-size:15.5px;}
-  .gu-page .hdr-tel span{display:flex;justify-content:center;}
+  .gu-page .hdr-tel span{display:flex;justify-content:flex-end;}
   .gu-page .burger{display:flex;}
+  .gu-page .wrap{padding:0 16px;}
 }
 
 /* ---------- 1. HERO ---------- */
@@ -790,7 +794,7 @@ html{scroll-behavior:smooth;}
         </div>
       </article>
       <article class="biz-side" style="justify-content:flex-start;padding:0;overflow:hidden;">
-        <iframe src="https://kinescope.io/embed/g7FMACFnaEdjPzWPKUSvTY?muted=1&autoplay=1&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка коммерческого объекта" style="width:100%;height:100%;min-height:280px;border-radius:inherit;border:none;display:block;"></iframe>
+        <div id="kp-g7FMACFnaEdjPzWPKUSvTY" class="kp-player" style="width:100%;height:100%;min-height:280px;border-radius:inherit;"></div>
       </article>
     </div>
   </div>
@@ -842,7 +846,7 @@ html{scroll-behavior:smooth;}
       <p>Профессиональное оборудование даёт результат, которого не добиться бытовыми средствами.</p>
     </div>
     <div class="eq-split">
-      <div class="eq-video"><div class="vid-item"><iframe src="https://kinescope.io/embed/sm64C8wtJeAKVY3TSSLzYL?muted=1&autoplay=1&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Чем и как моем"></iframe></div></div>
+      <div class="eq-video"><div class="vid-item"><div id="kp-sm64C8wtJeAKVY3TSSLzYL" class="kp-player"></div></div></div>
       <ul class="eq-list">
         <li>Профессиональные пылесосы для жилых помещений и строительные пылесосы для спецработ</li>
         <li>Парогенераторы и экстракторы для химчистки мебели и ковров</li>
@@ -863,9 +867,9 @@ html{scroll-behavior:smooth;}
       <p>Видео с реальных объектов, на которых работали наши специалисты.</p>
     </div>
     <div class="vid-grid vid-v" style="grid-template-columns:repeat(3,1fr);">
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/7EGdmMfPyu89rqu1Awi4pS?muted=1&autoplay=1&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка квартиры"></iframe></div>
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/q4ZnwkA3VVJrhrZGtJHmwb?muted=1&autoplay=1&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка офиса"></iframe></div>
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/aFuKSeTaHTcvqrcMu4Ujio?muted=1&autoplay=1&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка склада"></iframe></div>
+      <div class="vid-item"><div id="kp-7EGdmMfPyu89rqu1Awi4pS" class="kp-player"></div></div>
+      <div class="vid-item"><div id="kp-q4ZnwkA3VVJrhrZGtJHmwb" class="kp-player"></div></div>
+      <div class="vid-item"><div id="kp-aFuKSeTaHTcvqrcMu4Ujio" class="kp-player"></div></div>
     </div>
     <div class="addon-strip">
       <b>Доп.услуги при уборке:</b><span>поломоечная машина — 2 000 ₽</span>
@@ -1455,19 +1459,41 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
     document.querySelectorAll('input[type=tel]').forEach(applyMask);
   });
 })();
-/* Autoplay via postMessage */
+/* Kinescope SDK autoplay */
 (function(){
-  document.addEventListener('DOMContentLoaded',function(){
-    document.querySelectorAll('iframe[src*="kinescope.io"]').forEach(function(f){
-      f.addEventListener('load',function(){
-        var frame=f;
-        setTimeout(function(){
-          try{frame.contentWindow.postMessage(JSON.stringify({method:'play'}), '*');}catch(e){}
-        },800);
-      });
+  function initKP(){
+    if(!window.Kinescope||!window.Kinescope.IframePlayer){setTimeout(initKP,200);return;}
+    var KP=window.Kinescope.IframePlayer;
+    var players=[];
+    document.querySelectorAll('.kp-player').forEach(function(el){
+      var vid=el.id.replace('kp-','');
+      KP.create(el,{url:'https://kinescope.io/embed/'+vid}).then(function(p){
+        players.push({id:el.id,player:p});
+        p.on(p.Events.Ready,function(){p.mute();p.play();});
+        p.on(p.Events.Ended,function(){p.play();});
+        if('IntersectionObserver' in window){
+          var obs=new IntersectionObserver(function(entries){
+            entries.forEach(function(e){if(e.isIntersecting)p.play();});
+          },{threshold:0.25});
+          obs.observe(document.getElementById(el.id)||el);
+        }
+      }).catch(function(){});
     });
-  });
+    window.addEventListener('message',function(e){
+      try{
+        var d=typeof e.data==='string'?JSON.parse(e.data):e.data;
+        if(d&&(d.event==='play'||d.type==='play')){
+          players.forEach(function(o){
+            var f=document.getElementById(o.id);
+            if(f&&f.contentWindow!==e.source){try{o.player.pause();}catch(err){}}
+          });
+        }
+      }catch(err){}
+    });
+  }
+  document.addEventListener('DOMContentLoaded',initKP);
 })();
 </script>
+<script src="https://player.kinescope.io/latest/iframe.player.js" defer></script>
 </body>
 </html>
