@@ -312,6 +312,7 @@ html{scroll-behavior:smooth;}
 /* ---------- 7. ОБОРУДОВАНИЕ: видео + список ---------- */
 .gu-page .eq-split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;}
 .gu-page .eq-video .video-ph{aspect-ratio:4/3;border-radius:var(--r-lg);}
+.gu-page .eq-video .vid-item iframe{aspect-ratio:9/14;}
 .gu-page .eq-list{list-style:none;display:flex;flex-direction:column;}
 .gu-page .eq-list li{position:relative;padding:16px 0 16px 28px;font-size:15px;line-height:1.5;color:rgba(241,241,238,.85);
   border-top:1px solid rgba(255,255,255,.12);}
@@ -347,11 +348,11 @@ html{scroll-behavior:smooth;}
 
 /* ---------- 6. КОМАНДА — СЛАЙДЕР ---------- */
 .gu-page .team-slider-wrap{position:relative;}
-.gu-page .ppl{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 4px 20px;scrollbar-width:none;}
+.gu-page .ppl{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:4px;scrollbar-width:none;}
 .gu-page .ppl::-webkit-scrollbar{display:none;}
-.gu-page .pp{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-1);overflow:hidden;transition:.2s ease;
+.gu-page .pp{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden;
   flex:0 0 calc((100% - 40px) / 3);scroll-snap-align:start;}
-.gu-page .pp:hover{transform:translateY(-4px);box-shadow:var(--sh-3);}
+
 .gu-page .pp-ph{position:relative;aspect-ratio:3/4;}
 .gu-page .pp-ph .photo{position:absolute;inset:0;font-size:12px;}
 .gu-page .pp-b{padding:20px 22px 24px;}
@@ -547,6 +548,15 @@ html{scroll-behavior:smooth;}
 .gu-page .kp-modal .om-backdrop,.gu-page .tender-modal .om-backdrop{position:absolute;inset:0;background:rgba(15,27,46,.55);backdrop-filter:blur(4px);}
 .gu-page .kp-modal .om-card,.gu-page .tender-modal .om-card{position:relative;background:#fff;border-radius:var(--r-xl);box-shadow:var(--sh-3);padding:40px 36px;width:100%;max-width:480px;margin:16px;z-index:1;transform:translateY(20px);transition:.25s ease;}
 .gu-page .kp-modal.open .om-card,.gu-page .tender-modal.open .om-card{transform:translateY(0);}
+
+/* ---- Быстрая форма (калькулятор / услуга) ---- */
+.gu-page .quick-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.2s ease;}
+.gu-page .quick-modal.open{opacity:1;visibility:visible;}
+.gu-page .quick-modal .om-backdrop{position:absolute;inset:0;background:rgba(15,27,46,.55);backdrop-filter:blur(4px);}
+.gu-page .quick-modal .om-card{position:relative;background:#fff;border-radius:var(--r-xl);box-shadow:var(--sh-3);padding:36px;width:100%;max-width:440px;margin:16px;z-index:1;transform:translateY(20px);transition:.25s ease;}
+.gu-page .quick-modal.open .om-card{transform:translateY(0);}
+.gu-page .quick-ctx{background:var(--paper);border-radius:var(--r-md);padding:12px 16px;font-size:13.5px;color:var(--gray);margin-bottom:20px;line-height:1.5;}
+.gu-page .quick-ctx strong{color:var(--ink);}
 </style>
 <div class="gu-page">
 
@@ -690,7 +700,7 @@ html{scroll-behavior:smooth;}
           </div>
         </div>
         <div class="calc-foot">
-          <a href="#zayavka" class="btn btn-green btn-block" id="calcGo">Оставить заявку</a>
+          <button type="button" class="btn btn-green btn-block" id="calcGo" onclick="calcOrder()">Оставить заявку</button>
           <span class="calc-note">Точную цену назовём по фото в MAX</span>
         </div>
       </div>
@@ -734,23 +744,24 @@ html{scroll-behavior:smooth;}
 <section class="bg-mint" id="uslugi">
   <div class="wave top"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,60 C240,0 480,0 720,26 C960,52 1200,52 1440,18 L1440,0 L0,0 Z" fill="#fff"/></svg></div>
   <div class="wrap">
-    <div class="s-head">
-      <div><span class="micro">Услуги</span><h2 style="margin-top:14px;">Услуги клининга, которые заказывают чаще всего</h2></div>
-      <p>Цены указаны «от» — точная стоимость зависит от площади и состояния объекта.</p>
+    <div class="s-head" style="align-items:flex-end;">
+      <div><span class="micro">Услуги</span><h2 style="margin-top:14px;">Услуги клининга, которые заказывают чаще всего</h2>
+      <p>Цены указаны «от» — точная стоимость зависит от площади и состояния объекта.</p></div>
+      <a href="uborka.html" class="btn btn-line" style="flex-shrink:0;white-space:nowrap;">Все услуги →</a>
     </div>
     <div class="srv">
       <article class="srv-c"><div class="srv-ph"><img class="photo" src="img/svc-1.webp" alt="Генеральная уборка" loading="lazy"><span class="srv-tag">Для дома</span></div>
-        <div class="srv-b"><h3>Генеральная уборка</h3><p>Квартиры, дома и коттеджи — от плинтусов до люстр.</p><div class="srv-price">от 9 000 ₽ <small>/ 5 часов</small></div><div class="srv-ops"><span>👤 <b>1–2</b> клинера</span><span>⏱ <b>4–6</b> часов</span></div><a href="uborka.html" class="srv-link">Выбрать →</a></div></article>
+        <div class="srv-b"><h3>Генеральная уборка</h3><p>Квартиры, дома и коттеджи — от плинтусов до люстр.</p><div class="srv-price">от 9 000 ₽ <small>/ 5 часов</small></div><div class="srv-ops"><span>👤 <b>1–2</b> клинера</span><span>⏱ <b>4–6</b> часов</span></div><button type="button" class="srv-link" onclick="quickOpen('Генеральная уборка')">Выбрать →</button></div></article>
       <article class="srv-c"><div class="srv-ph"><img class="photo" src="img/svc-2.webp" alt="Уборка после ремонта" loading="lazy"><span class="srv-tag">Популярное</span></div>
-        <div class="srv-b"><h3>Уборка после ремонта</h3><p>Обеспыливание, вывоз мусора, мытьё всех поверхностей.</p><div class="srv-price">от 150 ₽ <small>/ м²</small></div><div class="srv-ops"><span>👤 <b>2–3</b> клинера</span><span>⏱ <b>6–10</b> часов</span></div><a href="#calc" class="srv-link">Выбрать →</a></div></article>
+        <div class="srv-b"><h3>Уборка после ремонта</h3><p>Обеспыливание, вывоз мусора, мытьё всех поверхностей.</p><div class="srv-price">от 150 ₽ <small>/ м²</small></div><div class="srv-ops"><span>👤 <b>2–3</b> клинера</span><span>⏱ <b>6–10</b> часов</span></div><button type="button" class="srv-link" onclick="quickOpen('Уборка после ремонта')">Выбрать →</button></div></article>
       <article class="srv-c"><div class="srv-ph"><img class="photo" src="img/svc-3.webp" alt="Мытьё окон и фасадов" loading="lazy"><span class="srv-tag">Высотные работы</span></div>
-        <div class="srv-b"><h3>Мытьё окон и фасадов</h3><p>Окна, лоджии, витрины, фасады — в том числе с автовышки.</p><div class="srv-price">от 500 ₽ <small>/ м²</small></div><div class="srv-ops"><span>👤 <b>1–2</b> клинера</span><span>⏱ <b>2–5</b> часов</span></div><a href="#calc" class="srv-link">Выбрать →</a></div></article>
+        <div class="srv-b"><h3>Мытьё окон и фасадов</h3><p>Окна, лоджии, витрины, фасады — в том числе с автовышки.</p><div class="srv-price">от 500 ₽ <small>/ м²</small></div><div class="srv-ops"><span>👤 <b>1–2</b> клинера</span><span>⏱ <b>2–5</b> часов</span></div><button type="button" class="srv-link" onclick="quickOpen('Мытьё окон и фасадов')">Выбрать →</button></div></article>
       <article class="srv-c"><div class="srv-ph"><img class="photo" src="img/svc-4.webp" alt="Химчистка мебели" loading="lazy"><span class="srv-tag">Выезд на дом</span></div>
-        <div class="srv-b"><h3>Химчистка мебели</h3><p>Диваны, кресла, матрасы, стулья — с выездом к вам.</p><div class="srv-price">от 3 000 ₽</div><div class="srv-ops"><span>👤 <b>1</b> клинер</span><span>⏱ <b>1–2</b> часа</span></div><a href="#calc" class="srv-link">Выбрать →</a></div></article>
+        <div class="srv-b"><h3>Химчистка мебели</h3><p>Диваны, кресла, матрасы, стулья — с выездом к вам.</p><div class="srv-price">от 3 000 ₽</div><div class="srv-ops"><span>👤 <b>1</b> клинер</span><span>⏱ <b>1–2</b> часа</span></div><button type="button" class="srv-link" onclick="quickOpen('Химчистка мебели')">Выбрать →</button></div></article>
       <article class="srv-c"><div class="srv-ph"><img class="photo" src="img/svc-5.webp" alt="Химчистка ковров и штор" loading="lazy"><span class="srv-tag">Без воды</span></div>
-        <div class="srv-b"><h3>Химчистка ковров и штор</h3><p>Ковры, паласы, шторы, жалюзи. Есть чистка без воды.</p><div class="srv-price">Рассчитаем по объёму</div><div class="srv-ops"><span>👤 <b>1</b> клинер</span><span>⏱ <b>1–3</b> часа</span></div><a href="#zayavka" class="srv-link">Выбрать →</a></div></article>
+        <div class="srv-b"><h3>Химчистка ковров и штор</h3><p>Ковры, паласы, шторы, жалюзи. Есть чистка без воды.</p><div class="srv-price">Рассчитаем по объёму</div><div class="srv-ops"><span>👤 <b>1</b> клинер</span><span>⏱ <b>1–3</b> часа</span></div><button type="button" class="srv-link" onclick="quickOpen('Химчистка ковров и штор')">Выбрать →</button></div></article>
       <article class="srv-c"><div class="srv-ph"><img class="photo" src="img/svc-6.webp" alt="Сухой туман" loading="lazy"><span class="srv-tag">Запахи</span></div>
-        <div class="srv-b"><h3>Сухой туман</h3><p>Устранение запахов после животных, ремонта, табака.</p><div class="srv-price">Рассчитаем по объёму</div><div class="srv-ops"><span>👤 <b>1</b> клинер</span><span>⏱ <b>~1</b> час</span></div><a href="#zayavka" class="srv-link">Выбрать →</a></div></article>
+        <div class="srv-b"><h3>Сухой туман</h3><p>Устранение запахов после животных, ремонта, табака.</p><div class="srv-price">Рассчитаем по объёму</div><div class="srv-ops"><span>👤 <b>1</b> клинер</span><span>⏱ <b>~1</b> час</span></div><button type="button" class="srv-link" onclick="quickOpen('Сухой туман')">Выбрать →</button></div></article>
     </div>
   </div>
 </section>
@@ -779,7 +790,7 @@ html{scroll-behavior:smooth;}
         </div>
       </article>
       <article class="biz-side" style="justify-content:flex-start;padding:0;overflow:hidden;">
-        <iframe src="https://kinescope.io/embed/g7FMACFnaEdjPzWPKUSvTY?muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка коммерческого объекта" style="width:100%;height:100%;min-height:280px;border-radius:inherit;border:none;display:block;"></iframe>
+        <iframe src="https://kinescope.io/embed/g7FMACFnaEdjPzWPKUSvTY?muted=1&autoplay=1&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка коммерческого объекта" style="width:100%;height:100%;min-height:280px;border-radius:inherit;border:none;display:block;"></iframe>
       </article>
     </div>
   </div>
@@ -831,7 +842,7 @@ html{scroll-behavior:smooth;}
       <p>Профессиональное оборудование даёт результат, которого не добиться бытовыми средствами.</p>
     </div>
     <div class="eq-split">
-      <div class="eq-video"><div class="vid-item"><iframe src="https://kinescope.io/embed/sm64C8wtJeAKVY3TSSLzYL?muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Чем и как моем"></iframe></div></div>
+      <div class="eq-video"><div class="vid-item"><iframe src="https://kinescope.io/embed/sm64C8wtJeAKVY3TSSLzYL?muted=1&autoplay=1&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Чем и как моем"></iframe></div></div>
       <ul class="eq-list">
         <li>Профессиональные пылесосы для жилых помещений и строительные пылесосы для спецработ</li>
         <li>Парогенераторы и экстракторы для химчистки мебели и ковров</li>
@@ -852,9 +863,9 @@ html{scroll-behavior:smooth;}
       <p>Видео с реальных объектов, на которых работали наши специалисты.</p>
     </div>
     <div class="vid-grid vid-v" style="grid-template-columns:repeat(3,1fr);">
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/7EGdmMfPyu89rqu1Awi4pS?muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка квартиры"></iframe></div>
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/q4ZnwkA3VVJrhrZGtJHmwb?muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка офиса"></iframe></div>
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/aFuKSeTaHTcvqrcMu4Ujio?muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка склада"></iframe></div>
+      <div class="vid-item"><iframe src="https://kinescope.io/embed/7EGdmMfPyu89rqu1Awi4pS?muted=1&autoplay=1&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка квартиры"></iframe></div>
+      <div class="vid-item"><iframe src="https://kinescope.io/embed/q4ZnwkA3VVJrhrZGtJHmwb?muted=1&autoplay=1&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка офиса"></iframe></div>
+      <div class="vid-item"><iframe src="https://kinescope.io/embed/aFuKSeTaHTcvqrcMu4Ujio?muted=1&autoplay=1&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Уборка склада"></iframe></div>
     </div>
     <div class="addon-strip">
       <b>Доп.услуги при уборке:</b><span>поломоечная машина — 2 000 ₽</span>
@@ -881,8 +892,19 @@ html{scroll-behavior:smooth;}
     <div class="revs">
       <div class="rev"><div class="q">“</div><p>Долго не могли найти, кто возьмётся за химчистку вискозного ковра без воды — здесь справились, ковёр как новый.</p>
         <div class="who"><span class="av">В</span><span><span class="nm">Валерий</span><span class="sv">Химчистка ковра</span></span></div></div>
-      <div class="rev"><div class="q">“</div><p>Заказывали уборку после ремонта — обеспылили всё, даже то, о чём мы сами не подумали. Приехали точно в срок.</p>
-        <div class="who"><span class="av">М</span><span><span class="nm">Мария</span><span class="sv">Уборка после ремонта</span></span></div></div>    </div>
+      <div class=”rev”><div class=”q”>”</div><p>Заказывали уборку после ремонта — обеспылили всё, даже то, о чём мы сами не подумали. Приехали точно в срок.</p>
+        <div class=”who”><span class=”av”>М</span><span><span class=”nm”>Мария</span><span class=”sv”>Уборка после ремонта</span></span></div></div>
+      <div class=”rev”><div class=”q”>”</div><p>Работаем с ними по абонементу — офис 240 м² убирают три раза в неделю. Персонал закреплён, не меняется, к замечаниям прислушиваются.</p>
+        <div class=”who”><span class=”av”>Е</span><span><span class=”nm”>Евгений</span><span class=”sv”>Абонентское обслуживание офиса</span></span></div></div>
+      <div class=”rev”><div class=”q”>”</div><p>Генеральная уборка квартиры после съёмщиков — сделали всё идеально. Плита, сантехника, за холодильником — нигде не схалтурили.</p>
+        <div class=”who”><span class=”av”>О</span><span><span class=”nm”>Ольга</span><span class=”sv”>Генеральная уборка квартиры</span></span></div></div>
+      <div class=”rev”><div class=”q”>”</div><p>Мыли окна на 5-м этаже — без стремянки снаружи, через телескопические штанги. Результат чистый, без разводов, без лишнего шума.</p>
+        <div class=”who”><span class=”av”>С</span><span><span class=”nm”>Сергей</span><span class=”sv”>Мытьё окон</span></span></div></div>
+      <div class=”rev”><div class=”q”>”</div><p>Использовали сухой туман после запаха гари. Специалист приехал на следующий день, через 3 часа в квартире уже не было ни намёка на запах.</p>
+        <div class=”who”><span class=”av”>Н</span><span><span class=”nm”>Наталья</span><span class=”sv”>Сухой туман — устранение запаха</span></span></div></div>
+      <div class=”rev”><div class=”q”>”</div><p>Диван чистили с глубокой экстракцией — пятна от кофе и вина сошли полностью. Высох за ночь, запах приятный. Буду звать снова.</p>
+        <div class=”who”><span class=”av”>И</span><span><span class=”nm”>Ирина</span><span class=”sv”>Химчистка дивана</span></span></div></div>
+    </div>
   </div>
 </section>
 
@@ -895,7 +917,7 @@ html{scroll-behavior:smooth;}
         <h2>Платите баллами UDS за следующий заказ</h2>
         <p>Участвуем в бонусной программе UDS: копите баллы и оплачивайте ими будущую уборку или химчистку — частично или полностью. Скидка 10% за наличку.</p>
         <div class="pts"><i></i>+300 баллов сразу при регистрации</div>
-        <div><a href="#" class="btn btn-green">Подключиться →</a></div>
+        <div><a href="https://uborka38.uds.app/c/" target="_blank" rel="noopener" class="btn btn-green">Подключиться →</a></div>
       </div>
       <div class="uds-ph"><img class="photo" src="img/uds-app.webp" alt="Приложение UDS — бонусная программа Генеральной уборки" loading="lazy"></div>
     </div>
@@ -1241,6 +1263,39 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
   </div>
 </div>
 
+
+<!-- ============ БЫСТРАЯ ФОРМА (калькулятор / услуга) ============ -->
+<div class="quick-modal" id="quickModal" role="dialog" aria-modal="true" aria-label="Оставить заявку">
+  <div class="om-backdrop" onclick="quickClose()"></div>
+  <div class="om-card">
+    <button class="om-close" onclick="quickClose()" aria-label="Закрыть">✕</button>
+    <div class="om-head">
+      <div class="micro">Оставить заявку</div>
+      <h2>Заказать услугу</h2>
+    </div>
+    <div class="quick-ctx" id="quickCtx"></div>
+    <form class="om-form" id="quickForm" onsubmit="return quickSubmit(event)">
+      <div class="om-field">
+        <label for="quickName">Ваше имя</label>
+        <input type="text" id="quickName" name="name" placeholder="Как вас зовут?" autocomplete="name" required>
+      </div>
+      <div class="om-field">
+        <label for="quickPhone">Телефон</label>
+        <input type="tel" id="quickPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+      </div>
+      <div class="om-check">
+        <input type="checkbox" id="quickPd" name="pd" required>
+        <label for="quickPd">Согласен(а) с <a href="contacts.html">политикой обработки персональных данных</a></label>
+      </div>
+      <button type="submit" class="btn btn-green btn-block">Отправить заявку</button>
+    </form>
+    <div class="om-success" id="quickSuccess">
+      <div class="om-ok">✓</div>
+      <h3>Заявка принята!</h3>
+      <p>Свяжемся с вами в ближайшее время</p>
+    </div>
+  </div>
+</div>
 <!-- ============ МОДАЛЬНОЕ ОКНО: ЗАКАЗАТЬ КЛИНИНГ ============ -->
 <div class="order-modal" id="orderModal" role="dialog" aria-modal="true" aria-label="Заказать клининг">
   <div class="om-backdrop" onclick="omClose()"></div>
@@ -1287,6 +1342,103 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
   }
   window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit;
   document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
+})();
+(function(){
+  function kpOpen(){document.getElementById('kpModal').classList.add('open');document.body.style.overflow='hidden';}
+  function kpClose(){document.getElementById('kpModal').classList.remove('open');document.body.style.overflow='';}
+  function kpSubmit(e){
+    e.preventDefault();
+    document.getElementById('kpForm').classList.add('hide');
+    document.getElementById('kpSuccess').classList.add('show');
+    setTimeout(kpClose,3500);return false;
+  }
+  function tenderOpen(){document.getElementById('tenderModal').classList.add('open');document.body.style.overflow='hidden';}
+  function tenderClose(){document.getElementById('tenderModal').classList.remove('open');document.body.style.overflow='';}
+  function tenderSubmit(e){
+    e.preventDefault();
+    document.getElementById('tenderForm').classList.add('hide');
+    document.getElementById('tenderSuccess').classList.add('show');
+    setTimeout(tenderClose,3500);return false;
+  }
+  window.kpOpen=kpOpen;window.kpClose=kpClose;window.kpSubmit=kpSubmit;
+  window.tenderOpen=tenderOpen;window.tenderClose=tenderClose;window.tenderSubmit=tenderSubmit;
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){kpClose();tenderClose();}});
+})();
+(function(){
+  window.addEventListener('message',function(e){
+    try{
+      var d=typeof e.data==='string'?JSON.parse(e.data):e.data;
+      if(d&&(d.event==='play'||d.type==='play')){
+        document.querySelectorAll('iframe[src*="kinescope.io"]').forEach(function(f){
+          if(f.contentWindow!==e.source){
+            try{f.contentWindow.postMessage(JSON.stringify({method:'pause'}),'*');}catch(err){}
+          }
+        });
+      }
+    }catch(err){}
+  });
+})();
+/* Quick order modal */
+(function(){
+  function quickOpen(label){
+    document.getElementById('quickCtx').innerHTML='<strong>Выбранная услуга:</strong> '+label;
+    document.getElementById('quickForm').classList.remove('hide');
+    document.getElementById('quickSuccess').classList.remove('show');
+    document.getElementById('quickModal').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function calcOrder(){
+    var tab=document.querySelector('.calc-tab.on');
+    var tabLabel=tab?tab.textContent.trim():'Уборка';
+    var price=document.getElementById('out')?document.getElementById('out').textContent.trim():'';
+    var extra='';
+    if(tabLabel==='Уборка'){var vv=document.getElementById('v-uborka');extra=vv?' · '+vv.textContent:'';}
+    else if(tabLabel==='Окна'){var vv=document.getElementById('v-okna');extra=vv?' · '+vv.textContent:'';}
+    else if(tabLabel==='Химчистка'){var sel=document.getElementById('s-mebel');extra=sel?' · '+sel.options[sel.selectedIndex].text:'';}
+    var label=tabLabel+extra+(price?' — <b>'+price+'</b>':'');
+    quickOpen(label);
+  }
+  function quickClose(){
+    document.getElementById('quickModal').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function quickSubmit(e){
+    e.preventDefault();
+    document.getElementById('quickForm').classList.add('hide');
+    document.getElementById('quickSuccess').classList.add('show');
+    setTimeout(quickClose,3500);
+    return false;
+  }
+  window.quickOpen=quickOpen;window.calcOrder=calcOrder;
+  window.quickClose=quickClose;window.quickSubmit=quickSubmit;
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')quickClose();});
+})();
+/* Phone mask for all tel inputs */
+(function(){
+  function applyMask(inp){
+    inp.addEventListener('focus',function(){if(!this.value)this.value='+7 (';});
+    inp.addEventListener('input',function(){
+      var digits=this.value.replace(/[^\d]/g,'');
+      if(digits.charAt(0)==='7')digits=digits.slice(1);
+      else if(digits.charAt(0)==='8')digits=digits.slice(1);
+      digits=digits.slice(0,10);
+      var v='+7';
+      if(digits.length>0)v+=' ('+digits.slice(0,3);
+      if(digits.length>=3)v+=') ';
+      if(digits.length>3)v+=digits.slice(3,6);
+      if(digits.length>=6)v+='-';
+      if(digits.length>6)v+=digits.slice(6,8);
+      if(digits.length>=8)v+='-';
+      if(digits.length>8)v+=digits.slice(8,10);
+      this.value=v;
+    });
+    inp.addEventListener('keydown',function(e){
+      if(e.key==='Backspace'&&(this.value==='+7 ('||this.value==='+7'))e.preventDefault();
+    });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    document.querySelectorAll('input[type=tel]').forEach(applyMask);
+  });
 })();
 </script>
 </body>
