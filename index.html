@@ -169,7 +169,7 @@ html{scroll-behavior:smooth;}
   display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;box-shadow:var(--sh-1);}
 .gu-page .ava span:first-child{margin-left:0;}
 .gu-page .ava .a1{background:var(--cyan);}
-.gu-page .ava .a2{background:var(--green);color:#16290a;}
+.gu-page .ava .a2{background:var(--green);color:#fff;}
 .gu-page .ava .a3{background:var(--blue);}
 .gu-page .ava .a4{background:var(--mint-3);color:var(--cyan-deep);}
 .gu-page .rt-n{font-size:19px;font-weight:800;display:flex;align-items:center;gap:9px;letter-spacing:-.01em;}
@@ -333,7 +333,7 @@ html{scroll-behavior:smooth;}
 .gu-page .tr:hover{transform:translateY(-4px);}
 .gu-page .tr i{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;margin-bottom:20px;font-style:normal;}
 .gu-page .tr:nth-child(1) i{background:var(--cyan);}
-.gu-page .tr:nth-child(2) i{background:var(--green);color:#16290a;}
+.gu-page .tr:nth-child(2) i{background:var(--green);color:#fff;}
 .gu-page .tr:nth-child(3) i{background:var(--blue);}
 .gu-page .tr:nth-child(4) i{background:var(--cyan-deep);}
 .gu-page .tr h3{font-size:18px;margin-bottom:10px;line-height:1.3;font-weight:700;}
@@ -397,7 +397,7 @@ html{scroll-behavior:smooth;}
 .gu-page .rev p{font-size:14.5px;}
 .gu-page .rev .who{display:flex;align-items:center;gap:12px;margin-top:auto;}
 .gu-page .rev .av{width:38px;height:38px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;background:var(--cyan);}
-.gu-page .rev:nth-child(2) .av{background:var(--green);color:#16290a;}
+.gu-page .rev:nth-child(2) .av{background:var(--green);color:#fff;}
 .gu-page .rev:nth-child(3) .av{background:var(--blue);}
 .gu-page .rev .nm{font-size:14px;font-weight:700;display:block;}
 .gu-page .rev .sv{font-size:12px;color:var(--gray-2);display:block;}
@@ -407,7 +407,7 @@ html{scroll-behavior:smooth;}
 .gu-page .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
 .gu-page .st{background:#fff;border-radius:var(--r-xl);position:relative;padding:30px;border:1px solid var(--line);}
 .gu-page .st .n{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff;margin-bottom:18px;background:var(--cyan);}
-.gu-page .st:nth-child(2) .n{background:var(--green);color:#16290a;}
+.gu-page .st:nth-child(2) .n{background:var(--green);color:#fff;}
 .gu-page .st:nth-child(3) .n{background:var(--blue);}
 .gu-page .st:nth-child(4) .n{background:var(--cyan-deep);}
 .gu-page .st h3{font-size:19px;margin-bottom:10px;}
@@ -518,19 +518,16 @@ html{scroll-behavior:smooth;}
 <header class="hdr">
   <div class="hdr-in">
     <a href="index.html" class="hdr-logo"><img src="https://static.tildacdn.com/tild3766-6436-4261-b661-613261313461/image_997.png" alt="Генеральная уборка — клининговая компания в Иркутске"></a>
-            <nav class="hdr-nav">
+                <nav class="hdr-nav">
       <div class="nd"><a href="clients.html" class="nd-t">Для дома</a><div class="nd-m"><a href="clients.html" class="nd-top">Все услуги для дома</a><a href="uborka.html">Уборка квартир</a><a href="mytyo.html">Мытьё окон</a><a href="himchistka.html">Химчистка мебели</a><a href="suhoy-tuman.html">Сухой туман</a></div></div>
       <div class="nd"><a href="business.html" class="nd-t">Для бизнеса</a><div class="nd-m"><a href="business.html" class="nd-top">Все для бизнеса</a><a href="abonement.html">Абонентское обслуживание</a><a href="razovye.html">Разовые услуги</a><a href="partners.html">Партнёрам</a></div></div>
       <a href="price.html">Цены</a>
-      <a href="#otzyvy">Отзывы</a>
-      <a href="about.html">О компании</a>
-      <a href="contacts.html">Контакты</a>
-      <a href="uds.html">Бонусы UDS</a>
+      <div class="nd"><span class="nd-t">Ещё</span><div class="nd-m"><a href="index.html#otzyvy" class="nd-top">Отзывы</a><a href="about.html">О компании</a><a href="contacts.html">Контакты</a><a href="uds.html">Бонусы UDS</a></div></div>
     </nav>
     <div class="hdr-right">
       <div class="msg-ico">
-        <a href="tel:+79149276748" class="i-max" title="MAX: +7 914 927-67-48 — пришлите фото и видео">MAX</a>
-        <a href="https://vk.com/38uborka" class="i-vk" title="ВКонтакте">VK</a>
+        <a href="tel:+79149276748" class="i-max" title="MAX: +7 914 927-67-48 — пришлите фото и видео"><img src="img/max.svg" alt="MAX" width="24" height="24" style="display:block;"></a>
+        <a href="https://vk.com/38uborka" class="i-vk" title="ВКонтакте"><img src="img/vk.svg" alt="ВКонтакте" width="24" height="24" style="display:block;"></a>
       </div>
       <div class="hdr-tel">
         <a href="tel:83952554499">8 (3952) 55-44-99</a>
@@ -542,7 +539,7 @@ html{scroll-behavior:smooth;}
     </div>
   </div>
   <div class="mob-menu" id="mobMenu">
-            <nav class="mob-nav">
+                <nav class="mob-nav">
       <div class="mob-acc">
         <button type="button" class="mob-acc-t">Для дома <span class="arr">▾</span></button>
         <div class="mob-acc-m">
@@ -563,14 +560,19 @@ html{scroll-behavior:smooth;}
         </div>
       </div>
       <a href="price.html">Цены</a>
-      <a href="index.html#otzyvy">Отзывы</a>
-      <a href="about.html">О компании</a>
-      <a href="contacts.html">Контакты</a>
-      <a href="uds.html">Бонусы UDS</a>
+      <div class="mob-acc">
+        <button type="button" class="mob-acc-t">Ещё <span class="arr">▾</span></button>
+        <div class="mob-acc-m">
+          <a href="index.html#otzyvy">Отзывы</a>
+          <a href="about.html">О компании</a>
+          <a href="contacts.html">Контакты</a>
+          <a href="uds.html">Бонусы UDS</a>
+        </div>
+      </div>
     </nav>
     <div class="mob-social">
-      <a href="tel:+79149276748" class="i-max" title="MAX: +7 914 927-67-48 — пришлите фото и видео">MAX</a>
-      <a href="https://vk.com/38uborka" class="i-vk" title="ВКонтакте">VK</a>
+      <a href="tel:+79149276748" class="i-max" title="MAX: +7 914 927-67-48 — пришлите фото и видео"><img src="img/max.svg" alt="MAX" width="24" height="24" style="display:block;"></a>
+      <a href="https://vk.com/38uborka" class="i-vk" title="ВКонтакте"><img src="img/vk.svg" alt="ВКонтакте" width="24" height="24" style="display:block;"></a>
     </div>
   </div>
 </header>
@@ -655,18 +657,18 @@ html{scroll-behavior:smooth;}
     </div>
 
     <div class="hero-cards">
-      <a href="#uslugi" class="hc">
-        <img class="photo" src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=700&q=80&fit=crop" alt="Уборка квартиры" loading="lazy">
+      <a href="uborka.html" class="hc">
+        <img class="photo" src="img/hero-apartment.png" alt="Уборка квартиры" loading="eager">
         <span class="hc-n">01</span>
         <span class="hc-t">Уборка квартир</span>
       </a>
-      <a href="#biznes" class="hc">
-        <img class="photo" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=700&q=80&fit=crop" alt="Уборка офиса" loading="lazy">
+      <a href="business.html" class="hc">
+        <img class="photo" src="img/hero-office.png" alt="Уборка офиса" loading="eager">
         <span class="hc-n">02</span>
         <span class="hc-t">Уборка офисов</span>
       </a>
-      <a href="#uslugi" class="hc">
-        <img class="photo" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80&fit=crop" alt="Химчистка дивана" loading="lazy">
+      <a href="himchistka.html" class="hc">
+        <img class="photo" src="img/hero-himchistka.png" alt="Химчистка мебели" loading="eager">
         <span class="hc-n">03</span>
         <span class="hc-t">Химчистка мебели</span>
       </a>
