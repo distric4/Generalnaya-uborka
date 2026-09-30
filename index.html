@@ -312,7 +312,7 @@ html{scroll-behavior:smooth;}
 /* ---------- 7. ОБОРУДОВАНИЕ: видео + список ---------- */
 .gu-page .eq-split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;}
 .gu-page .eq-video .video-ph{aspect-ratio:4/3;border-radius:var(--r-lg);}
-.gu-page .eq-video .vid-item iframe{aspect-ratio:9/14;}
+.gu-page .eq-video{max-width:340px;}.gu-page .eq-video .vid-item iframe{aspect-ratio:9/14;}
 .gu-page .eq-list{list-style:none;display:flex;flex-direction:column;}
 .gu-page .eq-list li{position:relative;padding:16px 0 16px 28px;font-size:15px;line-height:1.5;color:rgba(241,241,238,.85);
   border-top:1px solid rgba(255,255,255,.12);}
@@ -745,7 +745,7 @@ html{scroll-behavior:smooth;}
   <div class="wave top"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,60 C240,0 480,0 720,26 C960,52 1200,52 1440,18 L1440,0 L0,0 Z" fill="#fff"/></svg></div>
   <div class="wrap">
     <div class="s-head" style="align-items:flex-end;">
-      <div><span class="micro">Услуги</span><h2 style="margin-top:14px;">Услуги клининга, которые заказывают чаще всего</h2>
+      <div><span class="micro">Услуги</span><h2 style="margin-top:14px;margin-bottom:10px;">Услуги клининга, которые заказывают чаще всего</h2>
       <p>Цены указаны «от» — точная стоимость зависит от площади и состояния объекта.</p></div>
       <a href="uborka.html" class="btn btn-line" style="flex-shrink:0;white-space:nowrap;">Все услуги →</a>
     </div>
@@ -892,18 +892,18 @@ html{scroll-behavior:smooth;}
     <div class="revs">
       <div class="rev"><div class="q">“</div><p>Долго не могли найти, кто возьмётся за химчистку вискозного ковра без воды — здесь справились, ковёр как новый.</p>
         <div class="who"><span class="av">В</span><span><span class="nm">Валерий</span><span class="sv">Химчистка ковра</span></span></div></div>
-      <div class=”rev”><div class=”q”>”</div><p>Заказывали уборку после ремонта — обеспылили всё, даже то, о чём мы сами не подумали. Приехали точно в срок.</p>
-        <div class=”who”><span class=”av”>М</span><span><span class=”nm”>Мария</span><span class=”sv”>Уборка после ремонта</span></span></div></div>
-      <div class=”rev”><div class=”q”>”</div><p>Работаем с ними по абонементу — офис 240 м² убирают три раза в неделю. Персонал закреплён, не меняется, к замечаниям прислушиваются.</p>
-        <div class=”who”><span class=”av”>Е</span><span><span class=”nm”>Евгений</span><span class=”sv”>Абонентское обслуживание офиса</span></span></div></div>
-      <div class=”rev”><div class=”q”>”</div><p>Генеральная уборка квартиры после съёмщиков — сделали всё идеально. Плита, сантехника, за холодильником — нигде не схалтурили.</p>
-        <div class=”who”><span class=”av”>О</span><span><span class=”nm”>Ольга</span><span class=”sv”>Генеральная уборка квартиры</span></span></div></div>
-      <div class=”rev”><div class=”q”>”</div><p>Мыли окна на 5-м этаже — без стремянки снаружи, через телескопические штанги. Результат чистый, без разводов, без лишнего шума.</p>
-        <div class=”who”><span class=”av”>С</span><span><span class=”nm”>Сергей</span><span class=”sv”>Мытьё окон</span></span></div></div>
-      <div class=”rev”><div class=”q”>”</div><p>Использовали сухой туман после запаха гари. Специалист приехал на следующий день, через 3 часа в квартире уже не было ни намёка на запах.</p>
-        <div class=”who”><span class=”av”>Н</span><span><span class=”nm”>Наталья</span><span class=”sv”>Сухой туман — устранение запаха</span></span></div></div>
-      <div class=”rev”><div class=”q”>”</div><p>Диван чистили с глубокой экстракцией — пятна от кофе и вина сошли полностью. Высох за ночь, запах приятный. Буду звать снова.</p>
-        <div class=”who”><span class=”av”>И</span><span><span class=”nm”>Ирина</span><span class=”sv”>Химчистка дивана</span></span></div></div>
+      <div class="rev"><div class="q">”</div><p>Заказывали уборку после ремонта — обеспылили всё, даже то, о чём мы сами не подумали. Приехали точно в срок.</p>
+        <div class="who"><span class="av">М</span><span><span class="nm">Мария</span><span class="sv">Уборка после ремонта</span></span></div></div>
+      <div class="rev"><div class="q">”</div><p>Работаем с ними по абонементу — офис 240 м² убирают три раза в неделю. Персонал закреплён, не меняется, к замечаниям прислушиваются.</p>
+        <div class="who"><span class="av">Е</span><span><span class="nm">Евгений</span><span class="sv">Абонентское обслуживание офиса</span></span></div></div>
+      <div class="rev"><div class="q">”</div><p>Генеральная уборка квартиры после съёмщиков — сделали всё идеально. Плита, сантехника, за холодильником — нигде не схалтурили.</p>
+        <div class="who"><span class="av">О</span><span><span class="nm">Ольга</span><span class="sv">Генеральная уборка квартиры</span></span></div></div>
+      <div class="rev"><div class="q">”</div><p>Мыли окна на 5-м этаже — без стремянки снаружи, через телескопические штанги. Результат чистый, без разводов, без лишнего шума.</p>
+        <div class="who"><span class="av">С</span><span><span class="nm">Сергей</span><span class="sv">Мытьё окон</span></span></div></div>
+      <div class="rev"><div class="q">”</div><p>Использовали сухой туман после запаха гари. Специалист приехал на следующий день, через 3 часа в квартире уже не было ни намёка на запах.</p>
+        <div class="who"><span class="av">Н</span><span><span class="nm">Наталья</span><span class="sv">Сухой туман — устранение запаха</span></span></div></div>
+      <div class="rev"><div class="q">”</div><p>Диван чистили с глубокой экстракцией — пятна от кофе и вина сошли полностью. Высох за ночь, запах приятный. Буду звать снова.</p>
+        <div class="who"><span class="av">И</span><span><span class="nm">Ирина</span><span class="sv">Химчистка дивана</span></span></div></div>
     </div>
   </div>
 </section>
@@ -917,7 +917,8 @@ html{scroll-behavior:smooth;}
         <h2>Платите баллами UDS за следующий заказ</h2>
         <p>Участвуем в бонусной программе UDS: копите баллы и оплачивайте ими будущую уборку или химчистку — частично или полностью. Скидка 10% за наличку.</p>
         <div class="pts"><i></i>+300 баллов сразу при регистрации</div>
-        <div><a href="https://uborka38.uds.app/c/" target="_blank" rel="noopener" class="btn btn-green">Подключиться →</a></div>
+        <div><a href="https://uborka38.uds.app/c/" target="_blank" rel="noopener" class="btn btn-green">Подключиться к UDS →</a>
+        <p style="margin-top:10px;font-size:12.5px;color:var(--gray-2);line-height:1.5;">Откроется страница «Генеральная уборка» в приложении UDS — там можно зарегистрироваться и получить +300 бонусных баллов</p></div>
       </div>
       <div class="uds-ph"><img class="photo" src="img/uds-app.webp" alt="Приложение UDS — бонусная программа Генеральной уборки" loading="lazy"></div>
     </div>
@@ -964,7 +965,7 @@ html{scroll-behavior:smooth;}
         <form id="leadForm" novalidate>
           <div class="fcalc" id="fcalc">Ваш расчёт: <b id="fcalcVal"></b></div>
           <div class="fld"><label for="f-name">Имя</label><input type="text" id="f-name" name="name" placeholder="Как к вам обращаться"></div>
-          <div class="fld"><label for="f-phone">Телефон <span style="color:var(--cyan-deep)">*</span></label><input type="tel" id="f-phone" name="phone" placeholder="+7 (___) ___-__-__" required></div>
+          <div class="fld"><label for="f-phone">Телефон <span style="color:var(--cyan-deep)">*</span></label><input type="tel" id="f-phone" name="phone" placeholder="+7 (___) ___-__-__"></div>
           <div class="fld"><label>Как удобнее связаться</label>
             <div class="rrow">
               <label><input type="radio" name="svyaz" value="Позвонить" checked> Позвонить</label>
@@ -1132,7 +1133,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
   });
 })();
 
-/* ===== Кнопка «наверх» ===== */
+/* ===== Кнопка "наверх" ===== */
 (function(){
   var btn = document.getElementById('backTop');
   function upd(){
@@ -1190,7 +1191,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
     <form class="om-form" id="kpForm" onsubmit="return kpSubmit(event)">
       <div class="om-field">
         <label for="kpOrg">Организация</label>
-        <input type="text" id="kpOrg" name="org" placeholder="ООО «Название компании»" required>
+        <input type="text" id="kpOrg" name="org" placeholder="ООО "Название компании"" required>
       </div>
       <div class="om-field">
         <label for="kpName">Контактное лицо</label>
@@ -1198,7 +1199,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
       </div>
       <div class="om-field">
         <label for="kpPhone">Телефон</label>
-        <input type="tel" id="kpPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+        <input type="tel" id="kpPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel">
       </div>
       <div class="om-field">
         <label for="kpDesc">Объект и задача (кратко)</label>
@@ -1231,7 +1232,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
     <form class="om-form" id="tenderForm" onsubmit="return tenderSubmit(event)">
       <div class="om-field">
         <label for="tdOrg">Организация</label>
-        <input type="text" id="tdOrg" name="org" placeholder="ООО «Название компании»" required>
+        <input type="text" id="tdOrg" name="org" placeholder="ООО "Название компании"" required>
       </div>
       <div class="om-field">
         <label for="tdInn">ИНН</label>
@@ -1243,7 +1244,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
       </div>
       <div class="om-field">
         <label for="tdPhone">Телефон</label>
-        <input type="tel" id="tdPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+        <input type="tel" id="tdPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel">
       </div>
       <div class="om-field">
         <label for="tdDesc">Ссылка на тендер или описание</label>
@@ -1281,7 +1282,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
       </div>
       <div class="om-field">
         <label for="quickPhone">Телефон</label>
-        <input type="tel" id="quickPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+        <input type="tel" id="quickPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel">
       </div>
       <div class="om-check">
         <input type="checkbox" id="quickPd" name="pd" required>
@@ -1313,7 +1314,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
       </div>
       <div class="om-field">
         <label for="omPhone">Телефон</label>
-        <input type="tel" id="omPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+        <input type="tel" id="omPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel">
       </div>
       <div class="om-check">
         <input type="checkbox" id="omPd" name="pd" required>
@@ -1331,7 +1332,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
 </div>
 <script>
 (function(){
-  function omOpen(){document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
+  function omOpen(){var f=document.getElementById('omForm');if(f){f.reset();f.classList.remove('hide');}document.getElementById('omSuccess').classList.remove('show');document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
   function omClose(){document.getElementById('orderModal').classList.remove('open');document.body.style.overflow='';}
   function omSubmit(e){
     e.preventDefault();
@@ -1344,7 +1345,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
   document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
 })();
 (function(){
-  function kpOpen(){document.getElementById('kpModal').classList.add('open');document.body.style.overflow='hidden';}
+  function kpOpen(){var f=document.getElementById('kpForm');if(f){f.reset();f.classList.remove('hide');}document.getElementById('kpSuccess').classList.remove('show');document.getElementById('kpModal').classList.add('open');document.body.style.overflow='hidden';}
   function kpClose(){document.getElementById('kpModal').classList.remove('open');document.body.style.overflow='';}
   function kpSubmit(e){
     e.preventDefault();
@@ -1352,7 +1353,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
     document.getElementById('kpSuccess').classList.add('show');
     setTimeout(kpClose,3500);return false;
   }
-  function tenderOpen(){document.getElementById('tenderModal').classList.add('open');document.body.style.overflow='hidden';}
+  function tenderOpen(){var f=document.getElementById('tenderForm');if(f){f.reset();f.classList.remove('hide');}document.getElementById('tenderSuccess').classList.remove('show');document.getElementById('tenderModal').classList.add('open');document.body.style.overflow='hidden';}
   function tenderClose(){document.getElementById('tenderModal').classList.remove('open');document.body.style.overflow='';}
   function tenderSubmit(e){
     e.preventDefault();
@@ -1415,29 +1416,56 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
 })();
 /* Phone mask for all tel inputs */
 (function(){
+  function fmtPhone(d){
+    var v='+7';
+    if(d.length>0)v+=' ('+d.slice(0,3);
+    if(d.length>=3)v+=') ';
+    if(d.length>3)v+=d.slice(3,6);
+    if(d.length>=6)v+='-';
+    if(d.length>6)v+=d.slice(6,8);
+    if(d.length>=8)v+='-';
+    if(d.length>8)v+=d.slice(8,10);
+    return v;
+  }
+  function getDigits(v){
+    var d=v.replace(/[^\d]/g,'');
+    if(d.charAt(0)==='7')d=d.slice(1);
+    else if(d.charAt(0)==='8')d=d.slice(1);
+    return d.slice(0,10);
+  }
   function applyMask(inp){
-    inp.addEventListener('focus',function(){if(!this.value)this.value='+7 (';});
-    inp.addEventListener('input',function(){
-      var digits=this.value.replace(/[^\d]/g,'');
-      if(digits.charAt(0)==='7')digits=digits.slice(1);
-      else if(digits.charAt(0)==='8')digits=digits.slice(1);
-      digits=digits.slice(0,10);
-      var v='+7';
-      if(digits.length>0)v+=' ('+digits.slice(0,3);
-      if(digits.length>=3)v+=') ';
-      if(digits.length>3)v+=digits.slice(3,6);
-      if(digits.length>=6)v+='-';
-      if(digits.length>6)v+=digits.slice(6,8);
-      if(digits.length>=8)v+='-';
-      if(digits.length>8)v+=digits.slice(8,10);
-      this.value=v;
-    });
+    inp.addEventListener('focus',function(){if(!this.value)this.value='+7';});
     inp.addEventListener('keydown',function(e){
-      if(e.key==='Backspace'&&(this.value==='+7 ('||this.value==='+7'))e.preventDefault();
+      if(e.key==='Backspace'){
+        e.preventDefault();
+        var d=getDigits(this.value);
+        if(d.length>0)d=d.slice(0,-1);
+        this.value=d.length>0?fmtPhone(d):'';
+      }
+    });
+    inp.addEventListener('input',function(){
+      var d=getDigits(this.value);
+      this.value=d.length>0?fmtPhone(d):'';
+    });
+    inp.addEventListener('blur',function(){
+      if(!this.value||this.value==='+7')this.value='';
     });
   }
   document.addEventListener('DOMContentLoaded',function(){
     document.querySelectorAll('input[type=tel]').forEach(applyMask);
+  });
+})();
+/* Autoplay via postMessage */
+(function(){
+  document.addEventListener('DOMContentLoaded',function(){
+    document.querySelectorAll('iframe[src*="kinescope.io"]').forEach(function(f){
+      f.addEventListener('load',function(){
+        var frame=f;
+        setTimeout(function(){
+          try{frame.contentWindow.postMessage(JSON.stringify({method:'play'}), '*');}catch(e){}
+        },800);
+      });
+    });
   });
 })();
 </script>
