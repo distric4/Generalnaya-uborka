@@ -1087,6 +1087,17 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
     btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
   menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+  /* Аккордеон в мобильном меню */
+  menu.querySelectorAll('.mob-acc-t').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var acc = btn.parentElement;
+      var isOpen = acc.classList.toggle('open');
+      /* закрыть остальные */
+      menu.querySelectorAll('.mob-acc').forEach(function(other){
+        if(other !== acc) other.classList.remove('open');
+      });
+    });
+  });
 })();
 
 /* ===== Полоса прогресса прокрутки ===== */
