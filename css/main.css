@@ -938,3 +938,6 @@ html{scroll-behavior:smooth;}
 .gu-page .srv-card h3,.gu-page .srv-c h3{text-decoration:none;}
 .gu-page .srv-card .srv-b,.gu-page .srv-c .srv-b{padding:28px 24px 24px;gap:10px;border-top-width:3px;border-top-style:solid;border-top-color:#DCEEF4;}
 .gu-page .srv-card .srv-b h3,.gu-page .srv-c .srv-b h3{margin-top:0;font-size:18px;}
+.gu-page .srv-btns{display:flex;gap:8px;margin-top:4px;}
+.gu-page .srv-btns .btn{flex:1;text-align:center;font-size:14px;}
+@media(max-width:480px){.gu-page .srv-btns{flex-direction:column;}}
