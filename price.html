@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
@@ -85,8 +85,8 @@
     <h1 style="margin-top:14px;">Цены на услуги <b class="gr">клининга в Иркутске</b></h1>
     <p class="hero-lead" style="max-width:64ch;">Все цены указаны «от» — точная стоимость зависит от площади, состояния объекта и доступа к воде. Финальную сумму называет менеджер после уточнения деталей или оценки по фото.</p>
     <div class="hero-btns">
-      <a href="/#calc" class="btn btn-cyan">Рассчитать в калькуляторе →</a>
-      <a href="/#zayavka" class="btn btn-line">Оставить заявку</a>
+      <a href="index.html#calc" class="btn btn-cyan">Рассчитать в калькуляторе →</a>
+      <a href="index.html#zayavka" class="btn btn-line">Оставить заявку</a>
     </div>
   </div>
 </section>
@@ -306,7 +306,7 @@
     <h2 style="margin-top:14px;">Посчитаем точную стоимость по фото или на объекте</h2>
     <p style="color:rgba(255,255,255,.68);max-width:56ch;margin:14px auto 30px;">Бесплатный выезд менеджера или оценка по фото в мессенджере — точную цену назовём в течение суток.</p>
     <div class="hero-btns" style="justify-content:center;">
-      <a href="/#calc" class="btn btn-green">Открыть калькулятор →</a>
+      <a href="index.html#calc" class="btn btn-green">Открыть калькулятор →</a>
       <a href="tel:83952554499" class="btn btn-line" style="border-color:rgba(255,255,255,.3);color:#fff;">8 (3952) 55-44-99</a>
     </div>
   </div>
@@ -409,7 +409,7 @@
 </div>
 <script>
 (function(){
-  function omOpen(){document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
+  function omOpen(){var f=document.getElementById('omForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('omSuccess');if(s){s.classList.remove('show');}document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
   function omClose(){document.getElementById('orderModal').classList.remove('open');document.body.style.overflow='';}
   function omSubmit(e){
     e.preventDefault();

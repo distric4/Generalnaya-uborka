@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
@@ -190,7 +190,7 @@
             </div>
           </div>
           <label class="agree"><input type="checkbox" id="c-agree" required>
-            <span>Нажимая кнопку, я соглашаюсь с <a href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных.</span></label>
+            <span>Нажимая кнопку, я соглашаюсь с <a href="contacts.html">политикой конфиденциальности</a> и даю согласие на обработку персональных данных.</span></label>
           <button type="submit" class="btn btn-cyan btn-block">Рассчитать стоимость →</button>
           <div id="calcMsg" class="form-msg" style="display:none;margin-top:18px;padding:15px 18px;font-size:14px;"></div>
         </form>
@@ -230,7 +230,7 @@
       <span>Акты выполненных работ</span>
       <span>Полный документооборот в ЭДО</span>
     </div>
-    <p style="margin-top:14px;"><a href="/business/partners/" class="btn btn-line">Полный пакет документов и реквизиты компании →</a></p>
+    <p style="margin-top:14px;"><a href="partners.html" class="btn btn-line">Полный пакет документов и реквизиты компании →</a></p>
   </div>
 </section>
 
@@ -307,7 +307,7 @@
             </div>
           </div>
           <label class="agree"><input type="checkbox" id="f-agree" required>
-            <span>Нажимая кнопку, я соглашаюсь с <a href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных.</span></label>
+            <span>Нажимая кнопку, я соглашаюсь с <a href="contacts.html">политикой конфиденциальности</a> и даю согласие на обработку персональных данных.</span></label>
           <button type="submit" class="btn btn-cyan btn-block">Получить КП →</button>
           <div id="formMsg" class="form-msg" style="display:none;margin-top:18px;padding:15px 18px;font-size:14px;"></div>
         </form>
@@ -438,7 +438,7 @@ guBindForm('leadForm','f-phone','f-agree','formMsg','Заявка принята
 </div>
 <script>
 (function(){
-  function omOpen(){document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
+  function omOpen(){var f=document.getElementById('omForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('omSuccess');if(s){s.classList.remove('show');}document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
   function omClose(){document.getElementById('orderModal').classList.remove('open');document.body.style.overflow='';}
   function omSubmit(e){
     e.preventDefault();

@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
@@ -339,7 +339,7 @@
       <a href="uborka.html" class="os-card"><h3>Уборка квартир и домов</h3><p>генеральная, поддерживающая, после ремонта</p><span class="os-go">Подробнее →</span></a>
       <a href="himchistka.html" class="os-card"><h3>Химчистка</h3><p>диваны, кресла, матрасы, ковры и шторы</p><span class="os-go">Подробнее →</span></a>
       <a href="suhoy-tuman.html" class="os-card"><h3>Сухой туман</h3><p>устранение запахов после животных, ремонта, табака</p><span class="os-go">Подробнее →</span></a>
-      <a href="/price" class="os-card"><h3>Все цены</h3><p>полный прайс на услуги</p><span class="os-go">Смотреть прайс →</span></a>
+      <a href="price.html" class="os-card"><h3>Все цены</h3><p>полный прайс на услуги</p><span class="os-go">Смотреть прайс →</span></a>
     </div>
   </div>
 </section>
@@ -364,7 +364,7 @@
             </div>
           </div>
           <label class="agree"><input type="checkbox" id="f-agree" required>
-            <span>Нажимая кнопку, я соглашаюсь с <a href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных.</span></label>
+            <span>Нажимая кнопку, я соглашаюсь с <a href="contacts.html">политикой конфиденциальности</a> и даю согласие на обработку персональных данных.</span></label>
           <button type="submit" class="btn btn-cyan btn-block">Оставить заявку →</button>
           <div id="formMsg" style="display:none;margin-top:18px;padding:15px 18px;border-radius:14px;background:rgba(122,205,2,.14);border:1px solid rgba(122,205,2,.42);font-size:14px;"></div>
         </form>
@@ -508,7 +508,7 @@
 </div>
 <script>
 (function(){
-  function omOpen(){document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
+  function omOpen(){var f=document.getElementById('omForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('omSuccess');if(s){s.classList.remove('show');}document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
   function omClose(){document.getElementById('orderModal').classList.remove('open');document.body.style.overflow='';}
   function omSubmit(e){
     e.preventDefault();
