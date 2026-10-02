@@ -936,5 +936,5 @@ html{scroll-behavior:smooth;}
 .gu-page .srv-ph img{width:100%;height:200px;object-fit:cover;display:block;border-radius:var(--r-lg) var(--r-lg) 0 0;}
 .gu-page .srv-card,.gu-page .srv-c{text-decoration:none;color:inherit;}
 .gu-page .srv-card h3,.gu-page .srv-c h3{text-decoration:none;}
-.gu-page .srv-b{padding:28px 24px 24px;gap:8px;}
-.gu-page .srv-b h3{margin-top:0;}
+.gu-page .srv-card .srv-b,.gu-page .srv-c .srv-b{padding:28px 24px 24px;gap:10px;}
+.gu-page .srv-card .srv-b h3,.gu-page .srv-c .srv-b h3{margin-top:0;font-size:18px;}
