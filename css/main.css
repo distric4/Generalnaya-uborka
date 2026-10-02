@@ -147,8 +147,8 @@ html{scroll-behavior:smooth;}
 .gu-page .burger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg);}
 
 /* ---- мобильное меню ---- */
-.gu-page .mob-menu{max-height:0;overflow:hidden;transition:max-height .3s ease;background:#fff;border-bottom:1px solid var(--line);}
-.gu-page .mob-menu.open{max-height:85vh;overflow-y:auto;border-bottom:1px solid var(--line);}
+.gu-page .mob-menu{position:absolute;top:100%;left:0;right:0;z-index:69;max-height:0;overflow:hidden;transition:max-height .3s ease;background:#fff;box-shadow:0 8px 24px rgba(19,27,35,.10);border-bottom:1px solid var(--line);}
+.gu-page .mob-menu.open{max-height:85vh;overflow-y:auto;}
 @media(min-width:1241px){.gu-page .mob-menu{display:none;}}
 .gu-page .mob-nav{display:flex;flex-direction:column;padding:8px 18px;}
 .gu-page .mob-nav a{padding:13px 4px;font-size:15.5px;font-weight:600;color:var(--ink-2);border-bottom:1px solid var(--line);}
