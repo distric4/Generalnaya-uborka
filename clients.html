@@ -95,6 +95,7 @@
       </div>
       <p class="hero-sub">⏱ Ответим за 5–10 минут</p>
     </div>
+    <img class="hero-mob-img" src="img/hero-clients.webp" alt="Уборщица Генеральной уборки за работой" loading="eager">
   </div>
 </section>
 
@@ -107,19 +108,19 @@
     </div>
     <div class="srv-grid">
       <a href="uborka.html" class="srv-card">
-        <div class="srv-ph"><div class="photo"><span>Фото: уборка квартиры</span></div></div>
+        <div class="srv-ph"><img src="img/srv-uborka.jpg" alt="Уборка квартиры" loading="lazy"></div>
         <div class="srv-b"><h3>Уборка квартир и домов</h3><p>Генеральная, поддерживающая, после ремонта. Бригада 2–3 человека, двушка — 3–4 часа.</p><div class="srv-pr">от 9 000 ₽</div><span class="btn btn-line">Подробнее →</span></div>
       </a>
       <a href="mytyo.html" class="srv-card">
-        <div class="srv-ph"><div class="photo"><span>Фото: мытьё окон</span></div></div>
+        <div class="srv-ph"><img src="img/srv-potolok.jpg" alt="Мойка потолков" loading="lazy"></div>
         <div class="srv-b"><h3>Мытьё окон, потолков, люстр</h3><p>Без разводов и следов воды. Окна, лоджии, натяжные потолки, люстры — работаем со стремянкой и телескопической щёткой.</p><div class="srv-pr">от 500 ₽<small> /м²</small></div><span class="btn btn-line">Подробнее →</span></div>
       </a>
       <a href="himchistka.html" class="srv-card">
-        <div class="srv-ph"><div class="photo"><span>Фото: химчистка дивана</span></div></div>
+        <div class="srv-ph"><img src="img/srv-himchistka.jpg" alt="Химчистка дивана" loading="lazy"></div>
         <div class="srv-b"><h3>Химчистка</h3><p>Чистим на дому — диван, кресла, матрасы, ковры, шторы. Высыхает за 3–5 часов, вывозить ничего не нужно.</p><div class="srv-pr">от 3 000 ₽</div><span class="btn btn-line">Подробнее →</span></div>
       </a>
       <a href="suhoy-tuman.html" class="srv-card">
-        <div class="srv-ph"><div class="photo"><span>Фото: сухой туман</span></div></div>
+        <div class="srv-ph"><img src="img/srv-tuman.jpg" alt="Сухой туман" loading="lazy"></div>
         <div class="srv-b"><h3>Сухой туман</h3><p>Убираем запах насовсем — после кошек, собак, табака, гари и плесени. Не маскируем, а нейтрализуем.</p><div class="srv-pr">от 2 500 ₽</div><span class="btn btn-line">Подробнее →</span></div>
       </a>
     </div>
@@ -238,27 +239,34 @@
         <div class="cc-lbl">Ориентировочно</div>
         <div class="cc-sum" id="ccSum">от 8 250 ₽</div>
         <div class="cc-hint">Предварительный расчёт. Точную цену назовёт менеджер по фото в MAX или на объекте.</div>
-        <a href="#zayavka" class="btn btn-green">Оставить заявку →</a>
+        <button type="button" class="btn btn-green" onclick="calcModalOpen()">Оставить заявку →</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 6. ФОТО И ВИДЕО ============ -->
+<!-- ============ 6. КАК МЫ РАБОТАЕМ ============ -->
 <section class="bg-mint">
   <div class="wrap">
     <div class="s-head">
-      <div><span class="micro">Фото и видео</span><h2 style="margin-top:14px;">Наши работы — до и после</h2></div>
-      <p>Результат реальных объектов в Иркутске. Фото и видео добавит заказчик.</p>
+      <div><span class="micro">Видео</span><h2 style="margin-top:14px;">Как мы работаем</h2></div>
+      <p>Реальные съёмки наших уборок в Иркутске — посмотрите, как это выглядит изнутри.</p>
     </div>
-    <!-- TODO: заказчик заменит .photo-плейсхолдеры на реальные фото/видео (до/после) -->
-    <div class="gal-grid">
-      <div class="photo"><span>Кухня — до / после</span></div>
-      <div class="photo"><span>Санузел — до / после</span></div>
-      <div class="photo"><span>Комната — до / после</span></div>
-      <div class="photo"><span>Окна — до / после</span></div>
-      <div class="photo"><span>Диван — до / после</span></div>
-      <div class="photo"><span>Видео уборки</span></div>
+    <div class="works-slider" id="worksSliderC">
+      <div class="ws-viewport">
+        <div class="ws-track" id="wsTrackC">
+          <div class="vid-item"><div id="kp-c-7EGdmMfPyu89rqu1Awi4pS" class="kp-player"></div></div>
+          <div class="vid-item"><div id="kp-c-q4ZnwkA3VVJrhrZGtJHmwb" class="kp-player"></div></div>
+          <div class="vid-item"><div id="kp-c-aFuKSeTaHTcvqrcMu4Ujio" class="kp-player"></div></div>
+        </div>
+      </div>
+      <div class="ws-ctrl" id="wsCtrlC">
+        <button class="ws-btn" id="wsPrevC">‹</button>
+        <div class="ws-dots" id="wsDotsC">
+          <span class="ws-dot on"></span><span class="ws-dot"></span><span class="ws-dot"></span>
+        </div>
+        <button class="ws-btn" id="wsNextC">›</button>
+      </div>
     </div>
   </div>
 </section>
@@ -296,19 +304,31 @@
 <section class="bg-mint" id="otzyvy">
   <div class="wrap">
     <div class="s-head">
-      <div><span class="micro">Отзывы</span><h2 style="margin-top:14px;">Что говорят клиенты</h2></div>
+      <div><span class="micro">Отзывы</span><h2 style="margin-top:14px;">Клиенты, которые выбрали нас — и остались довольны</h2></div>
+      <p>Собираем обратную связь после каждой уборки — контрольным звонком в течение суток.</p>
     </div>
-    <div class="rev-grid">
-      <div class="rev-card">
-        <div class="rev-st">★★★★★</div>
-        <p>Заказывала генеральную перед переездом в трёшку на Байкальской. Приехали втроём, управились за 5 часов. Я вернулась к концу работы — принимала вместе с менеджером. Всё до последнего угла.</p>
-        <div class="rev-nm">Ольга, Иркутск</div>
-      </div>
-      <div class="rev-card">
-        <div class="rev-st">★★★★★</div>
-        <p>Мыли окна после зимы — 8 окон и лоджия. Ни одного развода, воду убрали за собой. Я даже не ожидала что света в квартире станет настолько больше, будто шторы сменила.</p>
-        <div class="rev-nm">Марина, Иркутск</div>
-      </div>
+    <a href="https://go.2gis.com/ALCVB" target="_blank" rel="noopener" class="gis-badge">
+      <span class="gis-logo">2ГИС</span>
+      <span class="gis-stars">★★★★★</span>
+      <span class="gis-score">4.7</span>
+      <span class="gis-count">· 328 отзывов</span>
+      <span class="gis-arrow">Читать →</span>
+    </a>
+    <div class="revs">
+      <div class="rev"><div class="q">"</div><p>Долго не могли найти, кто возьмётся за химчистку вискозного ковра без воды — здесь справились, ковёр как новый.</p>
+        <div class="who"><span class="av">В</span><span><span class="nm">Валерий</span><span class="sv">Химчистка ковра</span></span></div></div>
+      <div class="rev"><div class="q">"</div><p>Заказывали уборку после ремонта — обеспылили всё, даже то, о чём мы сами не подумали. Приехали точно в срок.</p>
+        <div class="who"><span class="av">М</span><span><span class="nm">Мария</span><span class="sv">Уборка после ремонта</span></span></div></div>
+      <div class="rev"><div class="q">"</div><p>Работаем с ними по абонементу — офис 240 м² убирают три раза в неделю. Персонал закреплён, не меняется, к замечаниям прислушиваются.</p>
+        <div class="who"><span class="av">Е</span><span><span class="nm">Евгений</span><span class="sv">Абонентское обслуживание офиса</span></span></div></div>
+      <div class="rev"><div class="q">"</div><p>Генеральная уборка квартиры после съёмщиков — сделали всё идеально. Плита, сантехника, за холодильником — нигде не схалтурили.</p>
+        <div class="who"><span class="av">О</span><span><span class="nm">Ольга</span><span class="sv">Генеральная уборка квартиры</span></span></div></div>
+      <div class="rev"><div class="q">"</div><p>Мыли окна на 5-м этаже — без стремянки снаружи, через телескопические штанги. Результат чистый, без разводов, без лишнего шума.</p>
+        <div class="who"><span class="av">С</span><span><span class="nm">Сергей</span><span class="sv">Мытьё окон</span></span></div></div>
+      <div class="rev"><div class="q">"</div><p>Использовали сухой туман после запаха гари. Специалист приехал на следующий день, через 3 часа в квартире уже не было ни намёка на запах.</p>
+        <div class="who"><span class="av">Н</span><span><span class="nm">Наталья</span><span class="sv">Сухой туман — устранение запаха</span></span></div></div>
+      <div class="rev"><div class="q">"</div><p>Диван чистили с глубокой экстракцией — пятна от кофе и вина сошли полностью. Высох за ночь, запах приятный. Буду звать снова.</p>
+        <div class="who"><span class="av">И</span><span><span class="nm">Ирина</span><span class="sv">Химчистка дивана</span></span></div></div>
     </div>
   </div>
 </section>
@@ -458,6 +478,38 @@
 </script>
 
 
+<!-- ============ МОДАЛЬНОЕ ОКНО: РАСЧЁТ ============ -->
+<div class="calc-modal" id="calcModal" role="dialog" aria-modal="true">
+  <div class="cm-backdrop" onclick="calcModalClose()"></div>
+  <div class="cm-card">
+    <button class="om-close" onclick="calcModalClose()" aria-label="Закрыть">✕</button>
+    <div class="om-head">
+      <div class="micro">Ваша заявка</div>
+      <h2>Расчёт стоимости</h2>
+      <p>Проверьте детали и оставьте номер — перезвоним в течение 15 минут</p>
+    </div>
+    <div class="cm-receipt" id="cmReceipt"></div>
+    <div class="cm-uds">💳 Есть бонусная программа <strong>UDS</strong> — часть суммы можно оплатить накопленными баллами. <a href="uds.html">Подробнее →</a>
+    </div>
+    <form id="cmForm" onsubmit="return cmSubmit(event)">
+      <div class="om-field">
+        <label for="cmPhone">Телефон</label>
+        <input type="tel" id="cmPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+      </div>
+      <div class="om-check">
+        <input type="checkbox" id="cmPd" name="pd" required>
+        <label for="cmPd">Согласен(а) с <a href="contacts.html">политикой обработки персональных данных</a></label>
+      </div>
+      <button type="submit" class="btn btn-green btn-block">Подтвердить заявку →</button>
+    </form>
+    <div class="om-success" id="cmSuccess">
+      <div class="om-ok">✓</div>
+      <h3>Заявка принята!</h3>
+      <p>Свяжемся с вами в ближайшее время</p>
+    </div>
+  </div>
+</div>
+
 <!-- ============ МОДАЛЬНОЕ ОКНО: ЗАКАЗАТЬ КЛИНИНГ ============ -->
 <div class="order-modal" id="orderModal" role="dialog" aria-modal="true" aria-label="Заказать клининг">
   <div class="om-backdrop" onclick="omClose()"></div>
@@ -491,6 +543,7 @@
   </div>
 </div>
 </div>
+<script src="https://player.kinescope.io/latest/iframe.player.js" defer></script>
 <script>
 (function(){
   function omOpen(){var f=document.getElementById('omForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('omSuccess');if(s){s.classList.remove('show');}document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
@@ -503,7 +556,83 @@
     return false;
   }
   window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit;
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){omClose();calcModalClose();}});
+})();
+
+/* ===== Calc receipt modal ===== */
+(function(){
+  var LABELS={pod:'Поддерживающая',gen:'Генеральная',rem:'После ремонта'};
+  var EXTRAS_L={oven:'Мытьё духовки',mw:'Мытьё СВЧ',fridge:'Холодильник внутри',windows:'Мойка окон',chandelier:'Мытьё люстры',iron:'Глажка',linen:'Смена белья',balcony:'Уборка балкона'};
+  var EXTRAS_P={oven:900,mw:400,fridge:1000,windows:2500,chandelier:1200,iron:1000,linen:500,balcony:1500};
+  function money(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,' ');}
+
+  function calcModalOpen(){
+    var root=document.getElementById('calc2'); if(!root) return;
+    var type=root.querySelector('.cc-seg[data-k="type"] .cc-opt.on');
+    var rooms=root.querySelector('.cc-seg[data-k="rooms"] .cc-opt.on');
+    var bath=root.querySelector('.cc-seg[data-k="bath"] .cc-opt.on');
+    var extras=[];
+    root.querySelectorAll('.cc-check input:checked').forEach(function(c){extras.push({k:c.value,l:EXTRAS_L[c.value],p:EXTRAS_P[c.value]||0});});
+    var sumEl=document.getElementById('ccSum');
+    var sumTxt=sumEl?sumEl.textContent:'';
+    var receipt=document.getElementById('cmReceipt');
+    var html='<div class="cm-receipt-row"><span>Вид уборки</span><span>'+(type?LABELS[type.getAttribute('data-v')]:'–')+'</span></div>';
+    html+='<div class="cm-receipt-row"><span>Комнат</span><span>'+(rooms?rooms.getAttribute('data-v'):'–')+'</span></div>';
+    html+='<div class="cm-receipt-row"><span>Санузлов</span><span>'+(bath?bath.getAttribute('data-v'):'–')+'</span></div>';
+    extras.forEach(function(ex){html+='<div class="cm-receipt-row"><span>'+ex.l+'</span><span>+'+money(ex.p)+' ₽</span></div>';});
+    html+='<div class="cm-receipt-row total"><span>Ориентировочно</span><span>'+sumTxt+'</span></div>';
+    receipt.innerHTML=html;
+    var f=document.getElementById('cmForm'); if(f){f.reset();f.classList.remove('hide');}
+    var s=document.getElementById('cmSuccess'); if(s)s.classList.remove('show');
+    document.getElementById('calcModal').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function calcModalClose(){
+    document.getElementById('calcModal').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function cmSubmit(e){
+    e.preventDefault();
+    document.getElementById('cmForm').classList.add('hide');
+    document.getElementById('cmSuccess').classList.add('show');
+    setTimeout(calcModalClose, 3000);
+    return false;
+  }
+  window.calcModalOpen=calcModalOpen; window.calcModalClose=calcModalClose; window.cmSubmit=cmSubmit;
+})();
+
+/* ===== Видео-слайдер (Как мы работаем) ===== */
+(function(){
+  var track=document.getElementById('wsTrackC');
+  var ctrl=document.getElementById('wsCtrlC');
+  if(!track||!ctrl)return;
+  var items=track.querySelectorAll('.vid-item');
+  var dots=document.querySelectorAll('#wsDotsC .ws-dot');
+  var cur=0, total=items.length;
+  function go(i){
+    cur=(i+total)%total;
+    track.style.transform='translateX(-'+(cur*track.parentElement.offsetWidth)+'px)';
+    dots.forEach(function(d,idx){d.classList.toggle('on',idx===cur);});
+  }
+  document.getElementById('wsPrevC').onclick=function(){go(cur-1);};
+  document.getElementById('wsNextC').onclick=function(){go(cur+1);};
+  var sx=0;
+  track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));},{passive:true});
+
+  /* Kinescope SDK init */
+  function initKP(){
+    if(!window.Kinescope||!window.Kinescope.IframePlayer){setTimeout(initKP,200);return;}
+    var KP=window.Kinescope.IframePlayer;
+    document.querySelectorAll('#worksSliderC .kp-player').forEach(function(el){
+      var rawId=el.id.replace('kp-c-','');
+      KP.create(el,{url:'https://kinescope.io/embed/'+rawId}).then(function(p){
+        p.on(p.Events.Ready,function(){p.mute();p.play();});
+        p.on(p.Events.Ended,function(){p.play();});
+      }).catch(function(){});
+    });
+  }
+  document.addEventListener('DOMContentLoaded',initKP);
 })();
 </script>
 </body>
