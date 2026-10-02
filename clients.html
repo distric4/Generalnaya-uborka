@@ -109,19 +109,19 @@
     <div class="srv-grid">
       <a href="uborka.html" class="srv-card">
         <div class="srv-ph"><img src="img/srv-uborka.jpg" alt="Уборка квартиры" loading="lazy"></div>
-        <div class="srv-b"><h3>Уборка квартир и домов</h3><p>Генеральная, поддерживающая, после ремонта. Бригада 2–3 человека, двушка — 3–4 часа.</p><div class="srv-pr">от 9 000 ₽</div><div class="srv-btns"><span class="btn btn-line">Подробнее →</span><button type="button" class="btn btn-green" onclick="srvOrder(event)">Оставить заявку</button></div></div>
+        <div class="srv-b"><h3>Уборка квартир и домов</h3><p>Генеральная, поддерживающая, после ремонта. Бригада 2–3 человека, двушка — 3–4 часа.</p><div class="srv-pr">от 9 000 ₽</div><div class="srv-btns"><span class="btn btn-line">Подробнее →</span><button type="button" class="btn btn-green" onclick="srvOrder(event,'Уборка квартир и домов')">Оставить заявку</button></div></div>
       </a>
       <a href="mytyo.html" class="srv-card">
         <div class="srv-ph"><img src="img/srv-potolok.jpg" alt="Мойка потолков" loading="lazy"></div>
-        <div class="srv-b"><h3>Мытьё окон, потолков, люстр</h3><p>Без разводов и следов воды. Окна, лоджии, натяжные потолки, люстры — работаем со стремянкой и телескопической щёткой.</p><div class="srv-pr">от 500 ₽<small> /м²</small></div><div class="srv-btns"><span class="btn btn-line">Подробнее →</span><button type="button" class="btn btn-green" onclick="srvOrder(event)">Оставить заявку</button></div></div>
+        <div class="srv-b"><h3>Мытьё окон, потолков, люстр</h3><p>Без разводов и следов воды. Окна, лоджии, натяжные потолки, люстры — работаем со стремянкой и телескопической щёткой.</p><div class="srv-pr">от 500 ₽<small> /м²</small></div><div class="srv-btns"><span class="btn btn-line">Подробнее →</span><button type="button" class="btn btn-green" onclick="srvOrder(event,'Мытьё окон, потолков, люстр')">Оставить заявку</button></div></div>
       </a>
       <a href="himchistka.html" class="srv-card">
         <div class="srv-ph"><img src="img/srv-himchistka.jpg" alt="Химчистка дивана" loading="lazy"></div>
-        <div class="srv-b"><h3>Химчистка</h3><p>Чистим на дому — диван, кресла, матрасы, ковры, шторы. Высыхает за 3–5 часов, вывозить ничего не нужно.</p><div class="srv-pr">от 3 000 ₽</div><div class="srv-btns"><span class="btn btn-line">Подробнее →</span><button type="button" class="btn btn-green" onclick="srvOrder(event)">Оставить заявку</button></div></div>
+        <div class="srv-b"><h3>Химчистка</h3><p>Чистим на дому — диван, кресла, матрасы, ковры, шторы. Высыхает за 3–5 часов, вывозить ничего не нужно.</p><div class="srv-pr">от 3 000 ₽</div><div class="srv-btns"><span class="btn btn-line">Подробнее →</span><button type="button" class="btn btn-green" onclick="srvOrder(event,'Химчистка мебели')">Оставить заявку</button></div></div>
       </a>
       <a href="suhoy-tuman.html" class="srv-card">
         <div class="srv-ph"><img src="img/srv-tuman.jpg" alt="Сухой туман" loading="lazy"></div>
-        <div class="srv-b"><h3>Сухой туман</h3><p>Убираем запах насовсем — после кошек, собак, табака, гари и плесени. Не маскируем, а нейтрализуем.</p><div class="srv-pr">от 2 500 ₽</div><div class="srv-btns"><span class="btn btn-line">Подробнее →</span><button type="button" class="btn btn-green" onclick="srvOrder(event)">Оставить заявку</button></div></div>
+        <div class="srv-b"><h3>Сухой туман</h3><p>Убираем запах насовсем — после кошек, собак, табака, гари и плесени. Не маскируем, а нейтрализуем.</p><div class="srv-pr">от 2 500 ₽</div><div class="srv-btns"><span class="btn btn-line">Подробнее →</span><button type="button" class="btn btn-green" onclick="srvOrder(event,'Сухой туман')">Оставить заявку</button></div></div>
       </a>
     </div>
   </div>
@@ -527,6 +527,10 @@
       <p>Оставьте заявку — перезвоним в течение 15 минут</p>
     </div>
     <form class="om-form" id="omForm" onsubmit="return omSubmit(event)">
+      <div class="om-service" id="omService" style="display:none">
+        <span class="om-service-label">Услуга</span>
+        <span class="om-service-name" id="omServiceName"></span>
+      </div>
       <div class="om-field">
         <label for="omName">Ваше имя</label>
         <input type="text" id="omName" name="name" placeholder="Как вас зовут?" autocomplete="name" required>
@@ -552,7 +556,7 @@
 <script src="https://player.kinescope.io/latest/iframe.player.js" defer></script>
 <script>
 (function(){
-  function omOpen(){var f=document.getElementById('omForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('omSuccess');if(s){s.classList.remove('show');}document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
+  function omOpen(service){var f=document.getElementById('omForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('omSuccess');if(s){s.classList.remove('show');}var svcEl=document.getElementById('omService');var svcName=document.getElementById('omServiceName');if(svcEl&&svcName){if(service){svcName.textContent=service;svcEl.style.display='';}else{svcEl.style.display='none';}}document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
   function omClose(){document.getElementById('orderModal').classList.remove('open');document.body.style.overflow='';}
   function omSubmit(e){
     e.preventDefault();
@@ -561,7 +565,7 @@
     setTimeout(omClose, 3000);
     return false;
   }
-  function srvOrder(e){e.stopPropagation();e.preventDefault();omOpen();}
+  function srvOrder(e,service){e.stopPropagation();e.preventDefault();omOpen(service);}
   window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit; window.srvOrder=srvOrder;
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){omClose();calcModalClose();}});
 })();
