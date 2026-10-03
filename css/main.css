@@ -938,9 +938,8 @@ html{scroll-behavior:smooth;}
 .gu-page .srv-card h3,.gu-page .srv-c h3{text-decoration:none;}
 .gu-page .srv-card .srv-b,.gu-page .srv-c .srv-b{padding:28px 24px 24px;gap:10px;border-top-width:3px;border-top-style:solid;border-top-color:#DCEEF4;}
 .gu-page .srv-card .srv-b h3,.gu-page .srv-c .srv-b h3{margin-top:0;font-size:18px;}
-.gu-page .srv-btns{display:flex;gap:8px;margin-top:4px;}
-.gu-page .srv-btns .btn{flex:1;text-align:center;font-size:14px;}
-@media(max-width:480px){.gu-page .srv-btns{flex-direction:column;}}
+.gu-page .srv-btns{display:flex;flex-direction:column;gap:8px;margin-top:4px;}
+.gu-page .srv-btns .btn{text-align:center;font-size:14px;padding:12px 20px;}
 .gu-page .om-service{display:flex;align-items:center;gap:10px;background:var(--mint-1);border-radius:var(--r-md);padding:10px 14px;margin-bottom:8px;}
 .gu-page .om-service-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan-deep);white-space:nowrap;}
 .gu-page .om-service-name{font-size:14px;font-weight:600;color:var(--ink);}
