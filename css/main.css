@@ -181,7 +181,7 @@ html{scroll-behavior:smooth;}
 .gu-page .hero h1 b{font-weight:500;}
 .gu-page .hero h1 b{font-weight:800;display:block;}
 .gu-page .hero-lead{color:var(--gray);font-size:16px;max-width:50ch;margin-bottom:26px;}
-.gu-page .hero-lead-link{color:var(--cyan-deep);font-weight:700;white-space:nowrap;}
+.gu-page .hero-lead-link{color:var(--cyan-deep);font-weight:700;}
 .gu-page .hero-lead-link:hover{color:var(--cyan);}
 
 /* рейтинг с аватарами */
@@ -953,6 +953,8 @@ html{scroll-behavior:smooth;}
 .gu-page .hero-biz .hero-content{background:rgba(255,255,255,.90);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:var(--r-xl);padding:40px 44px;max-width:570px;box-shadow:0 4px 40px rgba(19,27,35,.08);}
 .gu-page .hero-biz .hero-lead{color:var(--ink-2);max-width:none;}
 @media(max-width:640px){.gu-page .hero-biz .hero-content{padding:26px 20px;}}
+/* clients.html — своя фотография в герое */
+.gu-page .hero-clients-bg{background:linear-gradient(100deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.92) 35%,rgba(255,255,255,.58) 60%,rgba(255,255,255,.18) 100%),url('../img/hero-clients.webp') 70% center/cover no-repeat;}
 
 /* FMT-CARD: иконки и структура */
 .gu-page .fmt-icon{font-size:40px;display:block;margin-bottom:16px;line-height:1;font-style:normal;}
