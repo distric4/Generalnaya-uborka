@@ -33,7 +33,7 @@
         <a href="tel:83952554499">8 (3952) 55-44-99</a>
         <span><i></i>ежедневно 08:00–20:00</span>
       </div>
-      <button type="button" class="btn btn-green btn-order" onclick="omOpen()">Заказать</button>
+      <button type="button" class="btn btn-green btn-order" onclick="omOpen()">Заказать клининг</button>
       <button type="button" class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -71,6 +71,9 @@
         </div>
       </div>
     </nav>
+      <div class="mob-cta">
+        <button type="button" class="btn btn-green btn-block" onclick="omOpen()">Заказать клининг →</button>
+      </div>
     <div class="mob-social">
       <a href="tel:+79149276748" class="i-max">MAX</a>
       <a href="https://vk.com/38uborka" class="i-vk">VK</a>
@@ -302,15 +305,35 @@
   </div>
 </section>
 
-<!-- 6б. ВИДЕО РАБОТ -->
+<!-- ============ КАК МЫ РАБОТАЕМ ============ -->
 <section class="bg-plain">
   <div class="wrap">
     <div class="s-head">
-      <div><span class="micro">Видео работ</span><h2 style="margin-top:14px;">Сухой туман в действии</h2></div>
+      <div><span class="micro">Видео</span><h2 style="margin-top:14px;">Как мы работаем</h2></div>
+      <p>Смотрите, как выглядит наша работа на реальных объектах.</p>
     </div>
-    <div class="vid-grid">
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/gDqNWAj1qakLR6pfbS7vib" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Видео: устранение запахов сухим туманом"></iframe></div>
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/h6uCw9NJtuaFH1ScpRUvyf" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Видео: устранение запахов сухим туманом"></iframe></div>
+    <div class="works-slider" id="worksSliderST">
+      <div class="ws-viewport">
+        <div class="ws-track" id="wsTrackST">
+          <div class="vid-item">
+            <div id="kp-st-iEQA6M79UqxoKoSEwgqoh8" class="kp-player"></div>
+            <p class="vid-cap">Профессиональный клининг с устранением запахов — комплексный подход</p>
+          </div>
+          <div class="vid-item">
+            <div id="kp-st-gGS78BU3cEQyug1oPcAtiB" class="kp-player"></div>
+            <p class="vid-cap">Что привозим с собой — в том числе генератор сухого тумана</p>
+          </div>
+          <div class="vid-item">
+            <div id="kp-st-649m5YvHXVToJnXntpKzf3" class="kp-player"></div>
+            <p class="vid-cap">Как выглядит наша работа: от приезда бригады до результата</p>
+          </div>
+        </div>
+      </div>
+      <div class="ws-ctrl" id="wsCtrlST">
+        <button class="ws-btn" id="wsPrevST" aria-label="Назад">‹</button>
+        <div class="ws-dots" id="wsDotsST"><span class="ws-dot on"></span><span class="ws-dot"></span><span class="ws-dot"></span></div>
+        <button class="ws-btn" id="wsNextST" aria-label="Вперёд">›</button>
+      </div>
     </div>
   </div>
 </section>
@@ -492,6 +515,9 @@
   window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit;
   document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
 })();
+/* ===== Видео-слайдер (Как мы работаем — ST) ===== */
+(function(){var track=document.getElementById('wsTrackST');var ctrl=document.getElementById('wsCtrlST');if(!track||!ctrl)return;var dots=document.querySelectorAll('#wsDotsST .ws-dot');var cur=0,total=track.querySelectorAll('.vid-item').length;function go(i){cur=(i+total)%total;track.style.transform='translateX(-'+(cur*track.parentElement.offsetWidth)+'px)';dots.forEach(function(d,idx){d.classList.toggle('on',idx===cur);});}document.getElementById('wsPrevST').onclick=function(){go(cur-1);};document.getElementById('wsNextST').onclick=function(){go(cur+1);};var sx=0;track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});track.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));},{passive:true});(function initKP(){if(!window.Kinescope||!window.Kinescope.IframePlayer){setTimeout(initKP,200);return;}var KP=window.Kinescope.IframePlayer;document.querySelectorAll('#worksSliderST .kp-player').forEach(function(el){var vid=el.id.replace(/^kp-[a-z]+-/,'');KP.create(el,{url:'https://kinescope.io/embed/'+vid}).then(function(p){p.on(p.Events.Ready,function(){p.mute();p.play();});p.on(p.Events.Ended,function(){p.play();});}).catch(function(){});});})();})();
 </script>
+<script src="https://player.kinescope.io/latest/iframe.player.js" defer></script>
 </body>
 </html>

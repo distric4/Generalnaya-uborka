@@ -33,7 +33,7 @@
         <a href="tel:83952554499">8 (3952) 55-44-99</a>
         <span><i></i>ежедневно 08:00–20:00</span>
       </div>
-      <button type="button" class="btn btn-green btn-order" onclick="omOpen()">Заказать</button>
+      <button type="button" class="btn btn-green btn-order" onclick="omOpen()">Заказать клининг</button>
       <button type="button" class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -71,6 +71,9 @@
         </div>
       </div>
     </nav>
+      <div class="mob-cta">
+        <button type="button" class="btn btn-green btn-block" onclick="omOpen()">Заказать клининг →</button>
+      </div>
     <div class="mob-social">
       <a href="tel:+79149276748" class="i-max" title="MAX: +7 914 927-67-48 — пришлите фото и видео"><img src="img/max.svg" alt="MAX" width="24" height="24" style="display:block;"></a>
       <a href="https://vk.com/38uborka" class="i-vk" title="ВКонтакте"><img src="img/vk.svg" alt="ВКонтакте" width="24" height="24" style="display:block;"></a>
@@ -81,232 +84,32 @@
 <!-- ============ ХЛЕБНЫЕ КРОШКИ ============ -->
 <div class="wrap breadcrumbs"><a href="index.html">Главная</a><span class="sep">→</span><a href="clients.html">Для дома</a><span class="sep">→</span><span>Химчистка</span></div>
 
-<!-- ============ 1. HERO ============ -->
-<section class="hero hero-biz">
-  <div class="wrap">
-    <div class="hero-content">
-      <span class="micro">Химчистка мебели и ковров</span>
-      <h1>Химчистка мебели, ковров и штор <b>на дому</b> в Иркутске</h1>
-      <p class="hero-lead">Приезжаем со своим оборудованием — диван чистится прямо у вас дома и высыхает за 3–5 часов. Выводим пятна, запах и пыль. Ковры, матрасы, шторы — ничего никуда везти не нужно.</p>
-      <p class="hero-marks">Чистим на дому · Сохнет 3–5 часов · Оценка по фото в MAX</p>
-      <div class="hero-btns">
-        <a href="#zayavka" class="btn btn-cyan">Рассчитать стоимость →</a>
-        <a href="#zayavka" class="btn btn-line">Оставить заявку</a>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ============ 2. ПЕРЕКЛЮЧАТЕЛЬ ФОРМАТОВ ============ -->
+<!-- ============ КАК МЫ РАБОТАЕМ ============ -->
 <section class="bg-mint">
   <div class="wrap">
     <div class="s-head">
-      <div><span class="micro">Что чистим</span><h2 style="margin-top:14px;">Выберите, что почистить</h2></div>
+      <div><span class="micro">Видео</span><h2 style="margin-top:14px;">Как мы работаем</h2></div>
+      <p>Реальные съёмки наших работ в Иркутске — посмотрите, как это выглядит изнутри.</p>
     </div>
-
-    <div class="sw-tabs" role="tablist">
-      <button type="button" class="sw-tab on" data-t="divan" role="tab" aria-selected="true">Диван</button>
-      <button type="button" class="sw-tab" data-t="kreslo" role="tab" aria-selected="false">Кресло</button>
-      <button type="button" class="sw-tab" data-t="kover" role="tab" aria-selected="false">Ковёр</button>
-      <button type="button" class="sw-tab" data-t="matras" role="tab" aria-selected="false">Матрас</button>
-      <button type="button" class="sw-tab" data-t="shtory" role="tab" aria-selected="false">Шторы</button>
-      <button type="button" class="sw-tab" data-t="zhalyuzi" role="tab" aria-selected="false">Жалюзи</button>
-    </div>
-
-    <!-- панель: Диван -->
-    <div class="sw-panel on" data-p="divan" role="tabpanel">
-      <div class="sw-card">
-        <div class="sw-main">
-          <h3>Химчистка дивана — вернём свежесть и цвет</h3>
-          <p class="sw-when">Пятна, засаленность, запахи и осевшая пыль — диван снова становится чистым и приятным на ощупь. Чистим прямо у вас дома.</p>
-          <div class="sw-inc-t">Что входит</div>
-          <ul class="sw-list">
-            <li>Глубокая чистка обивки экстрактором</li>
-            <li>Выведение пятен и засаленных зон</li>
-            <li>Чистка подлокотников, подушек и спинки</li>
-            <li>Удаление запахов и аллергенов</li>
-            <li>Обработка щадящими составами</li>
-            <li>Сушка — диваном можно пользоваться в тот же день</li>
-          </ul>
-        </div>
-        <div class="sw-side">
-          <div class="sw-price-l">Стоимость</div>
-          <div class="sw-price">от 3 000 ₽</div>
-          <div class="sw-brig">1 клинер, 1–2 часа</div>
-          <a href="#zayavka" class="btn btn-cyan">Рассчитать стоимость →</a>
+    <div class="works-slider" id="worksSliderH">
+      <div class="ws-viewport">
+        <div class="ws-track" id="wsTrackH">
+          <div class="vid-item">
+            <div id="kp-h-qHmTnvMdR8qbZgnFU6PyUr" class="kp-player"></div>
+            <p class="vid-cap">Химчистка дивана и кресел прямо у вас дома — выезжаем и чистим на месте</p>
+          </div>
+          <div class="vid-item">
+            <div id="kp-h-mZZ7Z1ytUbTDDcZuT7miPh" class="kp-player"></div>
+            <p class="vid-cap">Аппаратная мойка плитки и швов — результат виден сразу</p>
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- панель: Кресло -->
-    <div class="sw-panel" data-p="kreslo" role="tabpanel">
-      <div class="sw-card">
-        <div class="sw-main">
-          <h3>Химчистка кресла</h3>
-          <p class="sw-when">Мягкие, офисные и компьютерные кресла — убираем пятна, пыль и засаленность, освежаем ткань.</p>
-          <div class="sw-inc-t">Что входит</div>
-          <ul class="sw-list">
-            <li>Чистка обивки и спинки экстрактором</li>
-            <li>Выведение локальных пятен</li>
-            <li>Чистка подлокотников и сиденья</li>
-            <li>Удаление запахов</li>
-            <li>Щадящие составы под тип ткани</li>
-            <li>Быстрая сушка</li>
-          </ul>
-        </div>
-        <div class="sw-side">
-          <div class="sw-price-l">Стоимость</div>
-          <div class="sw-price">от 2 000 ₽</div>
-          <div class="sw-brig">1 клинер, ~1 час</div>
-          <a href="#zayavka" class="btn btn-cyan">Рассчитать стоимость →</a>
-        </div>
+      <div class="ws-ctrl" id="wsCtrlH">
+        <button class="ws-btn" id="wsPrevH" aria-label="Назад">‹</button>
+        <div class="ws-dots" id="wsDotsH"><span class="ws-dot on"></span><span class="ws-dot"></span></div>
+        <button class="ws-btn" id="wsNextH" aria-label="Вперёд">›</button>
       </div>
-    </div>
-
-    <!-- панель: Ковёр -->
-    <div class="sw-panel" data-p="kover" role="tabpanel">
-      <div class="sw-card">
-        <div class="sw-main">
-          <h3>Химчистка ковров и паласов</h3>
-          <p class="sw-when">Ковры, паласы и ковровые покрытия — глубокая чистка с выведением пятен и запахов. Есть чистка без обильной воды.</p>
-          <div class="sw-inc-t">Что входит</div>
-          <ul class="sw-list">
-            <li>Обеспыливание и глубокая экстракторная чистка</li>
-            <li>Выведение пятен и загрязнений</li>
-            <li>Удаление запахов, в том числе после животных</li>
-            <li>Чистка ворса любой длины</li>
-            <li>Составы для натуральных и синтетических волокон</li>
-            <li>Сушка</li>
-          </ul>
-        </div>
-        <div class="sw-side">
-          <div class="sw-price-l">Стоимость</div>
-          <div class="sw-price">от 1 800 ₽<span style="font-size:16px;font-weight:600;color:var(--gray);"> / м²</span></div>
-          <div class="sw-brig">1 клинер, 1–3 часа</div>
-          <a href="#zayavka" class="btn btn-cyan">Рассчитать стоимость →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- панель: Матрас -->
-    <div class="sw-panel" data-p="matras" role="tabpanel">
-      <div class="sw-card">
-        <div class="sw-main">
-          <h3>Химчистка матраса</h3>
-          <p class="sw-when">Убираем пыль, пятна, следы и пылевых клещей — сон на чистом матрасе здоровее, особенно для детей и аллергиков.</p>
-          <div class="sw-inc-t">Что входит</div>
-          <ul class="sw-list">
-            <li>Двусторонняя чистка экстрактором</li>
-            <li>Выведение пятен и разводов</li>
-            <li>Удаление пыли, клещей и аллергенов</li>
-            <li>Устранение запахов</li>
-            <li>Обработка щадящими составами</li>
-            <li>Сушка</li>
-          </ul>
-        </div>
-        <div class="sw-side">
-          <div class="sw-price-l">Стоимость</div>
-          <div class="sw-price">от 2 500 ₽</div>
-          <div class="sw-brig">1 клинер, ~1 час</div>
-          <a href="#zayavka" class="btn btn-cyan">Рассчитать стоимость →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- панель: Шторы -->
-    <div class="sw-panel" data-p="shtory" role="tabpanel">
-      <div class="sw-card">
-        <div class="sw-main">
-          <h3>Химчистка штор и портьер</h3>
-          <p class="sw-when">Шторы, портьеры и гардины — снимем, почистим и вернём. Работаем с тяжёлыми тканями и деликатными материалами.</p>
-          <div class="sw-inc-t">Что входит</div>
-          <ul class="sw-list">
-            <li>Снятие и навеска штор — по договорённости</li>
-            <li>Чистка с учётом типа ткани</li>
-            <li>Выведение пятен и пыли</li>
-            <li>Устранение запахов</li>
-            <li>Деликатная обработка без усадки и заломов</li>
-            <li>Возврат в опрятном виде</li>
-          </ul>
-        </div>
-        <div class="sw-side">
-          <div class="sw-price-l">Стоимость</div>
-          <div class="sw-price sm">Рассчитывается по объёму — зависит от количества и типа ткани. Точную стоимость назовёт менеджер.</div>
-          <div class="sw-brig">Зависит от количества и типа ткани — уточним при расчёте</div>
-          <a href="#zayavka" class="btn btn-cyan">Оставить заявку →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- панель: Жалюзи -->
-    <div class="sw-panel" data-p="zhalyuzi" role="tabpanel">
-      <div class="sw-card">
-        <div class="sw-main">
-          <h3>Чистка жалюзи</h3>
-          <p class="sw-when">Горизонтальные, вертикальные и тканевые жалюзи — убираем пыль, налёт и загрязнения без разводов.</p>
-          <div class="sw-inc-t">Что входит</div>
-          <ul class="sw-list">
-            <li>Чистка ламелей и механизма</li>
-            <li>Удаление пыли и жирного налёта</li>
-            <li>Обработка тканевых жалюзи</li>
-            <li>Аккуратная работа без повреждений</li>
-            <li>Чистка на месте или со снятием</li>
-          </ul>
-        </div>
-        <div class="sw-side">
-          <div class="sw-price-l">Стоимость</div>
-          <div class="sw-price sm">Рассчитывается по объёму — зависит от количества и типа. Точную стоимость назовёт менеджер.</div>
-          <div class="sw-brig">Зависит от количества и типа — уточним при расчёте</div>
-          <a href="#zayavka" class="btn btn-cyan">Оставить заявку →</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ============ 3. КАК РАБОТАЕМ ============ -->
-<section class="bg-plain">
-  <div class="wrap">
-    <div class="s-head">
-      <div><span class="micro">Как мы работаем</span><h2 style="margin-top:14px;">Приезжаем полностью готовыми — вам ничего не нужно покупать</h2></div>
-    </div>
-    <p class="s-lead">Мы работаем с 2007 года и чистим как для себя. Привозим профессиональное оборудование — экстрактор, парогенератор — и составы под тип ткани. От вас нужен только доступ к воде и розетке. Работаем по договору, а результат вы принимаете вместе с менеджером.</p>
-    <div class="ben-grid">
-      <div class="tr"><h3>Всё своё оборудование и химия</h3><p>Профессиональные средства без едкого запаха. Есть аллергики, дети или животные — предупредите, подберём щадящий состав.</p></div>
-      <div class="tr"><h3>Штатные клинеры</h3><p>Не подрядчики с улицы: каждый в штате, прошёл проверку службой безопасности и обучение.</p></div>
-      <div class="tr"><h3>Договор и гарантия</h3><p>Работаем официально. Если в течение 24 часов возникнет замечание — пришлите фото или видео в MAX, приедем и всё исправим.</p></div>
-      <div class="tr"><h3>Удобная оплата</h3><p>Наличными, картой через терминал или по QR-коду.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 4а. ВИДЕО РАБОТ ============ -->
-<section class="bg-plain">
-  <div class="wrap">
-    <div class="s-head">
-      <div><span class="micro">Видео работ</span><h2 style="margin-top:14px;">Химчистка в деле</h2></div>
-    </div>
-    <div class="vid-grid">
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/gU6ABWUMKRLGyN4rpBz3a1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Видео химчистки мебели"></iframe></div>
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/mZZ7Z1ytUbTDDcZuT7miPh" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Видео химчистки мебели"></iframe></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 4. ДО / ПОСЛЕ ============ -->
-<section class="bg-mint">
-  <div class="wrap">
-    <div class="s-head">
-      <div><span class="micro">Результат</span><h2 style="margin-top:14px;">Как это выглядит до и после</h2></div>
-    </div>
-    <p class="s-lead">Лучше всего о работе говорят сами вещи. Посмотрите, как меняются диваны, ковры и матрасы после химчистки — фото реальных объектов.</p>
-    <!-- TODO: заказчик добавит реальные фото «до/после». Заменить .photo-плейсхолдеры на <img class="photo" src="..." alt="..."> -->
-    <div class="ba-grid">
-      <div class="photo"><span>Диван — до</span></div>
-      <div class="photo"><span>Диван — после</span></div>
-      <div class="photo"><span>Ковёр — до</span></div>
-      <div class="photo"><span>Ковёр — после</span></div>
     </div>
   </div>
 </section>
@@ -541,6 +344,9 @@
   window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit;
   document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
 })();
+/* ===== Видео-слайдер (Как мы работаем — H) ===== */
+(function(){var track=document.getElementById('wsTrackH');var ctrl=document.getElementById('wsCtrlH');if(!track||!ctrl)return;var dots=document.querySelectorAll('#wsDotsH .ws-dot');var cur=0,total=track.querySelectorAll('.vid-item').length;function go(i){cur=(i+total)%total;track.style.transform='translateX(-'+(cur*track.parentElement.offsetWidth)+'px)';dots.forEach(function(d,idx){d.classList.toggle('on',idx===cur);});}document.getElementById('wsPrevH').onclick=function(){go(cur-1);};document.getElementById('wsNextH').onclick=function(){go(cur+1);};var sx=0;track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});track.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));},{passive:true});(function initKP(){if(!window.Kinescope||!window.Kinescope.IframePlayer){setTimeout(initKP,200);return;}var KP=window.Kinescope.IframePlayer;document.querySelectorAll('#worksSliderH .kp-player').forEach(function(el){var vid=el.id.replace(/^kp-[a-z]+-/,'');KP.create(el,{url:'https://kinescope.io/embed/'+vid}).then(function(p){p.on(p.Events.Ready,function(){p.mute();p.play();});p.on(p.Events.Ended,function(){p.play();});}).catch(function(){});});})();})();
 </script>
+<script src="https://player.kinescope.io/latest/iframe.player.js" defer></script>
 </body>
 </html>

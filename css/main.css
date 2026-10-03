@@ -979,3 +979,6 @@ html{scroll-behavior:smooth;}
 .gu-page .step-item.open .step-body{max-height:300px;}
 .gu-page .step-body-in{padding:2px 22px 20px 68px;font-size:14px;color:rgba(255,255,255,.72);line-height:1.65;}
 @media(max-width:560px){.gu-page .step-item-h h3{font-size:15px;}.gu-page .step-body-in{padding:2px 16px 18px 60px;}}
+
+.gu-page .vid-cap{font-size:13px;color:var(--ink-2);margin-top:10px;line-height:1.5;text-align:center;padding:0 4px;}
+.gu-page .mob-cta{padding:16px 20px 4px;}

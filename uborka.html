@@ -33,7 +33,7 @@
         <a href="tel:83952554499">8 (3952) 55-44-99</a>
         <span><i></i>ежедневно 08:00–20:00</span>
       </div>
-      <button type="button" class="btn btn-green btn-order" onclick="omOpen()">Заказать</button>
+      <button type="button" class="btn btn-green btn-order" onclick="omOpen()">Заказать клининг</button>
       <button type="button" class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -71,6 +71,9 @@
         </div>
       </div>
     </nav>
+      <div class="mob-cta">
+        <button type="button" class="btn btn-green btn-block" onclick="omOpen()">Заказать клининг →</button>
+      </div>
     <div class="mob-social">
       <a href="tel:+79149276748" class="i-max" title="MAX: +7 914 927-67-48 — пришлите фото и видео"><img src="img/max.svg" alt="MAX" width="24" height="24" style="display:block;"></a>
       <a href="https://vk.com/38uborka" class="i-vk" title="ВКонтакте"><img src="img/vk.svg" alt="ВКонтакте" width="24" height="24" style="display:block;"></a>
@@ -230,33 +233,39 @@
   </div>
 </section>
 
-<!-- ============ 4а. ВИДЕО РАБОТ ============ -->
-<section class="bg-plain">
-  <div class="wrap">
-    <div class="s-head">
-      <div><span class="micro">Видео работ</span><h2 style="margin-top:14px;">Смотрите, как мы убираем</h2></div>
-    </div>
-    <div class="vid-grid">
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/7EGdmMfPyu89rqu1Awi4pS" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Видео уборки квартиры"></iframe></div>
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/q4ZnwkA3VVJrhrZGtJHmwb" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Видео уборки квартиры"></iframe></div>
-      <div class="vid-item"><iframe src="https://kinescope.io/embed/aFuKSeTaHTcvqrcMu4Ujio" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Видео уборки квартиры"></iframe></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 4. ДО / ПОСЛЕ ============ -->
+<!-- ============ КАК МЫ РАБОТАЕМ ============ -->
 <section class="bg-mint">
   <div class="wrap">
     <div class="s-head">
-      <div><span class="micro">Результат</span><h2 style="margin-top:14px;">Как это выглядит до и после</h2></div>
+      <div><span class="micro">Видео</span><h2 style="margin-top:14px;">Как мы работаем</h2></div>
+      <p>Реальные съёмки наших работ в Иркутске — посмотрите, как это выглядит изнутри.</p>
     </div>
-    <p class="s-lead">Лучше всего о работе говорят сами квартиры. Посмотрите, как меняются кухни, санузлы и комнаты после нашей уборки — фото реальных объектов.</p>
-    <!-- TODO: заказчик добавит реальные фото «до/после». Заменить .photo-плейсхолдеры на <img class="photo" src="..." alt="..."> -->
-    <div class="ba-grid">
-      <div class="photo"><span>Кухня — до</span></div>
-      <div class="photo"><span>Кухня — после</span></div>
-      <div class="photo"><span>Санузел — до</span></div>
-      <div class="photo"><span>Санузел — после</span></div>
+    <div class="works-slider" id="worksSliderU">
+      <div class="ws-viewport">
+        <div class="ws-track" id="wsTrackU">
+          <div class="vid-item">
+            <div id="kp-u-gGS78BU3cEQyug1oPcAtiB" class="kp-player"></div>
+            <p class="vid-cap">Что привозим на уборку: профессиональное оборудование и химия</p>
+          </div>
+          <div class="vid-item">
+            <div id="kp-u-gU6ABWUMKRLGyN4rpBz3a1" class="kp-player"></div>
+            <p class="vid-cap">Убираем трёхкомнатную квартиру — реальная съёмка в Иркутске</p>
+          </div>
+          <div class="vid-item">
+            <div id="kp-u-7EGdmMfPyu89rqu1Awi4pS" class="kp-player"></div>
+            <p class="vid-cap">Генеральная уборка дома — кухня, санузлы и комнаты под ключ</p>
+          </div>
+          <div class="vid-item">
+            <div id="kp-u-iEQA6M79UqxoKoSEwgqoh8" class="kp-player"></div>
+            <p class="vid-cap">Профессиональный клининг: работа бригады от первого шага до сдачи</p>
+          </div>
+        </div>
+      </div>
+      <div class="ws-ctrl" id="wsCtrlU">
+        <button class="ws-btn" id="wsPrevU" aria-label="Назад">‹</button>
+        <div class="ws-dots" id="wsDotsU"><span class="ws-dot on"></span><span class="ws-dot"></span><span class="ws-dot"></span><span class="ws-dot"></span></div>
+        <button class="ws-btn" id="wsNextU" aria-label="Вперёд">›</button>
+      </div>
     </div>
   </div>
 </section>
@@ -491,6 +500,9 @@
   window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit;
   document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
 })();
+/* ===== Видео-слайдер (Как мы работаем — U) ===== */
+(function(){var track=document.getElementById('wsTrackU');var ctrl=document.getElementById('wsCtrlU');if(!track||!ctrl)return;var dots=document.querySelectorAll('#wsDotsU .ws-dot');var cur=0,total=track.querySelectorAll('.vid-item').length;function go(i){cur=(i+total)%total;track.style.transform='translateX(-'+(cur*track.parentElement.offsetWidth)+'px)';dots.forEach(function(d,idx){d.classList.toggle('on',idx===cur);});}document.getElementById('wsPrevU').onclick=function(){go(cur-1);};document.getElementById('wsNextU').onclick=function(){go(cur+1);};var sx=0;track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});track.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));},{passive:true});(function initKP(){if(!window.Kinescope||!window.Kinescope.IframePlayer){setTimeout(initKP,200);return;}var KP=window.Kinescope.IframePlayer;document.querySelectorAll('#worksSliderU .kp-player').forEach(function(el){var vid=el.id.replace(/^kp-[a-z]+-/,'');KP.create(el,{url:'https://kinescope.io/embed/'+vid}).then(function(p){p.on(p.Events.Ready,function(){p.mute();p.play();});p.on(p.Events.Ended,function(){p.play();});}).catch(function(){});});})();})();
 </script>
+<script src="https://player.kinescope.io/latest/iframe.player.js" defer></script>
 </body>
 </html>

@@ -33,7 +33,7 @@
         <a href="tel:83952554499">8 (3952) 55-44-99</a>
         <span><i></i>ежедневно 08:00–20:00</span>
       </div>
-      <button type="button" class="btn btn-green btn-order" onclick="omOpen()">Заказать</button>
+      <button type="button" class="btn btn-green btn-order" onclick="omOpen()">Заказать клининг</button>
       <button type="button" class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -71,6 +71,9 @@
         </div>
       </div>
     </nav>
+      <div class="mob-cta">
+        <button type="button" class="btn btn-green btn-block" onclick="omOpen()">Заказать клининг →</button>
+      </div>
     <div class="mob-social">
       <a href="tel:+79149276748" class="i-max" title="MAX: +7 914 927-67-48 — пришлите фото и видео"><img src="img/max.svg" alt="MAX" width="24" height="24" style="display:block;"></a>
       <a href="https://vk.com/38uborka" class="i-vk" title="ВКонтакте"><img src="img/vk.svg" alt="ВКонтакте" width="24" height="24" style="display:block;"></a>
@@ -273,6 +276,39 @@
   </div>
 </section>
 
+<!-- ============ КАК МЫ РАБОТАЕМ ============ -->
+<section class="bg-mint">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Видео</span><h2 style="margin-top:14px;">Как мы работаем по абонементу</h2></div>
+      <p>Реальные съёмки наших работ на объектах юридических лиц.</p>
+    </div>
+    <div class="works-slider" id="worksSliderA">
+      <div class="ws-viewport">
+        <div class="ws-track" id="wsTrackA">
+          <div class="vid-item">
+            <div id="kp-a-aFuKSeTaHTcvqrcMu4Ujio" class="kp-player"></div>
+            <p class="vid-cap">Как мы работаем с юридическими лицами по абонементу</p>
+          </div>
+          <div class="vid-item">
+            <div id="kp-a-g7FMACFnaEdjPzWPKUSvTY" class="kp-player"></div>
+            <p class="vid-cap">Регулярная уборка объекта — поддерживающая или после ремонта</p>
+          </div>
+          <div class="vid-item">
+            <div id="kp-a-q4ZnwkA3VVJrhrZGtJHmwb" class="kp-player"></div>
+            <p class="vid-cap">Закреплённая бригада на вашем объекте — как это организовано</p>
+          </div>
+        </div>
+      </div>
+      <div class="ws-ctrl" id="wsCtrlA">
+        <button class="ws-btn" id="wsPrevA" aria-label="Назад">‹</button>
+        <div class="ws-dots" id="wsDotsA"><span class="ws-dot on"></span><span class="ws-dot"></span><span class="ws-dot"></span></div>
+        <button class="ws-btn" id="wsNextA" aria-label="Вперёд">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 8. FAQ ============ -->
 <section class="bg-mint">
   <div class="wrap">
@@ -452,6 +488,9 @@ guBindForm('leadForm','f-phone','f-agree','formMsg','Заявка принята
   window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit;
   document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
 })();
+/* ===== Видео-слайдер (Как мы работаем — A) ===== */
+(function(){var track=document.getElementById('wsTrackA');var ctrl=document.getElementById('wsCtrlA');if(!track||!ctrl)return;var dots=document.querySelectorAll('#wsDotsA .ws-dot');var cur=0,total=track.querySelectorAll('.vid-item').length;function go(i){cur=(i+total)%total;track.style.transform='translateX(-'+(cur*track.parentElement.offsetWidth)+'px)';dots.forEach(function(d,idx){d.classList.toggle('on',idx===cur);});}document.getElementById('wsPrevA').onclick=function(){go(cur-1);};document.getElementById('wsNextA').onclick=function(){go(cur+1);};var sx=0;track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});track.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));},{passive:true});(function initKP(){if(!window.Kinescope||!window.Kinescope.IframePlayer){setTimeout(initKP,200);return;}var KP=window.Kinescope.IframePlayer;document.querySelectorAll('#worksSliderA .kp-player').forEach(function(el){var vid=el.id.replace(/^kp-[a-z]+-/,'');KP.create(el,{url:'https://kinescope.io/embed/'+vid}).then(function(p){p.on(p.Events.Ready,function(){p.mute();p.play();});p.on(p.Events.Ended,function(){p.play();});}).catch(function(){});});})();})();
 </script>
+<script src="https://player.kinescope.io/latest/iframe.player.js" defer></script>
 </body>
 </html>

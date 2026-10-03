@@ -33,7 +33,7 @@
         <a href="tel:83952554499">8 (3952) 55-44-99</a>
         <span><i></i>ежедневно 08:00–20:00</span>
       </div>
-      <button type="button" class="btn btn-green btn-order" onclick="omOpen()">Заказать</button>
+      <button type="button" class="btn btn-green btn-order" onclick="omOpen()">Заказать клининг</button>
       <button type="button" class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -71,6 +71,9 @@
         </div>
       </div>
     </nav>
+      <div class="mob-cta">
+        <button type="button" class="btn btn-green btn-block" onclick="omOpen()">Заказать клининг →</button>
+      </div>
     <div class="mob-social">
       <a href="tel:+79149276748" class="i-max" title="MAX: +7 914 927-67-48 — пришлите фото и видео"><img src="img/max.svg" alt="MAX" width="24" height="24" style="display:block;"></a>
       <a href="https://vk.com/38uborka" class="i-vk" title="ВКонтакте"><img src="img/vk.svg" alt="ВКонтакте" width="24" height="24" style="display:block;"></a>
@@ -241,6 +244,39 @@
       <div class="uds-step"><span class="usn">2</span><p><b style="color:#fff;">КП за 24 часа</b><br>Рассчитаем объём и пришлём коммерческое предложение в течение 24 часов.</p></div>
       <div class="uds-step"><span class="usn">3</span><p><b style="color:#fff;">Договор</b><br>Подписываем договор, работаем в ЭДО, оплата по безналу.</p></div>
       <div class="uds-step"><span class="usn">4</span><p><b style="color:#fff;">Выполнение</b><br>Выезжаем в согласованное время и делаем работу под ключ.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ КАК МЫ РАБОТАЕМ ============ -->
+<section class="bg-mint">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Видео</span><h2 style="margin-top:14px;">Как мы работаем</h2></div>
+      <p>Реальные съёмки разовых уборок на наших объектах — посмотрите процесс.</p>
+    </div>
+    <div class="works-slider" id="worksSliderR">
+      <div class="ws-viewport">
+        <div class="ws-track" id="wsTrackR">
+          <div class="vid-item">
+            <div id="kp-r-iEQA6M79UqxoKoSEwgqoh8" class="kp-player"></div>
+            <p class="vid-cap">Профессиональный разовый клининг — любой тип и объём объекта</p>
+          </div>
+          <div class="vid-item">
+            <div id="kp-r-gU6ABWUMKRLGyN4rpBz3a1" class="kp-player"></div>
+            <p class="vid-cap">Разовая уборка трёхкомнатной квартиры — смотрите процесс</p>
+          </div>
+          <div class="vid-item">
+            <div id="kp-r-649m5YvHXVToJnXntpKzf3" class="kp-player"></div>
+            <p class="vid-cap">Как выглядит наша уборка: от приезда до сдачи объекта клиенту</p>
+          </div>
+        </div>
+      </div>
+      <div class="ws-ctrl" id="wsCtrlR">
+        <button class="ws-btn" id="wsPrevR" aria-label="Назад">‹</button>
+        <div class="ws-dots" id="wsDotsR"><span class="ws-dot on"></span><span class="ws-dot"></span><span class="ws-dot"></span></div>
+        <button class="ws-btn" id="wsNextR" aria-label="Вперёд">›</button>
+      </div>
     </div>
   </div>
 </section>
@@ -454,6 +490,9 @@
   window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit;
   document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
 })();
+/* ===== Видео-слайдер (Как мы работаем — R) ===== */
+(function(){var track=document.getElementById('wsTrackR');var ctrl=document.getElementById('wsCtrlR');if(!track||!ctrl)return;var dots=document.querySelectorAll('#wsDotsR .ws-dot');var cur=0,total=track.querySelectorAll('.vid-item').length;function go(i){cur=(i+total)%total;track.style.transform='translateX(-'+(cur*track.parentElement.offsetWidth)+'px)';dots.forEach(function(d,idx){d.classList.toggle('on',idx===cur);});}document.getElementById('wsPrevR').onclick=function(){go(cur-1);};document.getElementById('wsNextR').onclick=function(){go(cur+1);};var sx=0;track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});track.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));},{passive:true});(function initKP(){if(!window.Kinescope||!window.Kinescope.IframePlayer){setTimeout(initKP,200);return;}var KP=window.Kinescope.IframePlayer;document.querySelectorAll('#worksSliderR .kp-player').forEach(function(el){var vid=el.id.replace(/^kp-[a-z]+-/,'');KP.create(el,{url:'https://kinescope.io/embed/'+vid}).then(function(p){p.on(p.Events.Ready,function(){p.mute();p.play();});p.on(p.Events.Ended,function(){p.play();});}).catch(function(){});});})();})();
 </script>
+<script src="https://player.kinescope.io/latest/iframe.player.js" defer></script>
 </body>
 </html>

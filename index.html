@@ -34,7 +34,7 @@
         <a href="tel:83952554499">8 (3952) 55-44-99</a>
         <span><i></i>ежедневно 08:00–20:00</span>
       </div>
-      <button type="button" class="btn btn-green btn-order" onclick="omOpen()">Заказать</button>
+      <button type="button" class="btn btn-green btn-order" onclick="omOpen()">Заказать клининг</button>
       <button type="button" class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -72,6 +72,9 @@
         </div>
       </div>
     </nav>
+      <div class="mob-cta">
+        <button type="button" class="btn btn-green btn-block" onclick="omOpen()">Заказать клининг →</button>
+      </div>
     <div class="mob-social">
       <a href="tel:+79149276748" class="i-max" title="MAX: +7 914 927-67-48 — пришлите фото и видео"><img src="img/max.svg" alt="MAX" width="24" height="24" style="display:block;"></a>
       <a href="https://vk.com/38uborka" class="i-vk" title="ВКонтакте"><img src="img/vk.svg" alt="ВКонтакте" width="24" height="24" style="display:block;"></a>
@@ -317,7 +320,19 @@
     <div class="works-slider" id="worksSlider">
       <div class="ws-viewport">
         <div class="ws-track" id="wsTrack">
-          <div class="vid-item"><div id="kp-7EGdmMfPyu89rqu1Awi4pS" class="kp-player"></div></div>
+          <div class="vid-item">
+            <div id="kp-idx-649m5YvHXVToJnXntpKzf3" class="kp-player"></div>
+            <p class="vid-cap">Как мы работаем — полная презентация уборки от приезда до результата</p>
+          </div>
+          <div class="vid-item">
+            <div id="kp-idx-iEQA6M79UqxoKoSEwgqoh8" class="kp-player"></div>
+            <p class="vid-cap">Генеральная уборка — профессиональный клининг в Иркутске</p>
+          </div>
+          <div class="vid-item">
+            <div id="kp-idx-gGS78BU3cEQyug1oPcAtiB" class="kp-player"></div>
+            <p class="vid-cap">Что привозим с собой: оборудование и химия на каждый выезд</p>
+          </div>
+        </div></div>
           <div class="vid-item"><div id="kp-q4ZnwkA3VVJrhrZGtJHmwb" class="kp-player"></div></div>
           <div class="vid-item"><div id="kp-aFuKSeTaHTcvqrcMu4Ujio" class="kp-player"></div></div>
         </div>
@@ -936,7 +951,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
     var KP=window.Kinescope.IframePlayer;
     var players=[];
     document.querySelectorAll('.kp-player').forEach(function(el){
-      var vid=el.id.replace('kp-','');
+      var vid=el.id.replace(/^kp-(?:idx-)?/,'');
       KP.create(el,{url:'https://kinescope.io/embed/'+vid}).then(function(p){
         players.push({id:el.id,player:p});
         p.on(p.Events.Ready,function(){p.mute();p.play();});
