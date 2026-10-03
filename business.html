@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
@@ -12,13 +12,12 @@
 <link rel="stylesheet" href="css/main.css">
 <div class="gu-page">
 
-
 <div class="scroll-progress" id="scrollProgress"></div>
 <!-- ============ ШАПКА ============ -->
 <header class="hdr">
   <div class="hdr-in">
     <a href="index.html" class="hdr-logo"><img src="https://static.tildacdn.com/tild3766-6436-4261-b661-613261313461/image_997.png" alt="Генеральная уборка — клининговая компания в Иркутске"></a>
-                <nav class="hdr-nav">
+    <nav class="hdr-nav">
       <div class="nd"><a href="clients.html" class="nd-t">Для дома</a><div class="nd-m"><a href="clients.html" class="nd-top">Все услуги для дома</a><a href="uborka.html">Уборка квартир</a><a href="mytyo.html">Мытьё окон</a><a href="himchistka.html">Химчистка мебели</a><a href="suhoy-tuman.html">Сухой туман</a></div></div>
       <div class="nd"><a href="business.html" class="nd-t on">Для бизнеса</a><div class="nd-m"><a href="business.html" class="nd-top">Все для бизнеса</a><a href="abonement.html">Абонентское обслуживание</a><a href="razovye.html">Разовые услуги</a><a href="partners.html">Партнёрам</a></div></div>
       <a href="price.html">Цены</a>
@@ -40,7 +39,7 @@
     </div>
   </div>
   <div class="mob-menu" id="mobMenu">
-                <nav class="mob-nav">
+    <nav class="mob-nav">
       <div class="mob-acc">
         <button type="button" class="mob-acc-t">Для дома <span class="arr">▾</span></button>
         <div class="mob-acc-m">
@@ -82,15 +81,17 @@
 <div class="wrap breadcrumbs"><a href="index.html">Главная</a><span class="sep">→</span><span>Для бизнеса</span></div>
 
 <!-- ============ 1. HERO ============ -->
-<section class="hero">
+<section class="hero hero-biz">
   <div class="wrap">
-    <span class="micro">Для бизнеса</span>
-    <h1>Клининг для бизнеса в Иркутске — <b class="gr">по договору, с закреплённой бригадой</b></h1>
-    <p class="hero-lead">Убираем офисы, склады и торговые площади Иркутска. За каждым объектом — отдельный менеджер и бригада, которую вы будете знать в лицо. Работаем официально: договор, ЭДО, полный пакет для бухгалтерии.</p>
-    <p class="hero-marks">Закреплённая бригада · Договор и ЭДО · КП за 24 часа</p>
-    <div class="hero-btns">
-      <a href="#zayavka" class="btn btn-cyan">Получить КП →</a>
-      <a href="#zayavka" class="btn btn-line">Пригласить на тендер</a>
+    <div class="hero-content">
+      <span class="micro">Для бизнеса</span>
+      <h1>Клининг для бизнеса в Иркутске — <b class="gr">по договору, с закреплённой бригадой</b></h1>
+      <p class="hero-lead">Убираем офисы, склады и торговые площади Иркутска. За каждым объектом — отдельный менеджер и бригада, которую вы будете знать в лицо. Работаем официально: договор, ЭДО, полный пакет для бухгалтерии.</p>
+      <p class="hero-marks">Закреплённая бригада · Договор и ЭДО · КП за 24 часа</p>
+      <div class="hero-btns">
+        <button type="button" class="btn btn-cyan" onclick="kpOpen()">Получить КП →</button>
+        <button type="button" class="btn btn-line" onclick="tenderOpen()">Пригласить на тендер</button>
+      </div>
     </div>
   </div>
 </section>
@@ -103,14 +104,16 @@
     </div>
     <div class="price-grid">
       <div class="price-card fmt-card">
+        <i class="fmt-icon">🗓</i>
         <h3>Абонентское обслуживание</h3>
         <p>Регулярная уборка объекта по графику — закреплённая бригада, фиксированная стоимость каждый месяц. Подходит, если объект работает постоянно: офис, бизнес-центр, магазин, производство.</p>
-        <div><a href="abonement.html" class="btn btn-line">Подробнее об абонементе →</a></div>
+        <div class="fmt-foot"><a href="abonement.html" class="btn btn-green">Подробнее об абонементе →</a></div>
       </div>
       <div class="price-card fmt-card">
+        <i class="fmt-icon">✨</i>
         <h3>Разовые услуги</h3>
         <p>Уборка под конкретную задачу — после ремонта, генеральная перед открытием, мытьё окон и фасадов, химчистка, дезинфекция. Подходит, если регулярный график не нужен.</p>
-        <div><a href="razovye.html" class="btn btn-line">Смотреть разовые услуги →</a></div>
+        <div class="fmt-foot"><a href="razovye.html" class="btn btn-line">Смотреть разовые услуги →</a></div>
       </div>
     </div>
   </div>
@@ -124,11 +127,26 @@
       <p>Берём объекты от 30 до 10 000 м² — независимо от сферы деятельности.</p>
     </div>
     <div class="obj-grid">
-      <div class="obj-card"><i>🏢</i><b>Офисы</b></div>
-      <div class="obj-card"><i>🏙</i><b>Бизнес-центры</b></div>
-      <div class="obj-card"><i>📦</i><b>Склады</b></div>
-      <div class="obj-card"><i>🛍</i><b>Магазины и торговые площади</b></div>
-      <div class="obj-card"><i>🏭</i><b>Производственные помещения</b></div>
+      <div class="obj-card">
+        <i>🏢</i><b>Офисы</b>
+        <p class="obj-ds">Убираем рабочие зоны, переговорные и санузлы с учётом графика сотрудников.</p>
+      </div>
+      <div class="obj-card">
+        <i>🏙</i><b>Бизнес-центры</b>
+        <p class="obj-ds">Обслуживаем лобби, коридоры, общие зоны и арендуемые площади под ключ.</p>
+      </div>
+      <div class="obj-card">
+        <i>📦</i><b>Склады</b>
+        <p class="obj-ds">Грузовые зоны, стеллажи и служебные помещения с учётом технологических требований.</p>
+      </div>
+      <div class="obj-card">
+        <i>🛍</i><b>Магазины и ТЦ</b>
+        <p class="obj-ds">Ежедневная и генеральная уборка торгового зала, примерочных и подсобок.</p>
+      </div>
+      <div class="obj-card">
+        <i>🏭</i><b>Производство</b>
+        <p class="obj-ds">Промышленный клининг с допуском к оборудованию и зонам регламентированного доступа.</p>
+      </div>
     </div>
     <p style="text-align:center;font-size:13px;color:var(--gray-2);margin-top:26px;">С общепитом не работаем.</p>
   </div>
@@ -140,12 +158,47 @@
     <div class="s-head">
       <div><span class="micro">Как это работает</span><h2 style="margin-top:14px;">Как проходит работа — от заявки до старта</h2></div>
     </div>
-    <div class="uds-steps">
-      <div class="uds-step"><span class="usn">1</span><p><b style="color:#fff;">Заявка и техническое задание</b><br>Пришлите ТЗ в MAX (можно фото и видео объекта) — если ТЗ ещё нет, приедем на объект и составим его вместе.</p></div>
-      <div class="uds-step"><span class="usn">2</span><p><b style="color:#fff;">Расчёт и КП</b><br>Присылаем коммерческое предложение с расчётом в течение 24 часов.</p></div>
-      <div class="uds-step"><span class="usn">3</span><p><b style="color:#fff;">Договор</b><br>Подписываем договор и дальше работаем полностью в ЭДО.</p></div>
-      <div class="uds-step"><span class="usn">4</span><p><b style="color:#fff;">Заезд бригады</b><br>На объект выходит закреплённая за вами бригада — одни и те же люди на каждой уборке.</p></div>
-      <div class="uds-step"><span class="usn">5</span><p><b style="color:#fff;">Замена при необходимости</b><br>Если сотрудник не вышел — присылаем замену в течение 2 часов.</p></div>
+    <div class="step-list" id="stepList">
+      <div class="step-item open">
+        <div class="step-item-h" onclick="stepToggle(this)">
+          <span class="usn">1</span>
+          <h3>Заявка и техническое задание</h3>
+          <span class="step-arr">▼</span>
+        </div>
+        <div class="step-body"><div class="step-body-in">Пришлите ТЗ в MAX (можно фото и видео объекта) — если ТЗ ещё нет, приедем на объект и составим его вместе с вашими специалистами.</div></div>
+      </div>
+      <div class="step-item">
+        <div class="step-item-h" onclick="stepToggle(this)">
+          <span class="usn">2</span>
+          <h3>Расчёт и коммерческое предложение</h3>
+          <span class="step-arr">▼</span>
+        </div>
+        <div class="step-body"><div class="step-body-in">Присылаем коммерческое предложение с подробным расчётом в течение 24 часов — без скрытых статей и расплывчатых формулировок.</div></div>
+      </div>
+      <div class="step-item">
+        <div class="step-item-h" onclick="stepToggle(this)">
+          <span class="usn">3</span>
+          <h3>Договор и ЭДО</h3>
+          <span class="step-arr">▼</span>
+        </div>
+        <div class="step-body"><div class="step-body-in">Подписываем договор и переводим весь документооборот в ЭДО: акты, счета и закрывающие документы — вовремя и без напоминаний.</div></div>
+      </div>
+      <div class="step-item">
+        <div class="step-item-h" onclick="stepToggle(this)">
+          <span class="usn">4</span>
+          <h3>Заезд закреплённой бригады</h3>
+          <span class="step-arr">▼</span>
+        </div>
+        <div class="step-body"><div class="step-body-in">На объект выходит закреплённая за вами бригада — одни и те же люди на каждой уборке. Вы знаете их в лицо, они знают ваш объект.</div></div>
+      </div>
+      <div class="step-item">
+        <div class="step-item-h" onclick="stepToggle(this)">
+          <span class="usn">5</span>
+          <h3>Замена при необходимости</h3>
+          <span class="step-arr">▼</span>
+        </div>
+        <div class="step-body"><div class="step-body-in">Если кто-то из бригады не вышел — присылаем замену в течение 2 часов. Без объяснений причин с вашей стороны — это наша задача.</div></div>
+      </div>
     </div>
     <p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:36px;max-width:70ch;">P.S. Цена клининга — это не зарплата уборщицы. В неё заложены все расходы компании и работа менеджера, который отвечает за результат на вашем объекте.</p>
   </div>
@@ -153,11 +206,13 @@
 
 <!-- ============ 5. ДОКУМЕНТЫ И БУХГАЛТЕРИЯ ============ -->
 <section class="bg-mint">
-  <div class="wrap" style="max-width:820px;text-align:center;margin:0 auto;">
-    <span class="micro">Документы</span>
-    <h2 style="margin-top:14px;">Что получает ваша бухгалтерия</h2>
-    <p style="color:var(--ink-2);font-size:15px;margin-top:16px;">Работаем официально и в ЭДО: договор, акты, счета — всё вовремя и без напоминаний. Для тендеров и закупок собираем полный пакет документов компании.</p>
-    <p style="margin-top:20px;"><a href="partners.html" class="hero-lead-link" style="color:var(--cyan-deep);font-weight:700;">Полный пакет документов для тендерной документации →</a></p>
+  <div class="wrap">
+    <div style="max-width:820px;margin:0 auto;text-align:center;">
+      <span class="micro">Документы</span>
+      <h2 style="margin-top:14px;font-size:clamp(28px,3.4vw,42px);">Что получает ваша бухгалтерия</h2>
+      <p style="color:var(--ink-2);font-size:15px;margin-top:16px;line-height:1.7;">Работаем официально и в ЭДО: договор, акты, счета — всё вовремя и без напоминаний. Для тендеров и закупок собираем полный пакет документов компании.</p>
+      <p style="margin-top:20px;"><a href="partners.html" class="hero-lead-link">Полный пакет документов для тендерной документации →</a></p>
+    </div>
   </div>
 </section>
 
@@ -176,7 +231,9 @@
       <div class="photo"><span>Логотип клиента</span></div>
       <div class="photo"><span>Логотип клиента</span></div>
     </div>
-    <div style="margin-top:30px;"><a href="partners.html" class="btn btn-dark">Пригласить на тендер →</a></div>
+    <div style="margin-top:30px;">
+      <button type="button" class="btn btn-dark" onclick="tenderOpen()">Пригласить на тендер →</button>
+    </div>
   </div>
 </section>
 
@@ -186,22 +243,17 @@
     <div class="s-head" style="justify-content:center;text-align:center;">
       <div style="max-width:none;"><span class="micro">Ваша команда</span><h2 style="margin-top:14px;max-width:none;">Кто ведёт ваш проект</h2></div>
     </div>
-    <div class="pp-grid">
-      <div class="pp">
-        <div class="pp-ph"><div class="photo"><span>Фото сотрудника</span></div></div>
-        <div class="pp-b">
-          <div class="nm">Огер Елена Борисовна</div>
-          <div class="rl">Тендерный специалист по работе с юр.лицами</div>
-          <div class="ds">Готовит расчёт и КП по вашему техническому заданию, сопровождает участие в тендере и закупочные процедуры от заявки до подписания договора.</div>
-        </div>
+    <div class="team-slider-wrap">
+      <div class="ppl" id="teamSlider">
+        <div class="pp"><div class="pp-ph"><img class="photo" src="img/team-rita.webp" alt="Федотова Рита Владимировна" loading="lazy"></div><div class="pp-b"><div class="nm">Федотова Рита Владимировна</div><div class="rl">Генеральный директор</div></div></div>
+        <div class="pp"><div class="pp-ph"><img class="photo" src="img/team-8.png" alt="Булатова Марина Ивановна" loading="lazy"></div><div class="pp-b"><div class="nm">Булатова Марина Ивановна</div><div class="rl">Заместитель генерального директора (экономист)</div></div></div>
+        <div class="pp"><div class="pp-ph"><img class="photo" src="img/team-9.png" alt="Огер Елена Борисовна" loading="lazy"></div><div class="pp-b"><div class="nm">Огер Елена Борисовна</div><div class="rl">Тендерный специалист по работе с юр.лицами</div></div></div>
+        <div class="pp"><div class="pp-ph"><img class="photo" src="img/team-11.png" alt="Титова Оксана Витальевна" loading="lazy"></div><div class="pp-b"><div class="nm">Титова Оксана Витальевна</div><div class="rl">Руководитель сервисного обслуживания объектов</div></div></div>
+        <div class="pp"><div class="pp-ph"><img class="photo" src="img/team-7.png" alt="Чернявская Наталья Сергеевна" loading="lazy"></div><div class="pp-b"><div class="nm">Чернявская Наталья Сергеевна</div><div class="rl">Оператор по работе с физ.лицами</div></div></div>
       </div>
-      <div class="pp">
-        <div class="pp-ph"><div class="photo"><span>Фото сотрудника</span></div></div>
-        <div class="pp-b">
-          <div class="nm">Титова Оксана Витальевна</div>
-          <div class="rl">Руководитель сервисного обслуживания объектов</div>
-          <div class="ds">Контролирует работу закреплённой бригады на вашем объекте и оперативно решает вопросы по графику, качеству и заменам персонала.</div>
-        </div>
+      <div class="slider-nav">
+        <button type="button" class="slider-btn" id="teamPrev" aria-label="Назад">←</button>
+        <button type="button" class="slider-btn" id="teamNext" aria-label="Вперёд">→</button>
       </div>
     </div>
   </div>
@@ -284,6 +336,7 @@
 <button type="button" class="back-top" id="backTop" aria-label="Наверх">↑</button>
 
 <script>
+/* ===== Бургер-меню ===== */
 (function(){
   var btn=document.getElementById('burgerBtn'),menu=document.getElementById('mobMenu');
   if(!btn||!menu)return;
@@ -299,11 +352,13 @@
     });
   });
 })();
+/* ===== Прогресс-бар ===== */
 (function(){
   var bar=document.getElementById('scrollProgress');
   function upd(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';}
   document.addEventListener('scroll',upd,{passive:true});upd();
 })();
+/* ===== Наверх ===== */
 (function(){
   var btn=document.getElementById('backTop');
   function upd(){if(window.scrollY>700)btn.classList.add('show');else btn.classList.remove('show');}
@@ -332,16 +387,32 @@
     ph.style.borderColor='';
     var data={name:document.getElementById('f-name').value.trim(),phone:ph.value.trim(),
       svyaz:(document.querySelector('input[name=svyaz]:checked')||{}).value};
-    /* TODO(интеграция): отправить data на почту / в CRM / в Telegram */
     console.log('Заявка (бизнес):',data);
     ms.textContent='Заявка принята. Менеджер свяжется в течение 24 часов. Срочно — 8 (914) 927-22-87';
     ms.style.display='block';this.reset();
   });
 })();
+/* ===== Аккордеон шагов ===== */
+(function(){
+  function stepToggle(header){
+    var item=header.parentElement;
+    var wasOpen=item.classList.contains('open');
+    document.querySelectorAll('#stepList .step-item').forEach(function(i){i.classList.remove('open');});
+    if(!wasOpen)item.classList.add('open');
+  }
+  window.stepToggle=stepToggle;
+})();
+/* ===== Слайдер команды ===== */
+(function(){
+  var slider=document.getElementById('teamSlider'),prev=document.getElementById('teamPrev'),next=document.getElementById('teamNext');
+  if(!slider||!prev||!next)return;
+  function goBy(n){slider.scrollBy({left:n*(slider.offsetWidth*.8),behavior:'smooth'});}
+  prev.addEventListener('click',function(){goBy(-1);});
+  next.addEventListener('click',function(){goBy(1);});
+})();
 </script>
 
-
-<!-- ============ МОДАЛЬНОЕ ОКНО: ЗАКАЗАТЬ КЛИНИНГ ============ -->
+<!-- ============ МОДАЛЬ: ЗАКАЗАТЬ КЛИНИНГ ============ -->
 <div class="order-modal" id="orderModal" role="dialog" aria-modal="true" aria-label="Заказать клининг">
   <div class="om-backdrop" onclick="omClose()"></div>
   <div class="om-card">
@@ -373,21 +444,104 @@
     </div>
   </div>
 </div>
-</div>
 <script>
 (function(){
   function omOpen(){var f=document.getElementById('omForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('omSuccess');if(s){s.classList.remove('show');}document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
   function omClose(){document.getElementById('orderModal').classList.remove('open');document.body.style.overflow='';}
-  function omSubmit(e){
-    e.preventDefault();
-    document.getElementById('omForm').classList.add('hide');
-    document.getElementById('omSuccess').classList.add('show');
-    setTimeout(omClose, 3000);
-    return false;
-  }
-  window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit;
+  function omSubmit(e){e.preventDefault();document.getElementById('omForm').classList.add('hide');document.getElementById('omSuccess').classList.add('show');setTimeout(omClose,3000);return false;}
+  window.omOpen=omOpen;window.omClose=omClose;window.omSubmit=omSubmit;
   document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
 })();
 </script>
+
+<!-- ============ МОДАЛЬ: ПОЛУЧИТЬ КП ============ -->
+<div class="order-modal" id="kpModal" role="dialog" aria-modal="true" aria-label="Получить КП">
+  <div class="om-backdrop" onclick="kpClose()"></div>
+  <div class="om-card">
+    <button class="om-close" onclick="kpClose()" aria-label="Закрыть">✕</button>
+    <div class="om-head">
+      <div class="micro">Коммерческое предложение</div>
+      <h2>Получить КП</h2>
+      <p>Заполните форму — пришлём расчёт в течение 24 часов</p>
+    </div>
+    <form class="om-form" id="kpForm" onsubmit="return kpSubmit(event)">
+      <div class="om-field">
+        <label for="kpName">Ваше имя</label>
+        <input type="text" id="kpName" name="name" placeholder="Как к вам обращаться" autocomplete="name">
+      </div>
+      <div class="om-field">
+        <label for="kpPhone">Телефон <span style="color:var(--cyan-deep)">*</span></label>
+        <input type="tel" id="kpPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+      </div>
+      <div class="om-check">
+        <input type="checkbox" id="kpPd" required>
+        <label for="kpPd">Согласен(а) с <a href="contacts.html">политикой обработки данных</a></label>
+      </div>
+      <button type="submit" class="btn btn-cyan btn-block">Отправить запрос на КП →</button>
+    </form>
+    <div class="om-success" id="kpSuccess">
+      <div class="om-ok">✓</div>
+      <h3>Заявка принята!</h3>
+      <p>Пришлём КП в течение 24 часов.<br>Срочно — 8 (914) 927-22-87</p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  function kpOpen(){var f=document.getElementById('kpForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('kpSuccess');if(s)s.classList.remove('show');document.getElementById('kpModal').classList.add('open');document.body.style.overflow='hidden';}
+  function kpClose(){document.getElementById('kpModal').classList.remove('open');document.body.style.overflow='';}
+  function kpSubmit(e){e.preventDefault();document.getElementById('kpForm').classList.add('hide');document.getElementById('kpSuccess').classList.add('show');setTimeout(kpClose,3000);return false;}
+  window.kpOpen=kpOpen;window.kpClose=kpClose;window.kpSubmit=kpSubmit;
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')kpClose();});
+})();
+</script>
+
+<!-- ============ МОДАЛЬ: ПРИГЛАСИТЬ НА ТЕНДЕР ============ -->
+<div class="order-modal" id="tenderModal" role="dialog" aria-modal="true" aria-label="Пригласить на тендер">
+  <div class="om-backdrop" onclick="tenderClose()"></div>
+  <div class="om-card">
+    <button class="om-close" onclick="tenderClose()" aria-label="Закрыть">✕</button>
+    <div class="om-head">
+      <div class="micro">Тендер и закупки</div>
+      <h2>Пригласить на тендер</h2>
+      <p>Оставьте контакты — подготовим пакет документов и КП для закупочной процедуры</p>
+    </div>
+    <form class="om-form" id="tenderForm" onsubmit="return tenderSubmit(event)">
+      <div class="om-field">
+        <label for="tndName">Контактное лицо</label>
+        <input type="text" id="tndName" name="name" placeholder="Имя и должность" autocomplete="name">
+      </div>
+      <div class="om-field">
+        <label for="tndPhone">Телефон <span style="color:var(--cyan-deep)">*</span></label>
+        <input type="tel" id="tndPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+      </div>
+      <div class="om-field">
+        <label for="tndCompany">Организация</label>
+        <input type="text" id="tndCompany" name="company" placeholder="Название компании / учреждения">
+      </div>
+      <div class="om-check">
+        <input type="checkbox" id="tndPd" required>
+        <label for="tndPd">Согласен(а) с <a href="contacts.html">политикой обработки данных</a></label>
+      </div>
+      <button type="submit" class="btn btn-dark btn-block">Отправить приглашение →</button>
+    </form>
+    <div class="om-success" id="tenderSuccess">
+      <div class="om-ok">✓</div>
+      <h3>Приглашение принято!</h3>
+      <p>Свяжемся для уточнения деталей.<br>Тендеры: 8 (914) 927-22-87</p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  function tenderOpen(){var f=document.getElementById('tenderForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('tenderSuccess');if(s)s.classList.remove('show');document.getElementById('tenderModal').classList.add('open');document.body.style.overflow='hidden';}
+  function tenderClose(){document.getElementById('tenderModal').classList.remove('open');document.body.style.overflow='';}
+  function tenderSubmit(e){e.preventDefault();document.getElementById('tenderForm').classList.add('hide');document.getElementById('tenderSuccess').classList.add('show');setTimeout(tenderClose,3000);return false;}
+  window.tenderOpen=tenderOpen;window.tenderClose=tenderClose;window.tenderSubmit=tenderSubmit;
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')tenderClose();});
+})();
+</script>
+
+</div>
 </body>
 </html>

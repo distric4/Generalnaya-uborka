@@ -944,3 +944,37 @@ html{scroll-behavior:smooth;}
 .gu-page .om-service{display:flex;align-items:center;gap:10px;background:var(--mint-1);border-radius:var(--r-md);padding:10px 14px;margin-bottom:8px;}
 .gu-page .om-service-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan-deep);white-space:nowrap;}
 .gu-page .om-service-name{font-size:14px;font-weight:600;color:var(--ink);}
+
+/* =====================================================
+   BUSINESS.HTML — улучшения дизайна
+   ===================================================== */
+
+/* HERO-BIZ: текстовая карточка для читаемости */
+.gu-page .hero-biz .hero-content{background:rgba(255,255,255,.90);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:var(--r-xl);padding:40px 44px;max-width:570px;box-shadow:0 4px 40px rgba(19,27,35,.08);}
+.gu-page .hero-biz .hero-lead{color:var(--ink-2);max-width:none;}
+@media(max-width:640px){.gu-page .hero-biz .hero-content{padding:26px 20px;}}
+
+/* FMT-CARD: иконки и структура */
+.gu-page .fmt-icon{font-size:40px;display:block;margin-bottom:16px;line-height:1;font-style:normal;}
+.gu-page .fmt-card{display:flex;flex-direction:column;}
+.gu-page .fmt-card>p{flex:1;color:var(--ink-2);}
+.gu-page .fmt-card .fmt-foot{margin-top:24px;}
+
+/* OBJ-CARD: описание */
+.gu-page .obj-card i{font-size:30px;display:block;font-style:normal;margin-bottom:10px;}
+.gu-page .obj-card b{display:block;font-size:14.5px;margin-bottom:6px;}
+.gu-page .obj-ds{font-size:12.5px;color:var(--gray);line-height:1.5;margin:0;}
+
+/* STEP-LIST: аккордеон шагов */
+.gu-page .step-list{display:flex;flex-direction:column;gap:8px;margin-top:32px;padding-top:28px;border-top:1px solid rgba(255,255,255,.14);}
+.gu-page .step-item{background:rgba(255,255,255,.08);border-radius:var(--r-lg);overflow:hidden;}
+.gu-page .step-item-h{display:flex;align-items:center;gap:14px;padding:18px 22px;cursor:pointer;user-select:none;transition:background .2s;}
+.gu-page .step-item-h:hover{background:rgba(255,255,255,.14);}
+.gu-page .step-item .usn{flex-shrink:0;}
+.gu-page .step-item-h h3{font-size:17px;font-weight:700;color:#fff;margin:0;flex:1;line-height:1.3;}
+.gu-page .step-arr{font-size:12px;color:rgba(255,255,255,.45);transition:transform .25s;flex-shrink:0;}
+.gu-page .step-item.open .step-arr{transform:rotate(180deg);}
+.gu-page .step-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.gu-page .step-item.open .step-body{max-height:300px;}
+.gu-page .step-body-in{padding:2px 22px 20px 68px;font-size:14px;color:rgba(255,255,255,.72);line-height:1.65;}
+@media(max-width:560px){.gu-page .step-item-h h3{font-size:15px;}.gu-page .step-body-in{padding:2px 16px 18px 60px;}}
