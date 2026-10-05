@@ -795,6 +795,8 @@ html{scroll-behavior:smooth;}
 .gu-page .svc-txt h2{font-size:clamp(24px,2.8vw,34px);margin:12px 0 16px;}
 .gu-page .svc-txt .when{font-size:14px;color:var(--gray);background:var(--paper);border-left:3px solid var(--cyan);padding:10px 14px;border-radius:0 var(--r-md) var(--r-md) 0;margin-bottom:20px;}
 .gu-page .svc-ph{aspect-ratio:4/3;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-1);}
+.gu-page .svc-ph img{width:100%;height:100%;object-fit:cover;display:block;}
+.gu-page .svc-cta{align-self:flex-start;}
 @media(max-width:860px){.gu-page .svc-split{grid-template-columns:1fr;}.gu-page .svc-split.rev .svc-txt{order:unset;}}
 
 /* ---- СТАТИСТИКА О КОМПАНИИ (about.html) ---- */
