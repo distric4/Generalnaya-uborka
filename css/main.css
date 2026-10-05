@@ -872,6 +872,26 @@ html{scroll-behavior:smooth;}
 .gu-page .zone-ul li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:800;}
 @media(max-width:760px){.gu-page .zone-cols{grid-template-columns:1fr;}}
 
+/* ---- Юридические страницы (политика, cookie) ---- */
+.gu-page .legal{max-width:860px;margin:0 auto;}
+.gu-page .legal .legal-upd{font-size:14px;color:var(--gray);margin-bottom:28px;}
+.gu-page .legal h2{font-size:20px;margin:30px 0 12px;}
+.gu-page .legal h3{font-size:16px;margin:20px 0 8px;}
+.gu-page .legal p{font-size:15px;line-height:1.7;color:var(--ink-2);margin:0 0 12px;}
+.gu-page .legal ul,.gu-page .legal ol{margin:0 0 14px;padding-left:22px;}
+.gu-page .legal li{font-size:15px;line-height:1.7;color:var(--ink-2);margin-bottom:7px;}
+.gu-page .legal a{color:var(--cyan-deep);font-weight:600;}
+.gu-page .legal .legal-req{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 24px;margin-top:10px;font-size:14.5px;line-height:1.8;color:var(--ink-2);}
+
+/* ---- Cookie-баннер ---- */
+.gu-page .cookie-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:0 10px 40px rgba(19,27,35,.18);padding:18px 22px;display:none;align-items:center;gap:18px;flex-wrap:wrap;}
+.gu-page .cookie-bar.show{display:flex;}
+.gu-page .cookie-bar p{margin:0;flex:1 1 320px;font-size:13.5px;line-height:1.6;color:var(--ink-2);}
+.gu-page .cookie-bar a{color:var(--cyan-deep);font-weight:600;}
+.gu-page .cookie-bar .cookie-btns{display:flex;gap:10px;flex-shrink:0;}
+.gu-page .cookie-bar .btn{padding:11px 22px;font-size:14px;}
+@media(max-width:560px){.gu-page .cookie-bar .cookie-btns{width:100%;}.gu-page .cookie-bar .cookie-btns .btn{flex:1;}}
+
 /* ---- PP-GRID (pp в виде сетки, не слайдера — business/uds) ---- */
 .gu-page .pp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 @media(max-width:760px){.gu-page .pp-grid{grid-template-columns:1fr;}}
