@@ -177,8 +177,7 @@ html{scroll-behavior:smooth;}
 .gu-page .hero-city{display:none;}
 .gu-page .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:44px;align-items:start;}
 .gu-page .hero h1{font-size:clamp(32px,3.5vw,48px);font-weight:500;margin-bottom:18px;letter-spacing:-.01em;margin-top:14px;}
-.gu-page .hero h1 b{font-weight:500;}
-.gu-page .hero h1 b{font-weight:800;display:block;}
+.gu-page .hero h1 b{font-weight:800;}
 .gu-page .hero-lead{color:var(--gray);font-size:16px;max-width:50ch;margin-bottom:26px;}
 .gu-page .hero-lead-link{color:var(--cyan-deep);font-weight:700;}
 .gu-page .hero-lead-link:hover{color:var(--cyan);}
