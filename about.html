@@ -196,41 +196,17 @@
       <h2 style="margin-top:14px;">Люди, которые делают уборку</h2>
       <p>Бригады по&nbsp;2–3 человека — пока один занимается кухней, второй уже в&nbsp;санузле. Все сотрудники в&nbsp;штате, с&nbsp;трудовым договором и&nbsp;обучены работе с&nbsp;профессиональной химией.</p>
     </div>
-    <div class="team-grid">
-      <div class="team-card">
-        <img src="img/team-10.png" alt="Федотова Рита Владимировна — генеральный директор" loading="lazy">
-        <div class="team-card-info">
-          <div class="team-card-name">Федотова Рита Владимировна</div>
-          <div class="team-card-role">Генеральный директор</div>
-        </div>
+    <div class="team-slider-wrap">
+      <div class="ppl" id="teamSlider">
+        <div class="pp"><div class="pp-ph"><img class="photo" src="img/team-rita.webp" alt="Федотова Рита Владимировна" loading="lazy"></div><div class="pp-b"><div class="nm">Федотова Рита Владимировна</div><div class="rl">Генеральный директор</div></div></div>
+        <div class="pp"><div class="pp-ph"><img class="photo" src="img/team-8.png" alt="Булатова Марина Ивановна" loading="lazy"></div><div class="pp-b"><div class="nm">Булатова Марина Ивановна</div><div class="rl">Заместитель генерального директора (экономист)</div></div></div>
+        <div class="pp"><div class="pp-ph"><img class="photo" src="img/team-9.png" alt="Огер Елена Борисовна" loading="lazy"></div><div class="pp-b"><div class="nm">Огер Елена Борисовна</div><div class="rl">Тендерный специалист по&nbsp;работе с&nbsp;юр.лицами</div></div></div>
+        <div class="pp"><div class="pp-ph"><img class="photo" src="img/team-11.png" alt="Титова Оксана Витальевна" loading="lazy"></div><div class="pp-b"><div class="nm">Титова Оксана Витальевна</div><div class="rl">Руководитель сервисного обслуживания объектов</div></div></div>
+        <div class="pp"><div class="pp-ph"><img class="photo" src="img/team-7.png" alt="Чернявская Наталья Сергеевна" loading="lazy"></div><div class="pp-b"><div class="nm">Чернявская Наталья Сергеевна</div><div class="rl">Оператор по&nbsp;работе с&nbsp;физ.лицами</div></div></div>
       </div>
-      <div class="team-card">
-        <img src="img/team-8.png" alt="Булатова Марина Ивановна — заместитель генерального директора" loading="lazy">
-        <div class="team-card-info">
-          <div class="team-card-name">Булатова Марина Ивановна</div>
-          <div class="team-card-role">Заместитель генерального директора (экономист)</div>
-        </div>
-      </div>
-      <div class="team-card">
-        <img src="img/team-9.png" alt="Огер Елена Борисовна — тендерный специалист" loading="lazy">
-        <div class="team-card-info">
-          <div class="team-card-name">Огер Елена Борисовна</div>
-          <div class="team-card-role">Тендерный специалист по&nbsp;работе с&nbsp;юрлицами</div>
-        </div>
-      </div>
-      <div class="team-card">
-        <img src="img/team-11.png" alt="Титова Оксана Витальевна — руководитель сервисного обслуживания" loading="lazy">
-        <div class="team-card-info">
-          <div class="team-card-name">Титова Оксана Витальевна</div>
-          <div class="team-card-role">Руководитель сервисного обслуживания объектов</div>
-        </div>
-      </div>
-      <div class="team-card">
-        <img src="img/team-7.png" alt="Чернявская Наталья Сергеевна — оператор по работе с физлицами" loading="lazy">
-        <div class="team-card-info">
-          <div class="team-card-name">Чернявская Наталья Сергеевна</div>
-          <div class="team-card-role">Оператор по&nbsp;работе с&nbsp;физлицами</div>
-        </div>
+      <div class="slider-nav">
+        <button type="button" class="slider-btn" id="teamPrev" aria-label="Назад">←</button>
+        <button type="button" class="slider-btn" id="teamNext" aria-label="Вперёд">→</button>
       </div>
     </div>
   </div>
@@ -412,6 +388,15 @@
   }
   window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit;
   document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
+})();
+(function(){
+  var track=document.getElementById('teamSlider');
+  var prev=document.getElementById('teamPrev');
+  var next=document.getElementById('teamNext');
+  if(!track||!prev||!next)return;
+  function step(){return track.querySelector('.pp').getBoundingClientRect().width+20;}
+  prev.addEventListener('click',function(){track.scrollBy({left:-step(),behavior:'smooth'});});
+  next.addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'});});
 })();
 </script>
 </body>

@@ -122,11 +122,11 @@
         <h3>Мессенджеры и&nbsp;соцсети</h3>
         <div class="msg-grid">
           <a href="tel:+79149276748" class="msg-btn">
-            <div class="mb-ico" style="background:linear-gradient(135deg,#9B5CFF,#6C2BD9);">MAX</div>
+            <div class="mb-ico"><img src="img/max.svg" alt="MAX"></div>
             <div><div>MAX</div><div class="mb-num">+7 914 927-67-48</div></div>
           </a>
           <a href="https://vk.com/38uborka" class="msg-btn" target="_blank" rel="noopener">
-            <div class="mb-ico" style="background:var(--cyan-deep);">VK</div>
+            <div class="mb-ico"><img src="img/vk.svg" alt="ВКонтакте"></div>
             <div><div>ВКонтакте</div><div class="mb-num">vk.com/38uborka</div></div>
           </a>
         </div>
@@ -338,15 +338,13 @@
   if(typeof ymaps==='undefined')return;
   ymaps.ready(function(){
     var el=document.getElementById('ymap'); if(!el)return;
-    ymaps.geocode('Иркутск, улица Красноказачья, 85',{results:1}).then(function(res){
-      var obj=res.geoObjects.get(0);
-      var coords=obj?obj.geometry.getCoordinates():[52.2869,104.3050];
-      var map=new ymaps.Map('ymap',{center:coords,zoom:16,controls:['zoomControl','fullscreenControl']});
-      map.behaviors.disable('scrollZoom');
-      map.geoObjects.add(new ymaps.Placemark(coords,{balloonContent:'Генеральная уборка — ул. Красноказачья, 85, офис 39'},{preset:'islands#greenHomeCircleIcon'}));
-    },function(){
-      var map=new ymaps.Map('ymap',{center:[52.2869,104.3050],zoom:13,controls:['zoomControl','fullscreenControl']});
-    });
+    var coords=[52.275198,104.324598];
+    var map=new ymaps.Map('ymap',{center:coords,zoom:16,controls:['zoomControl','fullscreenControl']});
+    map.behaviors.disable('scrollZoom');
+    map.geoObjects.add(new ymaps.Placemark(coords,{
+      balloonContent:'Генеральная уборка — ул. Красноказачья, 85, офис 39',
+      hintContent:'Генеральная уборка — Красноказачья, 85'
+    },{preset:'islands#greenHomeCircleIcon'}));
   });
 })();
 </script>
