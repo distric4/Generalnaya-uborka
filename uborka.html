@@ -93,7 +93,6 @@
       <p class="hero-lead">Бригада 2–3 человека, всё своё — химия, пылесос, стремянка. Однушку убираем за 2 часа, трёшку за 4–5. Если что-то не устроит — вернёмся и переделаем без лишних разговоров.</p>
       <p class="hero-marks">Своя химия и инвентарь · Договор и ответственность · Оценка по фото в MAX</p>
       <div class="hero-btns">
-        <a href="#zayavka" class="btn btn-cyan">Рассчитать стоимость →</a>
         <a href="#zayavka" class="btn btn-line">Оставить заявку</a>
       </div>
     </div>
@@ -134,7 +133,7 @@
           <div class="sw-price-l">Стоимость</div>
           <div class="sw-price">от 9 000 ₽ <span style="font-size:16px;font-weight:600;color:var(--gray);">/ 5 часов</span></div>
           <div class="sw-brig">1–2 клинера, 4–6 часов</div>
-          <a href="#zayavka" class="btn btn-cyan">Рассчитать стоимость →</a>
+          <button type="button" class="btn btn-cyan" onclick="srvOrder(event,'Генеральная уборка')">Оставить заявку →</button>
         </div>
       </div>
     </div>
@@ -159,7 +158,7 @@
           <div class="sw-price-l">Стоимость</div>
           <div class="sw-price sm">Рассчитывается индивидуально — зависит от площади и частоты визитов. Точную стоимость назовёт менеджер.</div>
           <div class="sw-brig">Согласуем удобный график и время визитов индивидуально</div>
-          <a href="#zayavka" class="btn btn-cyan">Оставить заявку →</a>
+          <button type="button" class="btn btn-cyan" onclick="srvOrder(event,'Поддерживающая уборка')">Оставить заявку →</button>
         </div>
       </div>
     </div>
@@ -184,7 +183,7 @@
           <div class="sw-price-l">Стоимость</div>
           <div class="sw-price">от 150 ₽<span style="font-size:16px;font-weight:600;color:var(--gray);">/м²</span></div>
           <div class="sw-brig">2–3 клинера, 6–10 часов</div>
-          <a href="#zayavka" class="btn btn-cyan">Рассчитать стоимость →</a>
+          <button type="button" class="btn btn-cyan" onclick="srvOrder(event,'Уборка после ремонта')">Оставить заявку →</button>
         </div>
       </div>
     </div>
@@ -209,7 +208,7 @@
           <div class="sw-price-l">Стоимость</div>
           <div class="sw-price sm">Рассчитывается индивидуально — зависит от площади и состояния дома. Выезд за город — +50 ₽/км. Точную стоимость назовёт менеджер.</div>
           <div class="sw-brig">Состав бригады и время подбираем под площадь дома индивидуально</div>
-          <a href="#zayavka" class="btn btn-cyan">Оставить заявку →</a>
+          <button type="button" class="btn btn-cyan" onclick="srvOrder(event,'Уборка загородного дома')">Оставить заявку →</button>
         </div>
       </div>
     </div>
@@ -464,6 +463,10 @@
       <p>Оставьте заявку — перезвоним в течение 15 минут</p>
     </div>
     <form class="om-form" id="omForm" onsubmit="return omSubmit(event)">
+      <div class="om-service" id="omService" style="display:none">
+        <span class="om-service-label">Услуга</span>
+        <span class="om-service-name" id="omServiceName"></span>
+      </div>
       <div class="om-field">
         <label for="omName">Ваше имя</label>
         <input type="text" id="omName" name="name" placeholder="Как вас зовут?" autocomplete="name" required>
@@ -488,7 +491,7 @@
 </div>
 <script>
 (function(){
-  function omOpen(){var f=document.getElementById('omForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('omSuccess');if(s){s.classList.remove('show');}document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
+  function omOpen(service){var f=document.getElementById('omForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('omSuccess');if(s){s.classList.remove('show');}var svcEl=document.getElementById('omService');var svcName=document.getElementById('omServiceName');if(svcEl&&svcName){if(service){svcName.textContent=service;svcEl.style.display='';}else{svcEl.style.display='none';}}document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
   function omClose(){document.getElementById('orderModal').classList.remove('open');document.body.style.overflow='';}
   function omSubmit(e){
     e.preventDefault();
@@ -497,7 +500,8 @@
     setTimeout(omClose, 3000);
     return false;
   }
-  window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit;
+  function srvOrder(e,service){e.stopPropagation();e.preventDefault();omOpen(service);}
+  window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit; window.srvOrder=srvOrder;
   document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
 })();
 /* ===== Видео-слайдер (Как мы работаем — U) ===== */

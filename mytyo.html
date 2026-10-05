@@ -93,7 +93,6 @@
       <p class="hero-lead">Телескопические штанги, специальная резина и состав без разводов — окна блестят и снаружи, и изнутри. Работаем с лоджиями, натяжными потолками, люстрами и высотными фасадами. Цену назовём по фото в MAX.</p>
       <p class="hero-marks">Без разводов и следов · Любая высота · Оценка по фото в MAX</p>
       <div class="hero-btns">
-        <a href="#zayavka" class="btn btn-cyan">Рассчитать стоимость →</a>
         <a href="#zayavka" class="btn btn-line">Оставить заявку</a>
       </div>
     </div>
@@ -151,7 +150,7 @@
             </tr>
           </table>
           <div class="sw-brig">1–2 клинера, 2–5 часов. Точную стоимость считаем по фото.</div>
-          <a href="#zayavka" class="btn btn-cyan">Рассчитать стоимость →</a>
+          <button type="button" class="btn btn-cyan" onclick="srvOrder(event,'Мытьё окон')">Оставить заявку →</button>
         </div>
       </div>
     </div>
@@ -188,7 +187,7 @@
             </tr>
           </table>
           <div class="sw-brig">Цена зависит от типа полотна (матовый/глянцевый) и высоты. Точную стоимость считаем по фото.</div>
-          <a href="#zayavka" class="btn btn-cyan">Оставить заявку →</a>
+          <button type="button" class="btn btn-cyan" onclick="srvOrder(event,'Натяжные потолки')">Оставить заявку →</button>
         </div>
       </div>
     </div>
@@ -230,7 +229,7 @@
             </tr>
           </table>
           <div class="sw-brig">Снимаем, моем, собираем обратно. Стоимость зависит от числа элементов и высоты.</div>
-          <a href="#zayavka" class="btn btn-cyan">Оставить заявку →</a>
+          <button type="button" class="btn btn-cyan" onclick="srvOrder(event,'Мытьё люстр')">Оставить заявку →</button>
         </div>
       </div>
     </div>
@@ -254,7 +253,7 @@
           <div class="sw-price-l">Стоимость</div>
           <div class="sw-price sm">Рассчитывается индивидуально и по запросу — зависит от размера судна и объёма работ. Услуга сезонная. Точную стоимость назовёт менеджер.</div>
           <div class="sw-brig">Состав бригады и сроки подбираем под размер судна индивидуально</div>
-          <a href="#zayavka" class="btn btn-cyan">Оставить заявку →</a>
+          <button type="button" class="btn btn-cyan" onclick="srvOrder(event,'Мытьё яхт')">Оставить заявку →</button>
         </div>
       </div>
     </div>
@@ -501,6 +500,10 @@
       <p>Оставьте заявку — перезвоним в течение 15 минут</p>
     </div>
     <form class="om-form" id="omForm" onsubmit="return omSubmit(event)">
+      <div class="om-service" id="omService" style="display:none">
+        <span class="om-service-label">Услуга</span>
+        <span class="om-service-name" id="omServiceName"></span>
+      </div>
       <div class="om-field">
         <label for="omName">Ваше имя</label>
         <input type="text" id="omName" name="name" placeholder="Как вас зовут?" autocomplete="name" required>
@@ -525,7 +528,7 @@
 </div>
 <script>
 (function(){
-  function omOpen(){var f=document.getElementById('omForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('omSuccess');if(s){s.classList.remove('show');}document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
+  function omOpen(service){var f=document.getElementById('omForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('omSuccess');if(s){s.classList.remove('show');}var svcEl=document.getElementById('omService');var svcName=document.getElementById('omServiceName');if(svcEl&&svcName){if(service){svcName.textContent=service;svcEl.style.display='';}else{svcEl.style.display='none';}}document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
   function omClose(){document.getElementById('orderModal').classList.remove('open');document.body.style.overflow='';}
   function omSubmit(e){
     e.preventDefault();
@@ -534,7 +537,8 @@
     setTimeout(omClose, 3000);
     return false;
   }
-  window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit;
+  function srvOrder(e,service){e.stopPropagation();e.preventDefault();omOpen(service);}
+  window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit; window.srvOrder=srvOrder;
   document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
 })();
 /* ===== Видео-слайдер (Как мы работаем — M) ===== */
