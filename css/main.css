@@ -461,6 +461,7 @@ html{scroll-behavior:smooth;}
 .gu-page .uds-ph{position:relative;aspect-ratio:4/5;border-radius:var(--r-xl);overflow:hidden;border:1px solid rgba(255,255,255,.10);}
 .gu-page .uds-ph .photo{position:absolute;inset:0;background:rgba(255,255,255,.06);color:rgba(255,255,255,.4);}
 .gu-page .uds-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:32px;padding-top:28px;border-top:1px solid rgba(255,255,255,.14);}
+@media(min-width:901px){.gu-page .uds-steps.cols-4{grid-template-columns:repeat(4,1fr);}}
 .gu-page .uds-step{display:flex;flex-direction:row;align-items:flex-start;gap:12px;}
 .gu-page .uds-step .usn{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
   display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--green);flex-shrink:0;}
@@ -772,7 +773,13 @@ html{scroll-behavior:smooth;}
 .gu-page .doc-chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:26px 0;}
 .gu-page .doc-chips span{background:#fff;border:1px solid var(--line);border-radius:var(--r-pill);padding:12px 22px;font-size:14px;font-weight:600;}
 .gu-page .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.gu-page .case-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);padding:26px 28px;}
+.gu-page .case-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-1);padding:26px 28px;transition:.2s ease;}
+.gu-page .case-card:hover{transform:translateY(-3px);box-shadow:var(--sh-2);}
+.gu-page .case-card .ci{width:46px;height:46px;border-radius:var(--r-md);background:var(--mint-1);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;}
+.gu-page .case-card .ct{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--line);}
+.gu-page .case-card .cl{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--cyan-deep);margin:0 0 5px;}
+.gu-page .case-card p{font-size:14px;line-height:1.55;color:var(--ink-2);margin:0 0 14px;}
+.gu-page .case-card .cnote{margin:16px 0 0;padding-top:12px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--gray);font-style:italic;}
 @media(max-width:760px){.gu-page .case-grid{grid-template-columns:1fr;}.gu-page .incl-grid{grid-template-columns:1fr;}}
 
 /* ---- ЯКОРНАЯ НАВИГАЦИЯ (razovye.html) ---- */
