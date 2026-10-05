@@ -143,12 +143,7 @@
       <div><span class="micro">Как&nbsp;найти</span><h2 style="margin-top:14px;">Адрес на&nbsp;карте</h2></div>
     </div>
     <p class="s-lead">ул. Красноказачья, 85, офис 39. Удобная парковка у&nbsp;здания, вход со&nbsp;стороны главного фасада.</p>
-    <div class="map-wrap">
-      <div class="map-placeholder">
-        <b>г. Иркутск, ул. Красноказачья, 85, офис 39</b>
-        Карта откроется здесь — добавьте Яндекс.Карты или&nbsp;Google Maps через настройки страницы.
-      </div>
-    </div>
+    <div id="ymap" class="ymap"></div>
   </div>
 </section>
 
@@ -159,19 +154,29 @@
       <div><span class="micro">Зона выезда</span><h2 style="margin-top:14px;">Куда выезжаем</h2></div>
     </div>
     <p class="s-lead">Работаем во&nbsp;всех районах Иркутска без&nbsp;наценки. За&nbsp;пределами города — выезд в&nbsp;радиусе 30 км от&nbsp;центра.</p>
-    <div class="zone-list">
-      <span class="zone-tag">Свердловский</span>
-      <span class="zone-tag">Ленинский</span>
-      <span class="zone-tag">Правобережный</span>
-      <span class="zone-tag">Октябрьский</span>
-      <span class="zone-tag">Куйбышевский</span>
-      <span class="zone-tag">Маркова</span>
-      <span class="zone-tag">Хомутово</span>
-      <span class="zone-tag">Пивовариха</span>
-      <span class="zone-tag">Молодёжный</span>
-      <span class="zone-tag">Грановщина</span>
-      <span class="zone-tag">Смоленщина</span>
-      <span class="zone-tag">Листвянка</span>
+    <div class="zone-cols">
+      <div class="zone-col">
+        <div class="zone-col-t">Районы Иркутска</div>
+        <ul class="zone-ul">
+          <li>Свердловский</li>
+          <li>Ленинский</li>
+          <li>Правобережный</li>
+          <li>Октябрьский</li>
+          <li>Куйбышевский</li>
+        </ul>
+      </div>
+      <div class="zone-col">
+        <div class="zone-col-t">Пригород — выезд до&nbsp;30 км</div>
+        <ul class="zone-ul">
+          <li>Маркова</li>
+          <li>Хомутово</li>
+          <li>Пивовариха</li>
+          <li>Молодёжный</li>
+          <li>Грановщина</li>
+          <li>Смоленщина</li>
+          <li>Листвянка</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -325,6 +330,24 @@
   }
   window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit;
   document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
+})();
+</script>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=734e19ec-7855-4a98-9f65-ffad3a2c8ebd&lang=ru_RU"></script>
+<script>
+(function(){
+  if(typeof ymaps==='undefined')return;
+  ymaps.ready(function(){
+    var el=document.getElementById('ymap'); if(!el)return;
+    ymaps.geocode('Иркутск, улица Красноказачья, 85',{results:1}).then(function(res){
+      var obj=res.geoObjects.get(0);
+      var coords=obj?obj.geometry.getCoordinates():[52.2869,104.3050];
+      var map=new ymaps.Map('ymap',{center:coords,zoom:16,controls:['zoomControl','fullscreenControl']});
+      map.behaviors.disable('scrollZoom');
+      map.geoObjects.add(new ymaps.Placemark(coords,{balloonContent:'Генеральная уборка — ул. Красноказачья, 85, офис 39'},{preset:'islands#greenHomeCircleIcon'}));
+    },function(){
+      var map=new ymaps.Map('ymap',{center:[52.2869,104.3050],zoom:13,controls:['zoomControl','fullscreenControl']});
+    });
+  });
 })();
 </script>
 </body>

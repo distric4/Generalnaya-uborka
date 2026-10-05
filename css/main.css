@@ -836,6 +836,25 @@ html{scroll-behavior:smooth;}
 .gu-page .zone-tag{background:#fff;border:1px solid var(--line);border-radius:var(--r-pill);padding:9px 18px;font-size:14px;color:var(--ink-2);}
 @media(max-width:760px){.gu-page .cnt-grid{grid-template-columns:1fr;}.gu-page .msg-grid{grid-template-columns:1fr;}}
 
+/* ---- правки: отступы в карточках, команда, контакты, зоны выезда, карта ---- */
+.gu-page .how-card .how-num{font-size:14px;font-weight:800;color:var(--cyan-deep);letter-spacing:.08em;margin-bottom:16px;}
+.gu-page .how-card h3{margin-bottom:12px;}
+.gu-page .team-card img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;}
+.gu-page .cnt-card h3{font-size:18px;margin-bottom:16px;}
+.gu-page .cnt-card a{display:block;color:var(--ink);font-size:15px;line-height:1.55;margin-bottom:8px;}
+.gu-page .cnt-card a:hover{color:var(--cyan-deep);}
+.gu-page .cnt-card>p{font-size:14.5px;color:var(--ink-2);line-height:1.55;margin:0;}
+.gu-page .cnt-card .cnt-note{font-size:13px;color:var(--gray);line-height:1.5;margin-top:14px;}
+.gu-page .msg-grid{grid-template-columns:1fr;}
+.gu-page .mb-num{font-size:13px;font-weight:600;color:var(--gray);margin-top:2px;}
+.gu-page .ymap{height:380px;border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--line);}
+.gu-page .zone-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px;margin-top:28px;}
+.gu-page .zone-col-t{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan-deep);margin-bottom:14px;}
+.gu-page .zone-ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:9px 20px;}
+.gu-page .zone-ul li{position:relative;padding-left:24px;font-size:15px;color:var(--ink-2);line-height:1.5;}
+.gu-page .zone-ul li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:800;}
+@media(max-width:760px){.gu-page .zone-cols{grid-template-columns:1fr;}}
+
 /* ---- PP-GRID (pp в виде сетки, не слайдера — business/uds) ---- */
 .gu-page .pp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 @media(max-width:760px){.gu-page .pp-grid{grid-template-columns:1fr;}}
