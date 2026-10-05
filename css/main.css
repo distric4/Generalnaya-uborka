@@ -81,7 +81,7 @@ html{scroll-behavior:smooth;}
 .gu-page .ws-viewport{overflow:hidden;border-radius:var(--r-lg);}
 .gu-page .ws-track{display:flex;gap:0;transition:transform .35s ease;}
 .gu-page .ws-track .vid-item{flex:0 0 100%;min-width:0;}
-.gu-page .ws-track .vid-item [id^="kp-"]{aspect-ratio:16/9;width:100%;border-radius:var(--r-lg);border:none;display:block;height:auto;}
+.gu-page .ws-track .vid-item [id^="kp-"]{aspect-ratio:9/16;width:100%;max-width:340px;margin:0 auto;border-radius:var(--r-lg);border:none;display:block;height:auto;}
 .gu-page .ws-ctrl{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:20px;}
 .gu-page .ws-btn{width:40px;height:40px;border-radius:50%;background:var(--cyan);border:none;color:#fff;font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;}
 .gu-page .ws-btn:hover{background:var(--cyan-deep);}
