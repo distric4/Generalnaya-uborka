@@ -79,8 +79,8 @@ html{scroll-behavior:smooth;}
 /* ---------- СЛАЙДЕР РАБОТ ---------- */
 .gu-page .works-slider{position:relative;}
 .gu-page .ws-viewport{overflow:hidden;border-radius:var(--r-lg);}
-.gu-page .ws-track{display:flex;gap:0;transition:transform .35s ease;}
-.gu-page .ws-track .vid-item{flex:0 0 100%;min-width:0;}
+.gu-page .ws-track{display:flex;gap:16px;transition:transform .35s ease;}
+.gu-page .ws-track .vid-item{flex:0 0 calc((100% - 32px)/3);min-width:0;}
 .gu-page .ws-track .vid-item [id^="kp-"]{aspect-ratio:9/16;width:100%;max-width:340px;margin:0 auto;border-radius:var(--r-lg);border:none;display:block;height:auto;}
 .gu-page .ws-ctrl{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:20px;}
 .gu-page .ws-btn{width:40px;height:40px;border-radius:50%;background:var(--cyan);border:none;color:#fff;font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;}
@@ -88,6 +88,10 @@ html{scroll-behavior:smooth;}
 .gu-page .ws-dots{display:flex;gap:8px;align-items:center;}
 .gu-page .ws-dot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;transition:.2s;}
 .gu-page .ws-dot.on{background:var(--cyan);width:22px;border-radius:4px;}
+@media(max-width:760px){
+  .gu-page .ws-track{gap:0;}
+  .gu-page .ws-track .vid-item{flex:0 0 100%;}
+}
 
 .gu-page .vid-grid{display:grid;gap:20px;}
 .gu-page .vid-item iframe,.gu-page .vid-item [id^="kp-"]{width:100%;aspect-ratio:16/9;border-radius:var(--r-lg);border:none;display:block;height:auto;}
