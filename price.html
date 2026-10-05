@@ -89,8 +89,59 @@
       <h1 style="margin-top:14px;">Цены на&nbsp;услуги <b class="gr">клининга в&nbsp;Иркутске</b></h1>
       <p class="hero-lead" style="max-width:64ch;">Все цены указаны «от» — точная стоимость зависит от&nbsp;площади, состояния объекта и&nbsp;доступа к&nbsp;воде. Финальную сумму называет менеджер после уточнения деталей или&nbsp;оценки по&nbsp;фото.</p>
       <div class="hero-btns">
-        <a href="index.html#calc" class="btn btn-cyan">Рассчитать в&nbsp;калькуляторе →</a>
-        <a href="index.html#zayavka" class="btn btn-line">Оставить заявку</a>
+        <a href="#calc" class="btn btn-cyan">Рассчитать в&nbsp;калькуляторе →</a>
+        <button type="button" class="btn btn-line" onclick="omOpen()">Оставить заявку</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ КАЛЬКУЛЯТОР ============ -->
+<section class="bg-plain">
+  <div class="wrap">
+    <div class="s-head">
+      <div><span class="micro">Онлайн-расчёт</span><h2 style="margin-top:14px;">Калькулятор стоимости</h2></div>
+      <p>Прикиньте примерную цену за&nbsp;минуту — точную назовём после уточнения деталей или&nbsp;оценки по&nbsp;фото.</p>
+    </div>
+    <div class="calc" id="calc" style="max-width:640px;margin:0 auto;">
+      <div class="calc-head">
+        <span class="micro">Расчёт стоимости</span>
+        <div class="calc-tabs">
+          <button type="button" class="calc-tab on" data-t="uborka">Уборка</button>
+          <button type="button" class="calc-tab" data-t="okna">Окна</button>
+          <button type="button" class="calc-tab" data-t="mebel">Химчистка</button>
+        </div>
+      </div>
+      <div class="calc-body">
+        <div class="calc-ctl">
+          <div class="calc-panel on" data-p="uborka">
+            <label for="r-uborka"><span>Площадь квартиры</span><b id="v-uborka">60 м²</b></label>
+            <input type="range" id="r-uborka" min="20" max="200" step="5" value="60">
+            <div class="calc-scale"><span>20 м²</span><span>200 м²</span></div>
+          </div>
+          <div class="calc-panel" data-p="okna">
+            <label for="r-okna"><span>Площадь остекления</span><b id="v-okna">10 м²</b></label>
+            <input type="range" id="r-okna" min="2" max="40" step="1" value="10">
+            <div class="calc-scale"><span>2 м²</span><span>40 м²</span></div>
+          </div>
+          <div class="calc-panel" data-p="mebel">
+            <label for="s-mebel"><span>Что&nbsp;чистим</span></label>
+            <select class="calc-sel" id="s-mebel">
+              <option value="2000">Кресло</option>
+              <option value="3000" selected>Диван 2–3-местный</option>
+              <option value="4500">Угловой диван</option>
+              <option value="2500">Матрас</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-out">
+          <div class="om">Ориентировочно</div>
+          <div class="op" id="out">от&nbsp;9 000 ₽</div>
+        </div>
+      </div>
+      <div class="calc-foot">
+        <button type="button" class="btn btn-green btn-block" id="calcGo" onclick="calcOrder()">Оставить заявку</button>
+        <span class="calc-note">Точную цену назовём по&nbsp;фото в&nbsp;MAX</span>
       </div>
     </div>
   </div>
@@ -233,7 +284,7 @@
 <section class="bg-plain">
   <div class="wrap">
     <div class="s-head">
-      <div><span class="micro">Химчистка</span><h2 style="margin-top:14px;">Ковры и&nbsp;ковровые покрytия</h2></div>
+      <div><span class="micro">Химчистка</span><h2 style="margin-top:14px;">Ковры и&nbsp;ковровые покрытия</h2></div>
       <p>Цена зависит от&nbsp;материала — натуральные волокна, синтетика или&nbsp;изделия ручной работы.</p>
     </div>
     <div class="price-grid">
@@ -311,7 +362,7 @@
     <h2 style="margin-top:14px;">Посчитаем точную стоимость по&nbsp;фото или&nbsp;на&nbsp;объекте</h2>
     <p style="color:rgba(255,255,255,.68);max-width:56ch;margin:14px auto 30px;">Бесплатный выезд менеджера или&nbsp;оценка по&nbsp;фото в&nbsp;мессенджере — точную цену назовём в&nbsp;течение суток.</p>
     <div class="hero-btns" style="justify-content:center;">
-      <a href="index.html#calc" class="btn btn-green">Открыть калькулятор →</a>
+      <a href="#calc" class="btn btn-green">Открыть калькулятор →</a>
       <a href="tel:83952554499" class="btn btn-line" style="border-color:rgba(255,255,255,.3);color:#fff;">8 (3952) 55-44-99</a>
     </div>
   </div>
@@ -390,6 +441,10 @@
       <p>Оставьте заявку — перезвоним в&nbsp;течение 15 минут</p>
     </div>
     <form class="om-form" id="omForm" onsubmit="return omSubmit(event)">
+      <div class="om-service" id="omService" style="display:none">
+        <span class="om-service-label">Услуга</span>
+        <span class="om-service-name" id="omServiceName"></span>
+      </div>
       <div class="om-field">
         <label for="omName">Ваше имя</label>
         <input type="text" id="omName" name="name" placeholder="Как вас зовут?" autocomplete="name" required>
@@ -414,7 +469,7 @@
 </div>
 <script>
 (function(){
-  function omOpen(){var f=document.getElementById('omForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('omSuccess');if(s){s.classList.remove('show');}document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
+  function omOpen(service){var f=document.getElementById('omForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('omSuccess');if(s){s.classList.remove('show');}var svcEl=document.getElementById('omService');var svcName=document.getElementById('omServiceName');if(svcEl&&svcName){if(service){svcName.textContent=service;svcEl.style.display='';}else{svcEl.style.display='none';}}document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
   function omClose(){document.getElementById('orderModal').classList.remove('open');document.body.style.overflow='';}
   function omSubmit(e){
     e.preventDefault();
@@ -425,6 +480,30 @@
   }
   window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit;
   document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
+})();
+/* ===== Калькулятор ===== */
+(function(){
+  var tabs=document.querySelectorAll('.calc-tab'),panels=document.querySelectorAll('.calc-panel'),out=document.getElementById('out');
+  if(!out)return;
+  var rU=document.getElementById('r-uborka'),vU=document.getElementById('v-uborka');
+  var rO=document.getElementById('r-okna'),vO=document.getElementById('v-okna'),sM=document.getElementById('s-mebel');
+  var cur='uborka',itog=0,opis='';
+  function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ');}
+  function pU(a){return a<=40?6000:a<=70?9000:a<=120?13000:a<=160?16000:20000;}
+  function pO(a){return Math.max(4000,Math.round(a*500/100)*100);}
+  function calc(){
+    if(cur==='uborka'){var a=+rU.value;vU.textContent=a+' м²';itog=pU(a);opis='Уборка, '+a+' м²';}
+    else if(cur==='okna'){var b=+rO.value;vO.textContent=b+' м²';itog=pO(b);opis='Мытьё окон, '+b+' м²';}
+    else{itog=+sM.value;opis='Химчистка: '+sM.options[sM.selectedIndex].text;}
+    out.textContent='от '+fmt(itog)+' ₽';
+  }
+  for(var i=0;i<tabs.length;i++){tabs[i].addEventListener('click',function(){
+    for(var j=0;j<tabs.length;j++)tabs[j].classList.remove('on');
+    for(var k=0;k<panels.length;k++)panels[k].classList.remove('on');
+    this.classList.add('on');cur=this.getAttribute('data-t');
+    document.querySelector('.calc-panel[data-p="'+cur+'"]').classList.add('on');calc();});}
+  rU.addEventListener('input',calc);rO.addEventListener('input',calc);sM.addEventListener('change',calc);calc();
+  window.calcOrder=function(){window.omOpen(opis+' — от '+fmt(itog)+' ₽');};
 })();
 </script>
 </body>
