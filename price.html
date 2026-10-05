@@ -97,51 +97,54 @@
 </section>
 
 <!-- ============ КАЛЬКУЛЯТОР ============ -->
-<section class="bg-plain">
+<section class="bg-plain" id="calc">
   <div class="wrap">
     <div class="s-head">
-      <div><span class="micro">Онлайн-расчёт</span><h2 style="margin-top:14px;">Калькулятор стоимости</h2></div>
-      <p>Прикиньте примерную цену за&nbsp;минуту — точную назовём после уточнения деталей или&nbsp;оценки по&nbsp;фото.</p>
+      <div><span class="micro">Калькулятор</span><h2 style="margin-top:14px;">Рассчитайте стоимость уборки</h2></div>
     </div>
-    <div class="calc" id="calc" style="max-width:640px;margin:0 auto;">
-      <div class="calc-head">
-        <span class="micro">Расчёт стоимости</span>
-        <div class="calc-tabs">
-          <button type="button" class="calc-tab on" data-t="uborka">Уборка</button>
-          <button type="button" class="calc-tab" data-t="okna">Окна</button>
-          <button type="button" class="calc-tab" data-t="mebel">Химчистка</button>
+    <div class="calc2" id="calc2">
+      <div class="cc-controls">
+        <div class="cc-row"><label>Вид уборки</label>
+          <div class="cc-seg" data-k="type">
+            <button type="button" class="cc-opt" data-v="pod">Поддерживающая</button>
+            <button type="button" class="cc-opt on" data-v="gen">Генеральная</button>
+            <button type="button" class="cc-opt" data-v="rem">После ремонта</button>
+          </div>
+        </div>
+        <div class="cc-row"><label>Комнат</label>
+          <div class="cc-seg" data-k="rooms">
+            <button type="button" class="cc-opt on" data-v="1">1</button>
+            <button type="button" class="cc-opt" data-v="2">2</button>
+            <button type="button" class="cc-opt" data-v="3">3</button>
+            <button type="button" class="cc-opt" data-v="4">4</button>
+            <button type="button" class="cc-opt" data-v="5">5+</button>
+          </div>
+        </div>
+        <div class="cc-row"><label>Санузлов</label>
+          <div class="cc-seg" data-k="bath">
+            <button type="button" class="cc-opt on" data-v="1">1</button>
+            <button type="button" class="cc-opt" data-v="2">2</button>
+            <button type="button" class="cc-opt" data-v="3">3+</button>
+          </div>
+        </div>
+        <div class="cc-row"><label>Дополнительные услуги</label>
+          <div class="cc-checks">
+            <label class="cc-check"><input type="checkbox" value="oven"> Мытьё духовки</label>
+            <label class="cc-check"><input type="checkbox" value="mw"> Мытьё СВЧ</label>
+            <label class="cc-check"><input type="checkbox" value="fridge"> Холодильник внутри</label>
+            <label class="cc-check"><input type="checkbox" value="windows"> Мойка окон</label>
+            <label class="cc-check"><input type="checkbox" value="chandelier"> Мытьё люстры</label>
+            <label class="cc-check"><input type="checkbox" value="iron"> Глажка</label>
+            <label class="cc-check"><input type="checkbox" value="linen"> Смена белья</label>
+            <label class="cc-check"><input type="checkbox" value="balcony"> Уборка балкона</label>
+          </div>
         </div>
       </div>
-      <div class="calc-body">
-        <div class="calc-ctl">
-          <div class="calc-panel on" data-p="uborka">
-            <label for="r-uborka"><span>Площадь квартиры</span><b id="v-uborka">60 м²</b></label>
-            <input type="range" id="r-uborka" min="20" max="200" step="5" value="60">
-            <div class="calc-scale"><span>20 м²</span><span>200 м²</span></div>
-          </div>
-          <div class="calc-panel" data-p="okna">
-            <label for="r-okna"><span>Площадь остекления</span><b id="v-okna">10 м²</b></label>
-            <input type="range" id="r-okna" min="2" max="40" step="1" value="10">
-            <div class="calc-scale"><span>2 м²</span><span>40 м²</span></div>
-          </div>
-          <div class="calc-panel" data-p="mebel">
-            <label for="s-mebel"><span>Что&nbsp;чистим</span></label>
-            <select class="calc-sel" id="s-mebel">
-              <option value="2000">Кресло</option>
-              <option value="3000" selected>Диван 2–3-местный</option>
-              <option value="4500">Угловой диван</option>
-              <option value="2500">Матрас</option>
-            </select>
-          </div>
-        </div>
-        <div class="calc-out">
-          <div class="om">Ориентировочно</div>
-          <div class="op" id="out">от&nbsp;9 000 ₽</div>
-        </div>
-      </div>
-      <div class="calc-foot">
-        <button type="button" class="btn btn-green btn-block" id="calcGo" onclick="calcOrder()">Оставить заявку</button>
-        <span class="calc-note">Точную цену назовём по&nbsp;фото в&nbsp;MAX</span>
+      <div class="cc-out">
+        <div class="cc-lbl">Ориентировочно</div>
+        <div class="cc-sum" id="ccSum">от&nbsp;8 250 ₽</div>
+        <div class="cc-hint">Предварительный расчёт. Точную цену назовёт менеджер по&nbsp;фото в&nbsp;MAX или&nbsp;на&nbsp;объекте.</div>
+        <button type="button" class="btn btn-green" onclick="calcModalOpen()">Оставить заявку →</button>
       </div>
     </div>
   </div>
@@ -430,6 +433,38 @@
 </script>
 
 
+<!-- ============ МОДАЛЬНОЕ ОКНО: РАСЧЁТ КАЛЬКУЛЯТОРА ============ -->
+<div class="calc-modal" id="calcModal" role="dialog" aria-modal="true">
+  <div class="cm-backdrop" onclick="calcModalClose()"></div>
+  <div class="cm-card">
+    <button class="om-close" onclick="calcModalClose()" aria-label="Закрыть">✕</button>
+    <div class="om-head">
+      <div class="micro">Ваша заявка</div>
+      <h2>Расчёт стоимости</h2>
+      <p>Проверьте детали и&nbsp;оставьте номер — перезвоним в&nbsp;течение 15 минут</p>
+    </div>
+    <div class="cm-receipt" id="cmReceipt"></div>
+    <div class="cm-uds">💳 Есть бонусная программа <strong>UDS</strong> — часть суммы можно оплатить накопленными баллами. <a href="uds.html">Подробнее →</a>
+    </div>
+    <form id="cmForm" onsubmit="return cmSubmit(event)">
+      <div class="om-field">
+        <label for="cmPhone">Телефон</label>
+        <input type="tel" id="cmPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+      </div>
+      <div class="om-check">
+        <input type="checkbox" id="cmPd" name="pd" required>
+        <label for="cmPd">Согласен(а) с <a href="contacts.html">политикой обработки персональных данных</a></label>
+      </div>
+      <button type="submit" class="btn btn-green btn-block">Подтвердить заявку →</button>
+    </form>
+    <div class="om-success" id="cmSuccess">
+      <div class="om-ok">✓</div>
+      <h3>Заявка принята!</h3>
+      <p>Свяжемся с&nbsp;вами в&nbsp;ближайшее время</p>
+    </div>
+  </div>
+</div>
+
 <!-- ============ МОДАЛЬНОЕ ОКНО: ЗАКАЗАТЬ КЛИНИНГ ============ -->
 <div class="order-modal" id="orderModal" role="dialog" aria-modal="true" aria-label="Заказать клининг">
   <div class="om-backdrop" onclick="omClose()"></div>
@@ -479,31 +514,79 @@
     return false;
   }
   window.omOpen=omOpen; window.omClose=omClose; window.omSubmit=omSubmit;
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){omClose();if(window.calcModalClose)calcModalClose();}});
 })();
-/* ===== Калькулятор ===== */
+/* ===== Калькулятор уборки (ориентировочно) =====
+   КОЭФФИЦИЕНТЫ НИЖЕ — ориентировочные. Заказчик заменит на реальные цены. */
 (function(){
-  var tabs=document.querySelectorAll('.calc-tab'),panels=document.querySelectorAll('.calc-panel'),out=document.getElementById('out');
-  if(!out)return;
-  var rU=document.getElementById('r-uborka'),vU=document.getElementById('v-uborka');
-  var rO=document.getElementById('r-okna'),vO=document.getElementById('v-okna'),sM=document.getElementById('s-mebel');
-  var cur='uborka',itog=0,opis='';
-  function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ');}
-  function pU(a){return a<=40?6000:a<=70?9000:a<=120?13000:a<=160?16000:20000;}
-  function pO(a){return Math.max(4000,Math.round(a*500/100)*100);}
+  var RATE={pod:90, gen:150, rem:200};        // ₽ за м² по типу уборки
+  var AREA={1:38, 2:55, 3:75, 4:95, 5:120};    // ориентир. площадь по числу комнат
+  var BATH_EXTRA=1200;                          // доплата за каждый доп. санузел
+  var MIN=4000;                                 // минимальный заказ
+  var EXTRA={oven:900, mw:400, fridge:1000, windows:2500, chandelier:1200, iron:1000, linen:500, balcony:1500};
+  var root=document.getElementById('calc2'); if(!root) return;
+  var out=document.getElementById('ccSum');
+  var state={type:'gen', rooms:1, bath:1};
+  function money(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,' ');}
   function calc(){
-    if(cur==='uborka'){var a=+rU.value;vU.textContent=a+' м²';itog=pU(a);opis='Уборка, '+a+' м²';}
-    else if(cur==='okna'){var b=+rO.value;vO.textContent=b+' м²';itog=pO(b);opis='Мытьё окон, '+b+' м²';}
-    else{itog=+sM.value;opis='Химчистка: '+sM.options[sM.selectedIndex].text;}
-    out.textContent='от '+fmt(itog)+' ₽';
+    var area=AREA[state.rooms]||120;
+    var base=Math.max(MIN, RATE[state.type]*area);
+    base += (state.bath-1)*BATH_EXTRA;
+    var ex=0; root.querySelectorAll('.cc-check input:checked').forEach(function(c){ex+=EXTRA[c.value]||0;});
+    out.textContent='от '+money(base+ex)+' ₽';
   }
-  for(var i=0;i<tabs.length;i++){tabs[i].addEventListener('click',function(){
-    for(var j=0;j<tabs.length;j++)tabs[j].classList.remove('on');
-    for(var k=0;k<panels.length;k++)panels[k].classList.remove('on');
-    this.classList.add('on');cur=this.getAttribute('data-t');
-    document.querySelector('.calc-panel[data-p="'+cur+'"]').classList.add('on');calc();});}
-  rU.addEventListener('input',calc);rO.addEventListener('input',calc);sM.addEventListener('change',calc);calc();
-  window.calcOrder=function(){window.omOpen(opis+' — от '+fmt(itog)+' ₽');};
+  root.querySelectorAll('.cc-seg').forEach(function(seg){
+    seg.addEventListener('click',function(e){
+      var b=e.target.closest('.cc-opt'); if(!b)return;
+      seg.querySelectorAll('.cc-opt').forEach(function(o){o.classList.remove('on');});
+      b.classList.add('on');
+      var k=seg.getAttribute('data-k'), v=b.getAttribute('data-v');
+      state[k]=(k==='type')?v:parseInt(v,10);
+      calc();
+    });
+  });
+  root.querySelectorAll('.cc-check input').forEach(function(c){c.addEventListener('change',calc);});
+  calc();
+})();
+/* ===== Calc receipt modal ===== */
+(function(){
+  var LABELS={pod:'Поддерживающая',gen:'Генеральная',rem:'После ремонта'};
+  var EXTRAS_L={oven:'Мытьё духовки',mw:'Мытьё СВЧ',fridge:'Холодильник внутри',windows:'Мойка окон',chandelier:'Мытьё люстры',iron:'Глажка',linen:'Смена белья',balcony:'Уборка балкона'};
+  var EXTRAS_P={oven:900,mw:400,fridge:1000,windows:2500,chandelier:1200,iron:1000,linen:500,balcony:1500};
+  function money(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,' ');}
+  function calcModalOpen(){
+    var root=document.getElementById('calc2'); if(!root) return;
+    var type=root.querySelector('.cc-seg[data-k="type"] .cc-opt.on');
+    var rooms=root.querySelector('.cc-seg[data-k="rooms"] .cc-opt.on');
+    var bath=root.querySelector('.cc-seg[data-k="bath"] .cc-opt.on');
+    var extras=[];
+    root.querySelectorAll('.cc-check input:checked').forEach(function(c){extras.push({k:c.value,l:EXTRAS_L[c.value],p:EXTRAS_P[c.value]||0});});
+    var sumEl=document.getElementById('ccSum');
+    var sumTxt=sumEl?sumEl.textContent:'';
+    var receipt=document.getElementById('cmReceipt');
+    var html='<div class="cm-receipt-row"><span>Вид уборки</span><span>'+(type?LABELS[type.getAttribute('data-v')]:'–')+'</span></div>';
+    html+='<div class="cm-receipt-row"><span>Комнат</span><span>'+(rooms?rooms.getAttribute('data-v'):'–')+'</span></div>';
+    html+='<div class="cm-receipt-row"><span>Санузлов</span><span>'+(bath?bath.getAttribute('data-v'):'–')+'</span></div>';
+    extras.forEach(function(ex){html+='<div class="cm-receipt-row"><span>'+ex.l+'</span><span>+'+money(ex.p)+' ₽</span></div>';});
+    html+='<div class="cm-receipt-row total"><span>Ориентировочно</span><span>'+sumTxt+'</span></div>';
+    receipt.innerHTML=html;
+    var f=document.getElementById('cmForm'); if(f){f.reset();f.classList.remove('hide');}
+    var s=document.getElementById('cmSuccess'); if(s)s.classList.remove('show');
+    document.getElementById('calcModal').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function calcModalClose(){
+    document.getElementById('calcModal').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function cmSubmit(e){
+    e.preventDefault();
+    document.getElementById('cmForm').classList.add('hide');
+    document.getElementById('cmSuccess').classList.add('show');
+    setTimeout(calcModalClose, 3000);
+    return false;
+  }
+  window.calcModalOpen=calcModalOpen; window.calcModalClose=calcModalClose; window.cmSubmit=cmSubmit;
 })();
 </script>
 </body>
