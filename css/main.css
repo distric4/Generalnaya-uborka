@@ -628,7 +628,9 @@ html{scroll-behavior:smooth;}
 .gu-page .sw-panel.on{display:block;animation:swfade .25s ease;}
 @keyframes swfade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
 @media(prefers-reduced-motion:reduce){.gu-page .sw-panel.on{animation:none;}}
-.gu-page .sw-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-2);padding:36px 40px;display:grid;grid-template-columns:1.35fr .65fr;gap:36px;align-items:start;}
+.gu-page .sw-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-2);padding:36px 40px;display:grid;grid-template-columns:1.35fr .65fr;gap:28px 36px;align-items:start;grid-template-areas:"img side" "main side";}
+.gu-page .sw-card .sw-main{grid-area:main;}
+.gu-page .sw-card .sw-side{grid-area:side;}
 .gu-page .sw-main h3{font-size:clamp(20px,2.4vw,26px);margin-bottom:14px;}
 .gu-page .sw-when{color:var(--ink-2);font-size:15px;margin-bottom:24px;line-height:1.6;}
 .gu-page .sw-inc-t{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-2);margin-bottom:14px;}
@@ -642,9 +644,10 @@ html{scroll-behavior:smooth;}
 .gu-page .sw-price.sm{font-size:15px;font-weight:600;color:var(--ink-2);line-height:1.55;}
 .gu-page .sw-brig{font-size:13.5px;color:var(--gray);margin:16px 0 22px;line-height:1.55;}
 .gu-page .sw-side .btn{width:100%;}
-.gu-page .sw-card .sw-img{grid-column:1/-1;width:100%;height:280px;object-fit:cover;border-radius:var(--r-lg);display:block;}
+.gu-page .sw-card .sw-img{grid-area:img;width:100%;height:340px;object-fit:cover;object-position:center;border-radius:var(--r-lg);display:block;}
 @media(max-width:760px){
-  .gu-page .sw-card{grid-template-columns:1fr;padding:26px 22px;gap:26px;}
+  .gu-page .sw-card{grid-template-columns:1fr;padding:26px 22px;gap:22px;grid-template-areas:"img" "main" "side";}
+  .gu-page .sw-card .sw-img{height:240px;}
   .gu-page .sw-tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-left:-20px;margin-right:-20px;padding:0 20px 8px;scrollbar-width:none;}
   .gu-page .sw-tabs::-webkit-scrollbar{display:none;}
   .gu-page .sw-tab{flex:0 0 auto;}
