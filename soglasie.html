@@ -264,5 +264,6 @@
   ok.addEventListener('click',function(){bar.classList.remove('show');try{localStorage.setItem('cookieOk','1');}catch(e){}});
 })();
 </script>
+<script>/*navActiveHL*/(function(){var p=(location.pathname.split("/").pop()||"index.html").split("?")[0]||"index.html";if(p==="index.html")return;var sel='a[href="'+p+'"]';document.querySelectorAll(".nd").forEach(function(nd){if(nd.querySelector(sel)){var t=nd.querySelector(".nd-t");if(t)t.classList.add("on");}});document.querySelectorAll(".mob-acc").forEach(function(ac){if(ac.querySelector(sel)){var t=ac.querySelector(".mob-acc-t");if(t)t.classList.add("on");}});document.querySelectorAll('.hdr-nav>a[href="'+p+'"],.mob-nav>a[href="'+p+'"]').forEach(function(a){a.classList.add("on");});})();</script>
 </body>
 </html>

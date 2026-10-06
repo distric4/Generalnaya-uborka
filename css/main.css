@@ -773,6 +773,31 @@ html{scroll-behavior:smooth;}
 @media(max-width:900px){.gu-page .gal-grid{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:620px){.gu-page .gal-grid{grid-template-columns:repeat(2,1fr);gap:12px;}}
 
+/* ===== Мобильные фиксы адаптива ===== */
+/* 1. abonement: сетка «Что фиксируем» */
+@media(max-width:900px){.gu-page .terms-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.gu-page .terms-grid{grid-template-columns:1fr;}}
+/* 3–4. сухой туман: 3-колоночные сетки с адаптивом + цена не переносится */
+.gu-page .ben-grid.cols-3,.gu-page .price-grid.cols-3{grid-template-columns:repeat(3,1fr);}
+@media(max-width:900px){.gu-page .ben-grid.cols-3,.gu-page .price-grid.cols-3{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.gu-page .ben-grid.cols-3,.gu-page .price-grid.cols-3{grid-template-columns:1fr;}}
+.gu-page .price-card table td:last-child{white-space:nowrap;}
+/* 5. тёмные секции: заголовок виден */
+.gu-page .bg-dark h2{color:#fff;}
+/* 7. реквизиты на мобильных */
+@media(max-width:560px){
+  .gu-page .req-row{flex-direction:column;gap:3px;align-items:flex-start;}
+  .gu-page .req-row .rv{text-align:left;overflow-wrap:anywhere;word-break:break-word;}
+}
+/* 8. активный пункт меню */
+.gu-page .hdr-nav .nd-t.on{background:var(--mint-1);color:var(--cyan-deep);}
+.gu-page .mob-nav .mob-acc-t.on,.gu-page .mob-nav>a.on{color:var(--cyan-deep);}
+/* 6. благодарственные письма — горизонтальный слайдер на мобильных */
+@media(max-width:760px){
+  .gu-page .letters-grid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:12px;scrollbar-width:thin;}
+  .gu-page .letters-grid .letter-item{flex:0 0 74%;scroll-snap-align:center;}
+}
+
 /* ===== Слайдер партнёров/клиентов ===== */
 .gu-page .pl-track{display:flex;gap:20px;transition:transform .4s cubic-bezier(.4,0,.2,1);will-change:transform;}
 .gu-page .pl-slide{display:contents;}

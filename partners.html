@@ -33,7 +33,7 @@
     <a href="index.html" class="hdr-logo"><img src="https://static.tildacdn.com/tild3766-6436-4261-b661-613261313461/image_997.png" alt="Генеральная уборка — клининговая компания в Иркутске"></a>
                 <nav class="hdr-nav">
       <div class="nd"><a href="clients.html" class="nd-t">Для&nbsp;дома</a><div class="nd-m"><a href="clients.html" class="nd-top">Все услуги для&nbsp;дома</a><a href="uborka.html">Уборка квартир</a><a href="mytyo.html">Мойка</a><a href="himchistka.html">Химчистка мебели</a><a href="suhoy-tuman.html">Сухой туман</a></div></div>
-      <div class="nd"><a href="business.html" class="nd-t on">Для&nbsp;бизнеса</a><div class="nd-m"><a href="business.html" class="nd-top">Все для&nbsp;бизнеса</a><a href="abonement.html">Абонентское обслуживание</a><a href="razovye.html">Разовые услуги</a><a href="partners.html">Партнёрам</a></div></div>
+      <div class="nd"><a href="business.html" class="nd-t">Для&nbsp;бизнеса</a><div class="nd-m"><a href="business.html" class="nd-top">Все для&nbsp;бизнеса</a><a href="abonement.html">Абонентское обслуживание</a><a href="razovye.html">Разовые услуги</a><a href="partners.html">Партнёрам</a></div></div>
       <a href="price.html">Цены</a>
       <div class="nd"><span class="nd-t">Ещё</span><div class="nd-m"><a href="index.html#otzyvy">Отзывы</a><a href="galereya.html">Наши работы</a><a href="about.html">О&nbsp;компании</a><a href="contacts.html">Контакты</a><a href="uds.html">Бонусы UDS</a></div></div>
     </nav>
@@ -432,5 +432,6 @@
 </script>
 <div class="lb" id="lb"><button class="lb-close" id="lbClose" aria-label="Закрыть">✕</button><img id="lbImg" src="" alt="Благодарственное письмо"></div>
 <script>(function(){var lb=document.getElementById("lb"),img=document.getElementById("lbImg");if(!lb)return;document.querySelectorAll("[data-lb]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();img.src=a.getAttribute("href");lb.classList.add("open");document.body.style.overflow="hidden";});});function close(){lb.classList.remove("open");document.body.style.overflow="";img.src="";}document.getElementById("lbClose").addEventListener("click",close);lb.addEventListener("click",function(e){if(e.target===lb)close();});document.addEventListener("keydown",function(e){if(e.key==="Escape")close();});})();</script>
+<script>/*navActiveHL*/(function(){var p=(location.pathname.split("/").pop()||"index.html").split("?")[0]||"index.html";if(p==="index.html")return;var sel='a[href="'+p+'"]';document.querySelectorAll(".nd").forEach(function(nd){if(nd.querySelector(sel)){var t=nd.querySelector(".nd-t");if(t)t.classList.add("on");}});document.querySelectorAll(".mob-acc").forEach(function(ac){if(ac.querySelector(sel)){var t=ac.querySelector(".mob-acc-t");if(t)t.classList.add("on");}});document.querySelectorAll('.hdr-nav>a[href="'+p+'"],.mob-nav>a[href="'+p+'"]').forEach(function(a){a.classList.add("on");});})();</script>
 </body>
 </html>
