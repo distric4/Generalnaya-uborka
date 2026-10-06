@@ -756,6 +756,18 @@ html{scroll-behavior:smooth;}
 .lb-close{position:absolute;top:18px;right:22px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;border:none;font-size:22px;cursor:pointer;line-height:1;}
 .lb-close:hover{background:rgba(255,255,255,.28);}
 
+/* ===== Галерея «Наши работы» ===== */
+.gu-page .gal-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;}
+.gu-page .gal-f{background:#fff;border:1.5px solid var(--line);color:var(--ink-2);border-radius:var(--r-pill);padding:9px 18px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:.15s;}
+.gu-page .gal-f:hover{border-color:var(--cyan);color:var(--cyan-deep);}
+.gu-page .gal-f.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+.gu-page .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.gu-page .gal-item{display:block;border-radius:var(--r-md);overflow:hidden;box-shadow:var(--sh-1);background:#fff;cursor:zoom-in;transition:.2s ease;}
+.gu-page .gal-item:hover{transform:translateY(-3px);box-shadow:var(--sh-2);}
+.gu-page .gal-item img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
+@media(max-width:900px){.gu-page .gal-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:620px){.gu-page .gal-grid{grid-template-columns:repeat(2,1fr);gap:12px;}}
+
 /* ===== Слайдер партнёров/клиентов ===== */
 .gu-page .pl-track{display:flex;gap:20px;transition:transform .4s cubic-bezier(.4,0,.2,1);will-change:transform;}
 .gu-page .pl-slide{display:contents;}
