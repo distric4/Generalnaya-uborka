@@ -272,6 +272,7 @@
         <label for="omPhone">Телефон</label>
         <input type="tel" id="omPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
       </div>
+      <input type="text" id="omCompany" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <div class="om-check">
         <input type="checkbox" id="omPd" name="pd" required>
         <label for="omPd">Принимаю <a href="soglasie.html">условия обработки персональных данных</a> и&nbsp;<a href="privacy.html">Политику конфиденциальности</a></label>
@@ -301,7 +302,7 @@
 (function(){
   function omOpen(){var f=document.getElementById('omForm');if(f){f.reset();f.classList.remove('hide');}var s=document.getElementById('omSuccess');if(s){s.classList.remove('show');}document.getElementById('orderModal').classList.add('open');document.body.style.overflow='hidden';}
   function omClose(){document.getElementById('orderModal').classList.remove('open');document.body.style.overflow='';}
-  function omSubmit(e){e.preventDefault();document.getElementById('omForm').classList.add('hide');document.getElementById('omSuccess').classList.add('show');setTimeout(omClose,3000);return false;}
+  function omSubmit(e){e.preventDefault();var gv=function(id){var el=document.getElementById(id);return el?((el.value||el.textContent||'')+''):'';};var sn=document.getElementById('omServiceName');var payload={name:gv('omName'),phone:gv('omPhone'),company:gv('omCompany'),source:(sn&&sn.textContent.trim())?('Заказ: '+sn.textContent.trim()):'Заказать клининг',page:location.pathname};try{fetch('api/lead.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});}catch(_){}document.getElementById('omForm').classList.add('hide');document.getElementById('omSuccess').classList.add('show');setTimeout(omClose,3000);return false;}
   window.omOpen=omOpen;window.omClose=omClose;window.omSubmit=omSubmit;
   document.addEventListener('keydown',function(e){if(e.key==='Escape')omClose();});
 })();

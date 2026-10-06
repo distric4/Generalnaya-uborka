@@ -473,6 +473,7 @@
             </div>
           </div>
           <input type="hidden" name="raschet" id="f-raschet">
+          <input type="text" id="f-company" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <label class="agree"><input type="checkbox" id="f-agree" required>
             <span>Нажимая кнопку, я соглашаюсь с <a href="privacy.html">политикой конфиденциальности</a> и&nbsp;даю согласие на&nbsp;обработку персональных данных.</span></label>
           <button type="submit" class="btn btn-cyan btn-block">Отправить заявку</button>
@@ -559,7 +560,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
     svyaz:(document.querySelector('input[name=svyaz]:checked')||{}).value,
     raschet:document.getElementById('f-raschet').value};
   /* TODO(интеграция): отправить data на почту / в CRM / в Telegram */
-  console.log('Заявка:',data);
+  try{fetch('api/lead.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:data.name,phone:data.phone,email:data.email,company:(document.getElementById('f-company')||{}).value||'',source:'Заявка (сайт)',page:location.pathname,message:(data.svyaz?('Связь: '+data.svyaz):'')})});}catch(_){}
   ms.textContent='Заявка принята. Менеджер перезвонит с 08:00 до 20:00. Срочно — 8 (3952) 55-44-99';
   ms.style.display='block';this.reset();
   document.getElementById('fcalc').classList.remove('on');
@@ -723,6 +724,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
         <label for="kpDesc">Объект и&nbsp;задача (кратко)</label>
         <input type="text" id="kpDesc" name="desc" placeholder="Например: офис 300 м², уборка 3 раза в неделю">
       </div>
+      <input type="text" id="omCompany" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <div class="om-check">
         <input type="checkbox" id="kpPd" name="pd" required>
         <label for="kpPd">Принимаю <a href="soglasie.html">условия обработки персональных данных</a> и&nbsp;<a href="privacy.html">Политику конфиденциальности</a></label>
@@ -854,6 +856,12 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
   function omClose(){document.getElementById('orderModal').classList.remove('open');document.body.style.overflow='';}
   function omSubmit(e){
     e.preventDefault();
+    var gv=function(id){var el=document.getElementById(id);return el?((el.value||el.textContent||'')+''):'';};
+    var sn=document.getElementById('omServiceName');
+    var payload={name:gv('omName'),phone:gv('omPhone'),company:gv('omCompany'),
+      source:(sn&&sn.textContent.trim())?('Заказ: '+sn.textContent.trim()):'Заказать клининг',
+      page:location.pathname};
+    try{fetch('api/lead.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});}catch(_){}
     document.getElementById('omForm').classList.add('hide');
     document.getElementById('omSuccess').classList.add('show');
     setTimeout(omClose, 3000);
