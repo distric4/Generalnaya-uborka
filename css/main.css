@@ -773,7 +773,15 @@ html{scroll-behavior:smooth;}
 .gu-page .incl-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 32px;}
 .gu-page .incl-grid li{display:flex;align-items:flex-start;gap:10px;}
 .gu-page .incl-grid li::before{content:"✓";flex-shrink:0;width:24px;height:24px;border-radius:50%;background:rgba(122,205,2,.16);color:var(--green-deep);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;}
-.gu-page .factors{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;margin:20px 0 0;}
+.gu-page .factors{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0 0;}
+.gu-page .factors li{display:flex;align-items:flex-start;gap:14px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;font-size:15px;line-height:1.5;color:var(--ink-2);box-shadow:var(--sh-1);transition:.2s ease;}
+.gu-page .factors li:hover{transform:translateY(-2px);box-shadow:var(--sh-2);}
+.gu-page .factors .fi{flex-shrink:0;width:42px;height:42px;border-radius:var(--r-md);background:var(--mint-1);display:flex;align-items:center;justify-content:center;font-size:21px;}
+@media(max-width:640px){.gu-page .factors{grid-template-columns:1fr;}}
+/* team-intro заголовок — выровнять со стилем секций */
+.gu-page .team-intro{margin-bottom:34px;max-width:760px;}
+.gu-page .team-intro h2{font-size:clamp(28px,3.4vw,42px);}
+.gu-page .team-intro p{color:var(--ink-2);font-size:15px;line-height:1.6;margin-top:12px;}
 .gu-page .doc-chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:26px 0;}
 .gu-page .doc-chips span{background:#fff;border:1px solid var(--line);border-radius:var(--r-pill);padding:12px 22px;font-size:14px;font-weight:600;}
 .gu-page .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
