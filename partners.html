@@ -125,14 +125,26 @@
       <div><span class="micro">Отзывы клиентов</span><h2 style="margin-top:14px;">Благодарственные письма</h2></div>
       <p>Компании, с&nbsp;которыми мы работаем, оставляют официальные благодарственные письма. Ниже — сканы оригиналов.</p>
     </div>
-    <!-- Плейсхолдеры сканов — здесь будут реальные сканы писем, сейчас стоят заглушки (заполнит заказчик) -->
     <div class="letters-grid">
-      <div class="photo"><span>Благодарственное письмо</span></div>
-      <div class="photo"><span>Благодарственное письмо</span></div>
-      <div class="photo"><span>Благодарственное письмо</span></div>
-      <div class="photo"><span>Благодарственное письмо</span></div>
+      <a class="letter-item" href="img/letters/letter-01.jpg" data-lb><img src="img/letters/letter-01.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-02.jpg" data-lb><img src="img/letters/letter-02.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-03.jpg" data-lb><img src="img/letters/letter-03.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-04.jpg" data-lb><img src="img/letters/letter-04.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-05.jpg" data-lb><img src="img/letters/letter-05.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-06.jpg" data-lb><img src="img/letters/letter-06.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-07.jpg" data-lb><img src="img/letters/letter-07.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-08.jpg" data-lb><img src="img/letters/letter-08.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-09.jpg" data-lb><img src="img/letters/letter-09.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-10.jpg" data-lb><img src="img/letters/letter-10.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-11.jpg" data-lb><img src="img/letters/letter-11.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-12.jpg" data-lb><img src="img/letters/letter-12.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-13.jpg" data-lb><img src="img/letters/letter-13.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-14.jpg" data-lb><img src="img/letters/letter-14.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-15.jpg" data-lb><img src="img/letters/letter-15.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-16.jpg" data-lb><img src="img/letters/letter-16.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-17.jpg" data-lb><img src="img/letters/letter-17.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
+      <a class="letter-item" href="img/letters/letter-18.jpg" data-lb><img src="img/letters/letter-18.jpg" alt="Благодарственное письмо клиента Генеральной уборки" loading="lazy"></a>
     </div>
-    <p class="note-placeholder">Здесь будут реальные сканы писем — сейчас стоят заглушки.</p>
   </div>
 </section>
 
@@ -353,5 +365,7 @@
 <script>
 (function(){var bar=document.getElementById('cookieBar'),ok=document.getElementById('cookieOk');if(!bar||!ok)return;var agreed=false;try{agreed=localStorage.getItem('cookieOk')==='1';}catch(e){}if(!agreed)bar.classList.add('show');ok.addEventListener('click',function(){bar.classList.remove('show');try{localStorage.setItem('cookieOk','1');}catch(e){}});})();
 </script>
+<div class="lb" id="lb"><button class="lb-close" id="lbClose" aria-label="Закрыть">✕</button><img id="lbImg" src="" alt="Благодарственное письмо"></div>
+<script>(function(){var lb=document.getElementById("lb"),img=document.getElementById("lbImg");if(!lb)return;document.querySelectorAll("[data-lb]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();img.src=a.getAttribute("href");lb.classList.add("open");document.body.style.overflow="hidden";});});function close(){lb.classList.remove("open");document.body.style.overflow="";img.src="";}document.getElementById("lbClose").addEventListener("click",close);lb.addEventListener("click",function(e){if(e.target===lb)close();});document.addEventListener("keydown",function(e){if(e.key==="Escape")close();});})();</script>
 </body>
 </html>
