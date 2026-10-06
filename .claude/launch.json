@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "uborka38",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "5500", "--directory", "C:\\Users\\Алексей\\OneDrive\\Рабочий стол\\Сайты\\uborka38-site"],
+      "port": 5500
+    }
+  ]
+}
