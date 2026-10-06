@@ -102,18 +102,41 @@
       <div><span class="micro">Клиенты</span><h2 style="margin-top:14px;">Нам доверяют компании Иркутска</h2></div>
       <p>Среди наших клиентов — офисы, торговые сети, склады и&nbsp;производства. Часть из&nbsp;них выбрала нас по&nbsp;итогам тендера.</p>
     </div>
-    <!-- Плейсхолдеры логотипов — заказчик заменит реальными логотипами клиентов -->
-    <div class="logo-grid">
-      <div class="photo"><span>Логотип клиента</span></div>
-      <div class="photo"><span>Логотип клиента</span></div>
-      <div class="photo"><span>Логотип клиента</span></div>
-      <div class="photo"><span>Логотип клиента</span></div>
-      <div class="photo"><span>Логотип клиента</span></div>
-      <div class="photo"><span>Логотип клиента</span></div>
-      <div class="photo"><span>Логотип клиента</span></div>
-      <div class="photo"><span>Логотип клиента</span></div>
-      <div class="photo"><span>Логотип клиента</span></div>
-      <div class="photo"><span>Логотип клиента</span></div>
+    <div class="works-slider" id="plSlider">
+      <div class="ws-viewport">
+        <div class="pl-track" id="plTrack">
+          <div class="pl-slide">
+            <figure class="pl-card"><div class="pl-logo"><img src="img/partners/rzd.jpg" alt="ОАО «РЖД»" loading="lazy"></div><figcaption>РЖД</figcaption></figure>
+            <figure class="pl-card"><div class="pl-logo"><img src="img/partners/sogaz.jpg" alt="СОГАЗ" loading="lazy"></div><figcaption>СОГАЗ</figcaption></figure>
+            <figure class="pl-card"><div class="pl-logo"><img src="img/partners/bank-primorye.svg" alt="Банк «Приморье»" loading="lazy"></div><figcaption>Банк «Приморье»</figcaption></figure>
+          </div>
+          <div class="pl-slide">
+            <figure class="pl-card"><div class="pl-logo"><img src="img/partners/invitro.png" alt="Инвитро" loading="lazy"></div><figcaption>«Инвитро»</figcaption></figure>
+            <figure class="pl-card"><div class="pl-logo"><img src="img/partners/idc.png" alt="Иркутский диагностический центр" loading="lazy"></div><figcaption>Иркутский диагностический центр</figcaption></figure>
+            <figure class="pl-card"><div class="pl-logo"><img src="img/partners/klinika-soyuz.svg" alt="Клиника «Союз»" loading="lazy"></div><figcaption>Клиника «Союз»</figcaption></figure>
+          </div>
+          <div class="pl-slide">
+            <figure class="pl-card"><div class="pl-logo"><img src="img/partners/poliklinika11.png" alt="Городская поликлиника №11" loading="lazy"></div><figcaption>Городская поликлиника №11</figcaption></figure>
+            <figure class="pl-card"><div class="pl-logo"><img src="img/partners/gkb3.jpg" alt="Городская клиническая больница №3" loading="lazy"></div><figcaption>Городская больница №3</figcaption></figure>
+            <figure class="pl-card"><div class="pl-logo"><img src="img/partners/iek.png" alt="Иркутский энергетический колледж" loading="lazy"></div><figcaption>Иркутский энергоколледж</figcaption></figure>
+          </div>
+          <div class="pl-slide">
+            <figure class="pl-card"><div class="pl-logo"><img src="img/partners/filarmoniya.png" alt="Иркутская областная филармония" loading="lazy"></div><figcaption>Иркутская филармония</figcaption></figure>
+            <figure class="pl-card"><div class="pl-logo"><img src="img/partners/taltsy.jpg" alt="Музей «Тальцы»" loading="lazy"></div><figcaption>Музей «Тальцы»</figcaption></figure>
+            <figure class="pl-card"><div class="pl-logo"><img src="img/partners/almaz.svg" alt="Ювелирная сеть «Алмаз»" loading="lazy"></div><figcaption>Ювелирная сеть «Алмаз»</figcaption></figure>
+          </div>
+          <div class="pl-slide">
+            <figure class="pl-card"><div class="pl-logo"><img src="img/partners/zhk-sibiryakov.jpg" alt="ЖК «Сибиряков»" loading="lazy"></div><figcaption>ЖК «Сибиряков»</figcaption></figure>
+            <figure class="pl-card"><div class="pl-logo"><img src="img/partners/gorzelenhoz.jpg" alt="АО «Горзеленхоз»" loading="lazy"></div><figcaption>АО «Горзеленхоз»</figcaption></figure>
+            <figure class="pl-card"><div class="pl-logo"><img src="img/partners/bradobrey.jpg" alt="Барбершоп Bradobrey" loading="lazy"></div><figcaption>Барбершоп Bradobrey</figcaption></figure>
+          </div>
+        </div>
+      </div>
+      <div class="ws-ctrl" id="plCtrl">
+        <button class="ws-btn" id="plPrev" aria-label="Назад">‹</button>
+        <div class="ws-dots" id="plDots"></div>
+        <button class="ws-btn" id="plNext" aria-label="Вперёд">›</button>
+      </div>
     </div>
   </div>
 </section>
@@ -310,6 +333,35 @@
     ms.textContent='Заявка принята. Елена Борисовна свяжется с вами в течение 24 часов. Срочно — 8 (914) 927-22-87';
     ms.style.display='block';this.reset();
   });
+})();
+/* ===== Слайдер партнёров ===== */
+(function(){
+  var sl=document.getElementById('plSlider');if(!sl)return;
+  var track=document.getElementById('plTrack');
+  var slides=[].slice.call(track.children);
+  var cards=[].slice.call(track.querySelectorAll('.pl-card'));
+  var dotsWrap=document.getElementById('plDots');
+  var ctrl=document.getElementById('plCtrl');
+  var cur=0,pages=1,step=0;
+  function isDesktop(){return getComputedStyle(slides[0]).display==='contents';}
+  function go(i){cur=Math.max(0,Math.min(i,pages-1));track.style.transform='translateX(-'+(cur*step)+'px)';[].forEach.call(dotsWrap.children,function(d,idx){d.classList.toggle('on',idx===cur);});}
+  function measure(){
+    var g=parseFloat(getComputedStyle(track).gap)||0;
+    var units=isDesktop()?cards:slides;
+    var uw=units[0].getBoundingClientRect().width;
+    var vpW=track.parentElement.clientWidth;
+    var pv=Math.max(1,Math.round((vpW+g)/((uw+g)||1)));
+    step=pv*(uw+g);
+    pages=Math.max(1,Math.ceil(units.length/pv));
+    dotsWrap.innerHTML='';
+    for(var k=0;k<pages;k++){var d=document.createElement('span');d.className='ws-dot';(function(k){d.addEventListener('click',function(){go(k);});})(k);dotsWrap.appendChild(d);}
+    if(ctrl)ctrl.style.display=pages>1?'flex':'none';
+    go(Math.min(cur,pages-1));
+  }
+  document.getElementById('plPrev').addEventListener('click',function(){go(cur-1);});
+  document.getElementById('plNext').addEventListener('click',function(){go(cur+1);});
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(measure,150);});
+  measure();
 })();
 </script>
 
